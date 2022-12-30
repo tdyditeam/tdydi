@@ -1,40 +1,42 @@
 <template>
   <div class="header">
-    <div class="header__top">
-      <div class="header__top-title">
-        <h2>
-          Türkmen döwlet ykdysadyýet <br />
-          we dolandyryş instituty
-        </h2>
-      </div>
-      <div class="header__top-logo">
-        <img src="@/assets/icons/logo.png" alt="" />
-      </div>
-      <div class="header__top-content">
-        <div class="languages">
-          <span class="_active">TM</span>
-          <span>RU</span>
-          <span>EN</span>
+    <div class="">
+      <div class="header__top __container">
+        <div class="header__top-title">
+          <h2>
+            Türkmen döwlet ykdysadyýet <br />
+            we dolandyryş instituty
+          </h2>
         </div>
-        <div class="contact">Contact</div>
+        <div class="header__top-logo">
+          <img src="@/assets/icons/logo.png" alt="" />
+        </div>
+        <div class="header__top-content">
+          <div class="languages">
+            <span class="_active">TM</span>
+            <span>RU</span>
+            <span>EN</span>
+          </div>
+          <div class="contact">Contact</div>
+        </div>
       </div>
-    </div>
-    <div class="header__bottom">
-      <ul class="header__bottom-menu">
-        <li v-for="item in menu" :key="item.id" class="header__bottom-items">
-          <span>{{ item.name }}</span>
-          <span></span>
-          <ul class="header__bottom-submenu">
-            <li
-              v-for="elem in item.subMenus"
-              :key="elem.id"
-              class="header__bottom-subitems"
-            >
-              <span>{{ elem.name }}</span>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div class="header__bottom">
+        <ul class="header__bottom-menu">
+          <li v-for="item in menu" :key="item.id" class="header__bottom-items">
+            <span>{{ item.name }}</span>
+            <span></span>
+            <ul class="header__bottom-submenu">
+              <li
+                v-for="elem in item.subMenus"
+                :key="elem.id"
+                class="header__bottom-subitems"
+              >
+                <span>{{ elem.name }}</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -184,6 +186,10 @@ export default {
 
 <style lang="scss">
 .header {
+  position: sticky;
+  top: 0;
+  //   background: #fff;
+  z-index: 2;
   &__top {
     display: flex;
     align-items: center;
@@ -322,9 +328,30 @@ export default {
       visibility: hidden;
       transition: 0.3s ease;
       overflow: auto;
+      background: #fff;
+      z-index: 1;
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        display: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        display: none;
+      }
+
+      &::-webkit-scrollbar {
+        background: transparent;
+        display: none;
+      }
+      &::-webkit-scrollbar-corner {
+        display: none;
+
+        visibility: hidden;
+        opacity: 0px;
+      }
     }
     &-subitems {
-      padding: 10px 0;
+      padding: 20px 0;
       margin-left: 15px;
       display: flex;
       align-items: center;
@@ -344,6 +371,7 @@ export default {
         }
       }
       span {
+        white-space: nowrap;
         &:hover {
           color: var(--primary);
         }
