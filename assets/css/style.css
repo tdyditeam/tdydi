@@ -94,12 +94,11 @@ h6 {
 }
 
 :root {
-  --inactive: #787878;
-  --inactive_2nd: #d0d0d0;
+  --primary: #3524d6;
   --dark: #333333;
   --light: #ffffff;
   --accent: #df2f2f;
-  --text: #3d3d3d;
+  --text: #333333;
   --tag: #d36464;
   --back: #fcfcfc;
   --back_2nd: #f7f7f7;
@@ -122,4 +121,14 @@ body ::-moz-selection {
 body ::selection {
   color: #fff;
   background-color: var(--tag);
+}
+
+[class*='__container'] {
+  max-width: 1440px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
