@@ -200,7 +200,7 @@ export default {
         font-weight: 700;
         font-size: 20px;
         line-height: 23px;
-        color: #333333;
+        color: var(--text);
       }
     }
     &-logo {
@@ -219,13 +219,12 @@ export default {
       align-items: center;
       font-family: 'Gilroy';
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 18px;
       line-height: 21px;
       text-align: center;
       text-transform: capitalize;
-
-      color: #333333;
+      color: var(--text);
       .languages {
         display: flex;
         cursor: pointer;
@@ -280,14 +279,16 @@ export default {
   }
   &__bottom {
     width: 100%;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
     &-menu {
       display: flex;
       align-items: center;
       justify-content: space-around;
       width: 100%;
-      padding: 10px 0 14px 0;
+      padding: 10px 0 10px 0;
       font-family: 'Gilroy';
-      font-weight: 600;
+      font-weight: 500;
       font-size: 18px;
       line-height: 21px;
       position: relative;
@@ -297,8 +298,12 @@ export default {
       transition: 0.3s ease;
       display: flex;
       flex-direction: column;
+      color: var(--text);
+      span:nth-child(1) {
+        margin-top: 8px;
+      }
       span:nth-child(2) {
-        margin-top: 14px;
+        margin-top: 8px;
         height: 2px;
         width: 0%;
         transition: 0.3s ease;
@@ -323,12 +328,12 @@ export default {
       width: 100%;
       top: 48px;
       color: var(--text);
-      border-top: 2px solid var(--border);
+      //   border-top: 2px solid var(--border);
       opacity: 0;
       visibility: hidden;
       transition: 0.3s ease;
       overflow: auto;
-      background: #fff;
+
       z-index: 1;
       &::-webkit-scrollbar-track {
         background: transparent;
