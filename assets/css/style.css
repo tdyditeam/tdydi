@@ -68,6 +68,13 @@
   font-style: normal;
   font-display: block;
 }
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
 
 * {
   padding: 0px;
@@ -168,7 +175,7 @@ h6 {
   --primary: #16ab65;
   --light: #ffffff;
   --error: #ff0015;
-  --text: #fff;
+  --text: #333;
   --hover: #e7e4ff;
   --border: #c1c1c1;
   --white: #ffffff;
