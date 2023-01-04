@@ -19,13 +19,14 @@ export default {
     host: '0.0.0.0',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/style.css'],
+  css: ['@/assets/css/style.css', 'swiper/css/swiper.css'],
+
   loading: {
     height: '0px',
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

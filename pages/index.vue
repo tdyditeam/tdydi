@@ -1,13 +1,12 @@
 <template>
   <div>
-    <section class="banner">
-      <div
+    <hero-slider></hero-slider>
+    <!-- <div
         class="banner__image"
         style="transform-style: preserve-3d; backface-visibility: hidden"
       >
         <img src="@/assets/img/home/banner.png" alt="" />
-      </div>
-    </section>
+      </div> -->
   </div>
 </template>
 
@@ -16,16 +15,14 @@ export default {
   name: 'IndexPage',
 
   mounted() {
-    let a = document.querySelector('.banner__image')
-
-    window.addEventListener('mousemove', function (event) {
-      let b = event.offsetX / 30
-      let c = event.offsetY / 30
-      a.style.transform = `translate3d(${b}px, ${c}px, 0px)`
-      console.log(a)
-
-      //   console.log(event.offsetY)
-    })
+    // let a = document.querySelector('.banner__image')
+    // window.addEventListener('mousemove', function (event) {
+    //   let b = event.offsetX / 30
+    //   let c = event.offsetY / 30
+    //   a.style.transform = `translate3d(${b}px, ${c}px, 0px)`
+    //   console.log(a)
+    //   //   console.log(event.offsetY)
+    // })
   },
 }
 </script>
