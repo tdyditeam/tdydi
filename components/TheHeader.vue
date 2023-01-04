@@ -171,12 +171,12 @@ export default {
           name: 'Halkara hyzmatdaşlygy',
         },
         {
-          id: 6,
-          name: 'Dalaşgär-2022',
-        },
-        {
           id: 7,
           name: 'Bäsleşikler-2022',
+        },
+        {
+          id: 6,
+          name: 'Dalaşgär-2022',
         },
       ],
     }
