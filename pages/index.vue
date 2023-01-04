@@ -1,17 +1,14 @@
 <template>
   <div>
-    <hero-slider></hero-slider>
-    <!-- <div
-        class="banner__image"
-        style="transform-style: preserve-3d; backface-visibility: hidden"
-      >
-        <img src="@/assets/img/home/banner.png" alt="" />
-      </div> -->
+    <the-banner></the-banner>
+    <the-history></the-history>
   </div>
 </template>
 
 <script>
+import TheBanner from '~/components/TheBanner.vue'
 export default {
+  components: { TheBanner },
   name: 'IndexPage',
 
   mounted() {
@@ -26,21 +23,4 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-.banner {
-  //   width: 100vw;
-  //   height: calc(100vh - 165px);
-  overflow: hidden;
-  &__image {
-    position: relative;
-    width: 105%;
-    height: 100%;
-    overflow-x: hidden;
-    margin: -14px -60px 0px -80px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

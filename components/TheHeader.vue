@@ -171,12 +171,12 @@ export default {
           name: 'Halkara hyzmatdaşlygy',
         },
         {
-          id: 6,
-          name: 'Dalaşgär-2022',
+          id: 7,
+          name: 'Bäsleşikler',
         },
         {
-          id: 7,
-          name: 'Bäsleşikler-2022',
+          id: 6,
+          name: 'Dalaşgär-2023',
         },
       ],
     }
@@ -188,7 +188,8 @@ export default {
 .header {
   position: sticky;
   top: 0;
-  //   background: #fff;
+  //   background: rgba(0, 0, 0, 0.63);
+  background: #fff;
   z-index: 2;
   &__top {
     display: flex;
@@ -257,7 +258,6 @@ export default {
           &._active {
             opacity: 1;
             visibility: visible;
-            color: var(--primary);
           }
         }
       }
@@ -272,7 +272,8 @@ export default {
           left: -15px;
           width: 1px;
           height: 100%;
-          background: #333333;
+          background: var(--text);
+          opacity: 0.5;
         }
       }
     }
@@ -326,8 +327,9 @@ export default {
       left: 0;
       display: flex;
       width: 100%;
-      top: 48px;
+      top: 50px;
       color: var(--text);
+      background: var(--white);
       //   border-top: 2px solid var(--border);
       opacity: 0;
       visibility: hidden;
