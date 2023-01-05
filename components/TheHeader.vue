@@ -188,9 +188,9 @@ export default {
 .header {
   position: sticky;
   top: 0;
-  //   background: rgba(0, 0, 0, 0.63);
   background: #fff;
   z-index: 2;
+  box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   &__top {
     display: flex;
     align-items: center;

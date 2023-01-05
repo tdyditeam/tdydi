@@ -1,5 +1,5 @@
 <template>
-  <section class="">
+  <section class="wrapper">
     <the-header></the-header>
     <nuxt></nuxt>
     <the-footer></the-footer>
@@ -10,4 +10,5 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

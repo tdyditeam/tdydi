@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div class="wrapper">
     <the-banner></the-banner>
-    <the-history></the-history>
+    <section class="__container">
+      <the-history></the-history><the-article></the-article>
+    </section>
   </div>
 </template>
-
 <script>
-import TheBanner from '~/components/TheBanner.vue'
 export default {
-  components: { TheBanner },
   name: 'IndexPage',
 
   mounted() {
@@ -23,4 +22,9 @@ export default {
   },
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+</style>
