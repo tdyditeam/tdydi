@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 500px"></div>
+  <div style="height: 300px">The history</div>
 </template>
 
 <script>
