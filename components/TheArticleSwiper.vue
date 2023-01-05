@@ -349,6 +349,9 @@ export default {
     border-radius: 24px;
     border-radius: 50%;
     cursor: pointer;
+    @media (max-width: 479px) {
+      padding: 10px;
+    }
   }
 
   &__prev {
@@ -357,6 +360,9 @@ export default {
     border-radius: 24px;
     border-radius: 50%;
     cursor: pointer;
+    @media (max-width: 479px) {
+      padding: 10px;
+    }
   }
 }
 .content-swiper-block {
@@ -373,6 +379,10 @@ export default {
     font-size: 18px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
+    @media (max-width: 479px) {
+      font-size: 14px;
+      line-height: 120%;
+    }
   }
 
   &__text {
@@ -380,6 +390,9 @@ export default {
     font-size: 14px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
+    @media (max-width: 479px) {
+      font-size: 12px;
+    }
   }
 }
 .people-swiper-block {
@@ -403,6 +416,9 @@ export default {
       object-fit: cover;
       object-position: center;
     }
+    @media (max-width: 479px) {
+      flex: 0 0 30px;
+    }
   }
 
   &__content {
@@ -415,6 +431,9 @@ export default {
     line-height: 116.6%;
     color: #333333;
     margin-bottom: 6px;
+    @media (max-width: 479px) {
+      margin-bottom: 2px;
+    }
   }
 
   &__subtitle {

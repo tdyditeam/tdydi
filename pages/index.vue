@@ -2,7 +2,8 @@
   <div class="wrapper">
     <the-banner></the-banner>
     <section class="__container">
-      <the-history></the-history><the-article></the-article>
+      <the-history></the-history><the-article></the-article
+      ><the-publication></the-publication>
     </section>
   </div>
 </template>

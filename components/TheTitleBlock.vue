@@ -1,22 +1,17 @@
 <template>
   <div class="title-block">
     <div class="title-block__row">
-      <div class="title-block__title">Wakalar</div>
-      <div class="title-block__buttons buttons-title-block">
+      <div class="title-block__title">{{ title }}</div>
+      <div v-if="items.length" class="title-block__buttons buttons-title-block">
         <button
-          class="buttons-title-block__button buttons-title-block__button--green"
+          v-for="(item, index) in items"
+          :key="index"
+          :class="[
+            'buttons-title-block__button buttons-title-block__button--green',
+            { 'buttons-title-block__button--dark': item.dark },
+          ]"
         >
-          Täzelikler
-        </button>
-        <button
-          class="buttons-title-block__button buttons-title-block__button--light"
-        >
-          Makalalar
-        </button>
-        <button
-          class="buttons-title-block__button buttons-title-block__button--dark"
-        >
-          Hemmesi
+          {{ item && item.name }}
         </button>
       </div>
     </div>
@@ -24,7 +19,22 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      default: () => '',
+      type: String,
+    },
+    btns: {
+      default: () => false,
+      type: Boolean,
+    },
+    items: {
+      default: () => [],
+      type: Array,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
