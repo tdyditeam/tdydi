@@ -22,7 +22,14 @@
       </div>
       <div class="header__bottom">
         <ul class="header__bottom-menu">
-          <li v-for="item in menu" :key="item.id" class="header__bottom-items">
+          <li
+            v-for="item in menus"
+            :key="item.id"
+            :class="[
+              'header__bottom-items',
+              { _active: $route.name == item.path },
+            ]"
+          >
             <span>{{ item.name }}</span>
             <span></span>
             <ul class="header__bottom-submenu">
@@ -45,7 +52,7 @@
 export default {
   data() {
     return {
-      menu: [
+      menus: [
         {
           id: 1,
           name: 'Baş sahypa',
@@ -202,6 +209,10 @@ export default {
         font-size: 20px;
         line-height: 23px;
         color: var(--text);
+        cursor: pointer;
+        &:hover {
+          color: var(--primary);
+        }
       }
     }
     &-logo {
@@ -247,8 +258,6 @@ export default {
         span {
           position: absolute;
           right: 0;
-          //   top: 50%;
-          //   transform: translateY(-50%);
           opacity: 0;
           visibility: hidden;
           transition: 0.3s ease;
@@ -258,6 +267,7 @@ export default {
           &._active {
             opacity: 1;
             visibility: visible;
+            color: var(--primary);
           }
         }
       }
@@ -320,6 +330,11 @@ export default {
       &:hover .header__bottom-submenu {
         opacity: 1;
         visibility: visible;
+      }
+      &._active {
+        span:nth-child(1) {
+          color: var(--primary);
+        }
       }
     }
     &-submenu {

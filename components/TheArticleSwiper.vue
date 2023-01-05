@@ -305,12 +305,6 @@ export default {
 <style lang="scss" scoped>
 .article {
   font-family: 'Gilroy';
-  &__swiper-block {
-  }
-}
-.article {
-  &__swiper-block {
-  }
 }
 .swiper-block {
   &__wrapper {
@@ -331,6 +325,9 @@ export default {
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
+    @media (max-width: 479px) {
+      padding: 5px;
+    }
   }
 
   &__image {
@@ -425,9 +422,6 @@ export default {
     font-size: 12px;
     line-height: 116.6%;
     color: #20ba72;
-  }
-
-  &__right-block {
   }
 }
 </style>

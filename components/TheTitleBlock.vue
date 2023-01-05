@@ -58,25 +58,31 @@ export default {}
   gap: 5px;
   &__button {
     padding: 8px 12px;
-    color: #fff;
+    color: #16ab65;
     font-weight: 400;
     font-size: 14px;
     line-height: 116.6%;
-    &--green {
+    transition: all 0.3s;
+    &:active {
       background-color: #16ab65;
+    }
+    &--green {
+      background-color: #e5f3ff;
       border-radius: 6px 0px 0px 6px;
       &:hover {
-        background: #43b47f;
+        background-color: #16ab65;
+        color: #fff;
       }
     }
     &--light {
-      color: #16ab65;
       background-color: #e5f3ff;
       &:hover {
-        background-color: #e5f3ffc6;
+        background-color: #16ab65;
+        color: #fff;
       }
     }
     &--dark {
+      color: #fff;
       background-color: #333333;
       border-radius: 0px 6px 6px 0px;
       &:hover {

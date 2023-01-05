@@ -136,8 +136,9 @@ export default {}
     display: flex;
     align-items: center;
     padding: 8px 14px;
+    transition: all 0.3s;
     &:hover {
-      background: #43b47f;
+      background: #4fb686;
     }
   }
   &__icon {
