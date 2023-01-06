@@ -21,28 +21,32 @@
         </div>
       </div>
       <div class="header__bottom">
-        <ul class="header__bottom-menu">
-          <li
-            v-for="item in menus"
-            :key="item.id"
-            :class="[
-              'header__bottom-items',
-              { _active: $route.name == item.path },
-            ]"
-          >
-            <span>{{ item.name }}</span>
-            <span></span>
-            <ul class="header__bottom-submenu">
-              <li
-                v-for="elem in item.subMenus"
-                :key="elem.id"
-                class="header__bottom-subitems"
-              >
-                <span>{{ elem.name }}</span>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="header__bottom-container __container">
+          <ul class="header__bottom-menu">
+            <li
+              v-for="item in menus"
+              :key="item.id"
+              :class="[
+                'header__bottom-items',
+                { _active: $route.name == item.path },
+              ]"
+            >
+              <span>{{ item.name }}</span>
+              <span></span>
+              <div class="header__bottom-submenu-container">
+                <ul class="header__bottom-submenu __container">
+                  <li
+                    v-for="elem in item.subMenus"
+                    :key="elem.id"
+                    class="header__bottom-subitems"
+                  >
+                    <span>{{ elem.name }}</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -292,6 +296,9 @@ export default {
     width: 100%;
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
+    &-container {
+      position: relative;
+    }
     &-menu {
       display: flex;
       align-items: center;
@@ -302,7 +309,6 @@ export default {
       font-weight: 500;
       font-size: 18px;
       line-height: 21px;
-      position: relative;
     }
     &-items {
       cursor: pointer;
@@ -327,7 +333,7 @@ export default {
           width: 100%;
         }
       }
-      &:hover .header__bottom-submenu {
+      &:hover .header__bottom-submenu-container {
         opacity: 1;
         visibility: visible;
       }
@@ -337,14 +343,18 @@ export default {
         }
       }
     }
-    &-submenu {
+    // &-submenu-container{
+
+    // }
+    &-submenu-container {
       position: absolute;
-      left: 0;
+      left: 50%;
       display: flex;
-      width: 100%;
+      width: 100vw;
       top: 50px;
       color: var(--text);
       background: var(--white);
+      transform: translateX(-50%);
       //   border-top: 2px solid var(--border);
       opacity: 0;
       visibility: hidden;
@@ -352,6 +362,12 @@ export default {
       overflow: auto;
 
       z-index: 1;
+    }
+    &-submenu {
+      display: flex;
+      //   align-items: center;
+      //   justify-content: flex-start;
+      overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
         display: none;
