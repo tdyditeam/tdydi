@@ -5,22 +5,19 @@
       class="swiper-block-publication-publication swiper"
     >
       <div class="swiper-block-publication__wrapper swiper-wrapper">
-        <div class="swiper-block-publication__slide swiper-slide">
+        <div
+          v-for="img in images"
+          :key="img.id"
+          class="swiper-block-publication__slide swiper-slide"
+        >
           <div class="swiper-block-publication__image">
-            <img src="@/assets/img/home/article/img_1.png" alt="surat" />
+            <img
+              :src="require(`@/assets/img/home/publication/${img.imgPath}`)"
+              alt="surat"
+            />
           </div>
         </div>
-        <div class="swiper-block-publication__slide swiper-slide">
-          <div class="swiper-block-publication__image">
-            <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
-          </div>
-        </div>
-        <div class="swiper-block-publication__slide swiper-slide">
-          <div class="swiper-block-publication__image">
-            <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
-          </div>
-        </div>
-        <div class="swiper-block-publication__slide swiper-slide">
+        <!-- <div class="swiper-block-publication__slide swiper-slide">
           <div class="swiper-block-publication__image">
             <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
           </div>
@@ -55,6 +52,16 @@
             <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
           </div>
         </div>
+        <div class="swiper-block-publication__slide swiper-slide">
+          <div class="swiper-block-publication__image">
+            <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
+          </div>
+        </div>
+        <div class="swiper-block-publication__slide swiper-slide">
+          <div class="swiper-block-publication__image">
+            <img src="@/assets/img/home/publication/img_1.png" alt="surat" />
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -92,6 +99,32 @@ export default {
           clickable: true,
         },
       },
+      images: [
+        {
+          id: 1,
+          imgPath: 'img_1.png',
+        },
+        {
+          id: 2,
+          imgPath: 'img_2.png',
+        },
+        {
+          id: 3,
+          imgPath: 'img_3.png',
+        },
+        {
+          id: 3,
+          imgPath: 'img_4.png',
+        },
+        {
+          id: 3,
+          imgPath: 'img_5.png',
+        },
+        {
+          id: 3,
+          imgPath: 'img_6.png',
+        },
+      ],
     }
   },
 }

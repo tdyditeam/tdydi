@@ -14,16 +14,19 @@ export default {
           id: 1,
           name: 'Täzelikler',
           dark: false,
+          active: true,
         },
         {
           id: 2,
           name: 'Makalalar',
           dark: false,
+          active: false,
         },
         {
           id: 3,
           name: 'Hemmesi',
           dark: true,
+          active: false,
         },
       ],
     }
