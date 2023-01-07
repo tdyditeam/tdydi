@@ -173,12 +173,13 @@ h6 {
 
 :root {
   --primary: #16ab65;
-  --light: #ffffff;
-  --error: #ff0015;
   --text: #333333;
   --hover: #e7e4ff;
   --border: #c1c1c1;
   --white: #ffffff;
+  --background: #fcfcfc;
+  --input: #f4f4f4;
+  --error: #a83232;
 }
 
 body._lock {
@@ -231,4 +232,84 @@ body ::selection {
   height: 100%;
   position: relative;
   transition-property: transform;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.col-1 {
+  grid-column-start: span 1;
+}
+.row-1 {
+  grid-row-start: span 1;
+}
+.col-2 {
+  grid-column-start: span 2;
+}
+.row-2 {
+  grid-row-start: span 2;
+}
+.col-3 {
+  grid-column-start: span 3;
+}
+.row-3 {
+  grid-row-start: span 3;
+}
+.col-4 {
+  grid-column-start: span 4;
+}
+.row-4 {
+  grid-row-start: span 4;
+}
+.col-5 {
+  grid-column-start: span 5;
+}
+.row-5 {
+  grid-row-start: span 5;
+}
+.col-6 {
+  grid-column-start: span 6;
+}
+.row-6 {
+  grid-row-start: span 6;
+}
+.col-7 {
+  grid-column-start: span 7;
+}
+.row-7 {
+  grid-row-start: span 7;
+}
+.col-8 {
+  grid-column-start: span 8;
+}
+.row-8 {
+  grid-row-start: span 8;
+}
+.col-9 {
+  grid-column-start: span 9;
+}
+.row-9 {
+  grid-row-start: span 9;
+}
+.col-10 {
+  grid-column-start: span 10;
+}
+.row-10 {
+  grid-row-start: span 10;
+}
+.col-11 {
+  grid-column-start: span 11;
+}
+.row-11 {
+  grid-row-start: span 11;
+}
+.col-12 {
+  grid-column-start: span 12;
+}
+.row-12 {
+  grid-row-start: span 12;
 }
