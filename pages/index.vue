@@ -2,7 +2,6 @@
   <div>
     <the-banner></the-banner>
     <the-history></the-history>
-    <the-events></the-events>
   </div>
 </template>
 
