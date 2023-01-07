@@ -10,7 +10,7 @@
           :key="img.id"
           class="swiper-slide hero-slider__img"
         >
-          <img :src="img.path" alt="" />
+          <nuxt-img :src="img.path" />
         </div>
         <!-- <div class="swiper-slide hero-slider__img">
           <img src="/TDYweDI_3.jpg" alt="" />
