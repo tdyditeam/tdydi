@@ -365,8 +365,7 @@ export default {
     }
     &-submenu {
       display: flex;
-      //   align-items: center;
-      //   justify-content: flex-start;
+        align-items: center;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
