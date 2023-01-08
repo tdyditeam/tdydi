@@ -36,6 +36,15 @@
         <span>3320</span>
       </div>
     </div>
+    <div class="banner__statistics-item">
+      <div class="banner__statistics-icon">
+        <img src="@/assets/icons/student.png" alt="" />
+      </div>
+      <div class="banner__statistics-text">
+        <span>Magistrler</span>
+        <span>3320</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,7 +61,7 @@ export default {}
     bottom: -30px;
     transform: translateX(-50%);
     display: flex;
-    z-index: 1;
+    z-index: 10;
     &-item {
       &:not(:last-child) {
         margin-right: 20px;
