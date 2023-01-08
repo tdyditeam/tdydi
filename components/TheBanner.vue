@@ -4,7 +4,7 @@
     <the-banner-title></the-banner-title>
     <the-banner-statistics></the-banner-statistics>
     <div class="banner__figure">
-      <img src="@/assets/img/home/figure.png" alt="" />
+      <!-- <img src="@/assets/img/home/figure.png" alt="" /> -->
     </div>
     <!-- <div class="banner__figure-white white1"></div> -->
     <!-- <div class="banner__figure-white white2"></div> -->

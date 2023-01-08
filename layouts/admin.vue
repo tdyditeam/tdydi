@@ -1,18 +1,31 @@
 <template>
   <div class="admin">
-    <nuxt></nuxt>
+    <the-sidebar></the-sidebar>
+    <div class="admin-main">
+      <nuxt></nuxt>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+// import TheSidebar from '~/components/admin/TheSidebar.vue'
+const TheSidebar = () => import('~/components/admin/TheSidebar.vue')
+export default {
+  components: { TheSidebar },
+}
 </script>
 
 <style lang="scss" scoped>
 .admin {
   width: 100vw;
   height: 100vh;
-  background: #e7e7e7;
+  background: var(--background-second);
   padding: 10px;
+  font-family: 'Gilroy';
+  display: flex;
+  &-main {
+    flex: 1 1 auto;
+    padding: 10px;
+  }
 }
 </style>
