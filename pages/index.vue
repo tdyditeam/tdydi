@@ -6,6 +6,7 @@
       <the-article></the-article>
       <the-publication></the-publication>
       <the-gallery></the-gallery>
+      <the-partners></the-partners>
     </section>
   </div>
 </template>
@@ -20,5 +21,11 @@ export default {
 .wrapper {
   width: 100%;
   overflow: hidden;
+}
+
+.__container {
+  &:last-child {
+    padding-bottom: 100px;
+  }
 }
 </style>

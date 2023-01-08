@@ -316,6 +316,12 @@ export default {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
+    transition: all 1s;
+    &:hover {
+      box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
   }
 
   &__body {

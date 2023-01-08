@@ -11,6 +11,7 @@
             { 'buttons-title-block__button--active': item.active },
             { 'buttons-title-block__button--dark': item.dark },
           ]"
+          @click="$emit('change', item)"
         >
           {{ item && item.name }}
         </button>
