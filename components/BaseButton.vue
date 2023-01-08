@@ -21,11 +21,11 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  width: 100%;
   border-radius: 4px;
   padding: 12px 0;
+  text-align: center;
   button {
-    width: 100%;
+    text-align: center;
     background: transparent;
     font-family: 'Gilroy';
     font-weight: 400;

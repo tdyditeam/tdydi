@@ -78,6 +78,7 @@ export default {}
       border-bottom: 1px solid var(--background-second);
       transition: 0.2s ease;
       border-radius: 2px;
+      white-space: nowrap;
       &.active {
         background: var(--primary);
         color: var(--white);

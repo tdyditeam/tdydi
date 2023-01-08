@@ -23,9 +23,11 @@ export default {
   padding: 10px;
   font-family: 'Gilroy';
   display: flex;
+  overflow: hidden;
   &-main {
     flex: 1 1 auto;
-    padding: 10px;
+    padding: 0px 0px 0px 10px;
+    overflow: hidden;
   }
 }
 </style>
