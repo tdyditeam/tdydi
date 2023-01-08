@@ -360,12 +360,11 @@ export default {
       visibility: hidden;
       transition: 0.3s ease;
       overflow: auto;
-
-      z-index: 1;
+      z-index: 5;
     }
     &-submenu {
       display: flex;
-        align-items: center;
+      align-items: center;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;

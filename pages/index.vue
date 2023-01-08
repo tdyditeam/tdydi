@@ -24,8 +24,8 @@ export default {
 }
 
 .__container {
-  &:last-child {
-    padding-bottom: 100px;
-  }
+  //   &:last-child {
+  //     padding-bottom: 100px;
+  //   }
 }
 </style>
