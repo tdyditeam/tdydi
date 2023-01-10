@@ -3,7 +3,7 @@
     <div class="photo-block__row">
       <div class="photo-block__column-1">
         <div class="photo-block__first">
-          <div class="photo-block__image">
+          <div class="photo-block__image" @click="showPopUp">
             <img src="@/assets/img/home/TheHistory.png" alt="surat" />
             <div class="photo-block__text-block">
               <div class="photo-block__text-wrapper">
@@ -11,7 +11,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-block__image">
+          <div class="photo-block__image" @click="showPopUp">
             <img src="@/assets/img/home/gallery/img_2.png" alt="surat" />
             <div class="photo-block__text-block">
               <div class="photo-block__text-wrapper">
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="photo-block__column-2">
-        <div class="photo-block__image-long">
+        <div class="photo-block__image-long" @click="showPopUp">
           <img src="@/assets/img/home/gallery/img_3.png" alt="surat" />
           <div class="photo-block__text-block">
             <div class="photo-block__text-wrapper">
@@ -33,7 +33,7 @@
       </div>
       <div class="photo-block__column-3">
         <div class="photo-block__last">
-          <div class="photo-block__image">
+          <div class="photo-block__image" @click="showPopUp">
             <img src="@/assets/img/home/gallery/img_4.png" alt="surat" />
             <div class="photo-block__text-block">
               <div class="photo-block__text-wrapper">
@@ -41,7 +41,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-block__image">
+          <div class="photo-block__image" @click="showPopUp">
             <img src="@/assets/img/home/gallery/img_5.png" alt="surat" />
             <div class="photo-block__text-block">
               <div class="photo-block__text-wrapper">
@@ -52,11 +52,31 @@
         </div>
       </div>
     </div>
+    <gallery-photo-popup
+      :isActive="isActive"
+      @close="closePopUp"
+    ></gallery-photo-popup>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    showPopUp() {
+      document.body.classList.add('_lock')
+      this.isActive = true
+    },
+    closePopUp() {
+      document.body.classList.remove('_lock')
+      this.isActive = false
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

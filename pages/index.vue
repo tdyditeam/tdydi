@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div>
     <the-banner></the-banner>
     <section class="__container">
       <the-history></the-history>
-      <the-article></the-article>
+      <the-events></the-events>
       <the-publication></the-publication>
       <the-gallery></the-gallery>
       <the-partners></the-partners>
@@ -17,14 +17,4 @@ export default {
   mounted() {},
 }
 </script>
-<style lang="scss">
-.wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-.__container {
-  //   &:last-child {
-  //     padding-bottom: 100px;
-  //   }
-}
-</style>
+<style lang="scss"></style>

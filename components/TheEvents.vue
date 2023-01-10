@@ -1,7 +1,7 @@
 <template>
-  <div class="article">
+  <div class="events">
     <the-title-block :title="'Wakalar'" :items="items"> </the-title-block>
-    <the-article-swiper></the-article-swiper>
+    <events-article></events-article>
   </div>
 </template>
 

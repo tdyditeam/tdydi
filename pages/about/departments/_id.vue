@@ -1,7 +1,5 @@
 <template>
-  <div class="__container">
-    <nuxt-child></nuxt-child>
-  </div>
+  <div>ayratyn mugallymlar barada magumat</div>
 </template>
 
 <script>

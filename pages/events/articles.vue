@@ -1,5 +1,7 @@
 <template>
-  <div>ewjdjweb</div>
+  <div>
+    adfdfsf
+  </div>
 </template>
 
 <script>
@@ -16,4 +18,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
