@@ -22,10 +22,4 @@ export default {
   width: 100%;
   overflow: hidden;
 }
-
-.__container {
-  &:last-child {
-    padding-bottom: 100px;
-  }
-}
 </style>
