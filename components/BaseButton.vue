@@ -1,6 +1,12 @@
 <template>
   <div class="button" :style="{ backgroundColor: background }">
-    <button>{{ text }}</button>
+    <button
+      :style="{
+        color: color,
+      }"
+    >
+      {{ text }}
+    </button>
   </div>
 </template>
 
@@ -15,6 +21,10 @@ export default {
       type: String,
       default: () => '#16ab65',
     },
+    color: {
+      type: String,
+      default: () => '#fff',
+    },
   },
 }
 </script>
@@ -22,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   border-radius: 4px;
-  padding: 12px 0;
+  padding: 12px;
   text-align: center;
   button {
     text-align: center;
@@ -32,7 +42,6 @@ export default {
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
-    color: var(--white);
   }
 }
 </style>

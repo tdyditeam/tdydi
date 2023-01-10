@@ -302,7 +302,7 @@ export default {
     &-menu {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
       padding: 10px 0 10px 0;
       font-family: 'Gilroy';

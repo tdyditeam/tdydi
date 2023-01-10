@@ -6,7 +6,9 @@
       </div>
       <div class="institute-history__body">
         <div class="institute-history__content">
-          <div class="institute-history__title">Biz barada</div>
+          <div @click="$router.push('events')" class="institute-history__title">
+            Biz barada
+          </div>
           <div class="institute-history__text">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet
             consectetur. Bibendum facilisis amet praesent tortor molestie tortor
