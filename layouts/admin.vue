@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// import TheSidebar from '~/components/admin/TheSidebar.vue'
 const TheSidebar = () => import('~/components/admin/TheSidebar.vue')
 export default {
   components: { TheSidebar },
