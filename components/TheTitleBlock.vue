@@ -69,8 +69,7 @@ export default {
   display: flex;
   gap: 5px;
   &__button {
-    width: 85px;
-    height: 44px;
+    padding: 14px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +103,7 @@ export default {
     }
     @media (max-width: 479px) {
       font-size: 12px;
-      padding: 6px 10px;
+      padding: 8px 12px;
     }
   }
 }

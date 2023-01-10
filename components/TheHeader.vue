@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="">
       <div class="header__top __container">
         <div class="header__top-title">
@@ -17,7 +17,7 @@
             <span>RU</span>
             <span>EN</span>
           </div>
-          <div class="contact">Contact</div>
+          <div class="contact" @click="showPopUp">Contact</div>
         </div>
       </div>
       <div class="header__bottom">
@@ -49,13 +49,15 @@
         </div>
       </div>
     </div>
-  </div>
+    <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup>
+  </header>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      isActive: false,
       menus: [
         {
           id: 1,
@@ -191,6 +193,16 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    showPopUp() {
+      document.body.classList.add('_lock')
+      this.isActive = true
+    },
+    closePopUp() {
+      document.body.classList.remove('_lock')
+      this.isActive = false
+    },
   },
 }
 </script>

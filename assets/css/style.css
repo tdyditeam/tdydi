@@ -120,7 +120,11 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-
+body._lock{
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
 input,
 button,
 textarea {

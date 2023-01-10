@@ -35,10 +35,12 @@ export default {
         speed: 2000,
         breakpoints: {
           320: {
-            slidesPerView: 2,
+            slidesPerView: 2.4,
+            spaceBetween: 15,
           },
           480: {
-            slidesPerView: 2.4,
+            slidesPerView: 3.4,
+            spaceBetween: 15,
           },
           740: {
             slidesPerView: 5.4,
@@ -93,6 +95,7 @@ export default {
 
 <style lang="scss" scoped>
 .partners-swiper {
+  padding-bottom: 100px;
   &__swiper {
   }
 
@@ -113,6 +116,10 @@ export default {
   }
 
   &__image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__title {

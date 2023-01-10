@@ -22,10 +22,13 @@ export default {
   width: 100%;
   overflow: hidden;
 }
+<<<<<<< HEAD
+=======
 
 .__container {
   //   &:last-child {
   //     padding-bottom: 100px;
   //   }
 }
+>>>>>>> d7f18c6cce22046861f00a6bdaa827b87ddac7aa
 </style>
