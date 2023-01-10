@@ -178,10 +178,12 @@ h6 {
 :root {
   --primary: #16ab65;
   --text: #333333;
+  --text-second: #474747;
   --hover: #e7e4ff;
   --border: #c1c1c1;
   --white: #ffffff;
   --background: #fcfcfc;
+  --background-second: #e7e7e7;
   --input: #f4f4f4;
   --error: #a83232;
 }
@@ -316,4 +318,21 @@ body ::selection {
 }
 .row-12 {
   grid-row-start: span 12;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  visibility: hidden;
+  opacity: 0px;
 }

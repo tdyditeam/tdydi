@@ -82,7 +82,7 @@ export default {
     background: var(--input);
     padding: 12px 10px;
     border-radius: 4px;
-
+    border: 1px solid transparent;
     &--body {
       font-family: 'Gilroy';
       flex: 1 1 auto;

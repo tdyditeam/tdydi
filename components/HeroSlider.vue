@@ -66,10 +66,10 @@ export default {
           id: 2,
           path: '/TDYweDI_2.jpg',
         },
-        {
-          id: 3,
-          path: '/TDYweDI_1.jpg',
-        },
+        // {
+        //   id: 3,
+        //   path: '/TDYweDI_1.jpg',
+        // },
       ],
     }
   },

@@ -89,6 +89,7 @@ export default {
   }
   &__body {
     width: 420px;
+
     &--title {
       font-family: 'Gilroy';
       font-weight: 600;
