@@ -52,6 +52,7 @@ export default {
   data() {
     return {
       options: {
+        loop: true,
         slidesPerView: 1,
         speed: 2000,
         keyboard: {
@@ -145,6 +146,7 @@ export default {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     z-index: 100;
+    cursor: pointer;
   }
 
   &__next {
@@ -155,6 +157,7 @@ export default {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     z-index: 100;
+    cursor: pointer;
   }
 }
 </style>
