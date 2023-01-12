@@ -1,6 +1,7 @@
 <template>
   <div class="button" :style="{ backgroundColor: background }">
     <button
+      @click="$emit('click')"
       :style="{
         color: color,
       }"

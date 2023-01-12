@@ -1,7 +1,8 @@
 <template>
-  <div class="article">
-    <the-title-block :title="'Wakalar'" :items="items"> </the-title-block>
-    <the-article-swiper></the-article-swiper>
+  <div class="events">
+    <the-title-block :title="'Wakalar'" :items="items" @change="change">
+    </the-title-block>
+    <events-article></events-article>
   </div>
 </template>
 
@@ -30,6 +31,14 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    change(item) {
+      if (item.id === 3) {
+        this.$router.push('/events')
+      }
+      console.log(item.id)
+    },
   },
 }
 </script>

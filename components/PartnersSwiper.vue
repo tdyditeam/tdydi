@@ -100,6 +100,7 @@ export default {
   }
 
   &__wrapper {
+    display: flex;
   }
 
   &__slide {

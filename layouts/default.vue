@@ -1,7 +1,7 @@
 <template>
   <section class="wrapper">
     <the-header></the-header>
-    <nuxt></nuxt>
+    <nuxt class="page"></nuxt>
     <the-footer></the-footer>
   </section>
 </template>
@@ -12,10 +12,12 @@ export default {}
 
 <style lang="scss" scoped>
 .wrapper {
-  //   height: 100vh;
-  //   overflow: hidden;
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.page {
+  flex: 1 1 auto;
 }
 </style>

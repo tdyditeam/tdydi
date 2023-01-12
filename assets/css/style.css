@@ -212,6 +212,7 @@ body ::selection {
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+  width: 100%;
 }
 
 .swiper-container {
@@ -328,9 +329,9 @@ body ::selection {
 }
 
 ::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-  background: transparent;
+  height: 10px;
+  width: 10px;
+  background-color: #c1c1c1c1;
 }
 ::-webkit-scrollbar-corner {
   visibility: hidden;
