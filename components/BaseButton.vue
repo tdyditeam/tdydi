@@ -35,6 +35,9 @@ export default {
   border-radius: 4px;
   padding: 12px;
   text-align: center;
+  @media (max-width: 768px) {
+    padding: 4px 10px;
+  }
   button {
     text-align: center;
     background: transparent;
@@ -43,6 +46,11 @@ export default {
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
+    @media (max-width: 768px) {
+      font-size: 12px;
+      text-transform: capitalize;
+      line-height: 14px;
+    }
   }
 }
 </style>

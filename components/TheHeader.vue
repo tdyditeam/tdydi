@@ -256,7 +256,7 @@ export default {
   top: 0;
   background: #fff;
   z-index: 200;
-  box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  //   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   &__top {
     display: flex;
     align-items: center;

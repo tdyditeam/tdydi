@@ -1,12 +1,18 @@
 <template>
-  <div class="article-item">
+  <div @click="$emit('clickOneItem')" class="article-item">
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
           <img src="@/assets/img/home/article/img_1.png" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
-          <div class="content-swiper-block__data">03.10.2022</div>
+          <div class="content-swiper-block__data">
+            <span>03.10.2022</span>
+            <span>
+              <img src="@/assets/img/home/article/eye.png" alt="" />
+              <p>122</p>
+            </span>
+          </div>
           <div class="content-swiper-block__title">
             Where does it come from? Where does it come from?..
           </div>
@@ -83,6 +89,25 @@ export default {}
     font-size: 12px;
     line-height: 116.6%;
     color: #868686;
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    span:nth-child(1) {
+      flex: 1 1 auto;
+    }
+    span:nth-child(2) {
+      display: flex;
+      align-items: center;
+      img {
+        width: 18px;
+        height: 12px;
+        object-fit: cover;
+        object-position: center;
+      }
+      p {
+        margin-left: 5px;
+      }
+    }
   }
 
   &__title {
