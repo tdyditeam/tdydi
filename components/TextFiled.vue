@@ -1,6 +1,6 @@
 <template>
   <div :class="['input', { 'input--error': error }]">
-    <div class="input__label">
+    <div v-if="label" class="input__label">
       <span>{{ label }}</span>
     </div>
     <div class="input__body">
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .input {
-  margin: 10px 0 0 0;
+  //   margin: 10px 0 0 0;  dasyna bermeli sul margini
   &__label {
     font-family: 'Gilroy';
     font-weight: 500;
@@ -83,6 +83,10 @@ export default {
     padding: 12px 10px;
     border-radius: 4px;
     border: 1px solid transparent;
+    @media (max-width: 768px) {
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
     &--body {
       font-family: 'Gilroy';
       flex: 1 1 auto;
