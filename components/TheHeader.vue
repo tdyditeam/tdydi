@@ -31,6 +31,7 @@
                 'header__bottom-items',
                 { _active: $route.name == item.path },
               ]"
+              exact
             >
               <span>{{ item.name }}</span>
               <span></span>
@@ -124,7 +125,6 @@ export default {
           name: 'Bilim',
           path: '/about-us',
           route: false,
-
           subMenus: [
             {
               id: 1,
