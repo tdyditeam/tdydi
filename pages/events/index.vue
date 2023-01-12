@@ -26,7 +26,13 @@
 export default {
   head() {
     return {
-      meta: [{ title: 'tazelikler' }],
+      meta: [
+        {
+          hid: 'test',
+          name: 'test',
+          content: 'asdasd',
+        },
+      ],
     }
   },
   data() {

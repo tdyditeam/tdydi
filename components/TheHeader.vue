@@ -23,9 +23,10 @@
       <div class="header__bottom">
         <div class="header__bottom-container __container">
           <ul class="header__bottom-menu">
-            <li
+            <nuxt-link
               v-for="item in menus"
               :key="item.id"
+              :to="item.path"
               :class="[
                 'header__bottom-items',
                 { _active: $route.name == item.path },
@@ -44,7 +45,7 @@
                   </li>
                 </ul>
               </div>
-            </li>
+            </nuxt-link>
           </ul>
         </div>
       </div>
@@ -62,6 +63,15 @@ export default {
         {
           id: 1,
           name: 'Baş sahypa',
+          path: '/',
+          subMenus: [],
+          route: true,
+        },
+        {
+          id: 2,
+          name: 'Biz barada',
+          path: '/about-us',
+          route: false,
           subMenus: [
             {
               id: 1,
@@ -107,89 +117,122 @@ export default {
               id: 11,
               name: 'Ykdysatçy okuw merkezi',
             },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-          ],
-        },
-        {
-          id: 2,
-          name: 'Biz barada',
-          subMenus: [
-            {
-              id: 1,
-              name: 'Rektorat',
-            },
-            {
-              id: 2,
-              name: 'Fakultetler',
-            },
-            {
-              id: 3,
-              name: 'Kafedralar',
-            },
-            {
-              id: 4,
-              name: 'Bölümler',
-            },
-            {
-              id: 5,
-              name: 'Institutyň taryhy',
-            },
-            {
-              id: 6,
-              name: 'Institutyň TDP',
-            },
-            {
-              id: 7,
-              name: 'Kärdeşler arkalaşygy',
-            },
-            {
-              id: 8,
-              name: 'Talyp ýaşlar guramasy',
-            },
           ],
         },
         {
           id: 3,
           name: 'Bilim',
+          path: '/about-us',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Okuw bölümi',
+            },
+            {
+              id: 2,
+              name: 'Okuw meýilnamalar',
+            },
+            {
+              id: 3,
+              name: 'Okuw maksatnamalar',
+            },
+            {
+              id: 4,
+              name: 'Okuwlaryň tertibi',
+            },
+            {
+              id: 5,
+              name: 'Hünärler',
+            },
+            {
+              id: 6,
+              name: 'Bakalawr taýýarlyk ugurlary',
+            },
+            {
+              id: 7,
+              name: 'Magistr taýýarlyk ugurlary',
+            },
+          ],
         },
         {
           id: 4,
           name: 'Ylym ',
+          path: '/about-us',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Aspirantura',
+            },
+            {
+              id: 2,
+              name: 'Ylmy barlag we taslama işleri',
+            },
+            {
+              id: 3,
+              name: 'Ykdysady innowasiýalar merkezi',
+            },
+            {
+              id: 4,
+              name: 'Ylmy gT we tyu boýunça geçirilýän işler',
+            },
+          ],
         },
         {
           id: 5,
           name: 'Halkara hyzmatdaşlygy',
+          path: '/about-us',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Halkara hyzmatdaşlar',
+            },
+            {
+              id: 2,
+              name: 'Halkara maslahatlar',
+            },
+            {
+              id: 3,
+              name: 'Meýletinçiler',
+            },
+            {
+              id: 4,
+              name: 'Tasis-Tempus',
+            },
+          ],
         },
         {
           id: 7,
           name: 'Bäsleşikler',
+          path: '/about-us',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Döwlet bäsleşikler',
+            },
+            {
+              id: 2,
+              name: 'Halkara bäsleşikler',
+            },
+            {
+              id: 3,
+              name: 'Taslama bäsleşikler',
+            },
+          ],
         },
         {
           id: 6,
           name: 'Dalaşgär-2023',
+          path: '/about-us',
+          route: true,
+          subMenus: [],
         },
       ],
     }
@@ -377,6 +420,7 @@ export default {
     &-submenu {
       display: flex;
       align-items: center;
+      justify-content: center;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
@@ -425,6 +469,13 @@ export default {
         }
       }
     }
+  }
+}
+.nuxt-link-exact-active,
+.nuxt-link-active {
+  color: var(--primary);
+  & span:nth-child(2) {
+    width: 100%;
   }
 }
 </style>
