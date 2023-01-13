@@ -259,7 +259,7 @@ export default {
 <style lang="scss">
 .header {
   position: sticky;
-  top: 0;
+  top: 0px;
   background: #fff;
   z-index: 200;
   //   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);

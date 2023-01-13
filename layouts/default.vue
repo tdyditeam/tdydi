@@ -12,10 +12,10 @@ export default {}
 
 <style lang="scss" scoped>
 .wrapper {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .page {
   flex: 1 1 auto;
