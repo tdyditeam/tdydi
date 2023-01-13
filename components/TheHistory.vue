@@ -6,34 +6,35 @@
       </div>
       <div class="institute-history__body">
         <div class="institute-history__content">
-          <div @click="$router.push('events')" class="institute-history__title">
-            Biz barada
-          </div>
+          <div class="institute-history__title">Institutyň taryhy</div>
           <div class="institute-history__text">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet
-            consectetur. Bibendum facilisis amet praesent tortor molestie tortor
-            vestibulum facilisis enim. Vitae eget ac nibh sollicitudin nam
-            dictumst mauris mauris etiam. Et in eget risus amet. Tristique
-            pellentesque fermentum nisl congue risus nibh turpis. Dui tortor
-            rutrum tempus integer nibh risus pellentesque ultrices. Suscipit
-            lacus porta sed nisl integer. Duis vel et orci ultrices felis
-            suspendisse id. Tempus tristique facilisi ornare in at nunc a
-            malesuada convallis. Volutpat faucibus in maecenas nunc turpis sed
-            augue. Et tortor cursus sit sit feugiat ridiculus luctus sed elit.
-            Consectetur quam cras non proin natoque aliquet adipiscing. Id
-            accumsan cum volutpat est. Eget a habitant egestas augue.
-            Pellentesque sit sagittis et dignissim at. Quis viverra vitae
-            aliquam risus velit felis. Sagittis turpis at auctor malesuada.
-            Sagittis urna neque amet montesfelis. Sagittis turpis at auctor
-            malesuada. Sagittis urna neque amet
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berkarar döwletiň täze
+            eýýamynyň Galkynyşy döwründe hormatly Prezidentimiz Serdar
+            Berdimuhamedowyň başda durmagynda ylmyň we tehnikanyň gazananlaryny
+            ykdysadyýet bilen berk utgaşdyrmak, jemgyýetiň bar bolan ähli
+            mümkinçiliklerini doly güýje girizmek we şonuň esasynda
+            Türkmenistany innowasion döwlete öwürmek, häzirki zaman ýokary
+            tehnologik senagaty kemala getirmek, bäsdeşlige ukyply taýýar
+            önümleri öndürmek döwletimiziň baş strategik ugry bolup durýar. Şu
+            maksady durmuşa geçirmekde ýokary derejeli ykdysatçy hünärmenlere
+            uly orun degişli bolup, olar Türkmen döwlet ykdysadyýet we
+            dolandyryş institutynda taýýarlanylýar. Institut 1980-nji ýylyň
+            31-nji ýanwarynda Türkmen halk hojalyk instituty ady bilen Türkmen
+            döwlet uniwersitetiniň binýadynda döredildi.
           </div>
         </div>
-        <button class="institute-history__button">
-          <p>DOLY OKA</p>
+        <div class="institute-history__button">
+          <!-- <p>DOLY OKA</p>
           <span class="institute-history__icon">
             <img src="@/assets/img/home/icon-about.svg" alt="icon" />
-          </span>
-        </button>
+          </span> -->
+          <base-button
+            @click="$router.push(localeLocation('/about-us'))"
+            text="DOLY OKA"
+            appendIcon
+            iconUrl="home/icon-about.svg"
+          ></base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -131,17 +132,10 @@ export default {}
   &__button {
     font-family: 'Gilroy';
     font-size: 14px;
-    gap: 3px;
-    border-radius: 6px;
-    background: #16ab65;
     color: #fff;
     display: flex;
     align-items: center;
-    padding: 8px 14px;
-    transition: all 0.3s;
-    &:hover {
-      background: #4fb686;
-    }
+    justify-content: flex-start;
   }
   &__icon {
     margin-top: 6px;

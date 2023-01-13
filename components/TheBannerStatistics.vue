@@ -1,12 +1,12 @@
 <template>
-  <div class="banner__statistics">
+  <div ref="observe" class="banner__statistics">
     <div class="banner__statistics-item">
       <div class="banner__statistics-icon">
         <img src="@/assets/icons/faculti.png" alt="" />
       </div>
       <div class="banner__statistics-text">
         <span>Fakultetler</span>
-        <span>4</span>
+        <span class="counter" :data-target="faculti">4</span>
       </div>
     </div>
     <div class="banner__statistics-item">
@@ -15,7 +15,7 @@
       </div>
       <div class="banner__statistics-text">
         <span>Hünärler</span>
-        <span>52</span>
+        <span class="counter" :data-target="skill">52</span>
       </div>
     </div>
     <div class="banner__statistics-item">
@@ -24,7 +24,7 @@
       </div>
       <div class="banner__statistics-text">
         <span>Mugallymlar</span>
-        <span>277</span>
+        <span class="counter" :data-target="teacher">0</span>
       </div>
     </div>
     <div class="banner__statistics-item">
@@ -33,7 +33,7 @@
       </div>
       <div class="banner__statistics-text">
         <span>Talyplar</span>
-        <span>3320</span>
+        <span class="counter" :data-target="student">0</span>
       </div>
     </div>
     <div class="banner__statistics-item">
@@ -42,14 +42,62 @@
       </div>
       <div class="banner__statistics-text">
         <span>Magistrler</span>
-        <span>3320</span>
+        <span class="counter" :data-target="magistr">0</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      observer: null,
+      magistr: 300,
+      student: 3320,
+      teacher: 277,
+      skill: 52,
+      faculti: 4,
+    }
+  },
+  mounted() {
+    const options =
+      {
+        rootMargin: '0px',
+        threshold: 1.0,
+      } || {}
+    this.observer = new IntersectionObserver(([entry]) => {
+      if (entry && entry.isIntersecting) {
+        this.updateCount()
+      }
+    }, options)
+    this.observer.observe(this.$refs.observe)
+  },
+  destroyed() {
+    this.observer.disconnect()
+  },
+  methods: {
+    updateCount() {
+      const counters = document.querySelectorAll('.counter')
+      const speed = 200
+      counters.forEach((counter) => {
+        const update = () => {
+          let target = +counter.getAttribute('data-target')
+          let count = +counter.innerText
+          let inc = target / speed
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc)
+            setTimeout(update, 25)
+          } else {
+            counter.innerText = target
+          }
+        }
+        counter.innerText = Number(0)
+        update()
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

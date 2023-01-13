@@ -2,13 +2,19 @@
   <header class="header">
     <div class="">
       <div class="header__top __container">
-        <div class="header__top-title">
+        <div
+          class="header__top-title"
+          @click="$router.push(localeLocation('/'))"
+        >
           <h2>
             Türkmen döwlet ykdysadyýet <br />
             we dolandyryş instituty
           </h2>
         </div>
-        <div class="header__top-logo">
+        <div
+          class="header__top-logo"
+          @click="$router.push(localeLocation('/'))"
+        >
           <img src="@/assets/icons/logo.png" alt="" />
         </div>
         <div class="header__top-content">
@@ -23,13 +29,15 @@
       <div class="header__bottom">
         <div class="header__bottom-container __container">
           <ul class="header__bottom-menu">
-            <li
+            <nuxt-link
               v-for="item in menus"
               :key="item.id"
+              :to="item.path"
               :class="[
                 'header__bottom-items',
-                { _active: $route.name == item.path },
+                //  { _active: $route.name === item.path },
               ]"
+              exact
             >
               <span>{{ item.name }}</span>
               <span></span>
@@ -44,7 +52,7 @@
                   </li>
                 </ul>
               </div>
-            </li>
+            </nuxt-link>
           </ul>
         </div>
       </div>
@@ -62,6 +70,15 @@ export default {
         {
           id: 1,
           name: 'Baş sahypa',
+          path: '/',
+          subMenus: [],
+          route: true,
+        },
+        {
+          id: 2,
+          name: 'Biz barada',
+          path: '/about-us',
+          route: false,
           subMenus: [
             {
               id: 1,
@@ -107,89 +124,121 @@ export default {
               id: 11,
               name: 'Ykdysatçy okuw merkezi',
             },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-            {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-            },
-          ],
-        },
-        {
-          id: 2,
-          name: 'Biz barada',
-          subMenus: [
-            {
-              id: 1,
-              name: 'Rektorat',
-            },
-            {
-              id: 2,
-              name: 'Fakultetler',
-            },
-            {
-              id: 3,
-              name: 'Kafedralar',
-            },
-            {
-              id: 4,
-              name: 'Bölümler',
-            },
-            {
-              id: 5,
-              name: 'Institutyň taryhy',
-            },
-            {
-              id: 6,
-              name: 'Institutyň TDP',
-            },
-            {
-              id: 7,
-              name: 'Kärdeşler arkalaşygy',
-            },
-            {
-              id: 8,
-              name: 'Talyp ýaşlar guramasy',
-            },
           ],
         },
         {
           id: 3,
           name: 'Bilim',
+          path: '',
+          route: false,
+          subMenus: [
+            {
+              id: 1,
+              name: 'Okuw bölümi',
+            },
+            {
+              id: 2,
+              name: 'Okuw meýilnamalar',
+            },
+            {
+              id: 3,
+              name: 'Okuw maksatnamalar',
+            },
+            {
+              id: 4,
+              name: 'Okuwlaryň tertibi',
+            },
+            {
+              id: 5,
+              name: 'Hünärler',
+            },
+            {
+              id: 6,
+              name: 'Bakalawr taýýarlyk ugurlary',
+            },
+            {
+              id: 7,
+              name: 'Magistr taýýarlyk ugurlary',
+            },
+          ],
         },
         {
           id: 4,
           name: 'Ylym ',
+          path: '',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Aspirantura',
+            },
+            {
+              id: 2,
+              name: 'Ylmy barlag we taslama işleri',
+            },
+            {
+              id: 3,
+              name: 'Ykdysady innowasiýalar merkezi',
+            },
+            {
+              id: 4,
+              name: 'Ylmy gT we tyu boýunça geçirilýän işler',
+            },
+          ],
         },
         {
           id: 5,
           name: 'Halkara hyzmatdaşlygy',
+          path: '',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Halkara hyzmatdaşlar',
+            },
+            {
+              id: 2,
+              name: 'Halkara maslahatlar',
+            },
+            {
+              id: 3,
+              name: 'Meýletinçiler',
+            },
+            {
+              id: 4,
+              name: 'Tasis-Tempus',
+            },
+          ],
         },
         {
           id: 7,
           name: 'Bäsleşikler',
+          path: '',
+          route: false,
+
+          subMenus: [
+            {
+              id: 1,
+              name: 'Döwlet bäsleşikler',
+            },
+            {
+              id: 2,
+              name: 'Halkara bäsleşikler',
+            },
+            {
+              id: 3,
+              name: 'Taslama bäsleşikler',
+            },
+          ],
         },
         {
           id: 6,
           name: 'Dalaşgär-2023',
+          path: '',
+          route: true,
+          subMenus: [],
         },
       ],
     }
@@ -210,10 +259,10 @@ export default {
 <style lang="scss">
 .header {
   position: sticky;
-  top: 0;
+  top: 0px;
   background: #fff;
   z-index: 200;
-  box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  //   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   &__top {
     display: flex;
     align-items: center;
@@ -235,6 +284,7 @@ export default {
       width: 84px;
       height: 84px;
       flex: 1 1 auto;
+      cursor: pointer;
       img {
         width: 100%;
         height: 100%;
@@ -349,11 +399,11 @@ export default {
         opacity: 1;
         visibility: visible;
       }
-      &._active {
-        span:nth-child(1) {
-          color: var(--primary);
-        }
-      }
+      // &._active {
+      //   span:nth-child(1) {
+      //     color: var(--primary);
+      //   }
+      // }
     }
     // &-submenu-container{
 
@@ -377,6 +427,7 @@ export default {
     &-submenu {
       display: flex;
       align-items: center;
+      justify-content: center;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
@@ -425,6 +476,13 @@ export default {
         }
       }
     }
+  }
+}
+.nuxt-link-exact-active,
+.nuxt-link-active {
+  color: var(--primary);
+  & span:nth-child(2) {
+    width: 100%;
   }
 }
 </style>

@@ -1,6 +1,9 @@
+import tm from './locales/tm'
+import ru from './locales/ru'
+import en from './locales/en'
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target: 'static',
   head: {
     title: 'TDYDI',
     htmlAttrs: {
@@ -23,7 +26,8 @@ export default {
   css: ['@/assets/css/style.css', 'swiper/css/swiper.css'],
 
   loading: {
-    height: '0px',
+    color: '#16ab65',
+    height: '2px',
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,12 +43,35 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+  axios: { baseURL: `${process.env.BASE_API}` },
+
+  i18n: {
+    baseUrl: `${process.env.SITE_URL}`,
+    locales: [
+      {
+        code: 'tm',
+        lang: 'TM',
+        name: 'TM',
+        iso: 'tm-TM',
+        file: 'tm',
+        isCatchallLocale: true,
+      },
+      { code: 'ru', lang: 'RU', name: 'RU', iso: 'ru-RU', file: 'ru' },
+      { code: 'en', lang: 'EN', name: 'en', iso: 'en-EN', file: 'en' },
+    ],
+    defaultLocale: 'tm',
+    seo: true,
+    vueI18n: {
+      fallbackLocale: 'tm',
+      messages: {
+        tm,
+        ru,
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

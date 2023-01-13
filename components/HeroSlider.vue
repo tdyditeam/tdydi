@@ -56,7 +56,6 @@ export default {
           pageUpDown: true,
         },
       },
-
       images: [
         {
           id: 1,
@@ -66,10 +65,6 @@ export default {
           id: 2,
           path: '/TDYweDI_2.jpg',
         },
-        // {
-        //   id: 3,
-        //   path: '/TDYweDI_1.jpg',
-        // },
       ],
     }
   },
@@ -77,12 +72,12 @@ export default {
     let slide = document.querySelector(
       '.hero-slider__img[data-swiper-slide-index="0"]'
     )
-
-    slide.children[0].style.animationDuration = '7s'
-    console.log(slide.children[0])
+    if (slide) {
+      if (slide.children && slide.children[0]) {
+        slide.children[0].style.animationDuration = '7s'
+      }
+    }
   },
-
-  methods: {},
 }
 </script>
 
@@ -90,7 +85,6 @@ export default {
 .hero-slider {
   height: calc(100vh - 205px);
   width: 100%;
-  //   height: 500px;
   &__slider {
     width: 100%;
     height: 100%;
@@ -111,10 +105,6 @@ export default {
     }
   }
 }
-
-// .hero-slider__img[data-swiper-slide-index='0'] img {
-//   animation-duration: 7s !important;
-// }
 .swiper-slide-active.hero-slider__img img {
   animation-name: mymove;
   animation-timing-function: linear;

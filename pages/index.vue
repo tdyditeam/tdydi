@@ -14,7 +14,9 @@
 export default {
   name: 'IndexPage',
 
-  mounted() {},
+  mounted() {
+    window.scrollTo(0, 0)
+  },
 }
 </script>
 <style lang="scss"></style>
