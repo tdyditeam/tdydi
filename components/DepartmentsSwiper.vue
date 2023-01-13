@@ -2,7 +2,7 @@
   <div class="departments-swiper">
     <div
       class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
-      v-swiper:mySwiper="optionsTop"
+      v-swiper:mySwiper2="optionsTop"
     >
       <div class="departments-swiper-top__wrapper swiper-wrapper">
         <div class="departments-swiper-top__slide swiper-slide">
@@ -37,6 +37,7 @@
     </div>
     <div
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
+      v-swiper:mySwiper="optionsBottom"
     >
       <div class="departments-swiper-mini__wrapper swiper-wrapper">
         <div class="departments-swiper-mini__slide swiper-slide">
@@ -68,6 +69,13 @@
 export default {
   data() {
     return {
+      optionsBottom: {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        speed: 2000,
+        watchSlidesProgress: true,
+      },
       optionsTop: {
         slidesPerView: 1,
         speed: 2000,
@@ -79,6 +87,9 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        // thumbs: {
+        //   swiper: optionsBottom,
+        // },
       },
     }
   },
@@ -127,6 +138,7 @@ export default {
     top: 50%;
     left: 20px;
     z-index: 10;
+    cursor: pointer;
     img {
       height: 100px;
     }
@@ -137,19 +149,28 @@ export default {
     top: 50%;
     right: 10px;
     z-index: 10;
+    cursor: pointer;
     img {
       height: 100px;
     }
   }
 }
 .departments-swiper-mini {
+  width: 100%;
   &__wrapper {
+    display: flex;
   }
 
   &__slide {
   }
 
   &__image {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
