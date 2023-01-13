@@ -39,7 +39,6 @@ export default {}
 <style lang="scss" scoped>
 .footer {
   font-family: 'Gilroy';
-  margin-top: 40px;
   &__row {
     border-top: 1px solid #808884;
     display: flex;
@@ -50,6 +49,9 @@ export default {}
     gap: 10px;
     @media (max-width: 992px) {
       gap: 30px;
+    }
+    @media (max-width: 479px) {
+      border: none;
     }
   }
 }

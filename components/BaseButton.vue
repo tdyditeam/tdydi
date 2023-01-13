@@ -43,8 +43,8 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  border-radius: 4px;
-  padding: 12px;
+  border-radius: 9px;
+  padding: 12px 14px;
   text-align: center;
   cursor: pointer;
   @media (max-width: 768px) {
@@ -57,7 +57,6 @@ export default {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;

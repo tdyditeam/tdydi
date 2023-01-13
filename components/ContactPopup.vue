@@ -43,11 +43,11 @@
               <div class="input-block-contact__item">
                 <div class="input-block-contact__title">Message*</div>
                 <form action="#" class="input-block-contact__form">
-                  <input
-                    autocomplete="off"
+                  <textarea
                     placeholder="Message"
-                    class="input-block-contact__input"
-                  />
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    class="input-block-contact__textarea"
+                  ></textarea>
                 </form>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default {
 }
 .body-pop-up {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   @media (max-width: 767px) {
   }
   &__left-block {
@@ -143,7 +143,7 @@ export default {
     gap: 20px;
     color: #fff;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   &__title {
@@ -165,11 +165,11 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 
   &__title {
@@ -187,6 +187,20 @@ export default {
     border-radius: 4px;
     padding: 10px;
     color: #fff;
+    &::placeholder {
+      color: #efefefb2;
+    }
+  }
+
+  &__textarea {
+    height: 73px;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+    color: #fff;
+    resize: none;
     &::placeholder {
       color: #efefefb2;
     }

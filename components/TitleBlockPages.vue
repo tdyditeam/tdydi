@@ -5,10 +5,11 @@
         <h2 class="title-block-pages__title">MAGLUMAT ULGAMLARY KAFEDRASY</h2>
       </div>
       <div class="title-block-pages__button-wrapper">
-        <button class="title-block-pages__button">
-          <p>Hormatly mugallymlar</p>
-          <span><img src="@/assets/img/home/icon-go.svg" alt="icon" /></span>
-        </button>
+        <base-button
+          text="Hormatly mugallymlar"
+          appendIcon
+          iconUrl="home/icon-go.svg"
+        ></base-button>
       </div>
     </div>
   </div>
@@ -22,7 +23,6 @@ export default {}
 .title-block-pages {
   max-width: 900px;
   padding: 10px 0px 20px 0px;
-  font-family: 'Gilroy';
   &__row {
     display: flex;
     align-items: center;
@@ -33,6 +33,7 @@ export default {}
   }
 
   &__title {
+    font-family: 'Gilroy';
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
@@ -49,6 +50,7 @@ export default {}
   }
 
   &__button {
+    font-family: 'Gilroy';
     display: flex;
     gap: 5px;
     background-color: #16ab65;

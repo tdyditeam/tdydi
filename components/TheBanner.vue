@@ -2,7 +2,7 @@
   <div class="banner">
     <hero-slider></hero-slider>
     <the-banner-title></the-banner-title>
-    <!-- <the-banner-statistics></the-banner-statistics> -->
+    <the-banner-statistics></the-banner-statistics>
 
     <!-- <div class="banner-figure__wrapper">
       <div class="banner-figure__content"></div>

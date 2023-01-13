@@ -1,8 +1,13 @@
 <template>
   <div>
     <bread-crumbs></bread-crumbs>
-    <title-block-pages></title-block-pages>
-    <departments-swiper></departments-swiper>
+    <div class="departments__row">
+      <div>
+        <title-block-pages></title-block-pages>
+        <departments-swiper></departments-swiper>
+      </div>
+      <departments-sidebar></departments-sidebar>
+    </div>
   </div>
 </template>
 
@@ -10,4 +15,9 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.departments__row {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
