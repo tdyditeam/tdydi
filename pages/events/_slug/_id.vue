@@ -19,47 +19,6 @@
       <div class="news-item__picture">
         <departments-swiper></departments-swiper>
       </div>
-      <div class="news-item__text">
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Bibendum facilisis amet
-          praesent tortor molestie tortor vestibulum facilisis enim. Vitae eget
-          ac nibh sollicitudin nam dictumst mauris mauris etiam. Et in eget
-          risus amet. Tristique pellentesque fermentum nisl congue risus nibh
-          turpis. Dui tortor rutrum tempus integer nibh risus pellentesque
-          ultrices. Suscipit lacus porta sed nisl integer. Duis vel et orci
-          ultrices felis suspendisse id. Tempus tristique facilisi ornare in at
-          nunc a malesuada convallis. Volutpat faucibus in maecenas nunc turpis
-          sed augue. Et tortor cursus sit sit feugiat ridiculus luctus sed elit.
-          Consectetur quam cras non proin natoque aliquet adipiscing. Id
-          accumsan cum volutpat est. Eget a habitant egestas augue. Pellentesque
-          sit sagittis et dignissim at. Quis viverra vitae aliquam risus velit
-          felis. Sagittis turpis at auctor malesuada. Sagittis urna neque amet
-          montesfelis. Sagittis turpis at auctor malesuada. Sagittis urna neque
-          amet Lorem ipsum dolor sit amet consectetur. Bibendum facilisis amet
-          praesent tortor molestie tortor vestibulum facilisis enim. Vitae eget
-          ac nibh sollicitudin nam dictumst mauris mauris etiam. Et in eget
-          risus amet. Tristique pellentesque fermentum nisl congue risus nibh
-          turpis. Dui tortor rutrum tempus integer nibh risus pellentesque
-          ultrices. Suscipit lacus porta sed nisl integer. Duis vel et orci
-          ultrices felis suspendisse id. Tempus tristique facilisi ornare in at
-          nunc a malesuada convallis. Volutpat faucibus in maecenas nunc turpis
-          sed augue. Et tortor cursus sit sit feugiat ridiculus luctus sed elit.
-          Consectetur quam cras non proin natoque aliquet adipiscing. Id
-          accumsan cum volutpat est. Eget a habitant egestas augue. Pellentesque
-          sit sagittis et dignissim at. Quis viverra vitae aliquam risus velit
-          felis. Sagittis turpis at auctor malesuada. Sagittis urna neque amet
-          montesfelis. Sagittis turpis at auctor malesuada. Sagittis urna neque
-          amet Lorem ipsum dolor sit amet consectetur. Bibendum facilisis amet
-          praesent tortor molestie tortor vestibulum facilisis enim. Vitae eget
-          ac nibh sollicitudin nam dictumst mauris mauris etiam. Et in eget
-          risus amet. Tristique pellentesque fermentum nisl congue risus nibh
-          turpis. Dui tortor rutrum tempus integer nibh risus pellentesque
-          ultrices. Suscipit lacus porta sed nisl integer. Duis vel et orci
-          ultrices felis suspendisse id. Tempus tristique facilisi ornare in at
-          nunc a malesuada convallis. Volutpat faucibus in maecenas nunc turpis
-          sed augue. Et tortor cursus sit sit feugiat ridiculus luctus sed elit.
-        </p>
-      </div>
       <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
@@ -92,9 +51,12 @@ export default {}
 <style lang="scss" scoped>
 .news-item {
   &__content {
+    max-width: 900px;
+    margin: 0px auto;
   }
   &__header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     &-title {
@@ -103,7 +65,7 @@ export default {}
       line-height: 24px;
       text-transform: uppercase;
       color: var(--text);
-      flex: 1 1 auto;
+      max-width: 424px;
     }
     &-date {
       font-style: italic;
@@ -133,7 +95,7 @@ export default {}
     }
   }
   &__picture {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   &__text {
     font-family: 'Gilroy';
@@ -144,6 +106,50 @@ export default {}
     text-align: justify;
     color: var(--text);
     margin-bottom: 20px;
+  }
+}
+.people-swiper-block {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__image {
+    width: 60px;
+    height: 60px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    color: #333333;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #20ba72;
+  }
+
+  &__right-block {
   }
 }
 </style>

@@ -141,7 +141,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-bottom: 115px;
   &__text {
     font-family: 'Gilroy';
     font-weight: 400;

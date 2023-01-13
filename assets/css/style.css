@@ -329,8 +329,8 @@ body ::selection {
 }
 
 ::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
+  height: 10px;
+  width: 10px;
   background-color: #c1c1c1c1;
 }
 ::-webkit-scrollbar-corner {

@@ -38,6 +38,7 @@ export default {}
 
 <style lang="scss" scoped>
 .footer {
+  padding-top: 40px;
   font-family: 'Gilroy';
   &__row {
     border-top: 1px solid #808884;

@@ -4,19 +4,40 @@
       <div class="title-block-pages__title-wrapper">
         <h2 class="title-block-pages__title">MAGLUMAT ULGAMLARY KAFEDRASY</h2>
       </div>
-      <div class="title-block-pages__button-wrapper">
+      <div class="title-block-pages__button-wrapper" v-if="isButton">
         <base-button
-          text="Hormatly mugallymlar"
-          appendIcon
-          iconUrl="home/icon-go.svg"
-        ></base-button>
+          :text="text"
+          :appendIcon="appendIcon"
+          :iconUrl="iconUrl"
+          isActive
+        >
+        </base-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    isButton: {
+      type: Boolean,
+      default: () => false,
+    },
+    text: {
+      type: String,
+      default: () => '',
+    },
+    iconUrl: {
+      type: String,
+      default: () => '',
+    },
+    appendIcon: {
+      type: Boolean,
+      default: () => false,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -26,6 +47,7 @@ export default {}
   &__row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__title-wrapper {
