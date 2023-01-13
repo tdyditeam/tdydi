@@ -9,12 +9,24 @@
           prependIcon="search-normal.png"
         ></text-filed>
       </div>
+      <div class="news__header-buttons">
+        <base-button
+          v-for="item in items"
+          :key="item.id"
+          :text="item.name"
+          :isActive="item.id === Number($route.params.slug)"
+        ></base-button>
+      </div>
     </div>
     <div class="news__content">
       <article-item
-        v-for="item in 20"
-        :key="item"
-        @clickOneItem="$router.push('events/22')"
+        v-for="article in 14"
+        :key="article"
+        @clickOneItem="
+          $router.push(
+            localeLocation(`/events/${Number($route.params.slug)}/${article}`)
+          )
+        "
       ></article-item>
     </div>
   </div>
@@ -38,10 +50,23 @@ export default {
   data() {
     return {
       search: '',
+      items: [
+        {
+          id: 1,
+          name: 'Täzelikler',
+        },
+        {
+          id: 2,
+          name: 'Makalalar',
+        },
+      ],
     }
   },
   mounted() {
-    window.scrollTo(0, 0)
+    window.scrollTo({
+      top: 0,
+    })
+    console.log(this.$route)
   },
 }
 </script>
