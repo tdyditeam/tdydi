@@ -8,12 +8,17 @@
           :key="index"
           :class="[
             'buttons-title-block__button buttons-title-block__button--green',
-            { 'buttons-title-block__button--active': item.active },
-            { 'buttons-title-block__button--dark': item.dark },
+            { 'buttons-title-block__button--active': activeId === item.id },
           ]"
           @click="$emit('change', item)"
         >
           {{ item && item.name }}
+        </button>
+        <button
+          @click="$router.push(localeLocation(`/events/${activeId}`))"
+          class="buttons-title-block__button buttons-title-block__button--green buttons-title-block__button--dark"
+        >
+          Hemmesi
         </button>
       </div>
     </div>
@@ -34,6 +39,10 @@ export default {
     items: {
       default: () => [],
       type: Array,
+    },
+    activeId: {
+      type: Number,
+      default: 1,
     },
   },
 }

@@ -24,14 +24,11 @@
           </div>
         </div>
         <div class="institute-history__button">
-          <!-- <p>DOLY OKA</p>
-          <span class="institute-history__icon">
-            <img src="@/assets/img/home/icon-about.svg" alt="icon" />
-          </span> -->
           <base-button
             @click="$router.push(localeLocation('/about-us'))"
             text="DOLY OKA"
             appendIcon
+            isActive
             iconUrl="home/icon-about.svg"
           ></base-button>
         </div>

@@ -1,6 +1,11 @@
 <template>
   <div class="events">
-    <the-title-block :title="'Wakalar'" :items="items" @change="change">
+    <the-title-block
+      :title="'Wakalar'"
+      :activeId="activeId"
+      :items="items"
+      @change="change"
+    >
     </the-title-block>
     <events-article></events-article>
   </div>
@@ -10,34 +15,22 @@
 export default {
   data() {
     return {
+      activeId: 1,
       items: [
         {
           id: 1,
           name: 'Täzelikler',
-          dark: false,
-          active: true,
         },
         {
           id: 2,
           name: 'Makalalar',
-          dark: false,
-          active: false,
-        },
-        {
-          id: 3,
-          name: 'Hemmesi',
-          dark: true,
-          active: false,
         },
       ],
     }
   },
   methods: {
     change(item) {
-      if (item.id === 3) {
-        this.$router.push('/events')
-      }
-      console.log(item.id)
+      this.activeId = item.id
     },
   },
 }

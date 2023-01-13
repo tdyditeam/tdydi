@@ -1,11 +1,6 @@
 <template>
-  <div class="button" :style="{ backgroundColor: background }">
-    <button
-      @click="$emit('click')"
-      :style="{
-        color: color,
-      }"
-    >
+  <div :class="['button', { active: isActive }]">
+    <button @click="$emit('click')">
       <span class="button__text">{{ text }}</span>
       <span class="button__append-icon" v-if="appendIcon"
         ><img :src="require(`@/assets/img/${iconUrl}`)" alt=""
@@ -21,14 +16,6 @@ export default {
       type: String,
       default: () => '',
     },
-    background: {
-      type: String,
-      default: () => '#16ab65',
-    },
-    color: {
-      type: String,
-      default: () => '#fff',
-    },
     appendIcon: {
       type: Boolean,
       default: () => false,
@@ -36,6 +23,10 @@ export default {
     iconUrl: {
       type: String,
       default: () => '',
+    },
+    isActive: {
+      type: Boolean,
+      default: () => false,
     },
   },
 }
@@ -47,6 +38,7 @@ export default {
   padding: 12px;
   text-align: center;
   cursor: pointer;
+  background-color: #e5f3ff;
   @media (max-width: 768px) {
     padding: 4px 10px;
   }
@@ -72,12 +64,25 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #16ab65;
   }
   &__append-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 10px;
+  }
+  &.active {
+    background: #16ab65;
+    .button__text {
+      color: #fff;
+    }
+  }
+  &:hover {
+    background: #16ab65;
+    .button__text {
+      color: #fff;
+    }
   }
 }
 </style>
