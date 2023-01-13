@@ -1,6 +1,5 @@
 <template>
-  <nuxt-child>
-  </nuxt-child>
+  <nuxt-child> </nuxt-child>
 </template>
 
 <script>
@@ -9,6 +8,9 @@ export default {
     return {
       meta: [{ title: 'wakalar' }],
     }
+  },
+  mounted() {
+    window.scrollTo(0, 0)
   },
 }
 </script>

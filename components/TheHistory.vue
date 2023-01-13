@@ -23,12 +23,18 @@
             döwlet uniwersitetiniň binýadynda döredildi.
           </div>
         </div>
-        <button class="institute-history__button">
-          <p>DOLY OKA</p>
+        <div class="institute-history__button">
+          <!-- <p>DOLY OKA</p>
           <span class="institute-history__icon">
             <img src="@/assets/img/home/icon-about.svg" alt="icon" />
-          </span>
-        </button>
+          </span> -->
+          <base-button
+            @click="$router.push(localeLocation('/about-us'))"
+            text="DOLY OKA"
+            appendIcon
+            iconUrl="home/icon-about.svg"
+          ></base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -126,17 +132,10 @@ export default {}
   &__button {
     font-family: 'Gilroy';
     font-size: 14px;
-    gap: 3px;
-    border-radius: 6px;
-    background: #16ab65;
     color: #fff;
     display: flex;
     align-items: center;
-    padding: 8px 14px;
-    transition: all 0.3s;
-    &:hover {
-      background: #4fb686;
-    }
+    justify-content: flex-start;
   }
   &__icon {
     margin-top: 6px;

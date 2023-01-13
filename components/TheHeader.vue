@@ -2,13 +2,19 @@
   <header class="header">
     <div class="">
       <div class="header__top __container">
-        <div class="header__top-title">
+        <div
+          class="header__top-title"
+          @click="$router.push(localeLocation('/'))"
+        >
           <h2>
             Türkmen döwlet ykdysadyýet <br />
             we dolandyryş instituty
           </h2>
         </div>
-        <div class="header__top-logo">
+        <div
+          class="header__top-logo"
+          @click="$router.push(localeLocation('/'))"
+        >
           <img src="@/assets/icons/logo.png" alt="" />
         </div>
         <div class="header__top-content">
@@ -29,7 +35,7 @@
               :to="item.path"
               :class="[
                 'header__bottom-items',
-                { _active: $route.name == item.path },
+                //  { _active: $route.name === item.path },
               ]"
               exact
             >
@@ -123,7 +129,7 @@ export default {
         {
           id: 3,
           name: 'Bilim',
-          path: '/about-us',
+          path: '',
           route: false,
           subMenus: [
             {
@@ -159,7 +165,7 @@ export default {
         {
           id: 4,
           name: 'Ylym ',
-          path: '/about-us',
+          path: '',
           route: false,
 
           subMenus: [
@@ -184,7 +190,7 @@ export default {
         {
           id: 5,
           name: 'Halkara hyzmatdaşlygy',
-          path: '/about-us',
+          path: '',
           route: false,
 
           subMenus: [
@@ -209,7 +215,7 @@ export default {
         {
           id: 7,
           name: 'Bäsleşikler',
-          path: '/about-us',
+          path: '',
           route: false,
 
           subMenus: [
@@ -230,7 +236,7 @@ export default {
         {
           id: 6,
           name: 'Dalaşgär-2023',
-          path: '/about-us',
+          path: '',
           route: true,
           subMenus: [],
         },
@@ -278,6 +284,7 @@ export default {
       width: 84px;
       height: 84px;
       flex: 1 1 auto;
+      cursor: pointer;
       img {
         width: 100%;
         height: 100%;
@@ -392,11 +399,11 @@ export default {
         opacity: 1;
         visibility: visible;
       }
-      &._active {
-        span:nth-child(1) {
-          color: var(--primary);
-        }
-      }
+      // &._active {
+      //   span:nth-child(1) {
+      //     color: var(--primary);
+      //   }
+      // }
     }
     // &-submenu-container{
 

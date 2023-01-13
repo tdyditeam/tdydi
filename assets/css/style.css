@@ -347,7 +347,7 @@ body ::selection {
 }
 .block__title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 30px;
 }
@@ -361,7 +361,7 @@ body ::selection {
   text-transform: uppercase;
   color: var(--primary);
   border-left: 3px solid var(--primary);
-  padding-left: 20px;
+  padding: 0px 20px;
 }
 .block__description {
   display: flex;
@@ -388,5 +388,37 @@ body ::selection {
   line-height: 23px;
   text-align: justify;
   color: #000000;
-  margin-bottom: 40px;
+}
+.block__menu {
+  margin-left: 73px;
+}
+.menu {
+  width: 387px;
+  background: #f6f6f6;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.menu__item {
+  width: 100%;
+}
+.menu__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.menu__item a {
+  display: block;
+  padding: 14px 0px;
+  text-align: center;
+  border-radius: 4px;
+}
+.menu__item a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.menu__item.active a {
+  background-color: var(--primary);
+  color: var(--white);
 }
