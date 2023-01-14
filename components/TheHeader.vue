@@ -42,15 +42,15 @@
               <span></span>
               <div class="header__bottom-submenu-container">
                 <ul class="header__bottom-submenu __container">
-                  <nuxt-link
+                  <li
                     v-for="subMenu in item.subMenus"
                     :key="subMenu.id"
-                    :to="localePath(`${subMenu.path}`)"
-                    exact
                     class="header__bottom-subitems"
                   >
-                    <span>{{ subMenu.name }}</span>
-                  </nuxt-link>
+                    <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
+                      <span>{{ subMenu.name }}</span>
+                    </nuxt-link>
+                  </li>
                 </ul>
               </div>
             </nuxt-link>
@@ -436,7 +436,7 @@ export default {
     &-submenu {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
@@ -460,12 +460,13 @@ export default {
     }
     &-subitems {
       padding: 20px 0;
-      margin-left: 15px;
       display: flex;
       align-items: center;
       position: relative;
       transition: 0.3s ease;
-      margin-left: 25px;
+      &:not(:first-child) {
+        margin-left: 25px;
+      }
       &:not(:last-child) {
         &::after {
           position: absolute;
