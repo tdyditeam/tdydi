@@ -29,27 +29,28 @@
       <div class="header__bottom">
         <div class="header__bottom-container __container">
           <ul class="header__bottom-menu">
+            <nuxt-link :to="'/'" class="header__bottom-items" exact>
+              <span>Baş sahypa</span><span></span>
+            </nuxt-link>
             <nuxt-link
               v-for="item in menus"
               :key="item.id"
-              :to="item.path"
-              :class="[
-                'header__bottom-items',
-                //  { _active: $route.name === item.path },
-              ]"
-              exact
+              :to="localePath(`${item.path}`)"
+              class="header__bottom-items"
             >
               <span>{{ item.name }}</span>
               <span></span>
               <div class="header__bottom-submenu-container">
                 <ul class="header__bottom-submenu __container">
-                  <li
-                    v-for="elem in item.subMenus"
-                    :key="elem.id"
+                  <nuxt-link
+                    v-for="subMenu in item.subMenus"
+                    :key="subMenu.id"
+                    :to="localePath(`${subMenu.path}`)"
+                    exact
                     class="header__bottom-subitems"
                   >
-                    <span>{{ elem.name }}</span>
-                  </li>
+                    <span>{{ subMenu.name }}</span>
+                  </nuxt-link>
                 </ul>
               </div>
             </nuxt-link>
@@ -68,176 +69,184 @@ export default {
       isActive: false,
       menus: [
         {
-          id: 1,
-          name: 'Baş sahypa',
-          path: '/',
-          subMenus: [],
-          route: true,
-        },
-        {
           id: 2,
           name: 'Biz barada',
           path: '/about-us',
-          route: false,
           subMenus: [
+            {
+              id: 5,
+              name: 'Institutyň taryhy',
+              path: '/about-us',
+            },
             {
               id: 1,
               name: 'Rektorat',
+              path: '/about-us/rektorat',
             },
             {
               id: 2,
               name: 'Fakultetler',
+              path: '/about-us/faculties',
             },
             {
               id: 3,
               name: 'Kafedralar',
+              path: '/about-us/departments',
             },
             {
               id: 4,
               name: 'Bölümler',
-            },
-            {
-              id: 5,
-              name: 'Institutyň taryhy',
+              path: '/about-us/categories',
             },
             {
               id: 6,
               name: 'Institutyň TDP',
+              path: '/about-us/tdp--of-the-institute',
             },
             {
               id: 7,
               name: 'Kärdeşler arkalaşygy',
+              path: '/about-us/trade-union',
             },
             {
               id: 8,
               name: 'Talyp ýaşlar guramasy',
+              path: '/about-us/student-youth-organization',
             },
             {
               id: 9,
               name: 'Zenanlar guramasy',
+              path: '/about-us/womens-organization',
             },
             {
               id: 10,
               name: 'Kitaphana',
+              path: '/about-us/library',
             },
             {
               id: 11,
               name: 'Ykdysatçy okuw merkezi',
+              path: '/about-us/economist-training-center',
             },
           ],
         },
         {
           id: 3,
           name: 'Bilim',
-          path: '',
-          route: false,
+          path: '/education',
           subMenus: [
             {
               id: 1,
               name: 'Okuw bölümi',
+              path: '/education',
             },
             {
               id: 2,
               name: 'Okuw meýilnamalar',
+              path: '/education',
             },
             {
               id: 3,
               name: 'Okuw maksatnamalar',
+              path: '/education',
             },
             {
               id: 4,
               name: 'Okuwlaryň tertibi',
+              path: '/education',
             },
             {
               id: 5,
               name: 'Hünärler',
+              path: '/education',
             },
             {
               id: 6,
               name: 'Bakalawr taýýarlyk ugurlary',
+              path: '/education',
             },
             {
               id: 7,
               name: 'Magistr taýýarlyk ugurlary',
+              path: '/education',
             },
           ],
         },
         {
           id: 4,
           name: 'Ylym ',
-          path: '',
-          route: false,
-
+          path: '/science',
           subMenus: [
             {
               id: 1,
               name: 'Aspirantura',
+              path: '/science',
             },
             {
               id: 2,
               name: 'Ylmy barlag we taslama işleri',
+              path: '/science',
             },
             {
               id: 3,
               name: 'Ykdysady innowasiýalar merkezi',
+              path: '/science',
             },
             {
               id: 4,
               name: 'Ylmy gT we tyu boýunça geçirilýän işler',
+              path: '/science',
             },
           ],
         },
         {
           id: 5,
           name: 'Halkara hyzmatdaşlygy',
-          path: '',
-          route: false,
-
+          path: '/international-cooperation',
           subMenus: [
             {
               id: 1,
               name: 'Halkara hyzmatdaşlar',
+              path: '/international-cooperation',
             },
             {
               id: 2,
               name: 'Halkara maslahatlar',
+              path: '/international-cooperation',
             },
             {
               id: 3,
               name: 'Meýletinçiler',
-            },
-            {
-              id: 4,
-              name: 'Tasis-Tempus',
+              path: '/international-cooperation',
             },
           ],
         },
         {
           id: 7,
           name: 'Bäsleşikler',
-          path: '',
-          route: false,
-
+          path: '/competitions',
           subMenus: [
             {
               id: 1,
               name: 'Döwlet bäsleşikler',
+              path: '/competitions',
             },
             {
               id: 2,
               name: 'Halkara bäsleşikler',
+              path: '/competitions',
             },
             {
               id: 3,
               name: 'Taslama bäsleşikler',
+              path: '/competitions',
             },
           ],
         },
         {
           id: 6,
           name: 'Dalaşgär-2023',
-          path: '',
-          route: true,
+          path: '/candidate',
           subMenus: [],
         },
       ],

@@ -10,6 +10,7 @@
           :appendIcon="appendIcon"
           :iconUrl="iconUrl"
           isActive
+          @click="$emit('clicked')"
         >
         </base-button>
       </div>

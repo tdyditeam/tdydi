@@ -3,9 +3,9 @@
     <div class="block__content">
       <title-block-pages></title-block-pages>
       <div class="block__description">
-        <!-- <div class="block__description-img">
-            <img src="@/assets/img/about-us/image.png" alt="" />
-          </div> -->
+        <div class="block__description-img" v-if="false">
+          <img src="@/assets/img/about-us/image.png" alt="" />
+        </div>
         <div class="block__description-content">
           Berkarar döwletiň täze eýýamynyň Galkynyşy döwründe hormatly
           Prezidentimiz Serdar Berdimuhamedowyň başda durmagynda ylmyň we
@@ -70,7 +70,6 @@
         </div>
       </div>
     </div>
-    <departments-sidebar></departments-sidebar>
   </div>
 </template>
 
