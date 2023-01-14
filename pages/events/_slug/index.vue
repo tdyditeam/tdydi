@@ -63,10 +63,7 @@ export default {
     }
   },
   mounted() {
-    window.scrollTo({
-      top: 0,
-    })
-    console.log(this.$route)
+    document.querySelector('.wrapper').scrollTop = 0
   },
 }
 </script>
