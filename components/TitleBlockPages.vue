@@ -10,6 +10,7 @@
           :appendIcon="appendIcon"
           :iconUrl="iconUrl"
           isActive
+          @click="$emit('clicked')"
         >
         </base-button>
       </div>
@@ -43,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 .title-block-pages {
   max-width: 900px;
-  padding: 10px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
   &__row {
     display: flex;
     align-items: center;

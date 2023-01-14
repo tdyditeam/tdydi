@@ -1,13 +1,7 @@
 <template>
   <div>
-    <bread-crumbs></bread-crumbs>
-    <div class="departments__row">
-      <div>
-        <title-block-pages></title-block-pages>
-        <departments-teachers></departments-teachers>
-      </div>
-      <departments-sidebar></departments-sidebar>
-    </div>
+    <title-block-pages></title-block-pages>
+    <departments-teachers></departments-teachers>
   </div>
 </template>
 
@@ -15,9 +9,4 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-.departments__row {
-  display: flex;
-  justify-content: space-between;
-}
-</style>
+<style lang="scss" scoped></style>

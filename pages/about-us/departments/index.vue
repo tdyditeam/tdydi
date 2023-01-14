@@ -1,18 +1,13 @@
 <template>
   <div>
-    <bread-crumbs></bread-crumbs>
-    <div class="departments__row">
-      <div>
-        <title-block-pages
-          isButton
-          appendIcon
-          text="Hormatly mugallymlar"
-          iconUrl="home/icon-go.svg"
-        ></title-block-pages>
-        <departments-swiper></departments-swiper>
-      </div>
-      <departments-sidebar></departments-sidebar>
-    </div>
+    <title-block-pages
+      isButton
+      appendIcon
+      text="Hormatly mugallymlar"
+      iconUrl="home/icon-go.svg"
+      @clicked="$router.push(localeLocation('/about-us/departments/1'))"
+    ></title-block-pages>
+    <departments-swiper></departments-swiper>
   </div>
 </template>
 
@@ -24,10 +19,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.departments__row {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-</style>
+<style lang="scss" scoped></style>

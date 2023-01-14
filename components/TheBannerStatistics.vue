@@ -79,7 +79,7 @@ export default {
   methods: {
     updateCount() {
       const counters = document.querySelectorAll('.counter')
-      const speed = 200
+      const speed = 50
       counters.forEach((counter) => {
         const update = () => {
           let target = +counter.getAttribute('data-target')
