@@ -24,7 +24,7 @@ export default {}
   flex: 0 1 auto;
   list-style-type: none;
   margin: 0;
-  padding: 11px 0px;
+  padding: 10px 0px 10px 0px;
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
