@@ -2,7 +2,7 @@
   <div class="departments-swiper">
     <div
       class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
-      v-swiper:mySwiper2="optionsTop"
+      ref="swiperTop"
     >
       <div class="departments-swiper-top__wrapper swiper-wrapper">
         <div class="departments-swiper-top__slide swiper-slide">
@@ -29,27 +29,20 @@
     </div>
     <div
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
-      v-swiper:mySwiper="optionsBottom"
+      ref="mySwiperSmall"
+      :options="swiperSmallOptions"
     >
       <div class="departments-swiper-mini__wrapper swiper-wrapper">
-        <div class="departments-swiper-mini__slide swiper-slide">
+        <div
+          v-for="(item, index) in items"
+          :key="index"
+          class="departments-swiper-mini__slide swiper-slide"
+        >
           <div class="departments-swiper-mini__image">
-            <img src="@/assets/img/home/departments/img_1.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-mini__slide swiper-slide">
-          <div class="departments-swiper-mini__image">
-            <img src="@/assets/img/home/departments/img_2.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-mini__slide swiper-slide">
-          <div class="departments-swiper-mini__image">
-            <img src="@/assets/img/home/departments/img_3.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-mini__slide swiper-slide">
-          <div class="departments-swiper-mini__image">
-            <img src="@/assets/img/home/departments/img_4.png" alt="surat" />
+            <img
+              :src="require(`@/assets/img/home/departments/${item.path}`)"
+              alt="surat"
+            />
           </div>
         </div>
       </div>
@@ -105,17 +98,33 @@
 </template>
 
 <script>
+import Swiper from '@/plugins/thumbs'
+
 export default {
+  computed: {
+    swiperSmall() {
+      return this.$refs.mySwiperSmall.$swiper
+    },
+  },
   data() {
     return {
-      optionsBottom: {
+      swiperSmallOptions: null,
+      items: [
+        { id: 1, path: 'img_1.png' },
+        { id: 2, path: 'img_2.png' },
+        { id: 3, path: 'img_3.png' },
+        { id: 4, path: 'img_4.png' },
+      ],
+
+      swiperOptionThumbs: {
         loop: true,
         spaceBetween: 20,
         slidesPerView: 4,
         speed: 2000,
         watchSlidesProgress: true,
+        slideToClickedSlide: true,
       },
-      optionsTop: {
+      swiperOptionTop: {
         slidesPerView: 1,
         speed: 2000,
         pagination: {
@@ -126,11 +135,41 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        // thumbs: {
-        //   swiper: optionsBottom,
-        // },
       },
     }
+  },
+  mounted() {
+    this.swiperMainMini()
+    this.swiperMainBig()
+  },
+  methods: {
+    swiperMainMini() {
+      this.swiperSmallOptions = new Swiper('.departments-swiper-mini', {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 4,
+        speed: 2000,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+      })
+    },
+    swiperMainBig() {
+      this.swiperSmallOptions = new Swiper('.departments-swiper-top', {
+        slidesPerView: 1,
+        speed: 2000,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+          swiper: this.swiperSmallOptions,
+        },
+      })
+    },
   },
 }
 </script>
@@ -141,6 +180,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: hidden;
   &__text {
     font-family: 'Gilroy';
     font-weight: 400;
