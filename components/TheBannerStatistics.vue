@@ -109,20 +109,48 @@ export default {
     bottom: -30px;
     transform: translateX(-50%);
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
     z-index: 10;
+    gap: 20px;
+    @media (max-width: 992px) {
+      bottom: -50px;
+      gap: 10px;
+    }
+    @media (max-width: 600px) {
+      bottom: -130px;
+    }
     &-item {
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
       display: flex;
       padding: 15px;
       background-color: var(--white);
       box-shadow: 6px 7px 20px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      max-width: 230px;
+      @media (max-width: 1250px) {
+        max-width: 210px;
+      }
+      @media (max-width: 1150px) {
+        max-width: 180px;
+      }
+      @media (max-width: 992px) {
+        max-width: 100%;
+        flex: 0 1 30%;
+      }
+      @media (max-width: 600px) {
+        flex: 0 1 40%;
+        &:last-child {
+          display: none;
+        }
+      }
+      @media (max-width: 479px) {
+        flex: 0 1 45%;
+      }
     }
     &-icon {
-      width: 50px;
-      height: 50px;
+      flex: 0 1 50px;
       margin-right: 7px;
       img {
         width: 100%;
@@ -132,7 +160,7 @@ export default {
     &-text {
       display: flex;
       flex-direction: column;
-      width: 147px;
+      flex: 0 1 100%;
       span:nth-child(1) {
         font-family: 'Gilroy';
         font-weight: 600;
@@ -140,6 +168,9 @@ export default {
         line-height: 21px;
         text-align: center;
         color: var(--primary);
+        @media (max-width: 479px) {
+          font-size: 16px;
+        }
       }
       span:nth-child(2) {
         font-family: 'Gilroy';
@@ -150,6 +181,9 @@ export default {
         text-align: center;
         color: var(---text);
         margin-top: 2px;
+        @media (max-width: 479px) {
+          font-size: 18px;
+        }
       }
     }
   }

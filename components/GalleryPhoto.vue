@@ -81,6 +81,7 @@ export default {
 
 <style lang="scss" scoped>
 .photo-block {
+  transition: all 3s;
   &__row {
     display: flex;
     gap: 20px;

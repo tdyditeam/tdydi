@@ -1,7 +1,7 @@
 <template>
   <div class="block__wrapper">
     <div class="block__content">
-      <title-block-pages></title-block-pages>
+      <title-block-pages ></title-block-pages>
       <div class="block__description">
         <div class="block__description-img" v-if="false">
           <img src="@/assets/img/about-us/image.png" alt="" />

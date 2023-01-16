@@ -1,6 +1,7 @@
 <template>
   <div class="institute-history">
     <div class="institute-history__row">
+      <div class="institute-history__title-mobile">Institutyň taryhy</div>
       <div class="institute-history__image">
         <img src="@/assets/img/home/TheHistory.png" alt="surat" />
       </div>
@@ -45,6 +46,12 @@ export default {}
 .institute-history {
   font-family: 'Gilroy';
   padding: 60px 0px 15px 0px;
+  @media ((max-width: 992px)) {
+    padding-top: 80px;
+  }
+  @media (max-width: 600px) {
+    padding-top: 160px;
+  }
   &__row {
     display: flex;
     gap: 52px;
@@ -53,6 +60,10 @@ export default {}
     }
     @media (max-width: 767px) {
       flex-wrap: wrap;
+      gap: 20px;
+    }
+    @media (max-width: 767px) {
+      gap: 10px;
     }
   }
 
@@ -132,14 +143,12 @@ export default {}
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    @media (max-width: 767px) {
+    justify-content: flex-end;
+    }
   }
   &__icon {
     margin-top: 6px;
-  }
-  @media (max-width: 479px) {
-    padding: 4px 8px;
-    font-size: 12px;
   }
 }
 </style>

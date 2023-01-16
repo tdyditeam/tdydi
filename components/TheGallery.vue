@@ -45,5 +45,6 @@ export default {
 <style lang="scss" scoped>
 .gallery {
   padding: 15px 0px;
+  transition: all 3s;
 }
 </style>

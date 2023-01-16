@@ -107,6 +107,7 @@ export default {}
 
 <style lang="scss" scoped>
 .video-block {
+  transition: all 3s;
   &__row {
     display: flex;
     flex-wrap: wrap;

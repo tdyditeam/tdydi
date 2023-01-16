@@ -15,7 +15,7 @@
           class="header__top-logo"
           @click="$router.push(localeLocation('/'))"
         >
-          <img src="@/assets/icons/logo.png" alt="" />
+          <img src="@/assets/icons/logo.png" alt="logo" />
         </div>
         <div class="header__top-content">
           <div class="languages">
@@ -26,35 +26,107 @@
           <div class="contact" @click="showPopUp">Contact</div>
         </div>
       </div>
+      <div class="header__mobile __container">
+        <div class="header__mobile-logo-block">
+          <div
+            class="header__mobile-logo"
+            @click="$router.push(localeLocation('/'))"
+          >
+            <img src="@/assets/icons/logo.png" alt="logo" />
+          </div>
+          <div
+            class="header__mobile-title"
+            @click="$router.push(localeLocation('/'))"
+          >
+            Türkmen döwlet ykdysadyýet <br />
+            we dolandyryş instituty
+          </div>
+        </div>
+        <div
+          @click="isMobileActive = !isMobileActive"
+          class="header__mobile-burger"
+          :class="{ active: isMobileActive }"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       <div class="header__bottom">
         <div class="header__bottom-container __container">
-          <ul class="header__bottom-menu">
-            <nuxt-link :to="'/'" class="header__bottom-items" exact>
-              <span>Baş sahypa</span><span></span>
-            </nuxt-link>
-            <nuxt-link
-              v-for="item in menus"
-              :key="item.id"
-              :to="localePath(`${item.path}`)"
-              class="header__bottom-items"
-            >
-              <span>{{ item.name }}</span>
-              <span></span>
-              <div class="header__bottom-submenu-container">
-                <ul class="header__bottom-submenu __container">
-                  <li
-                    v-for="subMenu in item.subMenus"
-                    :key="subMenu.id"
-                    class="header__bottom-subitems"
-                  >
-                    <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
-                      <span>{{ subMenu.name }}</span>
-                    </nuxt-link>
-                  </li>
-                </ul>
+          <div class="header__bottom-container-body">
+            <ul class="header__bottom-menu">
+              <nuxt-link :to="'/'" class="header__bottom-items" exact>
+                <span>Baş sahypa</span><span></span>
+              </nuxt-link>
+              <nuxt-link
+                v-for="item in menus"
+                :key="item.id"
+                :to="localePath(`${item.path}`)"
+                class="header__bottom-items"
+              >
+                <span>{{ item.name }}</span>
+                <span></span>
+                <div class="header__bottom-submenu-container">
+                  <ul class="header__bottom-submenu __container">
+                    <li
+                      v-for="subMenu in item.subMenus"
+                      :key="subMenu.id"
+                      class="header__bottom-subitems"
+                    >
+                      <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
+                        <span>{{ subMenu.name }}</span>
+                      </nuxt-link>
+                    </li>
+                  </ul>
+                </div>
+              </nuxt-link>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        :class="[
+          'header__mobile-bottom __container',
+          { active: isMobileActive },
+        ]"
+      >
+        <nav class="header__mobile-bottom-menu menu-mobile">
+          <ul class="menu-mobile__list">
+            <li v-for="item in menus" :key="item.id" class="menu-mobile__item">
+              <div class="menu-mobile__link-wrapper">
+                <a href="#" class="menu-mobile__link">{{ item.name }}</a>
+                <div class="menu-mobile__icon">
+                  <img
+                    src="@/assets/img/home/header/icon-right.svg"
+                    alt="icon"
+                  />
+                </div>
               </div>
-            </nuxt-link>
+              <ul class="menu-mobile__sub-list">
+                <li
+                  v-for="subMenu in item.subMenus"
+                  :key="subMenu.id"
+                  class="menu-mobile__sub-item"
+                >
+                  <a href="" class="menu-mobile__sub-link">{{
+                    subMenu.name
+                  }}</a>
+                </li>
+              </ul>
+            </li>
           </ul>
+        </nav>
+        <div class="header__mobile-lng-wrapper">
+          <div class="header__mobile-lng-block active">
+            <span class="header__mobile-lng">TKM</span>
+          </div>
+          <div class="header__mobile-lng-block">
+            <span class="header__mobile-lng">RUS</span>
+          </div>
+          <div class="header__mobile-lng-block">
+            <span class="header__mobile-lng">ENG</span>
+          </div>
         </div>
       </div>
     </div>
@@ -67,6 +139,7 @@ export default {
   data() {
     return {
       isActive: false,
+      isMobileActive: false,
       menus: [
         {
           id: 2,
@@ -252,6 +325,21 @@ export default {
       ],
     }
   },
+  mounted() {
+    let className = 'scroll'
+    let scrollTrigger = 30
+    let wrapper = document.querySelector('.wrapper')
+    wrapper.onscroll = function () {
+      if (
+        wrapper.scrollTop >= scrollTrigger ||
+        window.pageYOffset >= scrollTrigger
+      ) {
+        document.querySelector('.header__mobile').classList.add(className)
+      } else {
+        document.querySelector('.header__mobile').classList.remove(className)
+      }
+    }
+  },
   methods: {
     showPopUp() {
       document.body.classList.add('_lock')
@@ -272,9 +360,18 @@ export default {
   background: #fff;
   z-index: 200;
   //   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  @media (max-width: 992px) {
+    position: fixed;
+    width: 100%;
+    background: none;
+    z-index: 100;
+  }
   &__top {
     display: flex;
     align-items: center;
+    @media (max-width: 992px) {
+      display: none;
+    }
     &-title {
       h2 {
         padding: 29px 0;
@@ -363,13 +460,118 @@ export default {
       }
     }
   }
+
+  &__mobile {
+    display: none;
+    &.scroll {
+      background: rgba(0, 0, 0, 0.6);
+    }
+    @media (max-width: 992px) {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+      padding: 20px;
+    }
+    &-logo-block {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      gap: 4px;
+      @media (max-width: 479px) {
+        gap: 2px;
+      }
+    }
+
+    &-title {
+      font-family: 'Gilroy';
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 115%;
+      color: #f5f5f5;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+      @media (max-width: 479px) {
+        font-size: 14px;
+      }
+    }
+
+    &-logo {
+      flex: 0 1 64px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-burger {
+      display: none;
+      cursor: pointer;
+      width: 24px;
+      height: 18px;
+      position: relative;
+      z-index: 2;
+      border-radius: 10px;
+      @media (max-width: 991px) {
+        display: block;
+      }
+      span {
+        transition: 0.3s;
+        height: 2px;
+        position: absolute;
+        border-radius: 10px;
+        background-color: var(--white);
+        transition: 0.3s;
+        &:nth-child(1) {
+          top: 0;
+          width: 100%;
+          transition: 0.3s;
+        }
+        &:nth-child(2) {
+          top: calc(50% - 1px);
+          width: 100%;
+          transition: 0.3s;
+        }
+        &:nth-child(3) {
+          top: calc(100% - 2px);
+          width: 100%;
+          transition: 0.3s;
+        }
+      }
+      &.active {
+        span {
+          transition: 0.3s;
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 50%;
+          }
+        }
+      }
+    }
+  }
+
   &__bottom {
     width: 100%;
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
+    @media (max-width: 992px) {
+      display: none;
+    }
     &-container {
       position: relative;
     }
+
+    &-container-body {
+    }
+
     &-menu {
       display: flex;
       align-items: center;
@@ -493,6 +695,144 @@ export default {
   color: var(--primary);
   & span:nth-child(2) {
     width: 100%;
+  }
+}
+.header {
+  &__mobile-bottom {
+    display: none;
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: 0.3s ease;
+      &.active {
+        transform: translateX(0);
+      }
+    }
+  }
+  &__mobile {
+    &-lng-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 54px;
+      padding: 20px;
+    }
+
+    &-lng-block {
+      padding: 6px;
+      &.active {
+        border-bottom: 1px solid #16ab65;
+        span {
+          color: #16ab65;
+        }
+      }
+    }
+
+    &-lng {
+      font-family: 'Gilroy';
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 125%;
+      color: #ffffff;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+      @media (max-width: 479px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.menu-mobile {
+  font-family: 'Gilroy';
+  padding: 120px 10px 0px 10px;
+  flex: 1 1 auto;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    &:hover {
+      .menu-mobile__sub-list {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+      }
+      .menu-mobile__icon {
+        rotate: 90deg;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 116%;
+    color: #f5f5f5;
+    @media (max-width: 479px) {
+      font-size: 20px;
+    }
+  }
+
+  &__icon {
+    transition: all 0.3s;
+  }
+
+  &__sub-list {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  &__sub-item {
+    display: flex;
+    position: relative;
+    &:hover {
+      padding-left: 15px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 34%;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #16ab65;
+      }
+    }
+  }
+
+  &__sub-link {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 116%;
+    color: #f5f5f5;
+    @media (max-width: 479px) {
+      font-size: 18px;
+    }
   }
 }
 </style>

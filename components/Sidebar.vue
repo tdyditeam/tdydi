@@ -31,6 +31,9 @@ export default {
   height: 100%;
   background-color: #f6f6f6;
   border-radius: 8px;
+  @media (max-width: 992px) {
+    display: none;
+  }
   &__row {
     display: flex;
     flex-direction: column;

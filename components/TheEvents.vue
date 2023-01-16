@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.article {
+.events {
   padding: 15px 0px;
 }
 </style>
