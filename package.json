@@ -14,13 +14,21 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.2.2",
+	"@tiptap/extension-bubble-menu": "^2.0.0-beta.55",
+    "@tiptap/extension-color": "^2.0.0-beta.202",
+    "@tiptap/extension-floating-menu": "^2.0.0-beta.50",
+    "@tiptap/extension-link": "^2.0.0-beta.36",
+    "@tiptap/extension-text-style": "^2.0.0-beta.202",
+    "@tiptap/starter-kit": "^2.0.0-beta.183",
+    "@tiptap/vue-2": "^2.0.0-beta.77",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
     "swiper": "^5.4.5",
     "vue": "^2.7.10",
     "vue-awesome-swiper": "^4.1.1",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",

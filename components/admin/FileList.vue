@@ -11,7 +11,7 @@
         <div class="admin-filelist__content-list">
           <div
             v-for="item in items"
-            :key="item"
+            :key="item.id"
             class="admin-filelist__content-img"
           >
             <img src="@/assets/img/home/TheHistory.png" alt="" />
