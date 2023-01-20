@@ -1,7 +1,7 @@
 <template>
   <div class="events">
     <the-title-block
-      :title="'Wakalar'"
+      :title="'TÄZELIKLER'"
       :activeId="activeId"
       :items="items"
       @change="change"
