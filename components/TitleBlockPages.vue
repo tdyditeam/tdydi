@@ -2,7 +2,7 @@
   <div class="title-block-pages">
     <div class="title-block-pages__row">
       <div class="title-block-pages__title-wrapper">
-        <h2 class="title-block-pages__title">MAGLUMAT ULGAMLARY KAFEDRASY</h2>
+        <h2 class="title-block-pages__title">{{ title }}</h2>
       </div>
       <div class="title-block-pages__button-wrapper" v-if="isButton">
         <base-button
@@ -29,6 +29,10 @@ export default {
       type: String,
       default: () => '',
     },
+    title: {
+      type: String,
+      default: () => '',
+    },
     iconUrl: {
       type: String,
       default: () => '',
@@ -44,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 .title-block-pages {
   max-width: 900px;
+  margin-top: 15px;
   padding: 0px 0px 20px 0px;
   &__row {
     display: flex;

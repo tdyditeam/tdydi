@@ -3,7 +3,7 @@
     <bread-crumbs></bread-crumbs>
     <div class="block__row">
       <nuxt-child></nuxt-child>
-      <sidebar :subMenus="subMenus"></sidebar>
+      <!-- <sidebar :subMenus="subMenus"></sidebar> -->
     </div>
   </div>
 </template>

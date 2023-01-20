@@ -46,7 +46,7 @@ export default {}
 .institute-history {
   font-family: 'Gilroy';
   padding: 60px 0px 15px 0px;
-  @media ((max-width: 992px)) {
+  @media (max-width: 992px) {
     padding-top: 80px;
   }
   @media (max-width: 600px) {
@@ -144,7 +144,7 @@ export default {}
     display: flex;
     align-items: center;
     @media (max-width: 767px) {
-    justify-content: flex-end;
+      justify-content: flex-end;
     }
   }
   &__icon {

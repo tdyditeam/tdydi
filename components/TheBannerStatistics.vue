@@ -57,7 +57,7 @@ export default {
       student: 3320,
       teacher: 277,
       skill: 52,
-      faculti: 4,
+      faculti: 5,
     }
   },
   mounted() {
