@@ -95,6 +95,7 @@ export default {
 
   &__column-1 {
     flex: 0 1 33.333%;
+    cursor: pointer;
     @media (max-width: 992px) {
       flex: 0 1 48%;
     }
@@ -107,6 +108,7 @@ export default {
   }
 
   &__column-2 {
+    cursor: pointer;
     @media (max-width: 992px) {
       flex: 0 1 49%;
     }
@@ -119,6 +121,7 @@ export default {
   }
 
   &__column-3 {
+    cursor: pointer;
     @media (max-width: 767px) {
       flex: 0 1 100%;
     }
