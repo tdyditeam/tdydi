@@ -336,3 +336,7 @@ body ::selection {
   visibility: hidden;
   opacity: 0px;
 }
+
+.ProseMirror {
+  height: 150px !important;
+}

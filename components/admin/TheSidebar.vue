@@ -7,18 +7,18 @@
         </div>
       </div>
       <div class="admin-sidebar__menu">
-        <ul class="admin-sidebar__menu-list">
+        <div class="admin-sidebar__menu-list">
           <nuxt-link to="/admin/main" class="admin-sidebar__menu-item"
             >Baş sahypa</nuxt-link
           >
           <nuxt-link to="/admin/about-us" class="admin-sidebar__menu-item"
             >Biz barada</nuxt-link
           >
-          <li class="admin-sidebar__menu-item">Ylym</li>
-          <li class="admin-sidebar__menu-item">Halkara hyzmatdaşlygy</li>
-          <li class="admin-sidebar__menu-item">Bäsleşikler</li>
-          <li class="admin-sidebar__menu-item">Dalaşgär-2022</li>
-        </ul>
+          <div class="admin-sidebar__menu-item">Ylym</div>
+          <div class="admin-sidebar__menu-item">Halkara hyzmatdaşlygy</div>
+          <div class="admin-sidebar__menu-item">Bäsleşikler</div>
+          <div class="admin-sidebar__menu-item">Dalaşgär-2022</div>
+        </div>
       </div>
       <div class="admin-sidebar__logout">
         <div class="admin-sidebar__logout-text">Mekan Çaryýew</div>

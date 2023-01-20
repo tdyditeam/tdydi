@@ -15,7 +15,7 @@
 </template>
 
 <script>
-const FileList = () => import('~/components/admin/FileList.vue')
+const FileList = () => import('@/components/admin/FileList.vue')
 
 export default {
   layout: 'admin',
@@ -25,14 +25,14 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
-        { id: 1, path: '' },
+        { id: 1, path: 'asd' },
+        { id: 2, path: 'ads' },
+        { id: 3, path: 'ads' },
+        { id: 4, path: 'ads' },
+        { id: 5, path: 'ads' },
+        { id: 6, path: 'ads' },
+        { id: 7, path: 'ds' },
+        { id: 8, path: 'ads' },
       ],
     }
   },
