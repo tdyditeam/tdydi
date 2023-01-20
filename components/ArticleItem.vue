@@ -30,7 +30,7 @@
             </div>
             <div class="people-swiper-block__content">
               <div class="people-swiper-block__title">
-                Atayew Atamyratgulmuhammet
+                Atayew Atamyrat
               </div>
               <div class="people-swiper-block__subtitle">
                 Elektron isewurliginin ykdysadyyeti
@@ -136,6 +136,9 @@ export default {}
     display: flex;
     align-items: center;
     gap: 30px;
+    @media (max-width: 479px) {
+      gap: 5px;
+    }
   }
 
   &__left-block {
@@ -159,6 +162,9 @@ export default {}
 
   &__content {
     max-width: 204px;
+    @media (max-width: 479px) {
+      max-width: 180px;
+    }
   }
 
   &__title {
@@ -168,6 +174,7 @@ export default {}
     color: #333333;
     margin-bottom: 6px;
     @media (max-width: 479px) {
+      font-size: 12px;
       margin-bottom: 2px;
     }
   }
@@ -177,6 +184,9 @@ export default {}
     font-size: 12px;
     line-height: 116.6%;
     color: #20ba72;
+    @media (max-width: 479px) {
+      font-size: 10px;
+    }
   }
 }
 </style>
