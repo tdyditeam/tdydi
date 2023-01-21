@@ -138,7 +138,7 @@ export default {
     },
 
     save() {
-      console.log(this.main)
+      console.log(this.main.description.tm)
     },
   },
 }

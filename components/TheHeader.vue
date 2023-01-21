@@ -146,11 +146,11 @@ export default {
           name: 'Biz barada',
           path: '/about-us',
           subMenus: [
-            {
-              id: 5,
-              name: 'Institutyň taryhy',
-              path: '/about-us',
-            },
+            // {
+            //   id: 5,
+            //   name: 'Institutyň taryhy',
+            //   path: '/about-us',
+            // },
             {
               id: 1,
               name: 'Rektorat',
@@ -166,30 +166,17 @@ export default {
               name: 'Kafedralar',
               path: '/about-us/departments',
             },
-            {
-              id: 4,
-              name: 'Bölümler',
-              path: '/about-us/categories',
-            },
+
             {
               id: 6,
-              name: 'Institutyň TDP',
-              path: '/about-us/tdp--of-the-institute',
+              name: 'Jemgyýetçilik guramalary',
+              path: '/about-us/public-organizations',
             },
-            {
-              id: 7,
-              name: 'Kärdeşler arkalaşygy',
-              path: '/about-us/trade-union',
-            },
-            {
-              id: 8,
-              name: 'Talyp ýaşlar guramasy',
-              path: '/about-us/student-youth-organization',
-            },
+
             {
               id: 9,
-              name: 'Zenanlar guramasy',
-              path: '/about-us/womens-organization',
+              name: 'Okuw merkezleri',
+              path: '/about-us/study-center',
             },
             {
               id: 10,
@@ -197,10 +184,15 @@ export default {
               path: '/about-us/library',
             },
             {
-              id: 11,
-              name: 'Ykdysatçy okuw merkezi',
-              path: '/about-us/economist-training-center',
+              id: 7,
+              name: 'Hazyna çeper höwesjeňler merkezi',
+              path: '/about-us/trade-union',
             },
+            // {
+            //   id: 8,
+            //   name: 'Terbiýeçilik işleri',
+            //   path: '/about-us/student-youth-organization',
+            // },
           ],
         },
         {
@@ -210,37 +202,22 @@ export default {
           subMenus: [
             {
               id: 1,
-              name: 'Okuw bölümi',
+              name: 'Hünärler',
               path: '/education',
             },
             {
               id: 2,
-              name: 'Okuw meýilnamalar',
+              name: 'Bakalawr taýýarlyk ugurlar',
               path: '/education',
             },
             {
               id: 3,
-              name: 'Okuw maksatnamalar',
+              name: 'Magistr taýýarlyk ugurlar',
               path: '/education',
             },
             {
               id: 4,
               name: 'Okuwlaryň tertibi',
-              path: '/education',
-            },
-            {
-              id: 5,
-              name: 'Hünärler',
-              path: '/education',
-            },
-            {
-              id: 6,
-              name: 'Bakalawr taýýarlyk ugurlary',
-              path: '/education',
-            },
-            {
-              id: 7,
-              name: 'Magistr taýýarlyk ugurlary',
               path: '/education',
             },
           ],
@@ -267,7 +244,7 @@ export default {
             },
             {
               id: 4,
-              name: 'Ylmy gT we tyu boýunça geçirilýän işler',
+              name: 'Ylmy gurnaklar',
               path: '/science',
             },
           ],
@@ -289,7 +266,7 @@ export default {
             },
             {
               id: 3,
-              name: 'Meýletinçiler',
+              name: 'Meýletinçiler Tasis-Tempus',
               path: '/international-cooperation',
             },
           ],
@@ -306,12 +283,12 @@ export default {
             },
             {
               id: 2,
-              name: 'Halkara bäsleşikler',
+              name: 'Taslama bäsleşikler',
               path: '/competitions',
             },
             {
               id: 3,
-              name: 'Taslama bäsleşikler',
+              name: 'Halkara bäsleşikler',
               path: '/competitions',
             },
           ],
@@ -320,7 +297,18 @@ export default {
           id: 6,
           name: 'Dalaşgär-2023',
           path: '/candidate',
-          subMenus: [],
+          subMenus: [
+            {
+              id: 1,
+              name: 'Bakalawr taýýarlyk ugurlary',
+              path: '/competitions',
+            },
+            {
+              id: 2,
+              name: 'Magistr taýýarlyk ugurlary',
+              path: '/competitions',
+            },
+          ],
         },
       ],
     }
@@ -638,7 +626,7 @@ export default {
     &-submenu {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;

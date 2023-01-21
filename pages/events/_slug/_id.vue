@@ -27,7 +27,7 @@
             </div>
             <div class="people-swiper-block__content">
               <div class="people-swiper-block__title">
-                Atayew Atamyratgulmuhammet
+                Atayew Atamyrat
               </div>
               <div class="people-swiper-block__subtitle">
                 Elektron isewurliginin ykdysadyyeti
