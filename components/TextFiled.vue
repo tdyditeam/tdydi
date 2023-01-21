@@ -91,7 +91,7 @@ export default {
       font-family: 'Gilroy';
       flex: 1 1 auto;
       background: transparent;
-      padding-left: 10px;
+      padding: 0px 10px;
     }
   }
   &__prepend--icon {

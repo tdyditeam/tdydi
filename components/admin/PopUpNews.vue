@@ -33,7 +33,12 @@
           ></text-filed>
         </div>
         <div class="col-9">
-          <text-filed label="Date" type="Date"></text-filed>
+          <text-filed
+            label="Date"
+            type="Date"
+            :value="newsDate"
+            @updateValue="(val) => (newsDate = val)"
+          ></text-filed>
         </div>
         <div class="col-12">
           <span class="editor__label">Makala</span>
@@ -79,6 +84,7 @@ export default {
       newsImg: null,
       activeLang: 1,
       activeKey: 'tm',
+      newsDate: '',
       langs: [
         {
           id: 1,
@@ -123,10 +129,12 @@ export default {
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
+      console.log(this.newsImg)
     },
 
     toggleLang(id, key) {
-      ;(this.activeLang = id), (this.activeKey = key)
+      this.activeLang = id
+      this.activeKey = key
     },
 
     save() {
@@ -156,12 +164,14 @@ export default {
   }
   &__image {
     border: 1px dashed #969494;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background: #f4f4f4;
+    height: 100%;
+    width: 100%;
 
     &-input {
       position: absolute;
@@ -173,10 +183,10 @@ export default {
       z-index: 2;
     }
     img {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      object-position: center;
+      object-position: center center;
     }
   }
   &__tab {

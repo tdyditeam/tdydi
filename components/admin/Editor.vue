@@ -404,4 +404,8 @@ export default {
   height: 30px !important;
   padding: 0px !important;
 }
+.editor a {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
 </style>
