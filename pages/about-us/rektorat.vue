@@ -1,5 +1,9 @@
 <template>
-  <block-pages :description="description" :title="title"></block-pages>
+  <block-pages
+    :description="description"
+    :title="title"
+    img="rektorat.png"
+  ></block-pages>
 </template>
 
 <script>

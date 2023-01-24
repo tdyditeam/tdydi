@@ -71,7 +71,7 @@ export default {
     }
   },
   mounted() {
-    // document.querySelector('.wrapper').scrollTop = 0
+    document.querySelector('.wrapper').scrollTop = 0
   },
 }
 </script>

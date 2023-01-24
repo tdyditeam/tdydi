@@ -159,12 +159,12 @@ export default {
             {
               id: 2,
               name: 'Fakultetler',
-              path: '/about-us/faculties',
+              path: '/about-us/faculties/economical',
             },
             {
               id: 3,
               name: 'Kafedralar',
-              path: '/about-us/departments',
+              path: '/about-us/departments/accounting',
             },
 
             {

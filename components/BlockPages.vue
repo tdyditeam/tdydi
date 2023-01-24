@@ -34,7 +34,6 @@ export default {
 <style lang="scss" scoped>
 .block__wrapper {
   display: flex;
-  margin-right: 40px;
 }
 .block__content {
   display: flex;
@@ -73,7 +72,7 @@ export default {
 .block__description-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
 }
 .block__description-content {

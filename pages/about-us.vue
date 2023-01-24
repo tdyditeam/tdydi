@@ -1,10 +1,7 @@
 <template>
   <div class="__container">
-    <bread-crumbs></bread-crumbs>
-    <div class="block__row">
-      <nuxt-child></nuxt-child>
-      <!-- <sidebar :subMenus="subMenus"></sidebar> -->
-    </div>
+    <!-- <bread-crumbs></bread-crumbs> -->
+    <nuxt-child></nuxt-child>
   </div>
 </template>
 

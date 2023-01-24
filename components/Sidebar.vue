@@ -28,7 +28,8 @@ export default {
 <style lang="scss" scoped>
 .departments-sidebar {
   margin-top: 10px;
-  height: 100%;
+  margin-left: 40px;
+  height: fit-content;
   background-color: #f6f6f6;
   border-radius: 8px;
   @media (max-width: 992px) {

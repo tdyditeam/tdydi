@@ -1,6 +1,6 @@
 <template>
   <div>
-    <title-block-pages></title-block-pages>
+    <title-block-pages title="Kafedranyň mugallymlary"></title-block-pages>
     <departments-teachers></departments-teachers>
   </div>
 </template>

@@ -46,7 +46,6 @@ export default {
     }
   },
   mounted() {
-    this.$router.push('/about-us/faculties/economical')
     document.querySelector('.wrapper').scrollTop = 0
   },
 }

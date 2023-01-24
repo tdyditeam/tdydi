@@ -1,6 +1,6 @@
 <template>
   <div class="departments-teachers">
-    <h2 class="departments-teachers__title">Kafedranyň mugallymlary</h2>
+    <!-- <h2 class="departments-teachers__title">Kafedranyň mugallymlary</h2> -->
     <div class="departments-teachers__block">
       <div class="departments-teachers__item-wrapper item-departments-teachers">
         <div class="departments-teachers__item item-departments-teachers">

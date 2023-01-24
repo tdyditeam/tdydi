@@ -1,33 +1,27 @@
 <template>
   <div class="departments-swiper">
     <div
+      v-if="items && items.length"
       class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
       ref="swiperTop"
     >
       <div class="departments-swiper-top__wrapper swiper-wrapper">
         <div class="departments-swiper-top__slide swiper-slide">
-          <div class="departments-swiper-top__image">
-            <img src="@/assets/img/home/departments/img_1.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-top__slide swiper-slide">
-          <div class="departments-swiper-top__image">
-            <img src="@/assets/img/home/departments/img_2.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-top__slide swiper-slide">
-          <div class="departments-swiper-top__image">
-            <img src="@/assets/img/home/departments/img_3.png" alt="surat" />
-          </div>
-        </div>
-        <div class="departments-swiper-top__slide swiper-slide">
-          <div class="departments-swiper-top__image">
-            <img src="@/assets/img/home/departments/img_4.png" alt="surat" />
+          <div
+            class="departments-swiper-top__image"
+            v-for="(item, index) in items"
+            :key="index"
+          >
+            <img
+              :src="require(`@/assets/img/about-us/departments/${item}`)"
+              alt="surat"
+            />
           </div>
         </div>
       </div>
     </div>
     <div
+      v-if="items && items.length"
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
       ref="mySwiperSmall"
       :options="swiperSmallOptions"
@@ -40,60 +34,14 @@
         >
           <div class="departments-swiper-mini__image">
             <img
-              :src="require(`@/assets/img/home/departments/${item.path}`)"
+              :src="require(`@/assets/img/about-us/departments/${item}`)"
               alt="surat"
             />
           </div>
         </div>
       </div>
     </div>
-    <div class="departments-swiper__text">
-      Kafedrada aşakdaky hünärler boýunça: Ykdysadyýetde we dolandyryşda
-      maglumat ulgamlary, Ykdysady kibernetika, Awtomatlaşdyrylan ulgamlaryň we
-      kompýuter tehnikasynyň programma üpjünçiligi hem-de taýýarlyk ugurlar
-      boýunça: Maglumat ulgamlary we tehnologiýalary (ykdysadyýetde we
-      dolandyryşda), Ykdysady kibernetika we Kompýuter ulgamynyň programma
-      üpjünçiligi (ykdysadyýetde we dolandyryşda) bakalawrlar taýýarlanylýar.
-      Umumy sapaklar interaktiw, multimedia tehnologiýalar bilen enjamlaşdyrylan
-      okuw otaglarynda, tejribe sapaklary Internet ulgamyna birleşdirilen,
-      häzirki zaman kompýuter serişdeleri bilen üpjün edilen kompýuter
-      otaglarynda geçirilýär. Ýöriteleşdirilen okuw otaglary «Programmirlemegiň
-      häzirki zaman tehnologiýalary», «Maglumatlar bazalary», «Operasion
-      ulgamlar we gurşawlar», «Maglumat ulgamlary taslamak», «Ykdysady
-      kibernetika», «Ykdysadyýetde we dolandyryşda internet» we «Maglumat
-      howpsuzlygy» ýaly hünär derslerini kämil derejede öwretmäge ýardam edýär.
-      Kafedrada şu aşakdaky dersler boýunça talyplara döwrebap derejede bilim
-      berilýär: Algoritmiň we programmirlemegiň esaslary; Amaly programmalary
-      ornaşdyrmak we ulanmak; Awtomatlaşdyrylan ulgamlaryň we kompýuter
-      tehnikasynyň programma üpjünçiligi; Halkara maglumat işewürligi;
-      Hünärmeniň awtomatlaşdyrylan iş ýeri; Inžener ykdysatçynyň psihologiýasy;
-      Maglumat howpsuzlygy; Maglumat ulgamlaryny taslamak; Maglumat ulgamlarynyň
-      arhitekturasy; Maglumatlar bazalary; Maglumatlaryň strukturalary;
-      Operasion ulgamlar we gurşawlar; Programma üpjünçiligini işläp düzmek;
-      Programmirlemegiň häzirki zaman tehnologiýalary; Tor tehnologiýalary;
-      Ulgamlaýyn programmirlemek; Ykdysady kibernetika; Ykdysadyýetde häzirki
-      zaman maglumat tehnologiýalary; Ykdysadyýetde maglumat ulgamlary we
-      tehnologiýalary; Ykdysadyýetde ulgamlaýyn analiz; Ykdysadyýetde we
-      dolandyryşda Internet. Kafedrada Türkmenistanyň Ylymlar akademiýasy
-      tarapyndan ylalaşylan ylmy iş alnyp barylýar. Talyplaryň taýýarlygyny ylmy
-      derejesi ýokary bolan hünärmenler ylmyň kandidatlary we uly mugallymlar
-      alyp barýarlar. Kafedranyň ýaş mugallymlary we talyplary döwlet we halkara
-      derejelerinde geçirilýän taslama we ylmy bäsleşiklerine gatnaşýarlar.
-      Kafedranyň mugallymlary we talyplary ýurdumyzda we daşary ýurtlarda
-      geçirilýän ylmy-amaly maslahatlara gatnaşýarlar, olaryň ylmy makalalary
-      tezisler ýygyndysynda çap edilýär. Kafedranyň mugallymlary, talyplary
-      ýurdumyzda we daşary ýurtlarda neşir edilýän ylmy žurnallarda, gazetlerde
-      makalalary çap edýärler şeýle hem köpçülikleýin habar beriş serişdelerinde
-      çykyş edýärler. Kafedranyň mugallymlary tarapyndan okuw kitaplar,
-      okadylýan dersler boýunça iş maksatnamalar taýýarlanylýar. Şeýle hem
-      okadylýan dersler boýunça umumy okuwlaryň beýanlary, tejribe sapaklarynyň
-      ýumuşlary, özbaşdak işleri we testler içki we daşky sanly bilim portalynda
-      yzygiderli ýerleşdirilýär. Kafedrada «Maglumat ulgamlary» we «Ykdysady
-      kibernetika» ugurlary boýunça ylmy gurnaklaryň işi alnyp barylýar.
-      Kafedrada aýratyn zehinli talyplary Ders bäsleşiklerine taýýarlamak
-      maksady bilen «Häzirki zaman kompýuter tehnologiýalary» dersinden goşmaça
-      okuwlar geçirilýär.
-    </div>
+    <div class="departments-swiper__text" v-html="description"></div>
   </div>
 </template>
 
@@ -106,16 +54,25 @@ export default {
       return this.$refs.mySwiperSmall.$swiper
     },
   },
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    description: {
+      type: String,
+      default: () => '',
+    },
+  },
   data() {
     return {
       swiperSmallOptions: null,
-      items: [
-        { id: 1, path: 'img_1.png' },
-        { id: 2, path: 'img_2.png' },
-        { id: 3, path: 'img_3.png' },
-        { id: 4, path: 'img_4.png' },
-      ],
-
+      // items: [
+      //   { id: 1, path: 'img_1.png' },
+      //   { id: 2, path: 'img_2.png' },
+      //   { id: 3, path: 'img_3.png' },
+      //   { id: 4, path: 'img_4.png' },
+      // ],
       swiperOptionThumbs: {
         loop: true,
         spaceBetween: 20,
@@ -176,7 +133,7 @@ export default {
 
 <style lang="scss" scoped>
 .departments-swiper {
-  max-width: 900px;
+  //   max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: 20px;
