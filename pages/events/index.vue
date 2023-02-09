@@ -1,6 +1,6 @@
 <template>
   <div class="news __container">
-    <bread-crumbs></bread-crumbs>
+    <!-- <bread-crumbs></bread-crumbs> -->
     <div class="news__header">
       <div class="news__header-search">
         <text-filed

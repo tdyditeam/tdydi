@@ -2,9 +2,12 @@
   <div class="article__swiper-block">
     <div v-swiper:mySwiper="options" class="swiper-block swiper">
       <div class="swiper-block__wrapper swiper-wrapper">
-        <article-item class="swiper-slide"> </article-item>
-        <article-item class="swiper-slide"> </article-item>
-        <article-item class="swiper-slide"> </article-item>
+        <article-item
+          class="swiper-slide"
+          v-for="event in events"
+          :key="event.id"
+          :event="event"
+        ></article-item>
       </div>
       <div class="swiper-block__buttons">
         <div class="swiper-block__next swiper-button-prev">
@@ -20,13 +23,20 @@
 
 <script>
 export default {
+  props: {
+    events: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       options: {
         spaceBetween: 30,
-        loop: true,
+        loop: false,
+        cache: false,
         slidesPerView: 3.2,
-        speed: 2000,
+        speed: 1000,
         breakpoints: {
           320: {
             slidesPerView: 1.2,
@@ -41,10 +51,10 @@ export default {
             slidesPerView: 3.2,
           },
         },
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
+        //   autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: false,
+        //   },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

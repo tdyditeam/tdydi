@@ -13,15 +13,15 @@
             :key="index"
           >
             <img
-              :src="require(`@/assets/img/about-us/departments/${item}`)"
-              alt="surat"
+              :src="require(`@/assets/img/home/events/news/${item}`)"
+              alt=""
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      v-if="items && items.length"
+      v-if="items.length"
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
       ref="mySwiperSmall"
       :options="swiperSmallOptions"
@@ -34,14 +34,14 @@
         >
           <div class="departments-swiper-mini__image">
             <img
-              :src="require(`@/assets/img/about-us/departments/${item}`)"
-              alt="surat"
+              :src="require(`@/assets/img/home/events/news/${item}`)"
+              alt=""
             />
           </div>
         </div>
       </div>
     </div>
-    <div class="departments-swiper__text" v-html="description"></div>
+    <div class="departments-swiper__text" v-html="datas.description"></div>
   </div>
 </template>
 
@@ -55,13 +55,13 @@ export default {
     },
   },
   props: {
+    datas: {
+      type: Object,
+      default: () => {},
+    },
     items: {
       type: Array,
       default: () => [],
-    },
-    description: {
-      type: String,
-      default: () => '',
     },
   },
   data() {

@@ -64,7 +64,11 @@ export default {
         },
         {
           id: 2,
-          path: '/TDYweDI_2.jpg',
+          path: '/main-slider1.jpg',
+        },
+        {
+          id: 3,
+          path: '/main-slider2.jpg',
         },
       ],
     }

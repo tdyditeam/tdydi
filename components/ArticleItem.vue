@@ -3,35 +3,36 @@
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <img src="@/assets/img/home/article/img_1.png" alt="" />
+          <img
+            v-if="event.img"
+            :src="require(`@/assets/img/home/events/news/${event.img}`)"
+            alt=""
+          />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
-            <span>03.10.2022</span>
+            <span v-show="event.createdAt">{{ event.createdAt }}</span>
             <span>
               <img src="@/assets/img/home/article/eye.png" alt="" />
-              <p>122</p>
+              <p>{{ event.viewCount }}</p>
             </span>
           </div>
           <div class="content-swiper-block__title">
-            Where does it come from? Where does it come from?..
+            {{ event.title }}
           </div>
           <div class="content-swiper-block__text">
-            Where does it come from? Where does it come from?..\ Where does it
-            come from? Where does it come from?..
+            {{ event.description }}
           </div>
         </div>
       </div>
-      <div class="article-item__people people-swiper-block">
+      <div class="article-item__people people-swiper-block" v-if="false">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div class="people-swiper-block__image">
               <img src="@/assets/img/home/article/profile_1.png" alt="surat" />
             </div>
             <div class="people-swiper-block__content">
-              <div class="people-swiper-block__title">
-                Atayew Atamyrat
-              </div>
+              <div class="people-swiper-block__title">Atayew Atamyrat</div>
               <div class="people-swiper-block__subtitle">
                 Elektron isewurliginin ykdysadyyeti
               </div>
@@ -48,7 +49,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    event: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  data() {
+    return {}
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -58,6 +69,7 @@ export default {}
   padding: 10px;
   cursor: pointer;
   transition: all 1s;
+  height: 430px !important;
   &:hover {
     box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -70,15 +82,20 @@ export default {}
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
+    border-radius: 10px;
     @media (max-width: 479px) {
       padding: 5px;
     }
   }
 
   &__image {
+    height: 200px;
+    border-radius: 10px;
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
+      object-position: center center;
     }
   }
 }
@@ -115,6 +132,7 @@ export default {}
     font-size: 18px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
+    padding-bottom: 10px;
     @media (max-width: 479px) {
       font-size: 14px;
       line-height: 120%;
