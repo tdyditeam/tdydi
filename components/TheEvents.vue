@@ -9,6 +9,7 @@
     </the-title-block>
     <events-article
       :events="activeId === 1 ? news : arcticles"
+      :activeId="activeId"
     ></events-article>
   </div>
 </template>

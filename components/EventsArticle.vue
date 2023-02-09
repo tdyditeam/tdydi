@@ -4,9 +4,10 @@
       <div class="swiper-block__wrapper swiper-wrapper">
         <article-item
           class="swiper-slide"
-          v-for="event in events"
+          v-for="(event, index) in events"
           :key="event.id"
           :event="event"
+          @clickOneItem="$router.push(`/events/${activeId}/${index}`)"
         ></article-item>
       </div>
       <div class="swiper-block__buttons">
@@ -28,6 +29,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    activeId: {
+      type: Number,
+      default: () => 1,
+    },
   },
   data() {
     return {
@@ -35,6 +40,7 @@ export default {
         spaceBetween: 30,
         loop: false,
         cache: false,
+        autoplay: false,
         slidesPerView: 3.2,
         speed: 1000,
         breakpoints: {

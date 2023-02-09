@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="article-item__people people-swiper-block" v-if="false">
+      <div class="article-item__people people-swiper-block" v-if="true">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div class="people-swiper-block__image">
@@ -69,7 +69,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   transition: all 1s;
-  height: 430px !important;
+  height: 465px !important;
   &:hover {
     box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -133,6 +133,11 @@ export default {
     line-height: 111.1%;
     letter-spacing: 0.04em;
     padding-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 479px) {
       font-size: 14px;
       line-height: 120%;
@@ -144,6 +149,11 @@ export default {
     font-size: 14px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 479px) {
       font-size: 12px;
     }

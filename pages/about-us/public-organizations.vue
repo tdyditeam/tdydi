@@ -14,25 +14,25 @@ export default {
       subMenus: [
         {
           id: 0,
-          name: 'Institutyň Türkmenistanyň Demokratik partiýa guramasy',
+          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Partiýa guramasy',
           path: '/about-us/public-organizations/0',
           exact: true,
         },
         {
           id: 1,
-          name: 'Institutyň kärdeşler arkalaşygy guramasy',
+          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Kärdeşler arkalaşygynyň ilkinji guramasy',
           path: '/about-us/public-organizations/1',
           exact: true,
         },
         {
           id: 2,
-          name: 'Institutyň Talyp ýaşlar guramasy',
+          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Ýaşlar guramasy',
           path: '/about-us/public-organizations/2',
           exact: true,
         },
         {
           id: 3,
-          name: 'Institutyň zenanlar guramasy',
+          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Ilkinji Zenanlar guramasy',
           path: '/about-us/public-organizations/3',
           exact: true,
         },

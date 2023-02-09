@@ -40,7 +40,9 @@
           :items="[
             $route.params?.slug == 1
               ? news[$route.params.id].img
-              : articles[$route.params.id].img,
+              : articles[$route.params.id].img
+              ? articles[$route.params.id].img
+              : 'news1.jpg',
           ]"
         ></departments-swiper>
       </div>
@@ -110,7 +112,7 @@ export default {
             'Halkara Bitaraplyk güni mynasybetli “Ykdysadyýet” ugry boýunça ýokary okuw mekdepleriniň talyplarynyň arasynda online görnüşinde...',
         },
       ],
-      arcticles: [
+      articles: [
         {
           id: 1,
           img: null,

@@ -21,7 +21,7 @@
       </div>
     </div>
     <div
-      v-if="items.length"
+      v-show="items.length > 1"
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
       ref="mySwiperSmall"
       :options="swiperSmallOptions"
@@ -164,8 +164,8 @@ export default {
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
+      object-fit: contain;
+      object-position: center center;
     }
   }
 

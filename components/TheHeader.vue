@@ -55,7 +55,7 @@
       <div class="header__bottom">
         <div class="header__bottom-container __container">
           <div class="header__bottom-container-body">
-            <ul class="header__bottom-menu">
+            <div class="header__bottom-menu">
               <nuxt-link :to="'/'" class="header__bottom-items" exact>
                 <span>Baş sahypa</span><span></span>
               </nuxt-link>
@@ -81,7 +81,7 @@
                   </ul>
                 </div>
               </nuxt-link>
-            </ul>
+            </div>
           </div>
         </div>
       </div>
