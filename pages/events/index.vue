@@ -1,6 +1,6 @@
 <template>
   <div class="news __container">
-    <bread-crumbs></bread-crumbs>
+    <!-- <bread-crumbs></bread-crumbs> -->
     <div class="news__header">
       <div class="news__header-search">
         <text-filed
@@ -11,17 +11,19 @@
       </div>
     </div>
     <div class="news__content">
-      <article-item
-        v-for="item in 20"
-        :key="item"
-        @clickOneItem="$router.push('events/22')"
-      ></article-item>
+      <client-only v-for="item in news" :key="item.id">
+        <article-item
+          :datas="item"
+          @clickOneItem="$router.push(`events/${item.id}`)"
+        ></article-item>
+      </client-only>
     </div>
   </div>
 </template>
 
 <script>
 import EventsArticle from '~/components/EventsArticle.vue'
+
 export default {
   components: { EventsArticle },
   head() {
@@ -38,6 +40,7 @@ export default {
   data() {
     return {
       search: '',
+      news: news,
     }
   },
   mounted() {
@@ -78,7 +81,7 @@ export default {
     margin: 60px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 25px;
     @media (max-width: 980px) {
       grid-template-columns: 1fr 1fr;

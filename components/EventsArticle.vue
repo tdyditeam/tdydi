@@ -2,9 +2,11 @@
   <div class="article__swiper-block">
     <div v-swiper:mySwiper="options" class="swiper-block swiper">
       <div class="swiper-block__wrapper swiper-wrapper">
-        <article-item class="swiper-slide"> </article-item>
-        <article-item class="swiper-slide"> </article-item>
-        <article-item class="swiper-slide"> </article-item>
+        <article-item
+          v-for="item in news"
+          :key="item.id"
+          :datas="item"
+        ></article-item>
       </div>
       <div class="swiper-block__buttons">
         <div class="swiper-block__next swiper-button-prev">
@@ -19,9 +21,12 @@
 </template>
 
 <script>
+import news from '@/static/json/news'
+
 export default {
   data() {
     return {
+      news: news,
       options: {
         spaceBetween: 30,
         loop: true,

@@ -1,45 +1,59 @@
 <template>
-  <div @click="$emit('clickOneItem')" class="article-item">
+  <div v-if="datas" @click="$emit('clickOneItem')" class="article-item">
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
-        <div class="article-item__image">
-          <img src="@/assets/img/home/article/img_1.png" alt="" />
+        <div v-if="datas.img" class="article-item__image">
+          <img
+            :src="require(`@/assets/img/news/${datas && datas.img}`)"
+            alt=""
+          />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
-            <span>03.10.2022</span>
+            <span>{{ datas && datas.date }}</span>
             <span>
               <img src="@/assets/img/home/article/eye.png" alt="" />
-              <p>122</p>
+              <p>{{ datas && datas.count }}</p>
             </span>
           </div>
           <div class="content-swiper-block__title">
-            Where does it come from? Where does it come from?..
+            {{ datas && datas.title }}
           </div>
-          <div class="content-swiper-block__text">
-            Where does it come from? Where does it come from?..\ Where does it
-            come from? Where does it come from?..
-          </div>
+          <div
+            v-html="datas && datas.description"
+            class="content-swiper-block__text"
+          ></div>
         </div>
       </div>
       <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
-            <div class="people-swiper-block__image">
-              <img src="@/assets/img/home/article/profile_1.png" alt="surat" />
+            <div v-if="datas.student_img" class="people-swiper-block__image">
+              <img
+                :src="require(`@/assets/img/news/${datas.student_img}`)"
+                alt=""
+              />
             </div>
-            <div class="people-swiper-block__content">
+            <div
+              v-if="datas && datas.student_name"
+              class="people-swiper-block__content"
+            >
               <div class="people-swiper-block__title">
-                Atayew Atamyrat
+                {{ datas && datas.student_name }}
               </div>
               <div class="people-swiper-block__subtitle">
-                Elektron isewurliginin ykdysadyyeti
+                {{ datas && datas.student__profession }}
               </div>
             </div>
           </div>
-          <div class="people-swiper-block__right-block">
+          <div
+            v-if="datas && datas.teacher"
+            class="people-swiper-block__right-block"
+          >
             <div class="people-swiper-block__title">Mugallym:</div>
-            <div class="people-swiper-block__subtitle">Amanow Aman</div>
+            <div class="people-swiper-block__subtitle">
+              {{ datas && datas.teacher }}
+            </div>
           </div>
         </div>
       </div>
@@ -48,7 +62,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    datas: {
+      default: () => {},
+      type: Object,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -124,8 +145,12 @@ export default {}
   &__text {
     font-weight: 400;
     font-size: 14px;
-    line-height: 111.1%;
+    line-height: 120%;
     letter-spacing: 0.04em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     @media (max-width: 479px) {
       font-size: 12px;
     }
