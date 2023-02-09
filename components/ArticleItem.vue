@@ -2,22 +2,26 @@
   <div v-if="datas" @click="$emit('clickOneItem')" class="article-item">
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
-        <div v-if="datas.img" class="article-item__image">
+        <div class="article-item__image">
           <img
-            :src="require(`@/assets/img/news/${datas && datas.img}`)"
+            v-if="event.img"
+            :src="require(`@/assets/img/home/events/news/${event.img}`)"
             alt=""
           />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
-            <span>{{ datas && datas.date }}</span>
+            <span v-show="event.createdAt">{{ event.createdAt }}</span>
             <span>
               <img src="@/assets/img/home/article/eye.png" alt="" />
-              <p>{{ datas && datas.count }}</p>
+              <p>{{ event.viewCount }}</p>
             </span>
           </div>
           <div class="content-swiper-block__title">
-            {{ datas && datas.title }}
+            {{ event.title }}
+          </div>
+          <div class="content-swiper-block__text">
+            {{ event.description }}
           </div>
           <div
             v-html="datas && datas.description"
@@ -25,7 +29,7 @@
           ></div>
         </div>
       </div>
-      <div class="article-item__people people-swiper-block">
+      <div class="article-item__people people-swiper-block" v-if="true">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div v-if="datas.student_img" class="people-swiper-block__image">
@@ -34,13 +38,8 @@
                 alt=""
               />
             </div>
-            <div
-              v-if="datas && datas.student_name"
-              class="people-swiper-block__content"
-            >
-              <div class="people-swiper-block__title">
-                {{ datas && datas.student_name }}
-              </div>
+            <div class="people-swiper-block__content">
+              <div class="people-swiper-block__title">Atayew Atamyrat</div>
               <div class="people-swiper-block__subtitle">
                 {{ datas && datas.student__profession }}
               </div>
@@ -64,10 +63,13 @@
 <script>
 export default {
   props: {
-    datas: {
-      default: () => {},
+    event: {
       type: Object,
+      default: () => {},
     },
+  },
+  data() {
+    return {}
   },
 }
 </script>
@@ -79,6 +81,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   transition: all 1s;
+  height: 465px !important;
   &:hover {
     box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -91,15 +94,20 @@ export default {
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
+    border-radius: 10px;
     @media (max-width: 479px) {
       padding: 5px;
     }
   }
 
   &__image {
+    height: 200px;
+    border-radius: 10px;
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
+      object-position: center center;
     }
   }
 }
@@ -136,6 +144,12 @@ export default {
     font-size: 18px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
+    padding-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 479px) {
       font-size: 14px;
       line-height: 120%;
@@ -147,10 +161,11 @@ export default {
     font-size: 14px;
     line-height: 120%;
     letter-spacing: 0.04em;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 479px) {
       font-size: 12px;
     }

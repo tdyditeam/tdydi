@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <the-title-block
-      :title="'Gallereýa'"
+      :title="'Galereýa'"
       :items="items"
       @change="change"
     ></the-title-block>

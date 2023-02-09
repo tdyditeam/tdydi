@@ -145,6 +145,7 @@ export default {
       //     prevEl: '.swiper-button-prev',
       //   },
       // },
+      swiperSmallOptions: null,
       swiperOptionThumbs: {
         loop: true,
         spaceBetween: 5,

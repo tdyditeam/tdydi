@@ -3,9 +3,11 @@
     <div v-swiper:mySwiper="options" class="swiper-block swiper">
       <div class="swiper-block__wrapper swiper-wrapper">
         <article-item
-          v-for="item in news"
-          :key="item.id"
-          :datas="item"
+          class="swiper-slide"
+          v-for="(event, index) in events"
+          :key="event.id"
+          :event="event"
+          @clickOneItem="$router.push(`/events/${activeId}/${index}`)"
         ></article-item>
       </div>
       <div class="swiper-block__buttons">
@@ -24,14 +26,26 @@
 import news from '@/static/json/news'
 
 export default {
+  props: {
+    events: {
+      type: Array,
+      default: () => [],
+    },
+    activeId: {
+      type: Number,
+      default: () => 1,
+    },
+  },
   data() {
     return {
       news: news,
       options: {
         spaceBetween: 30,
-        loop: true,
+        loop: false,
+        cache: false,
+        autoplay: false,
         slidesPerView: 3.2,
-        speed: 2000,
+        speed: 1000,
         breakpoints: {
           320: {
             slidesPerView: 1.2,
@@ -46,10 +60,10 @@ export default {
             slidesPerView: 3.2,
           },
         },
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
+        //   autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: false,
+        //   },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
