@@ -1,13 +1,12 @@
 <template>
   <div v-if="items.length" class="admin-submenu-wrapper">
     <ul class="admin-submenu-list">
-      <nuxt-link
-        v-for="item in items"
-        :key="item.id"
-        :to="item.path"
-        class="admin-submenu-item"
-        >{{ item.name }}</nuxt-link
-      >
+      <client-only v-for="item in items" :key="item.id">
+        <nuxt-link :to="item.path" class="admin-submenu-item">{{
+          item.name
+        }}</nuxt-link>
+      </client-only>
+
       <!-- <nuxt-link to="article" class="admin-submenu-item">Makalalar</nuxt-link>
       <li class="admin-submenu-item">Täzelikler</li>
       <li class="admin-submenu-item">Neşirler</li>

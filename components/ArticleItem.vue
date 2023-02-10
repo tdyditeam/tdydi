@@ -1,5 +1,5 @@
 <template>
-  <div v-if="datas" @click="$emit('clickOneItem')" class="article-item">
+  <div @click="$emit('clickOneItem')" class="article-item">
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
@@ -23,36 +23,24 @@
           <div class="content-swiper-block__text">
             {{ event.description }}
           </div>
-          <div
-            v-html="datas && datas.description"
-            class="content-swiper-block__text"
-          ></div>
         </div>
       </div>
       <div class="article-item__people people-swiper-block" v-if="true">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
-            <div v-if="datas.student_img" class="people-swiper-block__image">
-              <img
-                :src="require(`@/assets/img/news/${datas.student_img}`)"
-                alt=""
-              />
+            <div class="people-swiper-block__image">
+              <img src="@/assets/img/home/article/profile_1.png" alt="surat" />
             </div>
             <div class="people-swiper-block__content">
               <div class="people-swiper-block__title">Atayew Atamyrat</div>
               <div class="people-swiper-block__subtitle">
-                {{ datas && datas.student__profession }}
+                Elektron isewurliginin ykdysadyyeti
               </div>
             </div>
           </div>
-          <div
-            v-if="datas && datas.teacher"
-            class="people-swiper-block__right-block"
-          >
+          <div class="people-swiper-block__right-block">
             <div class="people-swiper-block__title">Mugallym:</div>
-            <div class="people-swiper-block__subtitle">
-              {{ datas && datas.teacher }}
-            </div>
+            <div class="people-swiper-block__subtitle">Amanow Aman</div>
           </div>
         </div>
       </div>
@@ -159,7 +147,7 @@ export default {
   &__text {
     font-weight: 400;
     font-size: 14px;
-    line-height: 120%;
+    line-height: 111.1%;
     letter-spacing: 0.04em;
     display: -webkit-box;
     -webkit-line-clamp: 3;

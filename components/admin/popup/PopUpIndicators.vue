@@ -2,7 +2,7 @@
   <div class="popup">
     <div class="popup__wrapper">
       <div class="row">
-        <div class="col-3 row-4">
+        <div class="col-2 row-2">
           <div class="popup__image">
             <img v-if="newsImg?.blobFile" :src="newsImg.blobFile" alt="" />
             <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
@@ -25,42 +25,36 @@
             >
           </div>
         </div>
-        <div class="col-9">
+        <div class="col-4">
           <text-filed
-            label="Title"
-            :value="main.title[activeKey]"
-            @updateValue="(val) => (main.title[activeKey] = val)"
+            label="Ugur"
+            :value="main.skils[activeKey]"
+            @updateValue="(val) => (main.skils[activeKey] = val)"
           ></text-filed>
         </div>
-        <div class="col-9">
+        <div class="col-4">
           <text-filed
-            label="Date"
-            type="Date"
-            :value="newsDate"
-            @updateValue="(val) => (newsDate = val)"
+            label="Sany"
+            type="number"
+            :value="main.count"
+            @updateValue="(val) => (main.count = val)"
           ></text-filed>
         </div>
-        <div class="col-12">
-          <span class="editor__label">Makala</span>
-          <editor v-model="main.description[activeKey]" class="editor" />
-        </div>
-        <div class="col-7">
+        <div class="col-2">
           <text-filed
-            :value="main.nameWriter[activeKey]"
-            @updateValue="(val) => (main.nameWriter[activeKey] = val)"
-            label="Ýazyjynyň ady"
-          ></text-filed>
-        </div>
-        <div class="col-5">
-          <text-filed
-            :value="main.profession[activeKey]"
-            @updateValue="(val) => (main.profession[activeKey] = val)"
-            label="Hünari"
+            label="Ýeri"
+            type="number"
+            :value="main.place"
+            @updateValue="(val) => (main.place = val)"
           ></text-filed>
         </div>
         <div class="col-12">
           <div class="popup__actions">
-            <base-button isActive text="Cancel"></base-button>
+            <base-button
+              @click="$emit('close')"
+              isActive
+              text="Cancel"
+            ></base-button>
             <base-button @click="save" isActive text="Save"></base-button>
           </div>
         </div>
@@ -70,8 +64,9 @@
 </template>
 
 <script>
-const Editor = () => import('@/components/admin/Editor.vue')
+import { request } from '@/api/generic.api'
 import changeImage from '@/mixins/changeImage'
+const Editor = () => import('@/components/admin/Editor.vue')
 
 export default {
   components: {
@@ -103,26 +98,13 @@ export default {
         },
       ],
       main: {
-        title: {
+        skils: {
           tm: '',
           ru: '',
           en: '',
         },
-        description: {
-          tm: '',
-          ru: '',
-          en: '',
-        },
-        nameWriter: {
-          tm: '',
-          ru: '',
-          en: '',
-        },
-        profession: {
-          tm: '',
-          ru: '',
-          en: '',
-        },
+        count: 0,
+        place: 1,
       },
     }
   },
@@ -137,8 +119,19 @@ export default {
       this.activeKey = key
     },
 
-    save() {
-      console.log(this.main.description.tm)
+    async save() {
+      const formData = new FormData()
+      console.log(this.main)
+      //   formData.append('title  ', this.main.title[this.activeKey])
+      //   formData.append('description   ', this.main.description[this.activeKey])
+      //   formData.append('date', this.newsDate)
+      //   formData.append('student_firstname', this.main.nameWriter[this.activeKey])
+      //   formData.append('student_firstname', this.main.nameWriter[this.activeKey])
+      //   try {
+      //     const res = await request({ url: '' })
+      //   } catch (error) {
+      //     console.log(error)
+      //   }
     },
   },
 }

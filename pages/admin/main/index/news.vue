@@ -2,7 +2,7 @@
   <div class="admin">
     <div class="admin__news">
       <div class="admin__news-header">
-        <base-button text="+ Goşmak" isActive></base-button>
+        <base-button @click="openPupup" text="+ Goşmak" isActive></base-button>
       </div>
       <div class="admin__news-body">
         <table class="table">
@@ -49,16 +49,26 @@
         </table>
       </div>
     </div>
-    <pop-up-news></pop-up-news>
+    <pop-up-news v-if="popupNews" @close="popupNews = false"></pop-up-news>
   </div>
 </template>
 
 <script>
-const PopUpNews = () => import('~/components/admin/PopUpNews.vue')
+const PopUpNews = () => import('~/components/admin/popup/PopUpNews.vue')
 
 export default {
   components: { PopUpNews },
   layout: 'admin',
+  data() {
+    return {
+      popupNews: false,
+    }
+  },
+  methods: {
+    openPupup() {
+      this.popupNews = true
+    },
+  },
 }
 </script>
 

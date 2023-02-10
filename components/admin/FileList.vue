@@ -4,7 +4,7 @@
       <h2>{{ title }}</h2>
     </div>
     <div class="admin-filelist__content">
-      <div class="admin-filelist__content-fixsed">
+      <div @click="$emit('clickPhoto')" class="admin-filelist__content-fixsed">
         <img v-if="icon" :src="require(`@/assets/img/admin/${icon}`)" alt="" />
       </div>
       <div class="admin-filelist__content-wrapper">
@@ -14,10 +14,21 @@
             :key="item.id"
             class="admin-filelist__content-img"
           >
-            <img src="@/assets/img/home/TheHistory.png" alt="" />
-            <span>
-              <img src="@/assets/img/admin/trash.png" alt="" />
-            </span>
+            <div :class="[{ 'admin-filelist__content-indicators': indicator }]">
+              <img src="@/assets/img/home/TheHistory.png" alt="" />
+              <div v-if="indicator">
+                <p>Hunarler</p>
+                <p>154</p>
+              </div>
+            </div>
+            <div class="admin-filelist__content-events">
+              <span>
+                <img src="@/assets/img/admin/trash.png" alt="" />
+              </span>
+              <span v-if="edit">
+                <img src="@/assets/img/admin/edit.png" alt="" />
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -45,6 +56,14 @@ export default {
     items: {
       type: Array,
       default: () => [],
+    },
+    edit: {
+      type: Boolean,
+      default: () => false,
+    },
+    indicator: {
+      type: Boolean,
+      default: () => false,
     },
   },
 }
@@ -123,17 +142,50 @@ export default {
         object-position: center;
         object-fit: cover;
       }
+    }
+    &-events {
+      display: flex;
+      flex-direction: column;
       span {
         padding: 4px;
         background: var(--background-second);
         border-radius: 4px;
         margin-left: 10px;
         cursor: pointer;
+        margin-bottom: 5px;
         img {
           width: 16px;
           height: 16px;
           object-fit: cover;
           object-position: center;
+        }
+      }
+    }
+    &-indicators {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 37px;
+      img {
+        width: 60px;
+        height: 60px;
+        margin-right: 18px;
+      }
+      p {
+        text-align: center;
+        &:first-child {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #16ab65;
+        }
+        &:nth-child(2) {
+          font-weight: 400;
+          font-size: 17.4667px;
+          line-height: 20px;
+          text-align: center;
+          color: #333333;
         }
       }
     }

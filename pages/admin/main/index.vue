@@ -10,6 +10,9 @@ const SubMenu = () => import('~/components/admin/SubMenu.vue')
 
 export default {
   layout: 'admin',
+  middleware(app) {
+    // return app.redirect(app.app.localePath('/admin/main/slider'))
+  },
   components: {
     SubMenu,
   },
@@ -48,6 +51,9 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.$router.push('/admin/main/slider')
   },
 }
 </script>

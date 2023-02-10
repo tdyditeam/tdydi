@@ -46,9 +46,14 @@ export default {
     '@nuxtjs/i18n',
     '@nuxt/image',
   ],
-
+  env: {
+    baseURL: process.env.baseURL,
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: { baseURL: `${process.env.BASE_API}` },
+  axios: {
+    baseURL: process.env.baseURL,
+    retry: true,
+  },
 
   i18n: {
     baseUrl: `${process.env.SITE_URL}`,
