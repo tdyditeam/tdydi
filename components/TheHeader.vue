@@ -148,11 +148,6 @@ export default {
           name: 'Biz barada',
           path: '/about-us',
           subMenus: [
-            // {
-            //   id: 5,
-            //   name: 'Institutyň taryhy',
-            //   path: '/about-us',
-            // },
             {
               id: 1,
               name: 'Rektorat',
@@ -190,64 +185,59 @@ export default {
               name: 'Hazyna çeper höwesjeňler merkezi',
               path: '/about-us/trade-union',
             },
-            // {
-            //   id: 8,
-            //   name: 'Terbiýeçilik işleri',
-            //   path: '/about-us/student-youth-organization',
-            // },
           ],
         },
         {
           id: 3,
           name: 'Bilim',
-          path: '/education',
+          path: '/education/skills',
           subMenus: [
             {
               id: 1,
               name: 'Hünärler',
-              path: '/education',
+              path: '/education/skills',
             },
             {
               id: 2,
               name: 'Bakalawr taýýarlyk ugurlar',
-              path: '/education',
+              path: '/education/undergraduate-courses',
             },
             {
               id: 3,
               name: 'Magistr taýýarlyk ugurlar',
-              path: '/education',
-            },
-            {
-              id: 4,
-              name: 'Okuwlaryň tertibi',
-              path: '/education',
+              path: '/education/masters-training-courses',
             },
           ],
         },
         {
           id: 4,
           name: 'Ylym ',
-          path: '/science',
+          path: '/science/postgraduate',
           subMenus: [
             {
               id: 1,
-              name: 'Aspirantura',
-              path: '/science',
+              name: 'Aspirantura bölümi',
+              path: '/science/postgraduate',
             },
             {
               id: 2,
               name: 'Ylmy barlag we taslama işleri',
-              path: '/science',
+              path: '/science/research-and-project-work',
             },
             {
               id: 3,
               name: 'Ykdysady innowasiýalar merkezi',
-              path: '/science',
+              path: '/science/center-for-economic-innovation',
             },
             {
               id: 4,
+              name: 'Ylmy maslahatlar',
+              path: '/science/scientific-advice',
+            },
+            {
+              id: 5,
               name: 'Ylmy gurnaklar',
-              path: '/science',
+              path: '/science/scientific-institutions',
             },
           ],
         },

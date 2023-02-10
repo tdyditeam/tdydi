@@ -53,12 +53,6 @@ export default {
           exact: false,
         },
         {
-          id: 8,
-          name: 'Jemgyýeti öwreniş ylymlary',
-          path: '/about-us/library/social-studies',
-          exact: false,
-        },
-        {
           id: 9,
           name: 'Dünýä ykdysadyýeti',
           path: '/about-us/library/world-economy',
@@ -98,12 +92,6 @@ export default {
           id: 15,
           name: 'Ýokary matematika we informatika',
           path: '/about-us/library/advanced-mathematics-and-computer-science',
-          exact: false,
-        },
-        {
-          id: 16,
-          name: 'Bedenterbiýe',
-          path: '/about-us/library/physical-education',
           exact: false,
         },
       ],

@@ -7,18 +7,18 @@
             <img src="@/assets/img/home/footer/logo.png" alt="logo" />
           </div>
           <div class="left-block-footer__adress">
-            744000, Türkmenistan Aşgabat, 1972 (Atatürk) köçesi, 73
+            Aşgabat ş., 1972-nji (Atatürk) köçe, 73,
           </div>
         </div>
         <div class="left-block-footer__about-wrapper">
           <div class="left-block-footer__about">
             <span>Faks:</span>
-            <span>(+993 12) 48-62-04</span>
+            <span>(+993 12) 48-62-89, (+993 12) 48-62-75</span>
           </div>
-          <div class="left-block-footer__about">
+          <!-- <div class="left-block-footer__about">
             <span>Telefon:</span>
-            <span>(+993 12) 48-62-31</span>
-          </div>
+            <span>(+993 12) 48-62-75</span>
+          </div> -->
           <div class="left-block-footer__about">
             <span>Email:</span>
             <span>info@tsiem.edu.tm</span>
