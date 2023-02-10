@@ -49,9 +49,6 @@ export default {
       ],
     }
   },
-  mounted() {
-    this.$router.push('/admin/main/slider')
-  },
 }
 </script>
 

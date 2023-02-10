@@ -5,7 +5,9 @@
 <script>
 export default {
   layout: 'admin',
-  mounted() {},
+  middleware(app) {
+    return app.redirect(app.app.localePath('/admin/main/slider'))
+  },
 }
 </script>
 

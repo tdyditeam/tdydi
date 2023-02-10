@@ -37,13 +37,14 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxt/image'],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
+    '@nuxt/image',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
