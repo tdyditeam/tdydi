@@ -56,46 +56,50 @@
         <div class="header__bottom-container __container">
           <div class="header__bottom-container-body">
             <div class="header__bottom-menu">
-              <nuxt-link :to="'/'" class="header__bottom-items" exact>
+              <nuxt-link
+                :to="localePath('/')"
+                class="header__bottom-items"
+                exact
+              >
                 <span>Baş sahypa</span><span></span>
               </nuxt-link>
-              <nuxt-link
-                v-for="item in menus"
-                :key="item.id"
-                :to="localePath(`${item.path}`)"
-                class="header__bottom-items"
-              >
-                <span>{{ item.name }}</span>
-                <span></span>
-                <div class="header__bottom-submenu-container">
-                  <ul class="header__bottom-submenu __container">
-                    <li
-                      v-for="subMenu in item.subMenus"
-                      :key="subMenu.id"
-                      class="header__bottom-subitems"
-                    >
-                      <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
-                        <span>{{ subMenu.name }}</span>
-                      </nuxt-link>
-                    </li>
-                  </ul>
-                </div>
-              </nuxt-link>
+              <client-only v-for="item in menus" :key="item.id">
+                <nuxt-link
+                  :to="localePath(`${item.path}`)"
+                  class="header__bottom-items"
+                >
+                  <span>{{ item.name }}</span>
+                  <span></span>
+                  <div class="header__bottom-submenu-container">
+                    <div class="header__bottom-submenu __container">
+                      <div
+                        v-for="subMenu in item.subMenus"
+                        :key="subMenu.id"
+                        class="header__bottom-subitems"
+                      >
+                        <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
+                          <span>{{ subMenu.name }}</span>
+                        </nuxt-link>
+                      </div>
+                    </div>
+                  </div>
+                </nuxt-link>
+              </client-only>
             </div>
           </div>
         </div>
       </div>
-      <div
+      <!-- <div
         :class="[
           'header__mobile-bottom __container',
           { active: isMobileActive },
         ]"
       >
         <nav class="header__mobile-bottom-menu menu-mobile">
-          <ul class="menu-mobile__list">
-            <li v-for="item in menus" :key="item.id" class="menu-mobile__item">
+          <div class="menu-mobile__list">
+            <div v-for="item in menus" :key="item.id" class="menu-mobile__item">
               <div class="menu-mobile__link-wrapper">
-                <a href="#" class="menu-mobile__link">{{ item.name }}</a>
+                <div class="menu-mobile__link">{{ item.name }}</div>
                 <div class="menu-mobile__icon">
                   <img
                     src="@/assets/img/home/header/icon-right.svg"
@@ -103,19 +107,17 @@
                   />
                 </div>
               </div>
-              <ul class="menu-mobile__sub-list">
-                <li
+              <div class="menu-mobile__sub-list">
+                <div
                   v-for="subMenu in item.subMenus"
                   :key="subMenu.id"
                   class="menu-mobile__sub-item"
                 >
-                  <a href="" class="menu-mobile__sub-link">{{
-                    subMenu.name
-                  }}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+                  <div class="menu-mobile__sub-link">{{ subMenu.name }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </nav>
         <div class="header__mobile-lng-wrapper">
           <div class="header__mobile-lng-block active">
@@ -128,9 +130,9 @@
             <span class="header__mobile-lng">ENG</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-    <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup>
+    <!-- <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup> -->
   </header>
 </template>
 

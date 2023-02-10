@@ -130,6 +130,7 @@ export default {
   },
   data() {
     return {
+      swiperSmallOptions: null,
       // options: {
       //   loop: true,
       //   slidesPerView: 1,

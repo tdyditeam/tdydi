@@ -11,6 +11,8 @@
   </div>
 </template>
 <script>
+import news from '@/static/json/news'
+
 export default {
   name: 'IndexPage',
 

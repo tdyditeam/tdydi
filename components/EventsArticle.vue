@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import news from '@/static/json/news'
+
 export default {
   props: {
     events: {
@@ -36,6 +38,7 @@ export default {
   },
   data() {
     return {
+      news: news,
       options: {
         spaceBetween: 30,
         loop: false,
