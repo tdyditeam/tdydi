@@ -58,8 +58,8 @@
             <div class="header__bottom-menu">
               <nuxt-link
                 :to="localePath('/')"
-                class="header__bottom-items"
                 exact
+                class="header__bottom-items"
               >
                 <span>Baş sahypa</span><span></span>
               </nuxt-link>
@@ -147,6 +147,7 @@ export default {
           id: 2,
           name: 'Biz barada',
           path: '/about-us',
+          exact: false,
           subMenus: [
             {
               id: 1,
@@ -191,6 +192,7 @@ export default {
           id: 3,
           name: 'Bilim',
           path: '/education/skills',
+          exact: false,
           subMenus: [
             {
               id: 1,
@@ -213,6 +215,7 @@ export default {
           id: 4,
           name: 'Ylym ',
           path: '/science/postgraduate',
+          exact: false,
           subMenus: [
             {
               id: 1,
@@ -244,61 +247,74 @@ export default {
         {
           id: 5,
           name: 'Halkara hyzmatdaşlygy',
-          path: '/international-cooperation',
+          path: '/international-cooperation/international-partners',
+          exact: false,
           subMenus: [
             {
               id: 1,
               name: 'Halkara hyzmatdaşlar',
-              path: '/international-cooperation',
+              path: '/international-cooperation/international-partners',
             },
             {
               id: 2,
               name: 'Halkara maslahatlar',
-              path: '/international-cooperation',
+              path: '/international-cooperation/international-tips',
             },
             {
               id: 3,
-              name: 'Meýletinçiler Tasis-Tempus',
-              path: '/international-cooperation',
+              name: 'Halkara taslamalar',
+              path: '/international-cooperation/international-projects',
             },
           ],
         },
         {
           id: 7,
           name: 'Bäsleşikler',
-          path: '/competitions',
+          path: '/competitions/lesson-competitions',
+          exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Döwlet bäsleşikler',
-              path: '/competitions',
-            },
-            {
-              id: 2,
-              name: 'Taslama bäsleşikler',
-              path: '/competitions',
+              name: 'Ders bäsleşikler',
+              path: '/competitions/lesson-competitions',
             },
             {
               id: 3,
-              name: 'Halkara bäsleşikler',
-              path: '/competitions',
+              name: 'Ylmy bäsleşikler',
+              path: '/competitions/scientific-competitions',
+            },
+            {
+              id: 4,
+              name: 'Ýylyň mugallymy bäsleşigi',
+              path: '/competitions/teacher-of-the-year-competitions',
+            },
+            {
+              id: 5,
+              name: 'Ýylyň talyby bäsleşigi',
+              path: '/competitions/student-of-the-year-competitions',
+            },
+            {
+              id: 7,
+              name: 'Halkara onlaýn internet ders bäsleşikleri',
+              path: '/competitions/international-online-internet-course-competitions',
             },
           ],
         },
         {
           id: 6,
           name: 'Dalaşgär-2023',
-          path: '/candidate',
+          path: '/candidate/undergraduate',
+          exact: false,
           subMenus: [
             {
               id: 1,
               name: 'Bakalawr taýýarlyk ugurlary',
-              path: '/competitions',
+              path: '/candidate/undergraduate',
             },
             {
               id: 2,
               name: 'Magistr taýýarlyk ugurlary',
-              path: '/competitions',
+              path: '/candidate/magistr',
             },
           ],
         },

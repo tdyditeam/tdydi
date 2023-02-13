@@ -60,7 +60,6 @@ export default {
     async fetchMainIamges() {
       try {
         const res = await request({ url: '/admin/main-images', method: 'GET' })
-        console.log(res)
       } catch (error) {
         console.log(error)
       }

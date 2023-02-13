@@ -13,9 +13,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.block__row {
-  display: flex;
-  justify-content: space-between;
-}
-</style>
+<style lang="scss" scoped></style>

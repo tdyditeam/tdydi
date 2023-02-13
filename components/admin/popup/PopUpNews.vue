@@ -154,7 +154,6 @@ export default {
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
-      console.log(this.newsImg)
     },
 
     toggleLang(id, key) {
@@ -174,7 +173,6 @@ export default {
       } catch (error) {
         console.log(error)
       }
-      console.log(this.main.description.tm)
     },
   },
 }

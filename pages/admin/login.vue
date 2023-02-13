@@ -60,13 +60,11 @@ export default {
   methods: {
     logIn() {
       if (!this.userData.name || !this.userData.password) {
-        console.log('if')
         this.error = false
         setTimeout(() => {
           this.error = true
         }, 0)
       } else {
-        console.log(this.userData)
       }
     },
   },
