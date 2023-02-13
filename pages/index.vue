@@ -2,6 +2,7 @@
   <div>
     <the-banner></the-banner>
     <section class="__container">
+      <the-banner-outside></the-banner-outside>
       <the-history></the-history>
       <the-events></the-events>
       <the-publication></the-publication>
