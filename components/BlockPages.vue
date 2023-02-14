@@ -76,7 +76,7 @@ export default {
   border-radius: 10px;
 }
 .block__description-content {
-  min-width: 900px;
+  max-width: 900px;
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;

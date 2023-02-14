@@ -111,7 +111,6 @@ export default {
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
-      console.log(this.newsImg)
     },
 
     toggleLang(id, key) {
@@ -121,7 +120,6 @@ export default {
 
     async save() {
       const formData = new FormData()
-      console.log(this.main)
       //   formData.append('title  ', this.main.title[this.activeKey])
       //   formData.append('description   ', this.main.description[this.activeKey])
       //   formData.append('date', this.newsDate)

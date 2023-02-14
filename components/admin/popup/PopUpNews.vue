@@ -159,13 +159,8 @@ export default {
     }
   },
   methods: {
-    async change(event) {
-      this.newsImg = URL.createObjectURL(event.target.files[0])
-      const data = await this.fileUpload('/api/news', event.target.files[0])
-    },
-    async changeStudent(event) {
-      this.studentImg = URL.createObjectURL(event.target.files[0])
-      const data = await this.fileUpload('/api/news', event.target.files[0])
+    change(event) {
+      this.newsImg = this.changeImage(event)
     },
     toggleLang(id, key) {
       this.activeLang = id
@@ -202,7 +197,6 @@ export default {
       } catch (error) {
         console.log(error)
       }
-      console.log(this.main.description.tm)
     },
   },
 }
