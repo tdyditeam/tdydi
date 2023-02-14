@@ -160,7 +160,12 @@ export default {
   },
   methods: {
     change(event) {
-      this.newsImg = this.changeImage(event)
+      this.newsImg = URL.createObjectURL(event.target.files[0])
+    },
+    changeStudent(event) {
+      this.studentImg = URL.createObjectURL(event.target.files[0])
+
+      //   this.newsImg = this.changeImage(event)
     },
     toggleLang(id, key) {
       this.activeLang = id
@@ -168,31 +173,42 @@ export default {
     },
 
     async save() {
-      let arr = [
-        {
-          title: this.main.title.tm,
-          description: this.main.title.tm,
-          student_fullname: this.main.nameStudent.tm,
-          teacher_fullname: this.main.nameTeacher.tm,
-          lang: 'tm',
-        },
-        {
-          title: this.main.title.ru,
-          description: this.main.title.ru,
-          student_fullname: this.main.nameStudent.ru,
-          teacher_fullname: this.main.nameTeacher.ru,
-          lang: 'ru',
-        },
-        {
-          title: this.main.title.en,
-          description: this.main.title.en,
-          student_fullname: this.main.nameStudent.en,
-          teacher_fullname: this.main.nameTeacher.en,
-          lang: 'en',
-        },
-      ]
+      //   let arr = [
+      //     {
+      //       title: this.main.title.tm,
+      //       description: this.main.description.tm,
+      //       student_full_name: this.main.nameStudent.tm,
+      //       teacher_full_name: this.main.nameTeacher.tm,
+      //       date: this.newsDate,
+      //       lang: 'tm',
+      //     },
+      //     {
+      //       title: this.main.title.ru,
+      //       description: this.main.description.ru,
+      //       student_full_name: this.main.nameStudent.ru,
+      //       teacher_full_name: this.main.nameTeacher.ru,
+      //       date: this.newsDate,
+      //       lang: 'ru',
+      //     },
+      //     {
+      //       title: this.main.title.en,
+      //       description: this.main.description.en,
+      //       student_fullname: this.main.nameStudent.en,
+      //       teacher_fullname: this.main.nameTeacher.en,
+      //       date: this.newsDate,
+      //       lang: 'en',
+      //     },
+      //   ]
+      let arr = {
+        title: this.main.title.en,
+        description: this.main.description.en,
+        student_fullname: this.main.nameStudent.en,
+        teacher_fullname: this.main.nameTeacher.en,
+        date: this.newsDate,
+        lang: 'en',
+      }
       try {
-        const res = await request({ url: '/api/news', data: arr })
+        const res = await request({ url: '/news', data: arr })
         console.log(res)
       } catch (error) {
         console.log(error)

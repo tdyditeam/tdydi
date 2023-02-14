@@ -59,6 +59,7 @@
 
 <script>
 const PopUpNews = () => import('~/components/admin/popup/PopUpNews.vue')
+import { request } from '@/api/generic.api'
 
 export default {
   components: { PopUpNews },
@@ -68,9 +69,21 @@ export default {
       popupNews: false,
     }
   },
+  async mounted() {
+    await this.fetchNews()
+  },
   methods: {
     openPupup() {
       this.popupNews = true
+    },
+
+    async fetchNews() {
+      try {
+        const response = await request({ url: '/news?lang=en', method: 'GET' })
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }

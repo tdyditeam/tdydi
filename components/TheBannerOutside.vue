@@ -3,12 +3,12 @@
     <div class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/01.png" alt="img" />
+          <img src="@/assets/img/home/banners-outside/banner.png" alt="img" />
         </div>
-        <div class="banners-outside__image">
+        <!-- <div class="banners-outside__image">
           <img src="@/assets/img/home/banners-outside/02.png" alt="img" />
-        </div>
-        <div class="banners-outside__items items-banners-outside">
+        </div> -->
+        <!-- <div class="banners-outside__items items-banners-outside">
           <div class="items-banners-outside__image">
             <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
           </div>
@@ -21,14 +21,17 @@
           <div class="items-banners-outside__image">
             <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="banners-outside__bannner-right">
         <div class="banners-outside__image">
           <img src="@/assets/img/home/banners-outside/04.png" alt="img" />
         </div>
         <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/05.png" alt="img" />
+          <img
+            src="@/assets/img/home/banners-outside/bannerRight.png"
+            alt="img"
+          />
         </div>
       </div>
     </div>
