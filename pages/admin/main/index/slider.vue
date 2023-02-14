@@ -54,7 +54,7 @@ export default {
     }
   },
   async mounted() {
-    // await this.fetchMainIamges()
+    await this.fetchMainIamges()
   },
   methods: {
     async fetchMainIamges() {

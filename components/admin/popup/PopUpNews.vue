@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-3 row-4">
           <div class="popup__image">
-            <img v-if="newsImg?.blobFile" :src="newsImg.blobFile" alt="" />
+            <img v-if="newsImg" :src="newsImg" alt="" />
             <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
             <input
               @change="change"
@@ -47,10 +47,10 @@
 
         <div class="col-3 row-4">
           <div class="popup__image">
-            <img v-if="newsImg?.blobFile" :src="newsImg.blobFile" alt="" />
+            <img v-if="studentImg" :src="studentImg" alt="" />
             <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
             <input
-              @change="change"
+              @change="changeStudent"
               accept=".jpg, .jpeg, .png"
               class="popup__image-input"
               type="file"
@@ -59,15 +59,15 @@
         </div>
         <div class="col-7">
           <text-filed
-            :value="main.nameWriter[activeKey]"
-            @updateValue="(val) => (main.nameWriter[activeKey] = val)"
+            :value="main.nameTeacher[activeKey]"
+            @updateValue="(val) => (main.nameTeacher[activeKey] = val)"
             label="Mugallym"
           ></text-filed>
         </div>
         <div class="col-7">
           <text-filed
-            :value="main.nameWriter[activeKey]"
-            @updateValue="(val) => (main.nameWriter[activeKey] = val)"
+            :value="main.nameStudent[activeKey]"
+            @updateValue="(val) => (main.nameStudent[activeKey] = val)"
             label="Talyp"
           ></text-filed>
         </div>
@@ -95,18 +95,20 @@
 
 <script>
 import { request } from '@/api/generic.api'
-import changeImage from '@/mixins/changeImage'
+// import changeImage from '@/mixins/changeImage'
+import fileUpload from '@/mixins/fileUpload'
 const Editor = () => import('@/components/admin/Editor.vue')
 
 export default {
   components: {
     Editor,
   },
-  mixins: [changeImage],
+  mixins: [fileUpload],
 
   data() {
     return {
       newsImg: null,
+      studentImg: null,
       activeLang: 1,
       activeKey: 'tm',
       newsDate: '',
@@ -138,7 +140,12 @@ export default {
           ru: '',
           en: '',
         },
-        nameWriter: {
+        nameTeacher: {
+          tm: '',
+          ru: '',
+          en: '',
+        },
+        nameStudent: {
           tm: '',
           ru: '',
           en: '',
@@ -152,25 +159,46 @@ export default {
     }
   },
   methods: {
-    change(event) {
-      this.newsImg = this.changeImage(event)
-      console.log(this.newsImg)
+    async change(event) {
+      this.newsImg = URL.createObjectURL(event.target.files[0])
+      const data = await this.fileUpload('/api/news', event.target.files[0])
     },
-
+    async changeStudent(event) {
+      this.studentImg = URL.createObjectURL(event.target.files[0])
+      const data = await this.fileUpload('/api/news', event.target.files[0])
+    },
     toggleLang(id, key) {
       this.activeLang = id
       this.activeKey = key
     },
 
     async save() {
-      const formData = new FormData()
-      formData.append('title  ', this.main.title[this.activeKey])
-      formData.append('description   ', this.main.description[this.activeKey])
-      formData.append('date', this.newsDate)
-      formData.append('student_firstname', this.main.nameWriter[this.activeKey])
-      formData.append('student_firstname', this.main.nameWriter[this.activeKey])
+      let arr = [
+        {
+          title: this.main.title.tm,
+          description: this.main.title.tm,
+          student_fullname: this.main.nameStudent.tm,
+          teacher_fullname: this.main.nameTeacher.tm,
+          lang: 'tm',
+        },
+        {
+          title: this.main.title.ru,
+          description: this.main.title.ru,
+          student_fullname: this.main.nameStudent.ru,
+          teacher_fullname: this.main.nameTeacher.ru,
+          lang: 'ru',
+        },
+        {
+          title: this.main.title.en,
+          description: this.main.title.en,
+          student_fullname: this.main.nameStudent.en,
+          teacher_fullname: this.main.nameTeacher.en,
+          lang: 'en',
+        },
+      ]
       try {
-        const res = await request({ url: '' })
+        const res = await request({ url: '/api/news', data: arr })
+        console.log(res)
       } catch (error) {
         console.log(error)
       }
