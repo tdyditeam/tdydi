@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <!-- <div
+      <div
         :class="[
           'header__mobile-bottom __container',
           { active: isMobileActive },
@@ -130,9 +130,9 @@
             <span class="header__mobile-lng">ENG</span>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-    <!-- <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup> -->
+    <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup>
   </header>
 </template>
 
@@ -298,6 +298,11 @@ export default {
               name: 'Halkara onlaýn internet ders bäsleşikleri',
               path: '/competitions/international-online-internet-course-competitions',
             },
+            {
+              id: 8,
+              name: 'Halkara bäsleşikler',
+              path: '/competitions/international-competitions',
+            },
           ],
         },
         {
@@ -355,7 +360,7 @@ export default {
   top: 0px;
   background: #fff;
   z-index: 200;
-  //   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   @media (max-width: 992px) {
     position: fixed;
     width: 100%;
@@ -461,6 +466,12 @@ export default {
     display: none;
     &.scroll {
       background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      .header__mobile-burger {
+        span {
+          background-color: #fff;
+        }
+      }
     }
     @media (max-width: 992px) {
       display: flex;
@@ -484,7 +495,6 @@ export default {
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
-      color: #f5f5f5;
       @media (max-width: 767px) {
         font-size: 16px;
       }
@@ -517,7 +527,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: var(--white);
+        background-color: #333333;
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;
@@ -630,6 +640,8 @@ export default {
       transition: 0.3s ease;
       overflow: auto;
       z-index: 5;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
     }
     &-submenu {
       display: flex;
@@ -806,7 +818,9 @@ export default {
   &__sub-item {
     display: flex;
     position: relative;
-    &:hover {
+    transition: all 0.3s ease 0s;
+    &:hover,
+    &._active {
       padding-left: 15px;
       &:before {
         content: '';
