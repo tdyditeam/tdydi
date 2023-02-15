@@ -30,7 +30,11 @@
             <tr v-for="(item, i) in 20" :key="item" class="table__body-row">
               <td class="table__body-col">{{ i }}</td>
               <td class="table__body-col">
-                <img src="@/assets/img/home/TheHistory.png" alt="" />
+                <img
+                  class="table__body-col__image"
+                  src="@/assets/img/home/TheHistory.png"
+                  alt=""
+                />
               </td>
               <td class="table__body-col"></td>
               <td class="table__body-col"></td>
@@ -55,6 +59,7 @@
 
 <script>
 const PopUpNews = () => import('~/components/admin/popup/PopUpNews.vue')
+import { request } from '@/api/generic.api'
 
 export default {
   components: { PopUpNews },
@@ -64,9 +69,21 @@ export default {
       popupNews: false,
     }
   },
+  async mounted() {
+    await this.fetchNews()
+  },
   methods: {
     openPupup() {
       this.popupNews = true
+    },
+
+    async fetchNews() {
+      try {
+        const response = await request({ url: '/news?lang=en', method: 'GET' })
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }
@@ -108,21 +125,25 @@ export default {
     &-col {
       text-align: left;
       padding-left: 10px;
+      &__image {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+      }
       &:nth-child(9) {
         width: 20px;
+        img {
+          width: 25px;
+          height: 25px;
+        }
       }
       &:nth-child(10) {
         width: 20px;
         padding-right: 10px;
         img {
-          width: 45px;
-          height: 45px;
+          width: 25px;
+          height: 25px;
         }
-      }
-      img {
-        width: 70px;
-        height: 70px;
-        padding: 10px;
       }
     }
   }

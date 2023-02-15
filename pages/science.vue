@@ -1,5 +1,7 @@
 <template>
   <div class="__container">
+    <the-banner-outside></the-banner-outside>
+
     <!-- <bread-crumbs></bread-crumbs> -->
     <nuxt-child></nuxt-child>
   </div>
