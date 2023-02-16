@@ -205,6 +205,7 @@ export default {
         student_fullname: this.main.nameStudent.en,
         teacher_fullname: this.main.nameTeacher.en,
         date: this.newsDate,
+        images_path: '/some.png',
         lang: 'en',
       }
       try {

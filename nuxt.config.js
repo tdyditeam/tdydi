@@ -61,12 +61,12 @@ export default {
       {
         code: 'tm',
         lang: 'TM',
-        name: 'TM',
+        name: 'Tm',
         iso: 'tm-TM',
         file: 'tm',
         isCatchallLocale: true,
       },
-      { code: 'ru', lang: 'RU', name: 'RU', iso: 'ru-RU', file: 'ru' },
+      { code: 'ru', lang: 'RU', name: 'Ru', iso: 'ru-RU', file: 'ru' },
       { code: 'en', lang: 'EN', name: 'en', iso: 'en-EN', file: 'en' },
     ],
     defaultLocale: 'tm',
@@ -76,6 +76,7 @@ export default {
       messages: {
         tm,
         ru,
+        en,
       },
     },
   },
