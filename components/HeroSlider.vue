@@ -62,14 +62,22 @@ export default {
           id: 1,
           path: '/1.jpg',
         },
-        {
-          id: 2,
-          path: '/main-slider1.jpg',
-        },
+        // {
+        //   id: 2,
+        //   path: '/TDYweDI_2.jpg',
+        // },
         {
           id: 3,
-          path: '/main-slider2.jpg',
+          path: '/TDYweDI_3.jpg',
         },
+        // {
+        //   id: 4,
+        //   path: '/TDYweDI_4.jpg',
+        // },
+        // {
+        //   id: 5,
+        //   path: '/sliderImage.jpg',
+        // },
       ],
     }
   },
