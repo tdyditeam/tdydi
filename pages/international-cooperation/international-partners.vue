@@ -1,5 +1,8 @@
 <template>
-  <block-pages :description="description" :title="title"></block-pages>
+  <section>
+    <block-pages :description="description" :title="title"></block-pages>
+    <the-table></the-table>
+  </section>
 </template>
 
 <script>
