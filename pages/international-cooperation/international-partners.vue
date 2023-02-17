@@ -3,7 +3,7 @@
     <bread-crumbs></bread-crumbs>
     <block-pages :description="description" :title="title"></block-pages>
     <div class="international-partners__image">
-      <img src="@/assets/img/international-partners/01.png" alt="img" />
+      <img src="@/assets/img/international-partners/00.png" alt="img" />
     </div>
     <p class="international-partners__text">
       Bilim ulgamynda halkara hyzmatdaşlygyny berkitmek we hünärmenleri
@@ -237,7 +237,8 @@ export default {
   }
 
   &__image {
-    width: 200px;
+    width: 150px;
+    height: 150px;
     img {
       width: 100%;
       height: 100%;
