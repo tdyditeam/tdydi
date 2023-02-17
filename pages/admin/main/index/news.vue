@@ -80,7 +80,6 @@ export default {
     async fetchNews() {
       try {
         const response = await request({ url: '/news?lang=en', method: 'GET' })
-        console.log(response)
       } catch (error) {
         console.log(error)
       }

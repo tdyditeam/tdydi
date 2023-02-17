@@ -4,6 +4,7 @@
       :title="'TÄZELIKLER'"
       :activeId="activeId"
       :items="items"
+      isAll
       @change="change"
     >
     </the-title-block>

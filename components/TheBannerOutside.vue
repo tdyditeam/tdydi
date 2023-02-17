@@ -70,6 +70,8 @@ export default {}
     &:first-child {
       margin-bottom: 40px;
     }
+    width: 100%;
+    height: 100%;
     img {
       width: 100%;
       height: 100%;

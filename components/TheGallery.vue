@@ -3,9 +3,10 @@
     <the-title-block
       :title="'Galereýa'"
       :items="items"
+      :activeId="activeId"
       @change="change"
     ></the-title-block>
-    <gallery-photo v-if="isActive"></gallery-photo>
+    <gallery-photo v-if="activeId == 1"></gallery-photo>
     <gallery-video v-else></gallery-video>
   </div>
 </template>
@@ -14,29 +15,22 @@
 export default {
   data() {
     return {
-      isActive: true,
+      activeId: 1,
       items: [
         {
           id: 1,
-          name: 'Photo',
-          dark: false,
-          active: true,
+          name: 'Suratlar',
         },
         {
-          id: 3,
-          name: 'Video',
-          dark: false,
-          active: false,
+          id: 2,
+          name: 'Videolar',
         },
       ],
     }
   },
   methods: {
     change(data) {
-      const find = this.items.find((item) => item.active === true)
-      find.active = false
-      data.active = true
-      this.isActive = !this.isActive
+      this.activeId = data.id
     },
   },
 }

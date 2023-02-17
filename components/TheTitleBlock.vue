@@ -15,6 +15,7 @@
           {{ item && item.name }}
         </button>
         <button
+          v-if="isAll"
           @click="$router.push(localeLocation(`/events/${activeId}`))"
           class="buttons-title-block__button buttons-title-block__button--green buttons-title-block__button--dark"
         >
@@ -43,6 +44,10 @@ export default {
     activeId: {
       type: Number,
       default: 1,
+    },
+    isAll: {
+      type: Boolean,
+      default: () => false,
     },
   },
 }

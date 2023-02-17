@@ -44,7 +44,6 @@
           <span class="editor__label">Makala</span>
           <editor v-model="main.description[activeKey]" class="editor" />
         </div>
-
         <div class="col-3 row-4">
           <div class="popup__image">
             <img v-if="studentImg" :src="studentImg" alt="" />
@@ -177,6 +176,7 @@ export default {
 
     async save() {
       const formData = new FormData()
+      console.log(this.main.description.tm)
       formData.append('title', this.main.title.en)
       formData.append('description', this.main.description.en)
       formData.append('student_fullname', this.main.nameTeacher.en)
@@ -221,7 +221,6 @@ export default {
       }
       try {
         const res = await request({ url: '/news', data: formData })
-        console.log(res)
       } catch (error) {
         console.log(error)
       }

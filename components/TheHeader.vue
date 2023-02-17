@@ -195,13 +195,13 @@ export default {
         {
           id: 3,
           name: this.$t('header.menu.education.name'),
-          path: '/education/skills',
+          path: '/education',
           exact: false,
           subMenus: [
             {
               id: 1,
               name: this.$t('header.menu.education.skills'),
-              path: '/education/skills',
+              path: '/education',
             },
             {
               id: 2,
@@ -218,13 +218,13 @@ export default {
         {
           id: 4,
           name: this.$t('header.menu.science.name'),
-          path: '/science/postgraduate',
+          path: '/science',
           exact: false,
           subMenus: [
             {
               id: 1,
               name: this.$t('header.menu.science.postgraduate'),
-              path: '/science/postgraduate',
+              path: '/science',
             },
             {
               id: 2,
@@ -251,7 +251,7 @@ export default {
         {
           id: 5,
           name: this.$t('header.menu.internationalCooperation.name'),
-          path: '/international-cooperation/international-partners',
+          path: '/international-cooperation',
           exact: false,
           subMenus: [
             {
@@ -259,7 +259,7 @@ export default {
               name: this.$t(
                 'header.menu.internationalCooperation.internationalPartners'
               ),
-              path: '/international-cooperation/international-partners',
+              path: '/international-cooperation',
             },
             {
               id: 2,
@@ -281,13 +281,13 @@ export default {
         {
           id: 7,
           name: this.$t('header.menu.competitions.name'),
-          path: '/competitions/lesson-competitions',
+          path: '/competitions',
           exact: false,
           subMenus: [
             {
               id: 1,
               name: this.$t('header.menu.competitions.lessonCompetitions'),
-              path: '/competitions/lesson-competitions',
+              path: '/competitions',
             },
             {
               id: 3,
@@ -311,23 +311,18 @@ export default {
               ),
               path: '/competitions/international-online-internet-course-competitions',
             },
-            {
-              id: 8,
-              name: 'Halkara bäsleşikler',
-              path: '/competitions/international-competitions',
-            },
           ],
         },
         {
           id: 6,
           name: this.$t('header.menu.candidate.name'),
-          path: '/candidate/undergraduate',
+          path: '/candidate',
           exact: false,
           subMenus: [
             {
               id: 1,
               name: this.$t('header.menu.candidate.name'),
-              path: '/candidate/undergraduate',
+              path: '/candidate',
             },
             {
               id: 2,
