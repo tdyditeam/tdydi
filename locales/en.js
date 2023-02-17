@@ -1,7 +1,7 @@
 export default {
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
-			we dolandyryş instituty`,
+		  we dolandyryş instituty`,
     menu: {
       main: 'Baş sahypa',
       aboutUs: {
@@ -36,6 +36,7 @@ export default {
       },
       competitions: {
         name: 'Bäsleşikler',
+        lessonCompetitions: 'Ders bäsleşikler',
         scientificCompetitions: 'Ylmy bäsleşikler',
         teacherCompetitions: 'Ýylyň mugallymy bäsleşigi',
         studentCompetitions: 'Ýylyň talyby bäsleşigi',

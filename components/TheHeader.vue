@@ -160,7 +160,7 @@ export default {
             },
             {
               id: 2,
-              name: this.$t('header.menu.aboutUs.faculties'),
+              name: this.$t('header.menu.aboutUs.fakulties'),
               path: '/about-us/faculties/economical',
             },
             {
@@ -243,9 +243,7 @@ export default {
             },
             {
               id: 5,
-              name: this.$t(
-                'header.menu.science.scientifiscientificInstitutionscAdvice'
-              ),
+              name: this.$t('header.menu.science.scientificInstitutions'),
               path: '/science/scientific-institutions',
             },
           ],
@@ -269,6 +267,7 @@ export default {
               name: this.$t(
                 'header.menu.internationalCooperation.internationalTips'
               ),
+              path: '/international-cooperation/international-tips',
             },
             {
               id: 3,
@@ -340,18 +339,7 @@ export default {
       ],
     }
   },
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
-    },
-    activeLocale() {
-      const [activeLocale] = this.$i18n.locales.filter(
-        (i) => i.code === this.$i18n.locale
-      )
-      console.log(activeLocale.name)
-      return activeLocale.name
-    },
-  },
+  computed: {},
   mounted() {
     let className = 'scroll'
     let scrollTrigger = 30
@@ -666,8 +654,8 @@ export default {
       transition: 0.3s ease;
       overflow: auto;
       z-index: 5;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
+      //   border-top: 1px solid #000;
+      //   border-bottom: 1px solid #000;
     }
     &-submenu {
       display: flex;

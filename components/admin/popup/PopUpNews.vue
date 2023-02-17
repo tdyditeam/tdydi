@@ -111,6 +111,7 @@ export default {
       studentImg: null,
       activeLang: 1,
       activeKey: 'tm',
+      images: null,
       newsDate: '',
       langs: [
         {
@@ -161,6 +162,8 @@ export default {
   methods: {
     change(event) {
       this.newsImg = URL.createObjectURL(event.target.files[0])
+      this.images = event.target.files[0]
+      //   fileUpload('', event.target.files[0])
     },
     changeStudent(event) {
       this.studentImg = URL.createObjectURL(event.target.files[0])
@@ -173,6 +176,14 @@ export default {
     },
 
     async save() {
+      const formData = new FormData()
+      formData.append('title', this.main.title.en)
+      formData.append('description', this.main.description.en)
+      formData.append('student_fullname', this.main.nameTeacher.en)
+      formData.append('teacher_fullname', this.main.nameStudent.en)
+      formData.append('date', this.newsDate)
+      formData.append('images', this.images)
+      formData.append('lang', 'en')
       //   let arr = [
       //     {
       //       title: this.main.title.tm,
@@ -209,7 +220,7 @@ export default {
         lang: 'en',
       }
       try {
-        const res = await request({ url: '/news', data: arr })
+        const res = await request({ url: '/news', data: formData })
         console.log(res)
       } catch (error) {
         console.log(error)
