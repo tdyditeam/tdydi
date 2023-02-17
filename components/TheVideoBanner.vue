@@ -10,8 +10,8 @@
           <img v-if="!status" src="@/assets/img/home/play.svg" alt="" />
           <img v-else src="@/assets/img/home/pouse.svg" alt="" />
         </div>
-        <div class="banner__video-time">{{ duration }}</div>
-        <div class="banner__video-maxsimize">
+        <div class="banner__video-time">{{}}</div>
+        <div @click="fullscreen" class="banner__video-maxsimize">
           <img src="@/assets/img/home/maxsimize.png" alt="" />
         </div>
       </div>
@@ -35,6 +35,10 @@ export default {
       } else {
         video.play()
       }
+    },
+    fullscreen() {
+      let video = document.getElementById('videos')
+      video.requestFullscreen()
     },
   },
   mounted() {
