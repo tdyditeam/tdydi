@@ -1,7 +1,7 @@
 export default {
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
-			we dolandyryş instituty`,
+		  we dolandyryş instituty`,
     menu: {
       main: 'Baş sahypa',
       aboutUs: {
@@ -20,6 +20,12 @@ export default {
         undergraduateCourses: 'Bakalawr taýýarlyk ugurlar',
         mastersCourses: 'Magistr taýýarlyk ugurlar',
       },
+      internationalCooperation: {
+        name: 'Halkara hyzmatdaşlygy',
+        internationalPartners: 'Halkara hyzmatdaşlar',
+        internationalTips: 'Halkara maslahatlar',
+        internationalProjects: 'Halkara taslamalar',
+      },
       science: {
         name: 'Ylym',
         postgraduate: 'Aspirantura bölümi',
@@ -28,14 +34,9 @@ export default {
         scientificAdvice: 'Ylmy maslahatlar',
         scientificInstitutions: 'Ylmy gurnaklar',
       },
-      internationalCooperation: {
-        name: 'Halkara hyzmatdaşlygy',
-        internationalPartners: 'Halkara hyzmatdaşlar',
-        internationalTips: 'Halkara maslahatlar',
-        internationalProjects: 'Halkara taslamalar',
-      },
       competitions: {
         name: 'Bäsleşikler',
+        lessonCompetitions: 'Ders bäsleşikler',
         scientificCompetitions: 'Ylmy bäsleşikler',
         teacherCompetitions: 'Ýylyň mugallymy bäsleşigi',
         studentCompetitions: 'Ýylyň talyby bäsleşigi',
