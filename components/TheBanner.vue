@@ -4,6 +4,7 @@
     <the-banner-title></the-banner-title>
     <the-banner-statistics></the-banner-statistics>
     <the-video-banner></the-video-banner>
+
     <!-- <div class="banner-figure__wrapper">
       <div class="banner-figure__content"></div>
     </div>
