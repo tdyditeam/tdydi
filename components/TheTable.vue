@@ -15,12 +15,7 @@
           <tbody>
             <tr class="table__row">
               <td>1</td>
-              <td>
-                <div class="table__img" v-if="img">
-                  <img src="@/assets/img/news/news1.jpg" alt="" />
-                </div>
-                <span v-else>Rejepow Taçmyrat Çarymyradowiç</span>
-              </td>
+              <td>Rejepow Taçmyrat Çarymyradowiç</td>
               <td>
                 Buhgalterçilik hasaba alnyşy we audit taýýarlyk ugrunyň 1-nji
                 ýyl talyby

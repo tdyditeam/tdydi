@@ -20,7 +20,6 @@
               :class="['lang__item', { _active: $i18n.locale == locale.code }]"
               v-for="locale in $i18n.locales"
               :key="locale.code"
-              exact
               :to="switchLocalePath(locale.code)"
             >
               {{ locale.name }}
