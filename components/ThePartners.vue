@@ -1,6 +1,6 @@
 <template>
   <div class="partners">
-    <the-title-block :title="'Hyzmatdaşlar'"></the-title-block>
+    <the-title-block :title="$t('button.partners')"></the-title-block>
     <partners-swiper></partners-swiper>
   </div>
 </template>
@@ -9,6 +9,4 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

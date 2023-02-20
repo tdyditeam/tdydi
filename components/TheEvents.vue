@@ -1,7 +1,7 @@
 <template>
   <div class="events">
     <the-title-block
-      :title="'TÄZELIKLER'"
+      :title="$t('button.news')"
       :activeId="activeId"
       :items="items"
       isAll
@@ -20,16 +20,6 @@ export default {
   data() {
     return {
       activeId: 1,
-      items: [
-        {
-          id: 1,
-          name: 'Täzelikler',
-        },
-        {
-          id: 2,
-          name: 'Makalalar',
-        },
-      ],
       news: [
         {
           id: 1,
@@ -107,6 +97,21 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    items() {
+      let arr = [
+        {
+          id: 1,
+          name: this.$t('button.news'),
+        },
+        {
+          id: 2,
+          name: this.$t('button.articles'),
+        },
+      ]
+      return arr
+    },
   },
   methods: {
     change(item) {

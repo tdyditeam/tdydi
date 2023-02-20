@@ -1,33 +1,24 @@
 <template>
   <div class="institute-history">
     <div class="institute-history__row">
-      <div class="institute-history__title-mobile">Institutyň taryhy</div>
+      <div class="institute-history__title-mobile">
+        {{ $t('history.title') }}
+      </div>
       <div class="institute-history__image">
         <img src="@/assets/img/home/TheHistory.png" alt="surat" />
       </div>
       <div class="institute-history__body">
         <div class="institute-history__content">
-          <div class="institute-history__title">Institutyň taryhy</div>
-          <div class="institute-history__text">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berkarar döwletiň täze
-            eýýamynyň Galkynyşy döwründe hormatly Prezidentimiz Serdar
-            Berdimuhamedowyň başda durmagynda ylmyň we tehnikanyň gazananlaryny
-            ykdysadyýet bilen berk utgaşdyrmak, jemgyýetiň bar bolan ähli
-            mümkinçiliklerini doly güýje girizmek we şonuň esasynda
-            Türkmenistany innowasion döwlete öwürmek, häzirki zaman ýokary
-            tehnologik senagaty kemala getirmek, bäsdeşlige ukyply taýýar
-            önümleri öndürmek döwletimiziň baş strategik ugry bolup durýar. Şu
-            maksady durmuşa geçirmekde ýokary derejeli ykdysatçy hünärmenlere
-            uly orun degişli bolup, olar Türkmen döwlet ykdysadyýet we
-            dolandyryş institutynda taýýarlanylýar. Institut 1980-nji ýylyň
-            31-nji ýanwarynda Türkmen halk hojalyk instituty ady bilen Türkmen
-            döwlet uniwersitetiniň binýadynda döredildi.
-          </div>
+          <div class="institute-history__title">{{ $t('history.title') }}</div>
+          <div
+            v-html="$t('history.text')"
+            class="institute-history__text"
+          ></div>
         </div>
         <div class="institute-history__button">
           <base-button
             @click="$router.push(localeLocation('/about-us'))"
-            text="DOLY OKA"
+            :text="$t('button.readMore')"
             appendIcon
             isActive
             iconUrl="home/icon-about.svg"
