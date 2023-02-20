@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <the-title-block
-      :title="'Galereýa'"
+      :title="$t('button.galerey')"
       :items="items"
       :activeId="activeId"
       @change="change"

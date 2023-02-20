@@ -1,41 +1,50 @@
 export default {
+  slogan: `  ARKADAG SERDARLY <br />
+	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  button: {
+    readMore: 'читать далее',
+    news: 'Новости',
+    publications: 'ПЕЧАТНЫЕ ИЗДАНИЯ',
+    galerey: 'ГАЛЕРЕЯ',
+    partners: 'ПАРТНЕРЫ',
+    all: 'All',
+  },
   header: {
-    name: `  Türkmen döwlet ykdysadyýet <br />
-		we dolandyryş instituty`,
+    name: `ТУРКМЕНСКИЙ ГОСУДАРСТВЕННЫЙ ИНСТИТУТ <br /> ЭКОНОМИКИ И УПРАВЛЕНИЯ`,
     menu: {
-      main: 'Baş sahypa',
+      main: 'ГЛАВНАЯ',
       aboutUs: {
-        name: 'Biz barada',
-        rektorat: 'Rektorat',
-        fakulties: 'Falultetlar',
-        departments: 'Kafedralar',
-        publicOrganizations: 'Jemgyýetçilik guramalary',
-        studyCenter: 'Okuw merkezleri',
-        library: 'Kitaphana',
-        tradeUnion: 'Hazyna çeper höwesjeňler merkezi',
+        name: 'О нас',
+        rektorat: 'Ректорат',
+        fakulties: 'Факультеты',
+        departments: 'Кафедры',
+        publicOrganizations: 'Общественные организации',
+        studyCenter: 'Учебные центры',
+        library: 'Библиотека',
+        tradeUnion: 'Центр художественной самодеятельности «Хазына»',
       },
       education: {
-        name: 'Bilim',
-        skills: 'Hünärler',
-        undergraduateCourses: 'Bakalawr taýýarlyk ugurlar',
-        mastersCourses: 'Magistr taýýarlyk ugurlar',
+        name: 'ОБРАЗОВАНИЕ',
+        skills: 'Специальности',
+        undergraduateCourses: 'Направления подготовки бакалавров',
+        mastersCourses: 'Направления подготовки магистров',
       },
       internationalCooperation: {
-        name: 'Halkara hyzmatdaşlygy',
-        internationalPartners: 'Halkara hyzmatdaşlar',
-        internationalTips: 'Halkara maslahatlar',
-        internationalProjects: 'Halkara taslamalar',
+        name: 'МЕЖДУНАРОДНОЕ СОТРУДНИЧЕСТВО',
+        internationalPartners: 'Международные партнеры',
+        internationalTips: 'Международные конференции',
+        internationalProjects: 'Волонтеры Tasis-Tempus',
       },
       science: {
-        name: 'Ylym',
-        postgraduate: 'Aspirantura bölümi',
-        researchProjectWork: 'Ylmy barlag we taslama işleri',
-        centerEconomicInnovation: 'Ykdysady innowasiýalar merkezi',
+        name: 'НАУКА',
+        postgraduate: 'Аспирантура',
+        researchProjectWork: 'Научно-исследовательские и проектные работы',
+        centerEconomicInnovation: 'Центр экономических инноваций',
         scientificAdvice: 'Ylmy maslahatlar',
-        scientificInstitutions: 'Ylmy gurnaklar',
+        scientificInstitutions: 'Научные кружки',
       },
       competitions: {
-        name: 'Bäsleşikler',
+        name: 'ОЛИМПИАДЫ',
         lessonCompetitions: 'Ders bäsleşikler',
         scientificCompetitions: 'Ylmy bäsleşikler',
         teacherCompetitions: 'Ýylyň mugallymy bäsleşigi',
@@ -43,10 +52,28 @@ export default {
         internationalCompetitions: 'Halkara onlaýn internet ders bäsleşikleri',
       },
       candidate: {
-        name: 'Dalaşgär-2023',
-        undergraduate: 'Bakalawr taýýarlyk ugurlary',
-        magistr: 'Magistr taýýarlyk ugurlary',
+        name: 'ПОСТУПЛЕНИЕ 2023',
+        undergraduate: 'Направления подготовки бакалавров',
+        magistr: 'Направления подготовки магистров',
       },
     },
+  },
+  statistics: {
+    teacher: 'Учители',
+    students: 'Студенты',
+    master: 'Магистры',
+  },
+  history: {
+    title: 'ИСТОРИЯ ИНСТИТУТА',
+    text: `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Президент Туркменистана Сердар Бердымухамедов в 
+	соответствии с требованиями эры Возрождения новой эпохи могущественного государства ставит перед 
+	экономистами важную стратегическую задачу: соединить достижения науки и техники с экономикой, привести в 
+	действие весь потенциал общества, тем самым превратить Туркменистан в инновационную державу с 
+	высокотехнологичной промышленностью, выпускающей готовую конкурентоспособную продукцию.
+	Огромная роль в осуществлении этой задачи принадлежит высококвалифицированным специалистам эконмического
+	 профиля, подготовку которых осуществляет Туркменский государственный институт экономики и управления.
+	Институт был образован 31 января 1980 года на базе экономического факультета ТГУ и стал именоваться 
+	Туркменский институт народного хозяйства.
+	`,
   },
 }

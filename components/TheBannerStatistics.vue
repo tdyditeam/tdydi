@@ -5,7 +5,7 @@
         <img src="@/assets/icons/faculti.png" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>Fakultetler</span>
+        <span>{{ $t('header.menu.aboutUs.fakulties') }}</span>
         <span class="counter" :data-target="faculti">4</span>
       </div>
     </div>
@@ -14,7 +14,7 @@
         <img src="@/assets/icons/hunaler.png" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>Hünärler</span>
+        <span>{{ $t('header.menu.education.skills') }}</span>
         <span class="counter" :data-target="skill">52</span>
       </div>
     </div>
@@ -23,7 +23,7 @@
         <img src="@/assets/icons/teacher.png" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>Mugallymlar</span>
+        <span>{{ $t('statistics.teacher') }}</span>
         <span class="counter" :data-target="teacher">0</span>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <img src="@/assets/icons/student.png" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>Talyplar</span>
+        <span>{{ $t('statistics.students') }}</span>
         <span class="counter" :data-target="student">0</span>
       </div>
     </div>
@@ -41,7 +41,7 @@
         <img src="@/assets/icons/student.png" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>Magistrler</span>
+        <span>{{ $t('statistics.master') }}</span>
         <span class="counter" :data-target="magistr">0</span>
       </div>
     </div>

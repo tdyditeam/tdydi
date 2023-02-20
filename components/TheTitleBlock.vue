@@ -19,7 +19,7 @@
           @click="$router.push(localeLocation(`/events/${activeId}`))"
           class="buttons-title-block__button buttons-title-block__button--green buttons-title-block__button--dark"
         >
-          Hemmesi
+          {{ $t('button.all') }}
         </button>
       </div>
     </div>

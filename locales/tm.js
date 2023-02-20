@@ -1,4 +1,15 @@
 export default {
+  slogan: `  ARKADAG SERDARLY <br />
+	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  button: {
+    readMore: 'Doly oka',
+    news: 'Täzelikler',
+    publications: 'Neşirler',
+    galerey: 'Galereýa',
+    partners: 'Hyzmatdaşlar',
+    all: 'Hemmesi',
+    articles: 'Makalalar',
+  },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
 		  we dolandyryş instituty`,
@@ -48,5 +59,26 @@ export default {
         magistr: 'Magistr taýýarlyk ugurlary',
       },
     },
+  },
+  statistics: {
+    teacher: 'Mugallymlar',
+    students: 'Talyplar',
+    master: 'Magistrlar',
+  },
+  history: {
+    title: 'Institutyň taryhy',
+    text: `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berkarar döwletiň täze
+	eýýamynyň Galkynyşy döwründe hormatly Prezidentimiz Serdar
+	Berdimuhamedowyň başda durmagynda ylmyň we tehnikanyň gazananlaryny
+	ykdysadyýet bilen berk utgaşdyrmak, jemgyýetiň bar bolan ähli
+	mümkinçiliklerini doly güýje girizmek we şonuň esasynda
+	Türkmenistany innowasion döwlete öwürmek, häzirki zaman ýokary
+	tehnologik senagaty kemala getirmek, bäsdeşlige ukyply taýýar
+	önümleri öndürmek döwletimiziň baş strategik ugry bolup durýar. Şu
+	maksady durmuşa geçirmekde ýokary derejeli ykdysatçy hünärmenlere
+	uly orun degişli bolup, olar Türkmen döwlet ykdysadyýet we
+	dolandyryş institutynda taýýarlanylýar. Institut 1980-nji ýylyň
+	31-nji ýanwarynda Türkmen halk hojalyk instituty ady bilen Türkmen
+	döwlet uniwersitetiniň binýadynda döredildi.`,
   },
 }

@@ -2,7 +2,7 @@
   <div class="banner__video">
     <div class="banner__video-wrapper">
       <!--  -->
-      <video id="videos" autoplay>
+      <video id="videos" autoplay muted loop poster="banner.png">
         <source src="@/assets/video/video.mp4" />
       </video>
       <div class="banner__video-controls">
@@ -10,7 +10,7 @@
           <img v-if="!status" src="@/assets/img/home/play.svg" alt="" />
           <img v-else src="@/assets/img/home/pouse.svg" alt="" />
         </div>
-        <div class="banner__video-time">{{}}</div>
+        <div class="banner__video-time"></div>
         <div @click="fullscreen" class="banner__video-maxsimize">
           <img src="@/assets/img/home/maxsimize.png" alt="" />
         </div>
@@ -53,7 +53,7 @@ export default {
   position: absolute;
   width: 500px;
   height: 300px;
-  bottom: 30px;
+  bottom: 50px;
   right: 30px;
   z-index: 5;
   border-radius: 20px;

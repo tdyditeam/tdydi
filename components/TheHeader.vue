@@ -67,7 +67,7 @@
                 <span>{{ $t('header.menu.main') }}</span
                 ><span></span>
               </nuxt-link>
-              <client-only v-for="item in menus" :key="item.id">
+              <client-only v-for="item in menuItems" :key="item.id">
                 <nuxt-link
                   :to="localePath(`${item.path}`)"
                   class="header__bottom-items"
@@ -101,7 +101,11 @@
       >
         <nav class="header__mobile-bottom-menu menu-mobile">
           <div class="menu-mobile__list">
-            <div v-for="item in menus" :key="item.id" class="menu-mobile__item">
+            <div
+              v-for="item in menuItems"
+              :key="item.id"
+              class="menu-mobile__item"
+            >
               <div class="menu-mobile__link-wrapper">
                 <div class="menu-mobile__link">{{ item.name }}</div>
                 <div class="menu-mobile__icon">
@@ -146,7 +150,11 @@ export default {
     return {
       isActive: false,
       isMobileActive: false,
-      menus: [
+    }
+  },
+  computed: {
+    menuItems() {
+      let menus = [
         {
           id: 2,
           name: this.$t('header.menu.aboutUs.name'),
@@ -331,10 +339,10 @@ export default {
             },
           ],
         },
-      ],
-    }
+      ]
+      return menus
+    },
   },
-  computed: {},
   mounted() {
     let className = 'scroll'
     let scrollTrigger = 30
