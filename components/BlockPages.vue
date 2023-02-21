@@ -72,7 +72,7 @@ export default {
 .block__description-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 10px;
 }
 .block__description-content {

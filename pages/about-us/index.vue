@@ -1,5 +1,9 @@
 <template>
-  <block-pages :description="description" :title="title"></block-pages>
+  <block-pages
+    :description="description"
+    :title="title"
+    :img="img"
+  ></block-pages>
 </template>
 
 <script>
@@ -7,6 +11,7 @@ export default {
   data() {
     return {
       title: 'Biz barada',
+      img: 'image.png',
       description: `
 	  Berkarar döwletiň täze eýýamynyň Galkynyşy döwründe hormatly
           Prezidentimiz Serdar Berdimuhamedowyň başda durmagynda ylmyň we
