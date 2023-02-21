@@ -3,9 +3,8 @@
     <div class="banner__title-img">
       <img src="/logo2022.png" alt="" />
     </div>
-    <div class="banner__title-text">
-      ARKADAG SERDARLY <br />
-      BAGTYÝAR ÝAŞLAR ÝYLY
+    <div v-html="$t('slogan')" class="banner__title-text">
+    
     </div>
   </div>
 </template>

@@ -7,7 +7,8 @@ export default {
     publications: 'ПЕЧАТНЫЕ ИЗДАНИЯ',
     galerey: 'ГАЛЕРЕЯ',
     partners: 'ПАРТНЕРЫ',
-    all: 'All',
+    all: 'Все',
+	articles: 'Статии',
   },
   header: {
     name: `ТУРКМЕНСКИЙ ГОСУДАРСТВЕННЫЙ ИНСТИТУТ <br /> ЭКОНОМИКИ И УПРАВЛЕНИЯ`,
