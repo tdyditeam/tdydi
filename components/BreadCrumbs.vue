@@ -1,19 +1,29 @@
 <template>
   <ul class="breadcrumbs">
-    <li class="breadcrumbs__list">
-      <a href="#" class="breadcrumbs__item">Biz barada</a>
-    </li>
-    <li class="breadcrumbs__list">
-      <a href="#" class="breadcrumbs__item">Wakalar</a>
-    </li>
-    <li class="breadcrumbs__list active">
-      <a href="#" class="breadcrumbs__item">Täzelikler</a>
+    <li
+      class="breadcrumbs__list"
+      v-for="breadCrumb in breadCrumbs"
+      :key="breadCrumb.id"
+    >
+      <nuxt-link
+        :to="localePath(`${breadCrumb.path}`)"
+        :exact="breadCrumb.exact"
+        class="breadcrumbs__item"
+        >{{ breadCrumb.name }}</nuxt-link
+      >
     </li>
   </ul>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    breadCrumbs: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
