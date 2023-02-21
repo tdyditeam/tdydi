@@ -18,6 +18,7 @@
           <div class="languages">
             <nuxt-link
               :class="['lang__item', { _active: $i18n.locale == locale.code }]"
+              exact
               v-for="locale in $i18n.locales"
               :key="locale.code"
               :to="switchLocalePath(locale.code)"
