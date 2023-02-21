@@ -14,7 +14,7 @@ export default {
     name: `TURKMEN STATE INSTITUTE <br /> OF ECONOMICS 
 	AND MANAGEMENT`,
     menu: {
-      main: 'Main page',
+      main: 'MAIN PAGE',
       aboutUs: {
         name: 'ABOUT US',
         rektorat: 'Rectorate',
