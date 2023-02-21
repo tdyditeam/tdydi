@@ -613,6 +613,7 @@ export default {
       display: flex;
       flex-direction: column;
       color: var(--text);
+      text-transform: uppercase;
       span:nth-child(1) {
         margin-top: 8px;
       }
