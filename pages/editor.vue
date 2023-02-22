@@ -4,8 +4,7 @@
     <span class="editor__label">Makala</span>
     <editor v-model="text" class="editor" />
   </div>
-  <button @click="textto" style="height: 25px; width: 100px;">bas</button>
-  <div  style="height: 25px; width: 500px; padding:50px">
+  <div  style="height: 25px; width: 500px; padding:50px; border:1px solid #eee; margin-left:50px">
 	{{ text }}
   </div>
 	</div>

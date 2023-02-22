@@ -14,33 +14,34 @@ export default {
       subMenus: [
         {
           id: 0,
-          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Partiýa guramasy',
+          name: this.$t('publicOrganizations.first.title'),
           path: '/about-us/public-organizations/0',
           exact: true,
         },
         {
           id: 1,
-          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Kärdeşler arkalaşygynyň ilkinji guramasy',
+          name: this.$t('publicOrganizations.second.title'),
           path: '/about-us/public-organizations/1',
           exact: true,
         },
         {
           id: 2,
-          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Ýaşlar guramasy',
+          name: this.$t('publicOrganizations.third.title'),
           path: '/about-us/public-organizations/2',
           exact: true,
         },
         {
           id: 3,
-          name: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Ilkinji Zenanlar guramasy',
+          name: this.$t('publicOrganizations.fourth.title'),
           path: '/about-us/public-organizations/3',
           exact: true,
         },
       ],
     }
   },
+
   mounted() {
-    this.$router.push('/about-us/public-organizations/0')
+    this.$router.push(this.localeLocation('/about-us/public-organizations/0'))
     document.querySelector('.wrapper').scrollTop = 0
   },
 }

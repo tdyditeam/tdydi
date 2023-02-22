@@ -181,7 +181,7 @@ export default {
             {
               id: 6,
               name: this.$t('header.menu.aboutUs.publicOrganizations'),
-              path: '/about-us/public-organizations',
+              path: '/about-us/public-organizations/0',
             },
 
             {
@@ -666,7 +666,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: auto;
+      //   overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
         display: none;

@@ -96,4 +96,22 @@ export default {
       'proffesional-development': `&nbsp&nbsp&nbsp&nbsp <p><span >Факультет Повышения квалификации является составной частью Туркменского государственного института экономики и управления, действующей с 2008 года.</span></p><p><span style="color: black">На факультете Повышения квалификации проводятся краткосрочные курсы повышения квалификации по Бухгалтерскому учету, Международным стандартам финансовой отчетности, Цифровой экономике и другой профессиональной деятельности, а также по конкретным отраслевым вопросам.</span></p><p><span style="color: black">В соответствии с утвержденным порядком все рабочие программы согласовываются с Министерством образования и утверждаются ректором Туркменского государственного института экономики и управления, что обеспечивает соблюдение образовательных стандартов, принятых в стране.</span></p><p><span style="color: black">На факультете обучаются специалисты банковских, финансовых, экономических структур, различных предприятий и организаций вне зависимости от формы собственности.</span></p><p><span style="color: black">Факультет повышения квалификации является важной структурой, обеспечивающей образование на протяжении всей профессиональной жизни в условиях рыночной экономики.</span></p>`,
     },
   },
+  publicOrganizations: {
+    first: {
+      title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Partiýa guramasy`,
+      description: ``,
+    },
+    second: {
+      title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Kärdeşler arkalaşygynyň ilkinji guramasy`,
+      description: ``,
+    },
+    third: {
+      title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Ýaşlar guramasy`,
+      description: ``,
+    },
+    fourth: {
+      title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Ilkinji Zenanlar guramasy`,
+      description: ``,
+    },
+  },
 }
