@@ -19,13 +19,13 @@ export default {
         {
           id: 2,
           name: '«Audit» okuw merkezi',
-          path: '/about-us/study-center/«Audit» okuw merkezi',
+          path: '/about-us/study-center/1',
           exact: true,
         },
         {
           id: 3,
           name: '«Hazyna» sport kluby',
-          path: '/about-us/study-center/«Hazyna» sport kluby',
+          path: '/about-us/study-center/2',
           exact: true,
         },
       ],

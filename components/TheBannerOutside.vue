@@ -4,7 +4,18 @@
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
           <img
+            v-if="$i18n.locale === 'tm'"
             src="@/assets/img/home/banners-outside/imageonline-co-gifimage.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'ru'"
+            src="@/assets/img/home/banners-outside/imageonline-co-gifimageRu.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'en'"
+            src="@/assets/img/home/banners-outside/imageonline-co-gifimageEn.gif"
             alt="img"
           />
         </div>
@@ -64,21 +75,22 @@ export default {}
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 238px;
     position: absolute;
-    left: -250px;
+    left: -280px;
+    cursor: pointer;
   }
 
   // .banners-outside__image
 
   &__image {
     &:first-child {
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
     }
     width: 100%;
     height: 100%;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
     }
   }
@@ -96,7 +108,11 @@ export default {}
     position: absolute;
     z-index: 300;
     top: 100;
-    right: -250px;
+    right: -280px;
+    cursor: pointer;
+    .banners-outside__image:last-child {
+      margin-top: 40px;
+    }
   }
 }
 .items-banners-outside {
