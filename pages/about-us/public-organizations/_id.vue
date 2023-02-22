@@ -1,14 +1,32 @@
 <template>
-  <block-pages
-    :description="description[$route.params.id]"
-    :title="title[$route.params.id]"
-  ></block-pages>
+  <section>
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
+    <block-pages
+      :description="description[$route.params.id]"
+      :title="title[$route.params.id]"
+    ></block-pages>
+  </section>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t('header.menu.aboutUs.name'),
+          path: '/about-us',
+          exact: true,
+        },
+        {
+          id: 3,
+          name: this.$t('header.menu.aboutUs.publicOrganizations'),
+          path: `/about-us/public-organizations/${this.$route.params.id}`,
+          exact: true,
+        },
+      ],
       title: {
         0: this.$t('publicOrganizations.first.title'),
         1: this.$t('publicOrganizations.second.title'),
