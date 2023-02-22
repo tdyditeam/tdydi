@@ -14,31 +14,31 @@ export default {
       subMenus: [
         {
           id: 1,
-          name: 'Ykdysadyýet',
+          name: this.$t('faculties.economical'),
           path: '/about-us/faculties/economical',
           exact: false,
         },
         {
           id: 2,
-          name: 'Maliýe',
+          name: this.$t('faculties.finanse'),
           path: '/about-us/faculties/finanse',
           exact: false,
         },
         {
           id: 3,
-          name: 'Menejment',
+          name: this.$t('faculties.managament'),
           path: '/about-us/faculties/managament',
           exact: false,
         },
         {
           id: 4,
-          name: 'Marketing',
+          name: this.$t('faculties.marketing'),
           path: '/about-us/faculties/marketing',
           exact: false,
         },
         {
           id: 5,
-          name: 'HÜNÄRI ÝOKARLANDYRYŞ',
+          name: this.$t('faculties.proffesional-development'),
           path: '/about-us/faculties/proffesional-development',
           exact: false,
         },

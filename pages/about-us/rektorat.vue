@@ -13,6 +13,8 @@
 export default {
   data() {
     return {
+      title: this.$t('header.menu.aboutUs.rektorat'),
+      description: this.$t('rectorat.description'),
       breadCrumbs: [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
@@ -28,11 +30,6 @@ export default {
           exact: true,
         },
       ],
-      title: 'Rektorat',
-      description: `Türkmenistanyň Prezidentiniň Türkmenistanyň ýokary 
-	  okuw mekdepleriniň gurluşyny tassyklamak hakynda 2019-njy ýylyň 
-	  12-nji iýunyndaky 1264 belgili karary esasynda Türkmen döwlet 
-	  ykdysadyýet we dolandyryş institutynyň täze gurluşy tassyklandy.`,
     }
   },
   mounted() {
