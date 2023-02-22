@@ -6,7 +6,9 @@
       <the-history></the-history>
       <the-events></the-events>
       <the-publication></the-publication>
+      <the-pointers></the-pointers>
       <the-gallery></the-gallery>
+      <the-view></the-view>
       <the-partners></the-partners>
     </section>
   </div>
