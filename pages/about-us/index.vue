@@ -1,12 +1,29 @@
 <template>
-  <block-pages :description="description" :title="title"></block-pages>
+  <section>
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
+    <block-pages
+      :description="description"
+      :title="title"
+      :img="img"
+    ></block-pages>
+  </section>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t('header.menu.aboutUs.name'),
+          path: '/about-us',
+          exact: true,
+        },
+      ],
       title: 'Biz barada',
+      img: 'image.png',
       description: `
 	  Berkarar döwletiň täze eýýamynyň Galkynyşy döwründe hormatly
           Prezidentimiz Serdar Berdimuhamedowyň başda durmagynda ylmyň we

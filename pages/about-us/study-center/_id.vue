@@ -1,6 +1,6 @@
 <template>
   <div class="study-center">
-    <bread-crumbs></bread-crumbs>
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
       :description="description[$route.params.id]"
       :title="title[$route.params.id]"
@@ -180,6 +180,21 @@
 export default {
   data() {
     return {
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t('header.menu.aboutUs.name'),
+          path: '/about-us',
+          exact: true,
+        },
+        {
+          id: 3,
+          name: this.$t('header.menu.aboutUs.studyCenter'),
+          path: `/about-us/study-center/${this.$route.params.id}`,
+          exact: true,
+        },
+      ],
       title: {
         0: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň  Ykdysatçy okuw merkezi',
         '«Audit» okuw merkezi': `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň   Audit okuw merkezi`,
@@ -241,7 +256,7 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
   flex-direction: column;
   gap: 40px;
   margin-bottom: 84px;
-  @media (max-width: 767px ) {
+  @media (max-width: 767px) {
     margin-bottom: 30px;
   }
   &__button {
@@ -264,9 +279,9 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
   margin-bottom: 50px;
   background: linear-gradient(0deg, #f2f2f2, #f2f2f2),
     linear-gradient(0deg, #f2f2f2, #f2f2f2), #f2f2f2;
-    @media (max-width: 767px) {
-      margin-bottom: 30px;
-    }
+  @media (max-width: 767px) {
+    margin-bottom: 30px;
+  }
   &__input-group {
     display: flex;
     flex-wrap: wrap;
@@ -302,7 +317,7 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
     display: flex;
     flex: 0 1 50%;
     gap: 20px;
-    @media (max-widtH: 767px) {
+    @media (max-width: 767px) {
       flex: 0 1 100%;
     }
   }

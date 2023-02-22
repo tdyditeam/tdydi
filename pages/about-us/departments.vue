@@ -12,7 +12,7 @@ export default {
       subMenus: [
         {
           id: 1,
-          name: 'Buhgalterçilik hasaba alnyşy we audit',
+          name: this.$t('departments.accounting.title'),
           path: '/about-us/departments/accounting',
           exact: false,
         },

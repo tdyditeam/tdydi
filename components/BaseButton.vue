@@ -1,6 +1,6 @@
 <template>
-  <div :class="['button', { active: isActive }]">
-    <button @click="$emit('click')">
+  <div :class="['button', { active: isActive }]" @click="$emit('click')">
+    <button>
       <span class="button__text">{{ text }}</span>
       <span class="button__append-icon" v-if="appendIcon"
         ><img :src="require(`@/assets/img/${iconUrl}`)" alt=""

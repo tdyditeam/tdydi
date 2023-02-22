@@ -6,10 +6,7 @@
           class="header__top-title"
           @click="$router.push(localeLocation('/'))"
         >
-          <h2>
-            Türkmen döwlet ykdysadyýet <br />
-            we dolandyryş instituty
-          </h2>
+          <h2 v-html="$t('header.name')"></h2>
         </div>
         <div
           class="header__top-logo"
@@ -19,9 +16,18 @@
         </div>
         <div class="header__top-content">
           <div class="languages">
-            <span class="_active">TM</span>
+            <nuxt-link
+              :class="['lang__item', { _active: $i18n.locale == locale.code }]"
+              exact
+              v-for="locale in $i18n.locales"
+              :key="locale.code"
+              :to="switchLocalePath(locale.code)"
+            >
+              {{ locale.name }}
+            </nuxt-link>
+            <!-- <span class="_active">TM</span>
             <span>RU</span>
-            <span>EN</span>
+            <span>EN</span> -->
           </div>
           <div class="contact" @click="showPopUp">Contact</div>
         </div>
@@ -37,10 +43,8 @@
           <div
             class="header__mobile-title"
             @click="$router.push(localeLocation('/'))"
-          >
-            Türkmen döwlet ykdysadyýet <br />
-            we dolandyryş instituty
-          </div>
+            v-html="$t('header.name')"
+          ></div>
         </div>
         <div
           @click="isMobileActive = !isMobileActive"
@@ -61,9 +65,10 @@
                 exact
                 class="header__bottom-items"
               >
-                <span>Baş sahypa</span><span></span>
+                <span>{{ $t('header.menu.main') }}</span
+                ><span></span>
               </nuxt-link>
-              <client-only v-for="item in menus" :key="item.id">
+              <client-only v-for="item in menuItems" :key="item.id">
                 <nuxt-link
                   :to="localePath(`${item.path}`)"
                   class="header__bottom-items"
@@ -97,7 +102,11 @@
       >
         <nav class="header__mobile-bottom-menu menu-mobile">
           <div class="menu-mobile__list">
-            <div v-for="item in menus" :key="item.id" class="menu-mobile__item">
+            <div
+              v-for="item in menuItems"
+              :key="item.id"
+              class="menu-mobile__item"
+            >
               <div class="menu-mobile__link-wrapper">
                 <div class="menu-mobile__link">{{ item.name }}</div>
                 <div class="menu-mobile__icon">
@@ -142,189 +151,198 @@ export default {
     return {
       isActive: false,
       isMobileActive: false,
-      menus: [
+    }
+  },
+  computed: {
+    menuItems() {
+      let menus = [
         {
           id: 2,
-          name: 'Biz barada',
+          name: this.$t('header.menu.aboutUs.name'),
           path: '/about-us',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Rektorat',
+              name: this.$t('header.menu.aboutUs.rektorat'),
               path: '/about-us/rektorat',
             },
             {
               id: 2,
-              name: 'Fakultetler',
+              name: this.$t('header.menu.aboutUs.fakulties'),
               path: '/about-us/faculties/economical',
             },
             {
               id: 3,
-              name: 'Kafedralar',
+              name: this.$t('header.menu.aboutUs.departments'),
               path: '/about-us/departments/accounting',
             },
 
             {
               id: 6,
-              name: 'Jemgyýetçilik guramalary',
-              path: '/about-us/public-organizations',
+              name: this.$t('header.menu.aboutUs.publicOrganizations'),
+              path: '/about-us/public-organizations/0',
             },
 
             {
               id: 9,
-              name: 'Okuw merkezleri',
+              name: this.$t('header.menu.aboutUs.studyCenter'),
               path: '/about-us/study-center',
             },
             {
               id: 10,
-              name: 'Kitaphana',
+              name: this.$t('header.menu.aboutUs.library'),
               path: '/about-us/library',
             },
             {
               id: 7,
-              name: 'Hazyna çeper höwesjeňler merkezi',
+              name: this.$t('header.menu.aboutUs.tradeUnion'),
               path: '/about-us/trade-union',
             },
           ],
         },
         {
           id: 3,
-          name: 'Bilim',
-          path: '/education/skills',
+          name: this.$t('header.menu.education.name'),
+          path: '/education',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Hünärler',
-              path: '/education/skills',
+              name: this.$t('header.menu.education.skills'),
+              path: '/education',
             },
             {
               id: 2,
-              name: 'Bakalawr taýýarlyk ugurlar',
+              name: this.$t('header.menu.education.undergraduateCourses'),
               path: '/education/undergraduate-courses',
             },
             {
               id: 3,
-              name: 'Magistr taýýarlyk ugurlar',
+              name: this.$t('header.menu.education.mastersCourses'),
               path: '/education/masters-training-courses',
             },
           ],
         },
         {
           id: 4,
-          name: 'Ylym ',
-          path: '/science/postgraduate',
+          name: this.$t('header.menu.science.name'),
+          path: '/science',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Aspirantura bölümi',
-              path: '/science/postgraduate',
+              name: this.$t('header.menu.science.postgraduate'),
+              path: '/science',
             },
             {
               id: 2,
-              name: 'Ylmy barlag we taslama işleri',
+              name: this.$t('header.menu.science.researchProjectWork'),
               path: '/science/research-and-project-work',
             },
             {
               id: 3,
-              name: 'Ykdysady innowasiýalar merkezi',
+              name: this.$t('header.menu.science.centerEconomicInnovation'),
               path: '/science/center-for-economic-innovation',
             },
             {
               id: 4,
-              name: 'Ylmy maslahatlar',
+              name: this.$t('header.menu.science.scientificAdvice'),
               path: '/science/scientific-advice',
             },
             {
               id: 5,
-              name: 'Ylmy gurnaklar',
+              name: this.$t('header.menu.science.scientificInstitutions'),
               path: '/science/scientific-institutions',
             },
           ],
         },
         {
           id: 5,
-          name: 'Halkara hyzmatdaşlygy',
-          path: '/international-cooperation/international-partners',
+          name: this.$t('header.menu.internationalCooperation.name'),
+          path: '/international-cooperation',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Halkara hyzmatdaşlar',
-              path: '/international-cooperation/international-partners',
+              name: this.$t(
+                'header.menu.internationalCooperation.internationalPartners'
+              ),
+              path: '/international-cooperation',
             },
             {
               id: 2,
               name: 'Halkara maslahatlar',
+              name: this.$t(
+                'header.menu.internationalCooperation.internationalTips'
+              ),
               path: '/international-cooperation/international-tips',
             },
             {
               id: 3,
-              name: 'Halkara taslamalar',
+              name: this.$t(
+                'header.menu.internationalCooperation.internationalProjects'
+              ),
               path: '/international-cooperation/international-projects',
             },
           ],
         },
         {
           id: 7,
-          name: 'Bäsleşikler',
-          path: '/competitions/lesson-competitions',
+          name: this.$t('header.menu.competitions.name'),
+          path: '/competitions',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Ders bäsleşikler',
-              path: '/competitions/lesson-competitions',
+              name: this.$t('header.menu.competitions.lessonCompetitions'),
+              path: '/competitions',
             },
             {
               id: 3,
-              name: 'Ylmy bäsleşikler',
+              name: this.$t('header.menu.competitions.scientificCompetitions'),
               path: '/competitions/scientific-competitions',
             },
             {
               id: 4,
-              name: 'Ýylyň mugallymy bäsleşigi',
+              name: this.$t('header.menu.competitions.teacherCompetitions'),
               path: '/competitions/teacher-of-the-year-competitions',
             },
             {
               id: 5,
-              name: 'Ýylyň talyby bäsleşigi',
+              name: this.$t('header.menu.competitions.studentCompetitions'),
               path: '/competitions/student-of-the-year-competitions',
             },
             {
               id: 7,
-              name: 'Halkara onlaýn internet ders bäsleşikleri',
+              name: this.$t(
+                'header.menu.competitions.internationalCompetitions'
+              ),
               path: '/competitions/international-online-internet-course-competitions',
-            },
-            {
-              id: 8,
-              name: 'Halkara bäsleşikler',
-              path: '/competitions/international-competitions',
             },
           ],
         },
         {
           id: 6,
-          name: 'Dalaşgär-2023',
-          path: '/candidate/undergraduate',
+          name: this.$t('header.menu.candidate.name'),
+          path: '/candidate',
           exact: false,
           subMenus: [
             {
               id: 1,
-              name: 'Bakalawr taýýarlyk ugurlary',
-              path: '/candidate/undergraduate',
+              name: this.$t('header.menu.candidate.name'),
+              path: '/candidate',
             },
             {
               id: 2,
-              name: 'Magistr taýýarlyk ugurlary',
+              name: this.$t('header.menu.candidate.magistr'),
               path: '/candidate/magistr',
             },
           ],
         },
-      ],
-    }
+      ]
+      return menus
+    },
   },
   mounted() {
     let className = 'scroll'
@@ -418,7 +436,7 @@ export default {
         transition: 2s ease;
         height: 25px;
         padding: 3px 0;
-        &:hover span {
+        &:hover .lang__item {
           &:nth-child(1) {
             transform: translateX(-75px);
           }
@@ -428,7 +446,7 @@ export default {
           opacity: 1;
           visibility: visible;
         }
-        span {
+        .lang__item {
           position: absolute;
           right: 0;
           opacity: 0;
@@ -595,6 +613,7 @@ export default {
       display: flex;
       flex-direction: column;
       color: var(--text);
+      text-transform: uppercase;
       span:nth-child(1) {
         margin-top: 8px;
       }
@@ -640,14 +659,14 @@ export default {
       transition: 0.3s ease;
       overflow: auto;
       z-index: 5;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
+      //   border-top: 1px solid #000;
+      //   border-bottom: 1px solid #000;
     }
     &-submenu {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: auto;
+      //   overflow: auto;
       &::-webkit-scrollbar-track {
         background: transparent;
         display: none;

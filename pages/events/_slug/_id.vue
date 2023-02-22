@@ -1,6 +1,7 @@
 <template>
   <div class="news-item __container">
     <bread-crumbs v-show="false"></bread-crumbs>
+    <the-banner-outside></the-banner-outside>
     <div class="news-item__content">
       <div class="news-item__header">
         <div class="news-item__header-title">

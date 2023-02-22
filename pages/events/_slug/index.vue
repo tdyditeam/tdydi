@@ -1,6 +1,7 @@
 <template>
   <div class="news __container">
     <!-- <bread-crumbs></bread-crumbs> -->
+    <the-banner-outside></the-banner-outside>
     <div class="news__header">
       <div class="news__header-search">
         <text-filed
