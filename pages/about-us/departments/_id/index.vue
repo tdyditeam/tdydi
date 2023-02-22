@@ -1,5 +1,6 @@
 <template>
   <section style="width: 100%">
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <title-block-pages
       isButton
       appendIcon
@@ -9,7 +10,11 @@
       :title="title[$route.params.id]"
       @clicked="
         $router.push(
-          localeLocation(`/about-us/departments/${$route.params.id}/1`)
+          localeLocation(
+            `/about-us/departments/${$route.params.id}/${
+              title[$route.params.id]
+            }`
+          )
         )
       "
     ></title-block-pages>
@@ -24,6 +29,21 @@
 export default {
   data() {
     return {
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t('header.menu.aboutUs.name'),
+          path: '/about-us',
+          exact: true,
+        },
+        {
+          id: 3,
+          name: this.$t('header.menu.aboutUs.departments'),
+          path: `/about-us/departments/${this.$route.params.id}`,
+          exact: true,
+        },
+      ],
       title: {
         accounting: 'Buhgalterçilik hasaba alnyşy we audit',
         statistic: 'Statistika',

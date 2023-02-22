@@ -24,8 +24,8 @@ export default {
         {
           id: 3,
           name: this.$t('header.menu.aboutUs.fakulties'),
-          path: '/about-us/faculties/economical',
-          exact: false,
+          path: `/about-us/faculties/${this.$route.params.id}`,
+          exact: true,
         },
       ],
       title: {

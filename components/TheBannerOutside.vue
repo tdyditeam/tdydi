@@ -3,7 +3,10 @@
     <div class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/banner.png" alt="img" />
+          <img
+            src="@/assets/img/home/banners-outside/imageonline-co-gifimage.gif"
+            alt="img"
+          />
         </div>
         <!-- <div class="banners-outside__image">
           <img src="@/assets/img/home/banners-outside/02.png" alt="img" />
