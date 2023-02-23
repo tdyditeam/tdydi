@@ -45,7 +45,7 @@ export default {}
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
       gap: 20px;
-    } 
+    }
   }
 
   &__item {
