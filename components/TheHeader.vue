@@ -25,11 +25,10 @@
             >
               {{ locale.name }}
             </nuxt-link>
-            <!-- <span class="_active">TM</span>
-            <span>RU</span>
-            <span>EN</span> -->
           </div>
-          <div class="contact" @click="showPopUp">Contact</div>
+          <div class="contact" @click="showPopUp">
+            {{ $t('button.contact') }}
+          </div>
         </div>
       </div>
       <div class="header__mobile __container">
@@ -129,15 +128,18 @@
           </div>
         </nav>
         <div class="header__mobile-lng-wrapper">
-          <div class="header__mobile-lng-block active">
-            <span class="header__mobile-lng">TKM</span>
-          </div>
-          <div class="header__mobile-lng-block">
-            <span class="header__mobile-lng">RUS</span>
-          </div>
-          <div class="header__mobile-lng-block">
-            <span class="header__mobile-lng">ENG</span>
-          </div>
+          <nuxt-link
+            :class="[
+              'header__mobile-lng-block',
+              { active: $i18n.locale == locale.code },
+            ]"
+            exact
+            v-for="locale in $i18n.locales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+          >
+            <span class="header__mobile-lng">{{ locale.name }}</span>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -177,13 +179,11 @@ export default {
               name: this.$t('header.menu.aboutUs.departments'),
               path: '/about-us/departments/accounting',
             },
-
             {
               id: 6,
               name: this.$t('header.menu.aboutUs.publicOrganizations'),
               path: '/about-us/public-organizations/0',
             },
-
             {
               id: 9,
               name: this.$t('header.menu.aboutUs.studyCenter'),
@@ -465,7 +465,6 @@ export default {
           }
         }
       }
-
       .contact {
         margin-left: 35px;
         position: relative;
@@ -482,7 +481,6 @@ export default {
       }
     }
   }
-
   &__mobile {
     display: none;
     &.scroll {
@@ -510,7 +508,6 @@ export default {
         gap: 2px;
       }
     }
-
     &-title {
       font-family: 'Gilroy';
       font-weight: 700;
@@ -523,7 +520,6 @@ export default {
         font-size: 14px;
       }
     }
-
     &-logo {
       flex: 0 1 64px;
       img {
@@ -531,7 +527,6 @@ export default {
         height: 100%;
       }
     }
-
     &-burger {
       display: none;
       cursor: pointer;
@@ -584,7 +579,6 @@ export default {
       }
     }
   }
-
   &__bottom {
     width: 100%;
     border-top: 1px solid var(--white);
@@ -595,10 +589,8 @@ export default {
     &-container {
       position: relative;
     }
-
     &-container-body {
     }
-
     &-menu {
       display: flex;
       align-items: center;
@@ -645,7 +637,6 @@ export default {
       // }
     }
     // &-submenu-container{
-
     // }
     &-submenu-container {
       position: absolute;
@@ -678,14 +669,12 @@ export default {
         background: var(--primary);
         display: none;
       }
-
       &::-webkit-scrollbar {
         background: transparent;
         display: none;
       }
       &::-webkit-scrollbar-corner {
         display: none;
-
         visibility: hidden;
         opacity: 0px;
       }
@@ -757,7 +746,6 @@ export default {
       gap: 54px;
       padding: 20px;
     }
-
     &-lng-block {
       padding: 6px;
       &.active {
@@ -767,7 +755,6 @@ export default {
         }
       }
     }
-
     &-lng {
       font-family: 'Gilroy';
       font-weight: 500;
@@ -792,7 +779,6 @@ export default {
     flex-direction: column;
     gap: 20px;
   }
-
   &__item {
     &:hover {
       .menu-mobile__sub-list {
@@ -806,12 +792,10 @@ export default {
       }
     }
   }
-
   &__link-wrapper {
     display: flex;
     justify-content: space-between;
   }
-
   &__link {
     font-weight: 700;
     font-size: 24px;
@@ -821,11 +805,9 @@ export default {
       font-size: 20px;
     }
   }
-
   &__icon {
     transition: all 0.3s;
   }
-
   &__sub-list {
     opacity: 0;
     visibility: hidden;
@@ -836,7 +818,6 @@ export default {
     margin-top: 10px;
     margin-left: 20px;
   }
-
   &__sub-item {
     display: flex;
     position: relative;
@@ -856,7 +837,6 @@ export default {
       }
     }
   }
-
   &__sub-link {
     font-weight: 500;
     font-size: 22px;

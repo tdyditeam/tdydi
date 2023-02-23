@@ -12,19 +12,19 @@ export default {
       subMenus: [
         {
           id: 1,
-          name: '«Ykdysatçy»okuwmerkezi',
+          name: this.$t('studyCenters.economistTraining.name'),
           path: '/about-us/study-center/0',
           exact: false,
         },
         {
           id: 2,
-          name: '«Audit» okuw merkezi',
+          name: this.$t('studyCenters.auditTraining.name'),
           path: '/about-us/study-center/1',
           exact: true,
         },
         {
           id: 3,
-          name: '«Hazyna» sport kluby',
+          name: this.$t('studyCenters.hazynaSportsClub.name'),
           path: '/about-us/study-center/2',
           exact: true,
         },
@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.push('/about-us/study-center/0')
+    // this.$router.push(localeLocation('/about-us/study-center/0'))
     document.querySelector('.wrapper').scrollTop = 0
   },
 }
