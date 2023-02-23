@@ -1,5 +1,11 @@
 <template>
   <div class="hero-slider">
+    <video class="banner__video" id="videos" autoplay muted loop poster="1.jpg">
+      <source src="@/assets/video/video.mp4" />
+    </video>
+    <div class="overlay"></div>
+  </div>
+  <!-- <div class="hero-slider">
     <div
       v-swiper:mySwiper="options"
       class="swiper-container hero-slider__slider"
@@ -10,26 +16,11 @@
           :key="img.id"
           class="swiper-slide hero-slider__img"
         >
-          <!-- <nuxt-img :src="img.path" /> -->
           <nuxt-img :src="img.path" alt="" />
         </div>
-        <!-- <div class="swiper-slide hero-slider__img">
-          <img src="/TDYweDI_3.jpg" alt="" />
-        </div>
-        <div class="swiper-slide hero-slider__img">
-          <img src="/TDYweDI_2.jpg" alt="" />
-        </div> -->
       </div>
     </div>
-    <!-- <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide
-        v-for="(slider, index) in images"
-        :key="index"
-        class="slider-item"
-      >
-      </swiper-slide
-    ></swiper> -->
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -95,9 +86,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000057;
+}
 .hero-slider {
   height: calc(100vh - 205px);
   width: 100%;
+  position: relative;
   &__slider {
     width: 100%;
     height: 100%;
