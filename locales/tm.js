@@ -9,6 +9,9 @@ export default {
     partners: 'Hyzmatdaşlar',
     all: 'Hemmesi',
     articles: 'Makalalar',
+    dearTeachers: 'Hormatly mugallymlar',
+    departmentTeachers: 'Kafedranyň mugallymlary',
+    contact: 'Habarlaşmak',
   },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
@@ -133,12 +136,7 @@ Harytşynaslyk, Hili dolandyrmak,  Jemgyýetçilik iýmitini guramak, Täjirçil
 	Hünäri ýokarlandyryş fakulteti bazar ykdysadyýeti şertlerinde hünärmeniň iş döwründe öz bilimini ýokarlandyrmaga ýardam edýän möhüm ugur bolup durýar.`,
     },
   },
-  departments: {
-    accounting: {
-      title: 'Accounting and auditing',
-      description: ``,
-    },
-  },
+
   publicOrganizations: {
     first: {
       title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň ilkinji Partiýa guramasy`,
@@ -227,11 +225,11 @@ Harytşynaslyk, Hili dolandyrmak,  Jemgyýetçilik iýmitini guramak, Täjirçil
     },
     foreignLanguages: {
       title: 'Daşary ýurt dilleri',
-      'foreign-languages': `<p>Daşary ýurt dilleri kafedrasy Türkmen döwlet ykdysadyýet we dolandyryş institutynyň düzüm birligi bolup durýar. Kafedranyň mugallymlary daşary ýurt dillerini, hususan-da ykdysadyýete gönükdirilen daşary ýurt dillerini kämil bilýän hünärmenleri taýýarlamagy baş maksat edip goýýarlar. Olar halkara maslahatlara, ýokary okuw mekdepleriniň arasynda geçirilýän dürli bäsleşiklere, ylmy-amaly we usulyýet maslahatlaryna, medeni çärelere işjeň gatnaşýarlar. Kafedra tarapyndan hem şeýle çäreler yzygiderli gurnalyp durulýar. Mugallymlaryň ýolbaşçylyk etmeklerinde institutymyzyň talyplary dersler boýunça geçirilýän Döwlet bäsleşiginde iňlis we rus dilleri boýunça her ýyl baýrakly orunlara mynasyp bolýarlar.</p><p>Türkmenistan döwletimizde halkara hyzmatdaşlygynyň barha giň gerime eýe bolýan döwründe daşary ýurt dillerini kämil bilýän hünärmenleri taýýarlamak meselesi döwlet syýasatynyň baş ugruna öwrülýär. Muňa 2017-nji ýylyň 22-nji dekabrynda «Türkmenistanda daşary ýurt dillerini okatmagy kämilleşdirmegiň Konsepsiýasynyň» kabul edilmegi hem şaýatlyk edýär. Bu tagallalar daşary ýurt dillerini okadýan mugallymlaryň öňünde uly wezipeleri goýýar. Ol wezipeleri durmuşa geçirmek ugrunda kafedranyň mugallymlary mynasyp zähmet çekýärler. Kafedrada türkmen dili we sözleýiş medeniýeti, taýýarlygyň ugry boýunça iňlis dili, taýýarlygyň ugry boýunça ikinji daşary ýurt dili – rus dili, nemes dili, hytaý dili, ýapon dili öwredilýär. Okuw sapaklary ylymlaryň kandidatlary, tejribeli mugallymlar tarapyndan ýöriteleşdirilen lingafon okuw otaglarynda geçirilýär. Bu bolsa olaryň sözleýiş, diňleýiş endiklerini ösdürmäge, fonetik, grammatik kadalary ele almaga ýardam edýär.</p><p>Kafedrada hereket edýän «Diller dünýäsi» atly erkin, intellektual-döredijilik birleşmesi bolsa talyplarda ýüze çykýan dil päsgelçiliklerini ýeňip geçmäge, erkin sözleýşi ösdürmäge mümkinçilik döredýär.</p><p>Daşary ýurt dilleri kafedrasynda Türkmenistanyň Ylymlar akademiýasynda hasaba alnan ylmy işiň üstünde işlenilýär. Bu ylmy işe kafedranyň ähli agzalary gatnaşýarlar. Kafedrada her bir mugallymyň özüniň hem alyp barýan ylmy temasy bar. Olar boýunça hem işler alnyp barylýar, yzygiderli hasabatlar berlip durulýar. Alnan netijeler bolsa okuw işine ornaşdyrylýar.</p>`,
+      description: `<p>Daşary ýurt dilleri kafedrasy Türkmen döwlet ykdysadyýet we dolandyryş institutynyň düzüm birligi bolup durýar. Kafedranyň mugallymlary daşary ýurt dillerini, hususan-da ykdysadyýete gönükdirilen daşary ýurt dillerini kämil bilýän hünärmenleri taýýarlamagy baş maksat edip goýýarlar. Olar halkara maslahatlara, ýokary okuw mekdepleriniň arasynda geçirilýän dürli bäsleşiklere, ylmy-amaly we usulyýet maslahatlaryna, medeni çärelere işjeň gatnaşýarlar. Kafedra tarapyndan hem şeýle çäreler yzygiderli gurnalyp durulýar. Mugallymlaryň ýolbaşçylyk etmeklerinde institutymyzyň talyplary dersler boýunça geçirilýän Döwlet bäsleşiginde iňlis we rus dilleri boýunça her ýyl baýrakly orunlara mynasyp bolýarlar.</p><p>Türkmenistan döwletimizde halkara hyzmatdaşlygynyň barha giň gerime eýe bolýan döwründe daşary ýurt dillerini kämil bilýän hünärmenleri taýýarlamak meselesi döwlet syýasatynyň baş ugruna öwrülýär. Muňa 2017-nji ýylyň 22-nji dekabrynda «Türkmenistanda daşary ýurt dillerini okatmagy kämilleşdirmegiň Konsepsiýasynyň» kabul edilmegi hem şaýatlyk edýär. Bu tagallalar daşary ýurt dillerini okadýan mugallymlaryň öňünde uly wezipeleri goýýar. Ol wezipeleri durmuşa geçirmek ugrunda kafedranyň mugallymlary mynasyp zähmet çekýärler. Kafedrada türkmen dili we sözleýiş medeniýeti, taýýarlygyň ugry boýunça iňlis dili, taýýarlygyň ugry boýunça ikinji daşary ýurt dili – rus dili, nemes dili, hytaý dili, ýapon dili öwredilýär. Okuw sapaklary ylymlaryň kandidatlary, tejribeli mugallymlar tarapyndan ýöriteleşdirilen lingafon okuw otaglarynda geçirilýär. Bu bolsa olaryň sözleýiş, diňleýiş endiklerini ösdürmäge, fonetik, grammatik kadalary ele almaga ýardam edýär.</p><p>Kafedrada hereket edýän «Diller dünýäsi» atly erkin, intellektual-döredijilik birleşmesi bolsa talyplarda ýüze çykýan dil päsgelçiliklerini ýeňip geçmäge, erkin sözleýşi ösdürmäge mümkinçilik döredýär.</p><p>Daşary ýurt dilleri kafedrasynda Türkmenistanyň Ylymlar akademiýasynda hasaba alnan ylmy işiň üstünde işlenilýär. Bu ylmy işe kafedranyň ähli agzalary gatnaşýarlar. Kafedrada her bir mugallymyň özüniň hem alyp barýan ylmy temasy bar. Olar boýunça hem işler alnyp barylýar, yzygiderli hasabatlar berlip durulýar. Alnan netijeler bolsa okuw işine ornaşdyrylýar.</p>`,
     },
     marketing: {
       title: 'Marketing',
-      marketing: `&nbsp&nbsp&nbsp&nbsp Marketing fakultetinde jemi 4 sany kafedra hereket edýär. Olar Marketing, Zähmetiň ykdysadyýeti, Ýokary matematika we informatika, Bedenterbiýe kafedralarydyr.
+      description: `&nbsp&nbsp&nbsp&nbsp Marketing fakultetinde jemi 4 sany kafedra hereket edýär. Olar Marketing, Zähmetiň ykdysadyýeti, Ýokary matematika we informatika, Bedenterbiýe kafedralarydyr.
 	  Marketing we Zähmetiň ykdysadyýeti kafedralary gutardyş kafedralarydyr. <br>
 	  &nbsp&nbsp&nbsp&nbsp Fakultetde Zähmetiň ykdysadyýeti we bazary, Ilatyň durmuş üpjünçiligini guramak, Marketing,
 		Harytşynaslyk, Hili dolandyrmak,  Jemgyýetçilik iýmitini guramak, Täjirçilik (Söwda işi),
@@ -244,14 +242,100 @@ Harytşynaslyk, Hili dolandyrmak,  Jemgyýetçilik iýmitini guramak, Täjirçil
     },
     economicsLabor: {
       title: 'Zähmetiň ykdysadyýeti',
-      'economics-of-labor': `<p>Zähmetiň ykdysadyýeti kafedrasy institutyň düzüm birligi bolup, onda Zähmetiň ykdysadyýeti we bazary hem-de Ilatyň durmuş üpjünçiligini guramak taýýarlyk ugurlary boýunça bakalawrlar taýýarlanylýar.</p><p>Kafedrada Zähmetiň ykdysadyýeti we bazary, Demografiýa, Daşary ýurtlarda zähmet gatnaşyklary, Zähmet gorlarynyň ykdysadyýeti, Durmuş ulgamynyň ykdysadyýeti, Zähmeti guramak we kadalaşdyrmak, Zähmetiň sosiologiýasy, Ilatyň iş bilen üpjünçiligi, Ilatyň pensiýa üpjünçiligi, Zähmet-durmuş gatnaşyklarynyň ykdysadyýeti, Döwlete dahylsyz sektorda durmuş zähmet gatnaşyklary, Zähmeti goramak, Ilaty durmuş taýdan goramak ulgamynyň işlerini guramak, Zähmet bazary, Zähmetiň ykdysadyýeti, Zähmet kanunçylygy, Ilatyň durmuş taýdan goraglylygy, Kärhanalarda işgärleri dolandyrmak dersleri boýunça okuw sapaklary okadylýar. Ähli dersler boýunça okadylýan umumy we amaly sapaklar ýokary derejeli mugallymlaryň alyp barmagynda, interaktiw usulda geçirilýär.</p><p>Kafedrada Türkmenistanyň Ylymlar akademiýasy tarapyndan hasaba alnan Ykdysadyýetiň sanlylaşdyrylýan şertlerinde zähmet bazarynda hünärlere bolan islegi seljermek atly tema boýunça ylmy iş alnyp barylýar.</p><p>Türkmenistanyň Zähmet we ilaty durmuş taýdan goramak ministrliginde kafedranyň şahamçasy işleýär.</p><p>Kafedranyň mugallymlary we talyplary döwlet we halkara derejesinde geçirilýän ylmy bäsleşiklere, ýurdumyzda we daşary ýurtlarda geçirilýän ylmy-amaly maslahatlara gatnaşýarlar, olaryň ylmy makalalary, tezisleri ýygyndylarda, ýurdumyzda we daşary ýurtlarda neşir edilýän ylmy žurnallarda, gazetlerde çap edilýär, şeýle-de olar köpçülikleýin habar beriş serişdelerinde çykyş edýärler. Okadylýan dersler boýunça umumy okuwlaryň beýanlary, amaly sapaklaryň ýumuşlary, özbaşdak işleri we testler içki we daşky sanly bilim portalynda yzygiderli ýerleşdirilýär.</p>`,
+      description: `<p>Zähmetiň ykdysadyýeti kafedrasy institutyň düzüm birligi bolup, onda Zähmetiň ykdysadyýeti we bazary hem-de Ilatyň durmuş üpjünçiligini guramak taýýarlyk ugurlary boýunça bakalawrlar taýýarlanylýar.</p><p>Kafedrada Zähmetiň ykdysadyýeti we bazary, Demografiýa, Daşary ýurtlarda zähmet gatnaşyklary, Zähmet gorlarynyň ykdysadyýeti, Durmuş ulgamynyň ykdysadyýeti, Zähmeti guramak we kadalaşdyrmak, Zähmetiň sosiologiýasy, Ilatyň iş bilen üpjünçiligi, Ilatyň pensiýa üpjünçiligi, Zähmet-durmuş gatnaşyklarynyň ykdysadyýeti, Döwlete dahylsyz sektorda durmuş zähmet gatnaşyklary, Zähmeti goramak, Ilaty durmuş taýdan goramak ulgamynyň işlerini guramak, Zähmet bazary, Zähmetiň ykdysadyýeti, Zähmet kanunçylygy, Ilatyň durmuş taýdan goraglylygy, Kärhanalarda işgärleri dolandyrmak dersleri boýunça okuw sapaklary okadylýar. Ähli dersler boýunça okadylýan umumy we amaly sapaklar ýokary derejeli mugallymlaryň alyp barmagynda, interaktiw usulda geçirilýär.</p><p>Kafedrada Türkmenistanyň Ylymlar akademiýasy tarapyndan hasaba alnan Ykdysadyýetiň sanlylaşdyrylýan şertlerinde zähmet bazarynda hünärlere bolan islegi seljermek atly tema boýunça ylmy iş alnyp barylýar.</p><p>Türkmenistanyň Zähmet we ilaty durmuş taýdan goramak ministrliginde kafedranyň şahamçasy işleýär.</p><p>Kafedranyň mugallymlary we talyplary döwlet we halkara derejesinde geçirilýän ylmy bäsleşiklere, ýurdumyzda we daşary ýurtlarda geçirilýän ylmy-amaly maslahatlara gatnaşýarlar, olaryň ylmy makalalary, tezisleri ýygyndylarda, ýurdumyzda we daşary ýurtlarda neşir edilýän ylmy žurnallarda, gazetlerde çap edilýär, şeýle-de olar köpçülikleýin habar beriş serişdelerinde çykyş edýärler. Okadylýan dersler boýunça umumy okuwlaryň beýanlary, amaly sapaklaryň ýumuşlary, özbaşdak işleri we testler içki we daşky sanly bilim portalynda yzygiderli ýerleşdirilýär.</p>`,
     },
     mathematics: {
       title: 'Ýokary matematika we informatika',
-      'advanced-mathematics-and-computer-science': `<p>Ýokary matematika we informatika kafedrasy Türkmen döwlet ykdysadyýet we dolandyryş institutynyň düzüm birligi bolup durýar. Kafedranyň mugallymlary institutda dürli hünärlerde talyplara Ýokary matematika, Ykdysadyýetde matematika, Maliýe matematikasy, Ähtimallyklaryň nazaryýeti we Matematiki statistika, Ykdysady-matematiki usullar we modeller, Makroykdysadyýetde matematiki modeller, Häzirki zaman kompýuter tehnologiýalary we Ekonometrika dersleriniň esaslary boýunça bilim berýärler.</p><p>Kafedranyň mugallymlary halkara maslahatlara, ýokary okuw mekdepleriniň arasynda geçirilýän dürli bäsleşiklere, ylmy-amaly we usulyýet maslahatlaryna, medeni çärelere işjeň gatnaşýarlar. Kafedra tarapyndan hem şeýle çäreler yzygiderli gurnalyp durulýar. Mugallymlaryň ýolbaşçylyk etmeklerinde institutymyzyň talyplary Matematika dersleri boýunça geçirilýän Döwlet bäsleşiginde her ýyl baýrakly orunlara mynasyp bolýarlar.</p><p>Türkmenistan döwletimizde halkara hyzmatdaşlygynyň barha giň gerime eýe bolýan döwründe Matematika derslerini bilýän kämil hünärmenleri taýýarlamak meselesi döwlet syýasatynyň baş ugruna öwrülýär. Muňa «Türkmenistanda tebigy we takyk ylmy ugurlara degişli dersleri okatmagy kämilleşdirmegiň Konsepsiýasynyň» kabul edilmegi hem şaýatlyk edýär. Bu tagallalar mugallymlaryň öňünde uly wezipeleri goýýar. Olary durmuşa geçirmek ugrunda kafedranyň mugallymlary mynasyp zähmet çekýärler. Kafedrada instituta berkidilen orta mekdepleriň ýokary synp okuwçylary bilen meýilnama laýyklykda okuwa, ylma we terbiýeçilige degişli işler alnyp barylýar. Kafedrada Türkmenistanyň Ylymlar akademiýasynda hasaba alnan ylmy işiň üstünde işlenilýär.Alnan netijeler bolsa ykdysadyýet pudagyna ornaşdyrylýar.</p>`,
+      description: `<p>Ýokary matematika we informatika kafedrasy Türkmen döwlet ykdysadyýet we dolandyryş institutynyň düzüm birligi bolup durýar. Kafedranyň mugallymlary institutda dürli hünärlerde talyplara Ýokary matematika, Ykdysadyýetde matematika, Maliýe matematikasy, Ähtimallyklaryň nazaryýeti we Matematiki statistika, Ykdysady-matematiki usullar we modeller, Makroykdysadyýetde matematiki modeller, Häzirki zaman kompýuter tehnologiýalary we Ekonometrika dersleriniň esaslary boýunça bilim berýärler.</p><p>Kafedranyň mugallymlary halkara maslahatlara, ýokary okuw mekdepleriniň arasynda geçirilýän dürli bäsleşiklere, ylmy-amaly we usulyýet maslahatlaryna, medeni çärelere işjeň gatnaşýarlar. Kafedra tarapyndan hem şeýle çäreler yzygiderli gurnalyp durulýar. Mugallymlaryň ýolbaşçylyk etmeklerinde institutymyzyň talyplary Matematika dersleri boýunça geçirilýän Döwlet bäsleşiginde her ýyl baýrakly orunlara mynasyp bolýarlar.</p><p>Türkmenistan döwletimizde halkara hyzmatdaşlygynyň barha giň gerime eýe bolýan döwründe Matematika derslerini bilýän kämil hünärmenleri taýýarlamak meselesi döwlet syýasatynyň baş ugruna öwrülýär. Muňa «Türkmenistanda tebigy we takyk ylmy ugurlara degişli dersleri okatmagy kämilleşdirmegiň Konsepsiýasynyň» kabul edilmegi hem şaýatlyk edýär. Bu tagallalar mugallymlaryň öňünde uly wezipeleri goýýar. Olary durmuşa geçirmek ugrunda kafedranyň mugallymlary mynasyp zähmet çekýärler. Kafedrada instituta berkidilen orta mekdepleriň ýokary synp okuwçylary bilen meýilnama laýyklykda okuwa, ylma we terbiýeçilige degişli işler alnyp barylýar. Kafedrada Türkmenistanyň Ylymlar akademiýasynda hasaba alnan ylmy işiň üstünde işlenilýär.Alnan netijeler bolsa ykdysadyýet pudagyna ornaşdyrylýar.</p>`,
     },
     physicaleducation: {
       title: 'Bedenterbiýe',
+      description:
+        '<p></p><p><span style="color: rgb(255, 255, 255)">Hormatly mugallymlar</span></p><p>Bedenterbiýe kafedrasy Türkmen döwlet ykdysadyýet we dolandyryş institutynyň düzüm birligi bolup, talyplaryň beden taýdan sagdynlygyny gazanmakda, olaryň sport ussdatlygyny ýokarlandyrmakda, saglygyny berkitmekde mynasyp işleri alyp barýarlar.</p><p>Institutyň Bedenterbiýe kafedrasynda we sport klubynda Türkmenistanyň at gazanan tälimçisi, Türkmenistanyň at gazanan bilim işgäri, sport ussatlary, tälimçi-mugallymlar, sport eminleri işleýärler. Institutda sportuň woleýbol, gandbol, basketbol, futbol, uly-kiçi tennis, göreşler, (dzudo, sambo, erkin göreş, milli göreş, grek-rim göreşi, kuraş), boks, küşt, düzdüm, şaşka, basketbol, suwda ýüzmek, ýeňil atletika görnüşleri boýunça türgenleşik işleri geçirilýär. Şeýle-de yzygiderli fakultetleriň professor mugallymlarynyň, talyplarynyň arasynda sport çäreleri, ýaryşlar geçirilýär.</p><p>Institutymyzyň sport toplumy halkara standartlaryna laýyk enjamlaşdyrylandyr. Türgenleşik zallary, basketbol we woleýbol meýdançalary, boks hem-de göreş zaly, umumy türgenleşik geçer ýaly zallar talyplara hyzmat edýär. Talyplarymyzyň suwda ýüzmek sporty bilen meşgullanmaklary üçin ýapyk suw basseýni hereket edýär. Şeýle hem açyk howada türgenleşik geçer ýaly futbol, woleýbol we basketbol meýdançalary bar, tennis korty döredilendir.</p><p>Institutyň talyplary ýurt möçberinde geçirilýän ýaryşlarda üstünlik gazanýarlar, halkara ýaryşlarynda yzygiderli çykyş edip, baýrakly orunlara mynasyp bolýarlar.</p>',
     },
+  },
+  studyCenters: {
+    economistTraining: {
+      name: '«Ykdysatçy»okuwmerkezi',
+      title:
+        'TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTYNYŇ YKDYSATÇY OKUW MERKEZI',
+      description: `&nbsp&nbsp&nbsp&nbsp Okuw merkeziniň işiniň esasy görnüşi işgärleriň hünär derejesini kämilleşdirmekden we olary gaýtadan taýýarlamakdan ybarat bolup durýar. <br> &nbsp&nbsp&nbsp&nbsp
+	  Ykdysatçy okuw merkezi aşakdaky taýýarlyk ugurlary boýunça gysga möhletli okuwlary yzygiderli geçirýär:<br> &nbsp&nbsp&nbsp&nbsp
+	  <ol>
+		  <li>Buhgalter (10 aý). </li>
+		  <li>Bank işiniň operatory (10 aý). </li>
+		  <li>Işewürlik we telekeçilik (10 aý). </li>
+		  <li>Işewürlik-informatika (10 aý).</li>
+		  <li>Iňlis dili (3 aý). </li>
+		  <li>Rus dili (3 aý).</li>
+		  <li>Nemes dili (3 aý).</li>
+		  <li>Hytaý dili (3 aý).</li>
+		  <li>Buhgalterçilik hasaby alnyşy (3 aý).</li>
+		  <li>Programmiremegiň tehnologiýalary (3 aý).</li>
+		  <li>Web programmirlemegiň tehnologiýalary (3 aý).</li>
+		  <li>Kompýuter sowatlylygy (2 aý).</li>
+		  </ol>`,
+    },
+    auditTraining: {
+      name: '«Audit» okuw merkezi',
+      title:
+        'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň   Audit okuw merkezi',
+      description: `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Audit
+		okuw merkezi 2000-nji ýylda ozalky Türkmen halk hojalyk institutynda döredildi.
+		 Audit okuw merkezi hojalyk hasaplaşygy esasynda hereket edýär. Okuw merkeziniň işiniň
+		 esasy görnüşi işgärleriň hünär derejesini kämilleşdirmekden we olary gaýtadan taýýarlamakdan
+		 ybarat bolup durýar. <br> &nbsp&nbsp&nbsp&nbsp
+Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini ýokarlandyrmak
+ üçin gysga möhletli okuwlar yzygiderli guralýar we geçirilýär. Audit boýunça gysga möhletli
+  okuwda Türkmenistanyň kanunçylygy, Buhgalterçilik hasaba alnyşy, Audit, Salgytlar we salgyt
+  salmak we Hojalyk işleriniň analizi derslerini, «Rieltorçylyk işi» boýunça gysga möhletli okuwda
+   bolsa Türkmenistanyň salgyt kanunçylygy, Rieltorçylyk işi, Gozgalmaýan emlägiň ykdysadyýeti,
+   Menejment we marketing, Raýat hukugy, Raýat iş ýörediş, Ýaşaýyş jaý hukugy we Ýer hukugy derslerini
+   özleşdirip, diňleýjiler özleriniň hünär derejesini ýokarlandyrýarlar. <br> &nbsp&nbsp&nbsp&nbsp
+   Audit okuw merkezi tarapyndan gurnalýan okuw kurslaryny döwrebap geçirmek üçin ähli şertler döredilen. Audit okuw merkezinde okuw sapaklary institutymyzyň ýokary derejeli, tejribeli professor-mugallymlary tarapyndan geçirilip, okuw-usuly maglumat üpjünçiligi yzygiderli kämilleşdirilýär.
+`,
+    },
+    hazynaSportsClub: {
+      name: '«Hazyna» sport kluby',
+      title:
+        'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň  Hazyna sport kluby',
+      description: `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş
+		institutynyň Hazyna sport kluby 2013-nji ýylyň iýul aýynda döredildi. Sport kluby
+		hojalyk hasaplaşygy esasynda hereket edýär. Hazyna sport klubunyň esasy maksady sportuň
+		 dürli ugurlarynyň, ýagny woleýbolyň, futbolyň, basketbolyň, kiçi futbolyň, suwda ýüzmegiň,
+		  boksuň, göreşiň ösmeginiň köpçülikleýin häsiýete eýe bolmagyny gazanmakdan, ilaty bedenterbiýe
+		  we sport bilen meşgullanmaga giňişleýin çekmekden, sagdyn durmuşy wagyz etmekden ybaratdyr.`,
+    },
+  },
+  library: {
+    title: 'KITAPHANA',
+    description: `<p><span> &nbsp&nbsp&nbsp&nbsp Institutda häzirki zaman amatlyklary bolan kitaphana hem bar. 
+	Kitaphananyň gorunda türkmen, rus, iňlis dillerinde ykdysadyýet ylmynyň we tejribäniň
+	 ähli ugurlary boýunça edebiýatlar, başga-da daşary ýurt dillerindäki käbir neşirler bar.
+	   Kitaphanada ykdysadyýet, maliýe, dolandyryş, marketing, ykdysady-matematiki usullar boýunça
+		elektron kitaplar, okuw gollanmalar, usulyýet edebiýatlar we ylmy monografiýalar bar.</span></p>
+		<p><span>Institutda&nbsp; institutyň kitaphana gorunyň elektron binýady bolan elektron
+		 kitaphana hem hereket edýär. Elektron kitaphana bu innowasion ykdysadyýeti kemala getirmegiň 
+		 wajyp şerti bolup durýar. Elektron kitaphana ýörite gözleg ulgamy bilen enjamlaşdyrylan we 
+		 ol arkaly zerur bolan edebiýat çeşmeleri, şeýle hem Gahryman Arkadagymyzyň kitaplary bilen 
+		 tanşyp bolýar. Diňe bir institutyň professor-mugallymlary tarapyndan ýazylan okuw kitaplaryny
+		   däl, eýsem başga awtorlaryň kitaplaryny hem okap bolýar.</span></p><p><span> &nbsp&nbsp&nbsp&nbspEdebiýat gözlegini 
+			dürli alamatlar, ýagny tema, adalga, neşir edilen ýyly, awtorlar we başga alamatlar arkaly amala
+			 aşyryp bolýar. Kitaphana ýörite robot-skaner bilen enjamlaşdyrylan we ol bir minutda onlarça 
+			 sahypalaryň suratyny alyp bilýär. Bu käbir neşirlerimiziň az mukdarda çap edilenligi, 
+			 kitaplaryň aýawly saklanylmagy ýaly meseleleriň hem çözgüdini ýeňilleşdirýär. Bulardan
+			   başga-da ýiten, zaýalanan kitaplary täzeden dikeltmek mümkinçiliklerini döredýär. Biziň 
+			   kitaphanamyzda elektron neşirleriň sany gün-günden köpelýär. Bu kitaplary mugallymlarymyz,
+				talyplarymyz özleriniň ýan kompýuterlerine, elektron maglumat göterijilerine ýükläp alyp,
+				 islendik pursatda olardan peýdalanýarlar.</span></p><p><span> &nbsp&nbsp&nbsp&nbsp Institutymyzda bilim portaly
+	 hem hereket edýär, bu bolsa ýörite tor arkaly talyplara islendik ugurlar boýunça 
+	 edebiýatlaryň, umumy sapaklaryň ýazgylarynyň baý edebi gorundan giňişleýin
+	   peýdalanmaklaryny üpjün edýär. Şular ýaly innowasion tehnologiýalaryň kömegi bilen 
+		ýaşlaryň bilim almak,ylym öwrenmek mümkinçilikleri barha ýokarlanýar. Kitaphananyň 
+		ýokary tizlikli internet ulgamy bilen enjamlaşdyrylmagy okyjylara elektron 
+		kitaphanasynyň gory bilen diňe lokal tor arkaly tanyşmaklygyna mümkinçiligi 
+		döretmän, eýsem bütindünýä intellektual gory bilen tanyşdyrýar. Kitaphana işini 
+		döwrebaplaşdyrmak ýaşlary okatmagyň, ylma çekmegiň netijeliligini gazanmak,hem-de
+		 her bir okyja elýeterliligi üpjün etmek her bir kitaphana işgärleriniň esasy borjudyr.</span></p>`,
   },
 }

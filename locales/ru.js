@@ -9,6 +9,9 @@ export default {
     partners: 'ПАРТНЕРЫ',
     all: 'Все',
     articles: 'Статии',
+    dearTeachers: 'Учителя',
+    departmentTeachers: 'Учетели кафедры',
+    contact: 'Контакт',
   },
   header: {
     name: `ТУРКМЕНСКИЙ ГОСУДАРСТВЕННЫЙ ИНСТИТУТ <br /> ЭКОНОМИКИ И УПРАВЛЕНИЯ`,
@@ -226,5 +229,29 @@ export default {
       title: 'Physical education',
       description: ``,
     },
+  },
+  studyCenters: {
+    economistTraining: {
+      name: 'Economist Training Center',
+      title:
+        'Turkmen State Institute of Economics and Management Economist Training Center',
+      description: `<p><span>The Economist Training Center of the Turkmen State Institute of Economics and Management was established in 1993 in the former Turkmen National Institute of Economics. The Economist Training Center operates on the basis of economic accounting.</span></p><p><span>The main activity of the training center is to improve the professional level of employees and retrain them.</span></p><p><span>The Economist Training Center regularly conducts short-term courses in the following training areas:</span></p><p><span>1. Accountant (10 months).</span></p><p><span>2. Banking operator (10 months).</span></p><p><span>3. Business and Entrepreneurship (10 months).</span></p><p><span>4. Business-informatics (10 months).</span></p><p><span>5. English (3 months).</span></p><p><span>6. Russian language (3 months).</span></p><p><span>7. German (3 months).</span></p><p><span>8. Chinese (3 months).</span></p><p><span>9. Keeping an accounting account (3 months).</span></p><p><span>10. Programming technologies (3 months).</span></p><p><span>11. Technologies of web programming (3 months).</span></p><p><span>12. Computer literacy (2 months).</span></p>`,
+    },
+    auditTraining: {
+      name: 'Audit Training Center',
+      title:
+        'Turkmen State Institute of Economics and Management  Audit Training Center',
+      description: `<p><span>The Audit Training Center of the Turkmen State Institute of Economics and Management was established in 2000 in the former Turkmen Institute of People's Economy. Audit training center operates on the basis of economic accounting. The main activity of the training center is to improve the professional level of employees and retrain them.</span></p><p><span>The Audit Training Center organizes and conducts short-term courses for professional development in Audit and Real Estate. In the short-term course on auditing, the courses on the legislation of Turkmenistan, Accounting, Auditing, Taxation and Taxation and Analysis of Economic Activities, and in the short-term course on "Real Estate" are the Tax Legislation of Turkmenistan, Real Estate, Economics of Real Estate, Management and Marketing, Civil Law. , by mastering the courses of Civil Procedure, Housing Law and Land Law, students improve their professional level.</span></p><p><span>All conditions have been created for modern training courses organized by the audit training center. In the audit training center, training sessions are conducted by high-level, experienced professors of our institute, and training and information provision is constantly improved.</span></p>`,
+    },
+    hazynaSportsClub: {
+      name: 'Hazyna Sports Club',
+      title:
+        'Turkmen State Institute of Economics and Management Hazyna Sports Club',
+      description: `<p><span>The Hazyna Sports Club of the Turkmen State Institute of Economics and Management was established in July 2013. The sports club operates on the basis of economic accounting. The main goal of the Khazyna sports club is to achieve mass development of various sports, such as volleyball, football, basketball, mini-football, swimming, boxing, wrestling, to attract people to physical education and sports, and to promote a healthy life.</span></p>`,
+    },
+  },
+  library: {
+    title: 'Библиотека',
+    description: ``,
   },
 }
