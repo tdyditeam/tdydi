@@ -1,112 +1,31 @@
 <template>
   <div class="departments-teachers">
-    <!-- <h2 class="departments-teachers__title">Kafedranyň mugallymlary</h2> -->
     <div class="departments-teachers__block">
-      <div class="departments-teachers__item-wrapper item-departments-teachers">
+      <div
+        class="departments-teachers__item-wrapper item-departments-teachers"
+        v-for="teacher in teachers"
+        :key="teacher.id"
+        @click="$emit('clickedToCard', teacher.name)"
+      >
         <div class="departments-teachers__item item-departments-teachers">
           <div class="item-departments-teachers__row">
             <div class="item-departments-teachers__image">
               <img
-                src="@/assets/img/home/departments-teachers/img_1.png"
+                :src="
+                  require(`@/assets/img/home/departments-teachers/${teacher.img}`)
+                "
                 alt="img"
               />
             </div>
             <div class="item-departments-teachers__content">
               <div class="item-departments-teachers__teacher">
-                <h2>Iwanow Bäşim Meredowiç</h2>
+                <h2>{{ teacher.name }}</h2>
                 <h3 class="item-departments-teachers__about">
-                  Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
+                  {{ teacher.skills }}
                 </h3>
               </div>
               <div class="item-departments-teachers__text">
-                Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
-                Türkmenistanyň Ýokary okuw mekdepleriniň
-                professor-mugallymlarynyň arasynda geçirilen «Ýylyň
-                mugallymy-2020» 3-nji orun – 2020ý. Türkmenistanyň «Watana bolan
-                söýgüsi üçin» medaly bilen sylaglanan -2021ý. Kafedrada
-                okadylýan dersler boýunça bir näçe okuw gollanmalarynyň we okuw
-                kitaplarynyň awtory.Maglumat ulgamlary kafedrasynyň müdiri, uly
-                mugallym.
-              </div>
-            </div>
-          </div>
-          <div
-            class="item-departments-teachers__text item-departments-teachers__text--wrapped"
-          >
-            Türkmenistanyň Ýokary okuw mekdepleriniň professor-mugallymlarynyň
-            arasynda geçirilen «Ýylyň mugallymy-2020» 3-nji orun – 2020ý.
-            Türkmenistanyň «Watana bolan söýgüsi üçin» medaly bilen sylaglanan
-            -2021ý. Kafedrada okadylýan dersler boýunça bir näçe okuw
-            gollanmalarynyň we okuw kitaplarynyň awtory.Maglumat ulgamlary
-            kafedrasynyň müdiri, uly mugallym.
-          </div>
-        </div>
-      </div>
-      <div class="departments-teachers__item-wrapper item-departments-teachers">
-        <div class="departments-teachers__item item-departments-teachers">
-          <div class="item-departments-teachers__row">
-            <div class="item-departments-teachers__image">
-              <img
-                src="@/assets/img/home/departments-teachers/img_1.png"
-                alt="img"
-              />
-            </div>
-            <div class="item-departments-teachers__content">
-              <div class="item-departments-teachers__teacher">
-                <h2>Iwanow Bäşim Meredowiç</h2>
-                <h3 class="item-departments-teachers__about">
-                  Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
-                </h3>
-              </div>
-              <div class="item-departments-teachers__text">
-                Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
-                Türkmenistanyň Ýokary okuw mekdepleriniň
-                professor-mugallymlarynyň arasynda geçirilen «Ýylyň
-                mugallymy-2020» 3-nji orun – 2020ý. Türkmenistanyň «Watana bolan
-                söýgüsi üçin» medaly bilen sylaglanan -2021ý. Kafedrada
-                okadylýan dersler boýunça bir näçe okuw gollanmalarynyň we okuw
-                kitaplarynyň awtory.Maglumat ulgamlary kafedrasynyň müdiri, uly
-                mugallym.
-              </div>
-            </div>
-          </div>
-          <div
-            class="item-departments-teachers__text item-departments-teachers__text--wrapped"
-          >
-            Türkmenistanyň Ýokary okuw mekdepleriniň professor-mugallymlarynyň
-            arasynda geçirilen «Ýylyň mugallymy-2020» 3-nji orun – 2020ý.
-            Türkmenistanyň «Watana bolan söýgüsi üçin» medaly bilen sylaglanan
-            -2021ý. Kafedrada okadylýan dersler boýunça bir näçe okuw
-            gollanmalarynyň we okuw kitaplarynyň awtory.Maglumat ulgamlary
-            kafedrasynyň müdiri, uly mugallym.
-          </div>
-        </div>
-      </div>
-      <div class="departments-teachers__item-wrapper item-departments-teachers">
-        <div class="departments-teachers__item item-departments-teachers">
-          <div class="item-departments-teachers__row">
-            <div class="item-departments-teachers__image">
-              <img
-                src="@/assets/img/home/departments-teachers/img_1.png"
-                alt="img"
-              />
-            </div>
-            <div class="item-departments-teachers__content">
-              <div class="item-departments-teachers__teacher">
-                <h2>Iwanow Bäşim Meredowiç</h2>
-                <h3 class="item-departments-teachers__about">
-                  Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
-                </h3>
-              </div>
-              <div class="item-departments-teachers__text">
-                Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.
-                Türkmenistanyň Ýokary okuw mekdepleriniň
-                professor-mugallymlarynyň arasynda geçirilen «Ýylyň
-                mugallymy-2020» 3-nji orun – 2020ý. Türkmenistanyň «Watana bolan
-                söýgüsi üçin» medaly bilen sylaglanan -2021ý. Kafedrada
-                okadylýan dersler boýunça bir näçe okuw gollanmalarynyň we okuw
-                kitaplarynyň awtory.Maglumat ulgamlary kafedrasynyň müdiri, uly
-                mugallym.
+                {{ teacher.description }}
               </div>
             </div>
           </div>
@@ -127,7 +46,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    teachers: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -167,6 +93,7 @@ export default {}
   }
 }
 .item-departments-teachers {
+  cursor: pointer;
   &__row {
     display: flex;
     gap: 40px;

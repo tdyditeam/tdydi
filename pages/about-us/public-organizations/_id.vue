@@ -4,6 +4,7 @@
     <block-pages
       :description="description[$route.params.id]"
       :title="title[$route.params.id]"
+      :img="img[$route.params.id]"
     ></block-pages>
   </section>
 </template>
@@ -38,6 +39,12 @@ export default {
         1: this.$t('publicOrganizations.second.description'),
         2: this.$t('publicOrganizations.third.description'),
         3: this.$t('publicOrganizations.fourth.description'),
+      },
+      img: {
+        0: 'image.png',
+        1: '3.png',
+        2: '2.png',
+        3: '1.png',
       },
     }
   },

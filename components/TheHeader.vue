@@ -452,6 +452,9 @@ export default {
           opacity: 0;
           visibility: hidden;
           transition: 0.3s ease;
+          &:not(:last-child) {
+            margin-right: 5px;
+          }
           &:hover {
             color: var(--primary);
           }
