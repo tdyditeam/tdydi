@@ -4,6 +4,7 @@
     <block-pages
       :description="description[$route.params.id]"
       :title="title[$route.params.id]"
+      :img="img[$route.params.id]"
     ></block-pages>
     <div class="study-center__button">
       <base-button
@@ -197,8 +198,8 @@ export default {
       ],
       title: {
         0: 'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň  Ykdysatçy okuw merkezi',
-        '«Audit» okuw merkezi': `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň   Audit okuw merkezi`,
-        '«Hazyna» sport kluby': `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň  Hazyna sport kluby`,
+        1: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň   Audit okuw merkezi`,
+        2: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň  Hazyna sport kluby`,
       },
       description: {
         0: `&nbsp&nbsp&nbsp&nbsp Okuw merkeziniň işiniň esasy görnüşi işgärleriň hünär derejesini kämilleşdirmekden we olary gaýtadan taýýarlamakdan ybarat bolup durýar. <br> &nbsp&nbsp&nbsp&nbsp
@@ -218,7 +219,7 @@ export default {
 			<li>Kompýuter sowatlylygy (2 aý).</li>
 			</ol>
 		`,
-        '«Audit» okuw merkezi': `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Audit
+        1: `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Audit
 		okuw merkezi 2000-nji ýylda ozalky Türkmen halk hojalyk institutynda döredildi.
 		 Audit okuw merkezi hojalyk hasaplaşygy esasynda hereket edýär. Okuw merkeziniň işiniň
 		 esasy görnüşi işgärleriň hünär derejesini kämilleşdirmekden we olary gaýtadan taýýarlamakdan
@@ -233,7 +234,7 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
    Audit okuw merkezi tarapyndan gurnalýan okuw kurslaryny döwrebap geçirmek üçin ähli şertler döredilen. Audit okuw merkezinde okuw sapaklary institutymyzyň ýokary derejeli, tejribeli professor-mugallymlary tarapyndan geçirilip, okuw-usuly maglumat üpjünçiligi yzygiderli kämilleşdirilýär.
 `,
 
-        '«Hazyna» sport kluby': `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş
+        2: `&nbsp&nbsp&nbsp&nbsp Türkmen döwlet ykdysadyýet we dolandyryş
 		 institutynyň Hazyna sport kluby 2013-nji ýylyň iýul aýynda döredildi. Sport kluby
 		 hojalyk hasaplaşygy esasynda hereket edýär. Hazyna sport klubunyň esasy maksady sportuň
 		  dürli ugurlarynyň, ýagny woleýbolyň, futbolyň, basketbolyň, kiçi futbolyň, suwda ýüzmegiň,
@@ -241,9 +242,9 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
 		   we sport bilen meşgullanmaga giňişleýin çekmekden, sagdyn durmuşy wagyz etmekden ybaratdyr.`,
       },
       img: {
-        '«Ykdysatçy» okuw merkezi': 'image.png',
-        '«Audit» okuw merkezi': '3.png',
-        '«Hazyna» sport kluby': '2.png',
+        0: 'image.png',
+        1: '3.png',
+        2: '2.png',
       },
     }
   },
@@ -254,7 +255,7 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
 .study-center {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   margin-bottom: 84px;
   @media (max-width: 767px) {
     margin-bottom: 30px;

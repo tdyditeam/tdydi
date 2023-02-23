@@ -187,7 +187,7 @@ export default {
             {
               id: 9,
               name: this.$t('header.menu.aboutUs.studyCenter'),
-              path: '/about-us/study-center',
+              path: '/about-us/study-center/0',
             },
             {
               id: 10,
@@ -452,6 +452,9 @@ export default {
           opacity: 0;
           visibility: hidden;
           transition: 0.3s ease;
+          &:not(:last-child) {
+            margin-right: 5px;
+          }
           &:hover {
             color: var(--primary);
           }
