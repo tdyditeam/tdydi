@@ -12,6 +12,7 @@ export default {
     dearTeachers: 'Hormatly mugallymlar',
     departmentTeachers: 'Kafedranyň mugallymlary',
     contact: 'Habarlaşmak',
+    feedBack: 'Ýüz tutmak üçin',
   },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
@@ -62,6 +63,68 @@ export default {
         magistr: 'Magistr taýýarlyk ugurlary',
       },
     },
+  },
+  aboutUs: {
+    description: ` Berkarar döwletiň täze eýýamynyň Galkynyşy döwründe hormatly
+	Prezidentimiz Serdar Berdimuhamedowyň başda durmagynda ylmyň we
+	tehnikanyň gazananlaryny ykdysadyýet bilen berk utgaşdyrmak,
+	jemgyýetiň bar bolan ähli mümkinçiliklerini doly güýje girizmek we
+	şonuň esasynda Türkmenistany innowasion döwlete öwürmek, häzirki zaman
+	ýokary tehnologik senagaty kemala getirmek, bäsdeşlige ukyply taýýar
+	önümleri öndürmek döwletimiziň baş strategik ugry bolup durýar. Şu
+	maksady durmuşa geçirmekde ýokary derejeli ykdysatçy hünärmenlere uly
+	orun degişli bolup, olar Türkmen döwlet ykdysadyýet we dolandyryş
+	institutynda taýýarlanylýar. Institut 1980-nji ýylyň 31-nji ýanwarynda
+	Türkmen halk hojalyk instituty ady bilen Türkmen döwlet
+	uniwersitetiniň binýadynda döredildi.Ykdysadyýetde bazar
+	gatnaşyklaryny ösdürmäge uly goşant goşjak ýokary derejeli
+	hünärmenleri häzirki zaman talaplaryna laýyklykda taýýarlamagyň we
+	olaryň hünärini ýokarlandyrmagyň bitewi ulgamyny döretmek şeýle hem
+	ýurdumyzyň dünýä ykdysady bileleşigine işjeň goşulyşmagyny üpjün etmek
+	maksady bilen Türkmenistanyň Prezidenti 2008-nji ýylyň 14-nji
+	aprelinde Türkmen halk hojalyk institutynyň adyny üýtgedip, ony
+	Türkmen döwlet ykdysadyýet we dolandyryş instituty diýip atlandyrmak
+	baradaky Karara gol çekdi. 2011-nji ýylyň 28-nji sentýabrynda bolsa
+	Gahryman Arkadagymyzyň hut özi gelip, dünýä ülňülerine laýyk gelýän,
+	iň kämil enjamlar bilen enjamlaşdyrylan ajaýyp ykdysady şäherçesini
+	açyp berdi. Täze binanyň okuw otaglary dünýä talaplaryna laýyk
+	sapaklary geçirmäge niýetlenilip, olar interaktiw tagtalar,
+	kompýuterler bilen enjamlaşdyrylandyr. Institutda jemi 24 sany
+	kompýuter okuw otagy, 8 sany lingafon kabinet bar. 120, 84, 60 we 40
+	adamlyk okuw otaglarynyň hemmesinde interaktiw tagtalar oturdylyp,
+	olarda distansion (daş aralykdan) sapaklar hem gurnalýar.
+	Mugallymlara, talyplara optiki süýümli, ýokary tizlikli internet
+	ulgamyndan peýdalanmaga doly mümkinçilikler döredilendir. Institutdaky
+	kompýuterler tor arkaly birleşdirilip, elektron resminama dolanyşygy
+	ýola goýuldy. Bu bolsa içerki we daşarky resminama dolanyşygyny özünde
+	jemleýär. Şonuň ýaly-da elektron kitaphana ulgamy döredilip, ol
+	mugallymlaryň we talyplaryň maglumat üpjünçiligini kanagatlandyrmakda,
+	wagtlaryny tygşytlamakda amatly şertler döredýär. Türkmen döwlet
+	ykdysadyýet we dolandyryş institutynyň binalar toplumynda talyplar
+	üçin niýetlenen 2 sany ýaşaýyş jaýy bolup, onda ähli amatlyklar
+	döredilendir. Türkmen döwlet ykdysadyýet we dolandyryş institutynda
+	häzirki wagtda hünärmenleri taýýarlamak Ykdysadyýet, Maliýe, Menejment
+	we Marketing fakultetlerinde alnyp barylýar, şeýle-de Hünäri
+	ýokarlandyryş fakulteti bolup, onda ministrlikleriň, pudak
+	edaralarynyň, bank ulgamynyň we dürli kärhanalaryň hünärmenleri
+	goşmaça taýýarlyk okuwyny geçýärler. Institutda Buhgalterçilik hasaba
+	alnyşy we audit, Statistika, Ykdysadyýet we hukuk, Ykdysady nazaryýet,
+	Maliýe, Bank işi, Sanly ykdysadyýet, Menejment, Maglumat ulgamlary,
+	Dünýä ykdysadyýeti, Marketing, Zähmetiň ykdysadyýeti ýaly gutardyş
+	kafedralary hereket edýär. Şonuň ýaly-da Jemgyýeti öwreniş ylymlary,
+	Daşary ýurt dilleri, Ýokary matematika we informatika, Bedenterbiýe
+	ýaly fakultetara kafedralar hereket edýär. Okuw binalarynda
+	kompýuterler, proýektorlar bilen enjamlaşdyrylan okuw otaglary,
+	internet ulgamyna birikdirilen kompýuter otaglary hereket edýär. Şeýle
+	hem okuw binalarynda birnäçe ýöriteleşdirilen okuw otaglary bar.
+	Institutda sport zaly, sport meýdançalary talyplara beden terbiýesini
+	bermekde hyzmat edýär. Institutymyzyň talyp türgenleri ýokary okuw
+	mekdepleriniň talyplarynyň arasynda, halkara ýaryşlarynda üstünlikli
+	çykyş edip, baýrakly orunlara mynasyp bolýarlar. Institutda hereket
+	edýän Türkmenistanyň Magtymguly adyndaky ýaşlar guramasynyň baýragynyň
+	eýesi «Hazyna» aýdym-saz we tans topary baýramçylyk çärelerinde,
+	döwlet konsertlerinde, tele-radio ýaýlymlarda yzygiderli çykyş edip,
+	halkyň söýgüsine mynasyp bolýarlar.`,
   },
   statistics: {
     teacher: 'Mugallymlar',
@@ -309,6 +372,37 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
   },
   library: {
     title: 'KITAPHANA',
+    description: `<p><span> &nbsp&nbsp&nbsp&nbsp Institutda häzirki zaman amatlyklary bolan kitaphana hem bar. 
+	Kitaphananyň gorunda türkmen, rus, iňlis dillerinde ykdysadyýet ylmynyň we tejribäniň
+	 ähli ugurlary boýunça edebiýatlar, başga-da daşary ýurt dillerindäki käbir neşirler bar.
+	   Kitaphanada ykdysadyýet, maliýe, dolandyryş, marketing, ykdysady-matematiki usullar boýunça
+		elektron kitaplar, okuw gollanmalar, usulyýet edebiýatlar we ylmy monografiýalar bar.</span></p>
+		<p><span>Institutda&nbsp; institutyň kitaphana gorunyň elektron binýady bolan elektron
+		 kitaphana hem hereket edýär. Elektron kitaphana bu innowasion ykdysadyýeti kemala getirmegiň 
+		 wajyp şerti bolup durýar. Elektron kitaphana ýörite gözleg ulgamy bilen enjamlaşdyrylan we 
+		 ol arkaly zerur bolan edebiýat çeşmeleri, şeýle hem Gahryman Arkadagymyzyň kitaplary bilen 
+		 tanşyp bolýar. Diňe bir institutyň professor-mugallymlary tarapyndan ýazylan okuw kitaplaryny
+		   däl, eýsem başga awtorlaryň kitaplaryny hem okap bolýar.</span></p><p><span> &nbsp&nbsp&nbsp&nbspEdebiýat gözlegini 
+			dürli alamatlar, ýagny tema, adalga, neşir edilen ýyly, awtorlar we başga alamatlar arkaly amala
+			 aşyryp bolýar. Kitaphana ýörite robot-skaner bilen enjamlaşdyrylan we ol bir minutda onlarça 
+			 sahypalaryň suratyny alyp bilýär. Bu käbir neşirlerimiziň az mukdarda çap edilenligi, 
+			 kitaplaryň aýawly saklanylmagy ýaly meseleleriň hem çözgüdini ýeňilleşdirýär. Bulardan
+			   başga-da ýiten, zaýalanan kitaplary täzeden dikeltmek mümkinçiliklerini döredýär. Biziň 
+			   kitaphanamyzda elektron neşirleriň sany gün-günden köpelýär. Bu kitaplary mugallymlarymyz,
+				talyplarymyz özleriniň ýan kompýuterlerine, elektron maglumat göterijilerine ýükläp alyp,
+				 islendik pursatda olardan peýdalanýarlar.</span></p><p><span> &nbsp&nbsp&nbsp&nbsp Institutymyzda bilim portaly
+	 hem hereket edýär, bu bolsa ýörite tor arkaly talyplara islendik ugurlar boýunça 
+	 edebiýatlaryň, umumy sapaklaryň ýazgylarynyň baý edebi gorundan giňişleýin
+	   peýdalanmaklaryny üpjün edýär. Şular ýaly innowasion tehnologiýalaryň kömegi bilen 
+		ýaşlaryň bilim almak,ylym öwrenmek mümkinçilikleri barha ýokarlanýar. Kitaphananyň 
+		ýokary tizlikli internet ulgamy bilen enjamlaşdyrylmagy okyjylara elektron 
+		kitaphanasynyň gory bilen diňe lokal tor arkaly tanyşmaklygyna mümkinçiligi 
+		döretmän, eýsem bütindünýä intellektual gory bilen tanyşdyrýar. Kitaphana işini 
+		döwrebaplaşdyrmak ýaşlary okatmagyň, ylma çekmegiň netijeliligini gazanmak,hem-de
+		 her bir okyja elýeterliligi üpjün etmek her bir kitaphana işgärleriniň esasy borjudyr.</span></p>`,
+  },
+  tradeUnion: {
+    title: 'Hazyna aýdym-saz we tans topary',
     description: `<p><span> &nbsp&nbsp&nbsp&nbsp Institutda häzirki zaman amatlyklary bolan kitaphana hem bar. 
 	Kitaphananyň gorunda türkmen, rus, iňlis dillerinde ykdysadyýet ylmynyň we tejribäniň
 	 ähli ugurlary boýunça edebiýatlar, başga-da daşary ýurt dillerindäki käbir neşirler bar.

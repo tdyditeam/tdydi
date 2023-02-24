@@ -12,6 +12,7 @@ export default {
     dearTeachers: 'Dear teachers',
     departmentTeachers: 'Teachers of department',
     contact: 'Contact',
+    feedBack: 'Feed back',
   },
   header: {
     name: `TURKMEN STATE INSTITUTE <br /> OF ECONOMICS 
@@ -62,6 +63,38 @@ export default {
         magistr: 'Master’s Degree Programs',
       },
     },
+  },
+  aboutUs: {
+    description: `<p><span >In the period of 
+	the Revival of the New Epoch </span><span>of &nbsp;Powerful State, under the leadership 
+	</span><span style="color: red">of our Esteemed President </span><span>Serdar Berdimuhamedov, 
+	stable coordination of the achievements of science and technology with the economy, comprehensive 
+	operation of all the available opportunities of the society and, based on this, to transform Turkmenistan 
+	into an innovative state, to create a modern high-tech industry, and to produce competitive finished products
+	 is the principal strategic priorities of the state. High-level economists, who are trained at the Turkmen
+	  State Institute of Economics and Management, play an important role in realizing this goal.</span></p><p>
+	  <span>The institute was established on January 31, 1980 under the name Turkmen People's Economic Institute 
+	  on the foundation of Turkmen State University.</span></p><p><span>On April 14, 2008, the President of 
+	  Turkmenistan changed the name of the Turkmen Institute of People's Economy in order to create a unified 
+	  system of training and professional development of high-level specialists who will greatly contribute
+	   to the development of market relations in the economy, as well as to ensure the active integration of
+	    the country into the world economic community. , signed the Decision to call it the Turkmen State 
+		Institute of Economics and Management. On September 28, 2011, our Arkadag came and opened a wonderful 
+		economic campus, which meets world standards and equipped with the most advanced equipment.</span></p>
+		<p><span>The classrooms of the new building are designed to meet international standards and equipped 
+		with interactive whiteboards and computers. The institute has a total of 24 computer classrooms and 8 
+		language classrooms. All classrooms for 120, 84, 60 and 40 people are equipped with interactive 
+		whiteboards, and distance learning is also organized in them. Teachers and students have full access 
+		to fiber-optic, high-speed Internet. Computers at the institute were connected via a network and 
+		electronic document circulation was established. This includes internal and external document 
+		circulation. In addition, an electronic library system was created, which creates favorable conditions
+		 for meeting the information supply of teachers and students and saving their time.</span></p><p><span>
+		 The complex of buildings of the Turkmen State Institute of Economics and Management has 2 dormitories,
+		  which are equipped with all amenities.</span></p><p><span>At the Turkmen State Institute of Economics 
+		  and Management, training of specialists is currently carried out in the faculties of Economics, 
+		  Finance, Management and Marketing, as well as the Faculty of Professional Development, where 
+		  specialists of ministries, departments, banking system and various enterprises undergo additional
+		   training. The Institute has graduate departments such as Accounting and Auditing, Statistics, Economics and Law, Economic Theory, Finance, Banking, Digital Economy, Management, Information Systems, Global Economy, Marketing, Labor Economics. In addition, there are departments in the faculties of Social Studies, Foreign Languages, Advanced Mathematics and Informatics, and Physical Education.</span></p><p><span>Educational buildings have computers, classrooms equipped with projectors, and computer rooms connected to the Internet. There are also several specialized classrooms in the academic buildings.</span></p><p><span>The institute has a gymnasium and sports grounds to provide physical education to the students. Student athletes of our institute successfully participate in international competitions among students of higher education institutions and win prizes.</span></p><p><span>The music and dance group "Hazyna", the winner of the award of the youth organization named after Magtymguly of Turkmenistan, operating at the institute, regularly performs at festive events, state concerts, TV and radio broadcasts and deserves the love of the people.</span></p>`,
   },
   statistics: {
     teacher: 'Teachers',
@@ -235,5 +268,9 @@ export default {
   library: {
     title: 'Library',
     description: `<p><span>The Institute also has a library with modern facilities. The library has literature in Turkmen, Russian, English languages on all fields of economic science and practice, as well as some publications in foreign languages. The library contains e-books, textbooks, methodological literature and scientific monographs on economics, finance, management, marketing, economic-mathematical methods.</span></p><p><span>The institute also has an electronic library, which is an electronic base of the institute's library stock. The electronic library is an essential condition for creating this innovative economy. The electronic library is equipped with a special search system, through which you can find the necessary literary resources, as well as the books of our Heroic Friend. One can read not only the textbooks written by the professors of the institute but also the books of other authors.</span></p><p><span>A literature search can be conducted using various indicators, such as topic, title, year of publication, authors, and other indicators. The library is equipped with a special robotic scanner that can scan dozens of pages per minute. This facilitates the solution of problems such as the limited edition of some of our publications and the storage of books. Apart from these, it provides opportunities to recover lost and damaged books. The number of electronic publications in our library is increasing day by day. Our teachers and students download these books to their personal computers and electronic data carriers and use them at any time.</span></p><p><span>Our institute also operates an educational portal, which provides students with extensive access to a rich literary reserve of literature in any field, records of general courses through a special network. With the help of such innovative technologies, the opportunities of young people to learn and study science are increasing. Equipping the library with a high-speed Internet system allows readers to get acquainted with the library's collection not only through the local network, but also with the world's intellectual collection. Modernization of library work is the main duty of every librarian to achieve the efficiency of teaching and learning of young people, as well as to provide access to every reader.</span></p>`,
+  },
+  tradeUnion: {
+    title: 'Hazyna Music and Dance Group',
+    description: `<p><strong><span >&nbsp;</span></strong></p><p><strong></strong></p><p><span >In the period of the Revival of the New Epoch </span><span>of the Powerful State, based on the rich life experience of our people accumulated over many centuries, and the achievements of modern culture, wide opportunities are created for the harmonious development of the students in terms of education, science, and culture. From that point of view, in order to identify talented young people who are capable of creativity outside of their professions, develop their skills, encourage students' creative activity, increase their passion for art, as well as widely promote national culture, we are currently the winner of the Youth Award of Turkmenistan in our institute. The winner of the "Turkmen's Golden Age" competition, Khazina, performs music and dance group.</span></p>`,
   },
 }
