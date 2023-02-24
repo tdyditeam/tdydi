@@ -66,7 +66,7 @@ export default {
 }
 .block__description-img {
   width: 100%;
-  height: 370px;
+  height: 400px;
   margin-bottom: 30px;
 }
 .block__description-img img {

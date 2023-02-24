@@ -22,7 +22,21 @@
       </div>
       <div class="banners-outside__bannner-right">
         <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/04.png" alt="img" />
+          <img
+            v-if="$i18n.locale === 'tm'"
+            src="@/assets/img/home/banners-outside/banking.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'ru'"
+            src="@/assets/img/home/banners-outside/bankingRu.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'en'"
+            src="@/assets/img/home/banners-outside/bankingEn.gif"
+            alt="img"
+          />
         </div>
         <div class="banners-outside__image">
           <img
@@ -66,7 +80,6 @@ export default {}
 
   &__bannner-left {
     background: #ecf7f8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 238px;
     position: absolute;
     left: -280px;
@@ -102,7 +115,7 @@ export default {}
     right: -280px;
     cursor: pointer;
     .banners-outside__image:last-child {
-      margin-top: 50px;
+      margin-top: 100px;
     }
   }
 }

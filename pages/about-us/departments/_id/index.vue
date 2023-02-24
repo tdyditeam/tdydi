@@ -11,9 +11,7 @@
       @clicked="
         $router.push(
           localeLocation(
-            `/about-us/departments/${$route.params.id}/${
-              title[$route.params.id]
-            }`
+            `/about-us/departments/${$route.params.id}/${$route.params.id}`
           )
         )
       "
@@ -47,22 +45,22 @@ export default {
       title: {
         accounting: this.$t('departments.accounting.title'),
         statistic: this.$t('departments.statistics.title'),
-        'economical-and-law': this.$t('departments.economicsandlaw.title'),
-        economic: this.$t('departments.economictheory.title'),
+        'economical-and-law': this.$t('departments.economical-and-law.title'),
+        economic: this.$t('departments.economic.title'),
         banking: this.$t('departments.banking.title'),
         finance: this.$t('departments.finance.title'),
-        'digital-ecocnomy': this.$t('departments.digitalEconomy.title'),
-        'social-studies': this.$t('departments.socialStudies.title'),
-        'world-economy': this.$t('departments.globalEconomy.title'),
-        menejment: this.$t('departments.management.title'),
-        'information-systems': this.$t('departments.informationsystems.title'),
-        'foreign-languages': this.$t('departments.foreignLanguages.title'),
+        'digital-ecocnomy': this.$t('departments.digital-ecocnomy.title'),
+        'social-studies': this.$t('departments.social-studies.title'),
+        'world-economy': this.$t('departments.world-economy.title'),
+        menejment: this.$t('departments.menejment.title'),
+        'information-systems': this.$t('departments.information-systems.title'),
+        'foreign-languages': this.$t('departments.foreign-languages.title'),
         marketing: this.$t('departments.marketing.title'),
-        'economics-of-labor': this.$t('departments.economicsLabor.title'),
+        'economics-of-labor': this.$t('departments.economics-of-labor.title'),
         'advanced-mathematics-and-computer-science': this.$t(
-          'departments.mathematics.title'
+          'departments.advanced-mathematics-and-computer-science.title'
         ),
-        'physical-education': this.$t('departments.physicaleducation.title'),
+        'physical-education': this.$t('departments.physical-education.title'),
       },
       description: {
         accounting: this.$t('departments.accounting.description'),

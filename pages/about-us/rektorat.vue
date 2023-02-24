@@ -4,7 +4,7 @@
     <block-pages
       :description="description"
       :title="title"
-      img="rektorat.png"
+      img="tdy_shema.jpg"
     ></block-pages>
   </section>
 </template>

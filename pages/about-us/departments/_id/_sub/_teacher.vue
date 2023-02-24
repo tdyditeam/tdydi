@@ -86,7 +86,21 @@
 export default {
   data() {
     return {
-      breadCrumbs: [
+      teachers: [
+        {
+          id: 1,
+          name: 'Iwanow Bäşim Meredowiç',
+          img: 'img_1.png',
+          skills: 'Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.',
+          description:
+            'Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym. Türkmenistanyň Ýokary okuw mekdepleriniň professor-mugallymlarynyň arasynda geçirilen «Ýylyň mugallymy-2020» 3-nji orun – 2020ý. Türkmenistanyň «Watana bolan söýgüsi üçin» medaly bilen sylaglanan -2021ý. Kafedrada okadylýan dersler boýunça bir näçe okuw gollanmalarynyň we okuw kitaplarynyň awtory.Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.',
+        },
+      ],
+    }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
           id: 2,
@@ -112,18 +126,8 @@ export default {
           path: `/about-us/departments/${this.$route.params.id}/${this.$route.params.sub}/${this.$route?.params?.teacher}`,
           exact: true,
         },
-      ],
-      teachers: [
-        {
-          id: 1,
-          name: 'Iwanow Bäşim Meredowiç',
-          img: 'img_1.png',
-          skills: 'Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.',
-          description:
-            'Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym. Türkmenistanyň Ýokary okuw mekdepleriniň professor-mugallymlarynyň arasynda geçirilen «Ýylyň mugallymy-2020» 3-nji orun – 2020ý. Türkmenistanyň «Watana bolan söýgüsi üçin» medaly bilen sylaglanan -2021ý. Kafedrada okadylýan dersler boýunça bir näçe okuw gollanmalarynyň we okuw kitaplarynyň awtory.Maglumat ulgamlary kafedrasynyň müdiri, uly mugallym.',
-        },
-      ],
-    }
+      ]
+    },
   },
 }
 </script>
