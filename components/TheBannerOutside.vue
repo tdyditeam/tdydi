@@ -19,23 +19,6 @@
             alt="img"
           />
         </div>
-        <!-- <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/02.png" alt="img" />
-        </div> -->
-        <!-- <div class="banners-outside__items items-banners-outside">
-          <div class="items-banners-outside__image">
-            <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
-          </div>
-          <div class="items-banners-outside__image">
-            <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
-          </div>
-          <div class="items-banners-outside__image">
-            <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
-          </div>
-          <div class="items-banners-outside__image">
-            <img src="@/assets/img/home/banners-outside/03.png" alt="img" />
-          </div>
-        </div> -->
       </div>
       <div class="banners-outside__bannner-right">
         <div class="banners-outside__image">
@@ -43,7 +26,18 @@
         </div>
         <div class="banners-outside__image">
           <img
-            src="@/assets/img/home/banners-outside/bannerRight.png"
+            v-if="$i18n.locale === 'tm'"
+            src="@/assets/img/home/banners-outside/olimpiada.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'ru'"
+            src="@/assets/img/home/banners-outside/olimpiadaRu.gif"
+            alt="img"
+          />
+          <img
+            v-if="$i18n.locale === 'en'"
+            src="@/assets/img/home/banners-outside/olimpiadaEn.gif"
             alt="img"
           />
         </div>
@@ -82,9 +76,6 @@ export default {}
   // .banners-outside__image
 
   &__image {
-    &:first-child {
-      // margin-bottom: 40px;
-    }
     width: 100%;
     height: 100%;
     img {
@@ -111,21 +102,7 @@ export default {}
     right: -280px;
     cursor: pointer;
     .banners-outside__image:last-child {
-      margin-top: 40px;
-    }
-  }
-}
-.items-banners-outside {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  // .items-banners-outside__image
-  &__image {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      margin-top: 50px;
     }
   }
 }

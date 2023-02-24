@@ -32,12 +32,7 @@
           <div
             class="item-departments-teachers__text item-departments-teachers__text--wrapped"
           >
-            Türkmenistanyň Ýokary okuw mekdepleriniň professor-mugallymlarynyň
-            arasynda geçirilen «Ýylyň mugallymy-2020» 3-nji orun – 2020ý.
-            Türkmenistanyň «Watana bolan söýgüsi üçin» medaly bilen sylaglanan
-            -2021ý. Kafedrada okadylýan dersler boýunça bir näçe okuw
-            gollanmalarynyň we okuw kitaplarynyň awtory.Maglumat ulgamlary
-            kafedrasynyň müdiri, uly mugallym.
+            {{ teacher.description }}
           </div>
         </div>
       </div>
@@ -153,8 +148,8 @@ export default {
 
   &__text {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 120%;
+    font-size: 17px;
+    line-height: 150%;
     letter-spacing: 0.04em;
     color: #333333;
     @media (max-width: 767px) {
@@ -168,7 +163,7 @@ export default {
       display: block;
     }
     @media (max-width: 479px) {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 }
