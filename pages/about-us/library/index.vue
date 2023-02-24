@@ -28,9 +28,9 @@ export default {
           exact: true,
         },
       ],
-      img: 'library.png',
+      img: '1.png',
       title: 'KITAPHANA',
-      description: ``,
+      description: `sadasd`,
     }
   },
   mounted() {
@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .library {
-  display: flex;
-  justify-content: space-between;
+  //   display: flex;
+  //   justify-content: space-between;
 }
 </style>
