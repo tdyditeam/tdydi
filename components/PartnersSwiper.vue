@@ -3,7 +3,7 @@
     <div v-swiper:mySwiper="options" class="partners-swiper__swiper swiper">
       <div class="partners-swiper__wrapper swiper-wrapper">
         <div
-          v-for="img in images"
+          v-for="(img, index) in images"
           :key="img.id"
           class="partners-swiper__slide swiper-slide"
         >
@@ -15,7 +15,7 @@
               />
             </div>
             <h2 class="partners-swiper__title">
-              Singapuryň Dolandyryşy ösdürmek instituty
+              {{ $t(`internationalPartnership[${index}]`) }}
             </h2>
           </div>
         </div>

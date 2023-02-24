@@ -432,4 +432,14 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
 		döwrebaplaşdyrmak ýaşlary okatmagyň, ylma çekmegiň netijeliligini gazanmak,hem-de
 		 her bir okyja elýeterliligi üpjün etmek her bir kitaphana işgärleriniň esasy borjudyr.</span></p>`,
   },
+  internationalPartnership: {
+    0: `Belarus döwlet ykdysadyýet uniwersiteti`,
+    1: `Belarusyň alyjylar kooperasiýasynyň söwda-ykdysady uniwersiteti`,
+    2: `Brest döwlet tehniki uniwersiteti`,
+    3: `Daşkent dowlet ykdysady uniwersiteti`,
+    4: `Buharestiň ykdysady bilimler  uniwersiteti`,
+    5: `Braşowyň Transilwaniýa uniwersiteti`,
+    6: `Kazanyň Federal uniwersiteti`,
+    7: `Singapur dolandyryş we ösüş instituty`,
+  },
 }

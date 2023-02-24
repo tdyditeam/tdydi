@@ -273,4 +273,14 @@ export default {
     title: 'Hazyna Music and Dance Group',
     description: `<p><strong><span >&nbsp;</span></strong></p><p><strong></strong></p><p><span >In the period of the Revival of the New Epoch </span><span>of the Powerful State, based on the rich life experience of our people accumulated over many centuries, and the achievements of modern culture, wide opportunities are created for the harmonious development of the students in terms of education, science, and culture. From that point of view, in order to identify talented young people who are capable of creativity outside of their professions, develop their skills, encourage students' creative activity, increase their passion for art, as well as widely promote national culture, we are currently the winner of the Youth Award of Turkmenistan in our institute. The winner of the "Turkmen's Golden Age" competition, Khazina, performs music and dance group.</span></p>`,
   },
+  internationalPartnership: {
+    0: `Belarusian State University of Economics`,
+    1: `Trade and Economic University of the Belarusian Consumers' Cooperative`,
+    2: `Brest State Technical University`,
+    3: `Tashkent State Economic University`,
+    4: `University of Economic Sciences of Bucharest`,
+    5: `Transylvania University of Brasov`,
+    6: `Kazan Federal University`,
+    7: `Singapore Institute of Management and Development`,
+  },
 }
