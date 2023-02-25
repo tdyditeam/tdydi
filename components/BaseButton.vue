@@ -45,7 +45,7 @@ export default {
   button {
     text-align: center;
     background: transparent;
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;

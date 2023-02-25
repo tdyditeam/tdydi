@@ -68,7 +68,7 @@ export default {
 .input {
   //   margin: 10px 0 0 0;  dasyna bermeli sul margini
   &__label {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -88,7 +88,7 @@ export default {
       border-radius: 6px;
     }
     &--body {
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       flex: 1 1 auto;
       background: transparent;
       padding: 0px 10px;

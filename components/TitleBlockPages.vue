@@ -61,7 +61,7 @@ export default {
   }
 
   &__title {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
@@ -78,7 +78,7 @@ export default {
   }
 
   &__button {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     display: flex;
     gap: 5px;
     background-color: #16ab65;

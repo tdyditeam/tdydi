@@ -48,7 +48,7 @@ export default {
 }
 .block__title-text {
   position: relative;
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -77,7 +77,7 @@ export default {
 }
 .block__description-content {
   //   max-width: 900px;
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

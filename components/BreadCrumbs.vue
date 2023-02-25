@@ -35,7 +35,7 @@ export default {
   list-style-type: none;
   margin: 0;
   padding: 10px 0px 10px 0px;
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

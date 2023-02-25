@@ -136,7 +136,7 @@ export default {
 .teacher {
   padding: 40px 20px 0px 20px;
   &__description {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;

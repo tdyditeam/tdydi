@@ -35,7 +35,7 @@ export default {}
 
 <style lang="scss" scoped>
 .institute-history {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   padding: 60px 0px 15px 0px;
   @media (max-width: 992px) {
     padding-top: 80px;
@@ -129,7 +129,7 @@ export default {}
   }
 
   &__button {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-size: 14px;
     color: #fff;
     display: flex;

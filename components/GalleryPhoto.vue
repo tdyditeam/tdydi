@@ -210,7 +210,7 @@ export default {
   }
 
   &__text {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     display: inline-flex;
     font-weight: 700;
     font-size: 16px;

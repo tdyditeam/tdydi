@@ -139,7 +139,7 @@ export default {
   gap: 20px;
   overflow: hidden;
   &__text {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;

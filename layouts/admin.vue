@@ -20,7 +20,7 @@ export default {
   height: 100vh;
   background: var(--background-second);
   padding: 10px;
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   display: flex;
   overflow: hidden;
   &-main {

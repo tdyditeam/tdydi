@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .article {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
 }
 .swiper-block {
   &__wrapper {

@@ -162,7 +162,7 @@ export default {
       flex-direction: column;
       flex: 0 1 100%;
       span:nth-child(1) {
-        font-family: 'Gilroy';
+        font-family: 'Roboto Flex';
         font-weight: 600;
         font-size: 18px;
         line-height: 21px;
@@ -173,7 +173,7 @@ export default {
         }
       }
       span:nth-child(2) {
-        font-family: 'Gilroy';
+        font-family: 'Roboto Flex';
         font-style: normal;
         font-weight: 400;
         font-size: 20px;

@@ -394,7 +394,7 @@ export default {
     &-title {
       h2 {
         padding: 29px 0;
-        font-family: 'Gilroy';
+        font-family: 'Roboto Flex';
         font-weight: 700;
         font-size: 20px;
         line-height: 23px;
@@ -420,9 +420,9 @@ export default {
     &-content {
       display: flex;
       align-items: center;
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-style: normal;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 18px;
       line-height: 21px;
       text-align: center;
@@ -510,7 +510,7 @@ export default {
       }
     }
     &-title {
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
@@ -598,8 +598,8 @@ export default {
       justify-content: space-between;
       width: 100%;
       padding: 10px 0 10px 0;
-      font-family: 'Gilroy';
-      font-weight: 500;
+      font-family: 'Roboto Flex';
+      font-weight: 600;
       font-size: 18px;
       line-height: 21px;
     }
@@ -757,7 +757,7 @@ export default {
       }
     }
     &-lng {
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-weight: 500;
       font-size: 18px;
       line-height: 125%;
@@ -772,7 +772,7 @@ export default {
   }
 }
 .menu-mobile {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   padding: 120px 10px 0px 10px;
   flex: 1 1 auto;
   &__list {
