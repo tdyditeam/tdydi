@@ -40,7 +40,6 @@ export default {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  text-transform: capitalize;
   color: var(--text);
   &__list {
     align-items: center;
