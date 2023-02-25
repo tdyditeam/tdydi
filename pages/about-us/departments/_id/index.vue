@@ -44,15 +44,15 @@ export default {
       ],
       title: {
         accounting: this.$t('departments.accounting.title'),
-        statistic: this.$t('departments.statistics.title'),
+        statistics: this.$t('departments.statistics.title'),
         'economical-and-law': this.$t('departments.economical-and-law.title'),
         economic: this.$t('departments.economic.title'),
         banking: this.$t('departments.banking.title'),
         finance: this.$t('departments.finance.title'),
-        'digital-ecocnomy': this.$t('departments.digital-ecocnomy.title'),
+        'digital-economy': this.$t('departments.digital-ecocnomy.title'),
         'social-studies': this.$t('departments.social-studies.title'),
         'world-economy': this.$t('departments.world-economy.title'),
-        menejment: this.$t('departments.menejment.title'),
+        management: this.$t('departments.management.title'),
         'information-systems': this.$t('departments.information-systems.title'),
         'foreign-languages': this.$t('departments.foreign-languages.title'),
         marketing: this.$t('departments.marketing.title'),
@@ -64,42 +64,44 @@ export default {
       },
       description: {
         accounting: this.$t('departments.accounting.description'),
-        statistic: this.$t('departments.statistics.description'),
+        statistics: this.$t('departments.statistics.description'),
         'economical-and-law': this.$t(
-          'departments.economicsandlaw.description'
+          'departments.economical-and-law.description'
         ),
-        economic: this.$t('departments.economictheory.description'),
+        economic: this.$t('departments.economic.description'),
         banking: this.$t('departments.banking.description'),
         finance: this.$t('departments.finance.description'),
-        'digital-ecocnomy': this.$t('departments.digitalEconomy.description'),
-        'social-studies': this.$t('departments.socialStudies.description'),
-        'world-economy': this.$t('departments.globalEconomy.description'),
-        menejment: this.$t('departments.management.description'),
+        'digital-economy': this.$t('departments.digital-economy.description'),
+        'social-studies': this.$t('departments.social-studies.description'),
+        'world-economy': this.$t('departments.world-economy.description'),
+        management: this.$t('departments.management.description'),
         'information-systems': this.$t(
-          'departments.informationsystems.description'
+          'departments.information-systems.description'
         ),
         'foreign-languages': this.$t(
-          'departments.foreignLanguages.description'
+          'departments.foreign-languages.description'
         ),
         marketing: this.$t('departments.marketing.description'),
-        'economics-of-labor': this.$t('departments.economicsLabor.description'),
+        'economics-of-labor': this.$t(
+          'departments.economics-of-labor.description'
+        ),
         'advanced-mathematics-and-computer-science': this.$t(
-          'departments.mathematics.description'
+          'departments.advanced-mathematics-and-computer-science.description'
         ),
         'physical-education': this.$t(
-          'departments.physicaleducation.description'
+          'departments.physical-education.description'
         ),
       },
       img: {
         accounting: ['accounting.png'],
         finance: ['finance.png'],
-        'digital-ecocnomy': ['digital-ecocnomy.png'],
+        'digital-economy': ['digital-ecocnomy.png'],
         'social-studies': ['finance.png'],
         'world-economy': ['finance.png'],
         'information-systems': ['information-systems.png'],
-        menejment: ['finance.png'],
+        management: ['finance.png'],
         'foreign-languages': ['finance.png'],
-        statistic: ['information-systems.png'],
+        statistics: ['information-systems.png'],
         economic: ['information-systems.png'],
         banking: ['banking.png'],
         marketing: ['marketing.png'],

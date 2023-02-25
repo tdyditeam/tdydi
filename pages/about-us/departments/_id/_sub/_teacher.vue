@@ -116,7 +116,7 @@ export default {
         },
         {
           id: 4,
-          name: this.$route?.params?.sub,
+          name: this.$t(`departments.${this.$route?.params?.sub}.title`),
           path: `/about-us/departments/${this.$route.params.id}/${this.$route.params.sub}`,
           exact: true,
         },
