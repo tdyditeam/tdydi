@@ -49,7 +49,7 @@ export default {
       display: block;
       width: 100%;
       padding: 13.5px;
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       border-radius: 4px;
       text-transform: uppercase;
       font-weight: 600;

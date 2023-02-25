@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .departments-teachers {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   max-width: 900px;
   &__title {
     font-weight: 600;

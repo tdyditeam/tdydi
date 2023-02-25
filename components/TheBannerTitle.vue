@@ -3,9 +3,7 @@
     <div class="banner__title-img">
       <img src="/logo2022.png" alt="" />
     </div>
-    <div v-html="$t('slogan')" class="banner__title-text">
-    
-    </div>
+    <div v-html="$t('slogan')" class="banner__title-text"></div>
   </div>
 </template>
 
@@ -54,7 +52,7 @@ export default {}
       }
     }
     &-text {
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-weight: 700;
       color: var(--white);
       font-size: 30px;

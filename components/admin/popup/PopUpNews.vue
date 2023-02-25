@@ -282,7 +282,7 @@ export default {
     span {
       padding: 8px 28px;
       margin-right: 2px;
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-weight: 600;
       font-size: 12px;
       line-height: 14px;

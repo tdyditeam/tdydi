@@ -1,5 +1,5 @@
-@font-face {
-  font-family: 'Gilroy';
+/* @font-face {
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-Light.eot');
   src: local('Gilroy Light'), local('Gilroy-Light'),
     url('../fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
@@ -11,7 +11,7 @@
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-Regular.eot');
   src: local('Gilroy Regular'), local('Gilroy-Regular'),
     url('../fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
@@ -22,7 +22,7 @@
   font-display: block;
 }
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-Medium.eot');
   src: local('Gilroy Medium'), local('Gilroy-Medium'),
     url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
@@ -34,7 +34,7 @@
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-Bold.eot');
   src: local('Gilroy Bold'), local('Gilroy-Bold'),
     url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
@@ -46,7 +46,7 @@
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-SemiBold.eot');
   src: local('Gilroy SemiBold'), local('Gilroy-SemiBold'),
     url('../fonts/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
@@ -58,7 +58,7 @@
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   src: url('../fonts/Gilroy-ExtraBold.eot');
   src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),
     url('../fonts/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
@@ -74,7 +74,8 @@
   font-weight: 600;
   font-style: normal;
   font-display: block;
-}
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&display=swap');
 
 * {
   padding: 0px;
@@ -115,7 +116,7 @@ body {
 body {
   line-height: 1;
   font-size: 0.875rem;
-  font-family: 'Gilroy';
+  font-family: 'Roboto Flex';
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

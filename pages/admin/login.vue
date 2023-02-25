@@ -89,7 +89,7 @@ export default {
     width: 420px;
 
     &--title {
-      font-family: 'Gilroy';
+      font-family: 'Roboto Flex';
       font-weight: 600;
       font-size: 40px;
       line-height: 48px;

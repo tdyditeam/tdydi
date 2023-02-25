@@ -205,7 +205,7 @@ export default {
     margin-bottom: 15px;
   }
   &__text {
-    font-family: 'Gilroy';
+    font-family: 'Roboto Flex';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

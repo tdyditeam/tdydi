@@ -283,4 +283,16 @@ export default {
     6: `Kazan Federal University`,
     7: `Singapore Institute of Management and Development`,
   },
+  education: {
+    title: `Programs conducted at the Turkmen State Institute of Economics and Management`,
+    description: `<p><span>Accounting and auditing</span></p><p><span>Statistics</span></p><p><span>Economics and law</span></p><p><span>Financial right</span></p><p><span>Economic security</span></p><p><span>Economy and economic law</span></p><p><span>Global financial markets</span></p><p><span>Cash flow and debt</span></p><p><span>Financial management</span></p><p><span>Stock market</span></p><p><span>It's a price cut</span></p><p><span>The economics of e-business</span></p><p><span>E-commerce</span></p><p><span>World economy</span></p><p><span>Management</span></p><p><span>Business Economics and Management</span></p><p><span>State and local government</span></p><p><span>Macroeconomics</span></p><p><span>Information Systems in Economics and Management</span></p><p><span>Economic cybernetics</span></p><p><span>Software for automated systems and computer hardware</span></p><p><span>Marketing</span></p><p><span>Commodity and Commodity Expertise</span></p><p><span>Organize community meals</span></p><p><span>Quality management</span></p><p><span>Labor economics and markets</span></p><p><span>To organize the livelihood of the population</span></p>`,
+    'undergraduate-courses': {
+      title: `Bachelor's Degree programs conducted at the Turkmen State Institute of Economics and Management`,
+      description: `<p><span>Accounting and auditing</span></p><p><span>Economy</span></p><p><span>Statistics</span></p><p><span>Economic security</span></p><p><span>Economics and law</span></p><p><span>Financial right</span></p><p><span>Banking and money circulation</span></p><p><span>Global financial markets</span></p><p><span>Financial management</span></p><p><span>Stock market</span></p><p><span>It's a price cut</span></p><p><span>Financial markets and financial security in the digital economy</span></p><p><span>The digital economy</span></p><p><span>The economics of e-business</span></p><p><span>E-commerce</span></p><p><span>World economy</span></p><p><span>Management</span></p><p><span>Business Economics and Management</span></p><p><span>State and local government</span></p><p><span>Business and Entrepreneurship</span></p><p><span>Information Systems and Technology (Economics and Management)</span></p><p><span>Economic cybernetics</span></p><p><span>Computer system software</span></p><p><span>Marketing</span></p><p><span>Commerce</span></p><p><span>Productivity</span></p><p><span>Quality management</span></p><p><span>Production technology and organization of public food</span></p><p><span>Digital technologies in trade and logistics</span></p><p><span>Labor economics and markets</span></p><p><span>To organize the livelihood of the population.</span></p>`,
+    },
+    'masters-training-courses': {
+      title: `Master's Degree programs conducted at the Turkmen State Institute of Economics and Management`,
+      description: `<p><span>Tax Administration</span></p><p><span>Management</span></p><p><span>National economy</span></p><p><span>World economy</span></p>`,
+    },
+  },
 }
