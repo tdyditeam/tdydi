@@ -57,7 +57,16 @@
           </div>
           <div class="body-pop-up__right-block right-block-contact">
             <div class="right-block-contact__image">
-              <img src="@/assets/img/home/contact-popup/img.png" alt="img" />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.3292064233046!2d58.36930555363504!3d37.899143344014654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f70027fba23882f%3A0xdf41c4a8f5ab0ac!2z0KLRg9GA0LrQvNC10L3RgdC60LjQuSDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdGL0Lkg0LjQvdGB0YLQuNGC0YPRgiDRjdC60L7QvdC-0LzQuNC60Lgg0Lgg0YPQv9GA0LDQstC70LXQvdC40Y8!5e0!3m2!1sru!2s!4v1677316828827!5m2!1sru!2s"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <!-- <img src="@/assets/img/home/contact-popup/img.png" alt="img" /> -->
             </div>
           </div>
         </div>

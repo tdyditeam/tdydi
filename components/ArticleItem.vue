@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="article-item__people people-swiper-block" v-if="false">
+      <div class="article-item__people people-swiper-block" v-if="true">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div class="people-swiper-block__image">
@@ -43,7 +43,7 @@
             <div class="people-swiper-block__subtitle">Amanow Aman</div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -75,7 +75,6 @@ export default {
     border-radius: 10px;
   }
   &__body-wrapper {
-    height: 100%;
   }
   &__body {
     padding: 30px 15px;

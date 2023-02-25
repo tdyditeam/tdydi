@@ -95,15 +95,19 @@ export default {
 
 <style lang="scss" scoped>
 .partners-swiper {
+  position: relative;
   padding-bottom: 100px;
   @media (max-width: 767px) {
     padding-bottom: 40px;
   }
   &__swiper {
+    position: relative;
   }
 
   &__wrapper {
     display: flex;
+
+    height: 100%;
   }
 
   &__slide {
@@ -117,12 +121,17 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 12px 14px;
+    height: 218px;
   }
 
   &__image {
+    width: 134px;
+    height: 134px;
     img {
       width: 100%;
       height: 100%;
+      object-position: center;
+      object-fit: contain;
     }
   }
 
