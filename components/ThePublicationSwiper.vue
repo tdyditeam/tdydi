@@ -68,8 +68,16 @@ export default {
           imgPath: 'img_3.png',
         },
         {
+          id: 7,
+          imgPath: 'img_7.png',
+        },
+        {
           id: 4,
           imgPath: 'img_4.png',
+        },
+        {
+          id: 8,
+          imgPath: 'img_8.png',
         },
         {
           id: 5,
@@ -78,6 +86,18 @@ export default {
         {
           id: 6,
           imgPath: 'img_6.png',
+        },
+        {
+          id: 9,
+          imgPath: 'img_9.png',
+        },
+        {
+          id: 10,
+          imgPath: 'img_10.png',
+        },
+        {
+          id: 11,
+          imgPath: 'img_11.png',
         },
       ],
     }
