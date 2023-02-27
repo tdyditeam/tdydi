@@ -23,7 +23,7 @@ export default {
         },
       ],
       title: this.$t('header.menu.aboutUs.name'),
-      img: 'image.png',
+      img: 'image.webp',
       description: this.$t('aboutUs.description'),
     }
   },

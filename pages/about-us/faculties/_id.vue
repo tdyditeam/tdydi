@@ -47,7 +47,7 @@ export default {
         ),
       },
       img: {
-        economical: 'image.png',
+        economical: 'image.webp',
         finanse: '3.png',
         managament: '2.png',
         marketing: '1.png',
