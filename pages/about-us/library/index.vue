@@ -28,7 +28,7 @@ export default {
           exact: true,
         },
       ],
-      img: '1.png',
+      img: 'library.webp',
     }
   },
   mounted() {

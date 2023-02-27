@@ -118,7 +118,7 @@
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
               <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[2]')
+                $t('internationalPartnership[3]')
               }}</span>
             </p>
           </div>
@@ -144,9 +144,9 @@
             </p>
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan"
-                >Buharestiň ykdysady bilimler uniwersiteti</span
-              >
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[4]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -171,9 +171,9 @@
             </p>
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan"
-                >Braşowyň Transilwaniýa uniwersiteti</span
-              >
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[5]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -198,9 +198,9 @@
             </p>
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan"
-                >Kazanyň Federal uniwersiteti</span
-              >
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[6]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -225,9 +225,9 @@
             </p>
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan"
-                >Singapur dolandyryş we ösüş instituty</span
-              >
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[7]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -235,14 +235,7 @@
     </div>
     <div class="international-partners__bottom-text">
       <p>
-        Türkmen döwlet ykdysadyýet we dolandyryş instituty bilen CAREC
-        Institutynyň arasynda ýakyn hyzmatdaşlyk saklanýar. 2022-nji ýylyň
-        sentýabr aýynyň 15-16-y aralygynda Azerbaýjanyň Baku şäherinde Ylmy
-        merkezleriň işini gowulandyrmak boýunça 6-njy Forum geçirildi. Bu
-        forumda Menejment kafedrasynyň müdiri Şallyýew Ç.M. «<em
-          >Türkmenistanda Durnukly ösüş maksatlarynyň amala aşyrylyşy</em
-        >» (<em>Implementation of SDGs in Turkmenistan</em>) atly tema boýunça
-        çykyş etdi.
+        {{ $t('international-cooperation.text') }}
       </p>
     </div>
   </div>
