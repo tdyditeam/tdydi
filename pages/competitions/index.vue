@@ -1,6 +1,11 @@
 <template>
   <section>
-    <block-pages :description="description" :title="title"></block-pages>
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
+    <block-pages
+      :description="description"
+      :title="title"
+      :img="img"
+    ></block-pages>
     <the-table :datas="datas"></the-table>
   </section>
 </template>
@@ -9,6 +14,16 @@
 export default {
   data() {
     return {
+      img: '4.png',
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t('header.menu.competitions.lessonCompetitions'),
+          path: '/competitions',
+          exact: true,
+        },
+      ],
       datas: [
         {
           id: 1,
