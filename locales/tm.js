@@ -451,7 +451,97 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
     },
     'masters-training-courses': {
       title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynda bilim berilýän Bakalawr taýýarlyk ugurlar`,
-      description: ``,
+      description: `<ul><li><p>Ykdysadyýet</p></li><li><p>Salgyt menejmenti</p></li><li><p>Menejment</p></li><li><p>Milli ykdysadyýet</p></li><li><p>Dünýä ykdysadyýeti</p></li></ul>`,
+    },
+  },
+  science: {
+    title:
+      'Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Aspirantura bölümi',
+    description: `<p>Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Aspirantura bölüminde aspirant, 
+	ylymlaryň kandidaty alymlyk derejesine dalaşgär, doktorant we ylymlaryň doktory alymlyk derejesine 
+	dalaşgär görnüşinde ylmy işgärler aşakdaky hünärler boýunça taýýarlanylýar:</p><p>05.13.18 – Matematiki 
+	modelirleme, san usullary we programma toplumlary;</p><p>05.19.08 – Senagat harytlarynyň we ýeňil senagat
+ çig mallarynyň haryt taýdan öwrenilişi;</p><p>08.00.01 – Ykdysady nazaryýet;</p><p>08.00.05 – Ykdysadyýet
+  we halk hojalygyny dolandyrmak;</p><p>08.00.10 – Maliýe, pul dolanyşygy we karz;</p><p>08.00.12 – Buhgalter
+  hasaby, audit, statistika;</p><p>08.00.13 – Ykdysadyýetiň matematiki we gural usullary;</p><p>08.00.14 – 
+ Dünýä ykdysadyýeti;</p><p>12.00.14 – Administratiw hukugy, maliýe-ykdysady hukugy, maglumat hukugy;</p>
+ <p>22.00.03 – Ykdysady sosiologiýa we demografiýa.</p><p><br></p><p>Aspirantura bilen baglanyşykly zerur
+  maglumatlary&nbsp;<strong><em>şu ýerde</em></strong>&nbsp;görüp bilersiňiz.</p><p>Ylymlaryň kandidaty 
+alymlyk derejesine dalaşgärlik bilen baglanyşykly zerur maglumatlary&nbsp;<strong><em>şu ýerde</em>
+</strong>&nbsp;görüp bilersiňiz.</p><p>Doktorantura bilen baglanyşykly zerur maglumatlary&nbsp;<strong>
+<em>şu ýerde</em></strong>&nbsp;görüp bilersiňiz.</p><p>Ylymlaryň &nbsp;doktory &nbsp;alymlyk &nbsp;
+derejesine &nbsp;dalaşgärlik &nbsp;bilen &nbsp;baglanyşykly &nbsp;zerur maglumatlary&nbsp;<strong>
+<em>şu ýerde&nbsp; </em></strong>görüp bilersiňiz.</p><p><br></p><p><strong>ASPIRANTURA KABUL ETMEGIŇ 
+TERTIBI</strong></p><p></p><p>Türkmenistanyň Prezidentiniň 2008-nji ýylyň 14-nji ýanwarynda çykaran 
+9378 belgili Karary bilen tassyklanan «Türkmenistanda ylmy işgärleri taýýarlamak hakynda Düzgünnama» 
+laýyklykda, aspirantura ýokary bilimli, azyndan 5 ýyl iş tejribesi bolan, saýlan ugry boýunça ylmy 
+gözlegleri geçirmekde başarnygyny görkezen şahslar bäsleşik esasynda kabul edilýär.</p><p>Aspirantura
+ girmek hakynda aspirantlary taýýarlamagy amala aşyrýan ýokary okuw mekdebiniň rektorynyň ýa-da ylmy
+  edaranyň ýolbaşçysynyň adyna arza şu resminamalary goşmak bilen berilýär:</p><ul><li><p>ýokary bilimi
+   hakynda diplomynyň nusgasyny we onuň goşundysy (ýokary bilimi daşary ýurtda alanlar degişli diplomynyň
+	 we onuň deň derejelidigini tassyklaýan Türkmenistanyň Bilim ministrligi tarapyndan berlen ykrar 
+	 şahadatnamanyň nusgasyny);</p></li><li><p>işgärleri hasaba almak boýunça şahsy kagyz;</p></li>
+	 <li><p>№086/h görnüşli lukmançylyk güwänamasy;</p></li><li><p>4x6 sm ölçegdäki üç sany fotosurat;
+	 </p></li><li><p>neşir edilen ylmy işleriniň sanawy, eger-de okuwa girýäniň ylmy işleri boýunça
+	oýlap tapmalary bar bolsa, ylmy-barlag işleriniň we oýlap tapmalarynyň, hasabatlarynyň sanawy;
+	</p></li><li><p>hünärine laýyklykda, saýlap alan temasy boýunça ylmy referat;</p></li><li><p>
+	 zähmet depderçesiniň nusgasy.</p></li></ul><p>Aspirantura girýän raýat ýokary okuw mekdebini 
+	 tamamlandygy hakyndaky diplomy (daşary ýurtda bilim alan adamlar diplom we onuň deň derejelidigi
+	 hakynda ykrar şahadatnamany) we şahsyýetini tassyklaýan resminamanyň asyl nusgasyny getirip 
+	 görkezýär.</p><br /><p><strong>YLYMLARYŇ KANDIDATY ALYMLYK DEREJESINE DALAŞGÄRLERI BERKITMEGIŇ 
+	 TERTIBI</strong></p><p></p><p>Ylymlaryň kandidaty alymlyk derejesine dalaşgärler ýokary bilimli
+	  bolmalydyrlar.</p><p>Aspiranturada doly okuwy geçenler ylymlaryň kandidaty alymlyk derejesine 
+	  dalaşgär hökmünde kabul edilmeýär.</p><p>Dalaşgärleri kandidatlyk dissertasiýalaryny 
+	  taýýarlamak üçin berkitmek üç ýyldan köp bolmadyk möhletde amala aşyrylýar.</p><p>Bir 
+	  wagtyň özünde iki ýa-da birnäçe ýokary okuw mekdebinde ýa-da ylmy edarada dalaşgär bolmaga
+	   rugsat edilmeýär.</p><p>Ylymlaryň kandidaty alymlyk derejesine dalaşgäriň ýokary okuw 
+	   mekdebine ýa-da ylmy edara berkidilmegi üçin:</p><ul><li><p>ýokary okuw mekdebiniň rektorynyň
+		   ýa-da ylmy-barlag edarasynyň ýolbaşçysynyň adyna arzasyny;</p></li><li><p>hünärine 
+		laýyklykda, saýlap alan temasy boýunça ylmy referat;</p></li><li><p>ýokary bilimi hakynda 
+		diplomynyň nusgasyny (ýokary bilimi daşary ýurtda alanlar degişli diplomynyň we onuň deň
+ derejelidigini tassyklaýan Türkmenistanyň Bilim ministrligi tarapyndan berlen ykrar 
+ şahadatnamanyň nusgasy).</p></li><li><p>Şahsyýetini tassyklaýan resminamany we ýokary
+  bilimi hakyndaky diplomynyň (ýokary bilimi daşary ýurtda alanlar degişli diplomy we 
+	Türkmenistanyň Bilim ministrligi tarapyndan berlen we onuň deň derejelidigini 
+	tassyklaýan ykrar şahadatnamany) asyl nusgasyny dalaşgäriň özi getirip görkezýär.
+	</p></li></ul><p><br></p><p><strong>DOKTORANTURA KABUL ETMEGIŇ TERTIBI</strong><br>
+	</p><p>Doktorantura ylymlaryň kandidaty alymlyk derejesi we doktorlyk 
+	dissertasiýasynyň üçden iki böleginiň ýerine ýetirilendigi barada şol ylmy
+	 ugurdan işleri alyp barýan ýokary okuw mekdebiniň ýa-da ylmy edaranyň Alymlar
+	  geňeşiniň güwänamasy, şeýle hem Alymlar geňeşi tarapyndan berlen hödürnamasy bolan
+		   şahslar bäsleşik esasynda kabul edilýär.</p><p>Doktoranturada okuwyň möhleti üç 
+	  ýyl.</p><p>Doktorantura girýän adamlar doktorantura döredilen edaranyň 
+   ýolbaşçysynyň adyna arza bilen ýüz tutýarlar we şu resminamalary goşup 
+  berýärler:</p><ul><li><p>işgärleri hasaba almak boýunça şahsy kagyz;</p></li>
+   <li><p>terjimehal;</p></li><li><p>№086/h görnüşli lukmançylyk güwänamasy;</p>
+ </li><li><p>4х6 sm ölçegindäki üç sany fotosurat;</p></li><li><p>ylymlaryň 
+	 kandidaty diplomynyň nusgasy;</p></li><li><p>zähmet depderçesiniň nusgasy;
+</p></li></ul><p>neşir eden ylmy işleriniň, oýlap tapyşlarynyň, patentleriniň sanawy we nusgalary, ýerine ýetiren ylmy barlaglary we işläp taýýarlamalary hakyndaky hasabatlarynyň sanawy;</p><p>üç ýylyň dowamynda tamamlamak göz öňünde tutulýan doktorlyk dissertasiýasyny taýýarlamagyň meýilnamasy;</p><p>dissertasiýanyň ugry boýunça ylmy barlaglary alyp barýan ýokary okuw mekdebiniň ýa-da ylmy edaranyň Alymlar geňeşiniň doktorlyk dissertasiýasynyň 2/3 böleginiň taýýardygy hakyndaky güwänamasy;</p><p>dissertasiýanyň ugry boýunça ylmy barlaglary alyp barýan ýokary okuw mekdebiniň ýa-da ylmy edaranyň Alymlar geňeşiniň hödürnamasy;</p><p>dissertasiýanyň temasynyň ylmy ugry boýunça ylmy barlaglary geçirýän iki sany ylymlaryň doktorynyň syny, olarda temanyň ylmy esaslandyrmasyna we derwaýyslygyna hem-de dissertasiýany taýýarlamagyň hödürlenýän meýilnamasyna baha berilmelidir, şeýle-de üç ýylyň dowamynda ony ýerine ýetirmegiň mümkinçiligi görkezilmelidir.</p><p>Doktorantura girýänler ylymlaryň kandidaty alymlyk derejesi hakyndaky diplomynyň we şahsyýetini tassyklaýan resminamanyň asyl nusgalaryny getirip görkezmelidirler.</p><br /><p><strong>DOKTORY ALYMLYK DEREJESINE DALAŞGÄR HÖKMÜNDE HASABA ALMAGYŇ TERTIBI</strong><br></p><p>Ylymlaryň doktory alymlyk derejesine dalaşgäriň ylymlaryň kandidaty alymlyk derejesi bolmaly.</p><p>Ylymlaryň doktory alymlyk derejesine dalaşgär ylmy işini doktorlyk dissertasiýasy görnüşinde taýýarlamak üçin 4 ýyl möhlet bilen ýokary okuw mekdebinde ýa-da ylmy edarada hasaba alynýar.</p><p>Ylymlaryň doktory alymlyk derejesine dalaşgär ýokary okuw mekdebinde ýa-da ylmy edarada hasaba alynmagy üçin ýolbaşçynyň adyna:</p><ul><li><p>ylymlaryň kandidaty diplomynyň nusgasy goşulan arzasyny;</p></li><li><p>dissertasiýanyň ugry boýunça ylmy işleri alyp barýan ýokary okuw mekdebiniň ýa-da ylmy edaranyň Alymlar geňeşiniň dissertasiýanyň 2/3 böleginiň taýýardygy baradaky güwänamasyny.</p></li><li><p>şahsyýetini tassyklaýan resminamanyň we ylymlaryň kandidaty diplomynyň asyl nusgasyny dalaşgäriň özi getirip görkezýär.</p></li></ul>`,
+    'research-and-project-work': {
+      title: 'Ylmy barlag we taslama işleri',
+      description: `<p>Türkmen döwlet ykdysadyýet we dolandyryş institutynda häzirki wagtda Türkmenistanyň 
+	 Ylymlar akademiýasy bilen ylalaşylan 13 sany ylmy temalar boýunça iş alnyp barylýar. Olardan 2021-2023-nji 
+	 ýyllar aralygynda alnyp barylýan ylmy işleriň sany 11 sany:</p><ul><li><p>«<em>Ykdysady subýektleriň maliýe
+	  ýagdaýynyň durnuklylygy we ony berkitmegiň ýollary (Türkmenistanyň dokma senagaty pudagynyň mysalynda)
+	  </em>» atly tema Buhgalterçilik hasaba alnyşy we audit kafedrasy;</p></li><li><p>«<em>Daşky gurşawyň s
+	  tatistikasyny kämilleşdirmegiň meseleleri</em>» atly tema Statistika kafedrasy;</p></li><li><p>«<em>Ykdysadyýet çygryndaky hukuk bozulmalar hakynda Türkmenistanyň kanunçylygynyň esaslary</em>» atly tema Ykdysadyýet we hukuk kafedrasy;</p></li><li><p>«<em>Türkmenistanyň maliýe ulgamyny kämilleşdirmegiň esasy ugurlary</em>» atly tema Maliýe kafedrasy;</p></li><li><p>«<em>Karz edaralaryň işiniň netijeliligini ýokarlandyrmakda innowasiýalaryň orny</em>» atly tema Bank işi kafedrasy;</p></li><li><p>«<em>Türkmenistanyň arhitektura ýadygärlikleri we binagärlik sungaty</em>» atly tema Jemgyýeti öwreniş ylymlary kafedrasy;</p></li><li><p>«<em>Ykdysadyýetiň hususy bölegini ösdürmegiň klaster modeli we dolandyryşyň hil görkezijilerini kämilleşdirmek</em>» atly tema Menejment kafedrasy;</p></li><li><p>«<em>Daşary ýurt dillerini öwretmegiň sanly tehnologiýalara esaslanýan okuw-usulyýet binýadyny döwrebaplaşdyrmak</em>» atly tema Daşary ýurt dilleri kafedrasy;</p></li><li><p>«<em>Energiýa çeşmelerini peýdalanmaklygyň marketing derňewleri</em>» atly tema Marketing kafedrasy;</p></li><li><p>«<em>Ykdysadyýetiň sanlylaşdyrylýan şertlerinde zähmet bazarynda hünärlere bolan isleg</em>» atly tema Zähmetiň ykdysadyýeti;</p></li><li><p>«<em>Sanly ykdysadyýet şertlerinde ykdysadyýetiň pudaklaryny optimal dolandyrmakda ykdysady-matematiki we ekonometriki modelleri ulanmagyň aýratynlyklary</em>» atly tema bolsa Ýokary matematika we informatika kafedrasy tarapyndan ýerine ýetirilýär.</p></li></ul><p>2018-2023-nji ýyllar aralygynda 2 sany ylmy temalar boýunça iş alnyp barylýar. 2018-2023-nji ýyllar aralygynda ýerine ýetirilýän ylmy temalaryň biri «<em>Türkmenistanyň halkara ykdysady hyzmatdaşlygynyň ileri tutulýan ugurlarynyň ösüş aýratynlyklary</em>» bolup, Dünýä ykdysadyýeti kafedrasynda ýerine ýetirilýär. «<em>Türkmenistanyň durmuş-ykdysady ösüşini seljermegiň we çaklamagyň ylmy-usuly esaslar</em>» atly beýleki tema bolsa, Maliýe we ykdysadyýet ministrligi, Türkmen döwlet maliýe instituty we Türkmenistanyň Ylymlar akademiýasy bilen bilelikde alnyp barylýar. Bu tema boýunça Ykdysady nazaryýet kafedrasy işleýär. Alnyp barylýan ylmy temalar boýunça teklipler taýýarlanylýar we ýurdumyzyň ykdysady toplumlaryna hödürlenilýär.</p>`,
+    },
+    'center-for-economic-innovation': {
+      title: 'Ykdysady innowasiýalar merkezi',
+      description: `<p>Türkmen döwlet ykdysadyýet we dolandyryş institutynyň Ykdysady innowasiýalar 
+	  merkezi 2019-njy ýylda institutyň professor-mugallymlaryny, aspirantlaryny, magistrantlaryny we 
+	  talyplaryny innowasion ykdysadyýeti kemala getirmek we ösdürmek babatynda düýpli ylmy-barlaglara 
+	  çekmek, kafedralarda bilim berlişini we ýerine ýetirilýän ylmy işleri utgaşdyrmak maksady bilen 
+	  döredildi.</p><p>Ykdysady innowasiýalar merkezi institutyň düzüm birligi bolup, institutyň 
+	  kafedralaryna Türkmenistanda ylmyň ileri tutulýan ugurlary boýunça ylmy-barlaglaryň maksatnamalaryny işläp düzmäge ýardam etmek, milli innowasion ykdysadyýeti kemala getirmek we ösdürmek, gazna biržalarynyň işini kämilleşdirmek, ylmyň, önümçiligiň, maýa goýujylaryň arasyndaky gatnaşyklary işjeňleşdirmek babatynda teklipleri taýýarlamak, ýurdumyzda innowasion we sanly ykdysadyýeti ösdürmekde durmuşa geçirilýän özgertmeleri ylmy taýdan seljermek, sanly ykdysadyýete geçiş döwründe innowasion telekeçiligiň işewürlik we guramaçylyk taslamalaryny taýýarlamaga gatnaşmak, ýurdumyzyň innowasion ösüşiniň netijeliligi babatynda seljermeleri geçirmek, ylmy-barlag işleriň ýerine ýetirilişiniň derejesine seljerme bermek, ýokary tehnologiýalara esaslanýan innowasion başlangyçlary önümçilige ornaşdyrmak boýunça taslamalary taýýarlamak, sanly gurşawa geçmegiň ykdysady görkezijilerini kesgitlemegiň we hasaplamagyň usulýetini işläp taýýarlamak ýaly işleri alnyp barylýar.</p><p>Ykdysady innowasiýalar merkeziniň maksatlaryndan we wezipelerinden ugur alnyp, dünýäniň öňdebaryjy ýurtlarynyň bilim-ylym, sanly ykdysadyýet, ýokary tehnologiýalar babatyndaky tejribeleri, ylmy gazananlary we innowasiýalary, daşary ýurtly ýokary okuw mekdepleriň ylmy merkezleri bilen bilelikdäki ylmy-barlaglary alyp barmagyň ýollary we usulyýeti öwrenilýär. Işewürligiň wekilleriniň gatnaşmagynda sanly gurşawa işewürligiň we sarp edijileriň işjeň utgaşmagyny üpjün edýän sanly platformalaryň mümkinçiliklerini giňeltmek we täze sanly hyzmatlaryny guramak boýunça taslamalar we teklipler taýýarlanylýar. Okuw-intellektual işleri, taýýarlanylýan taslamalar, sanly platformalar, olaryň mümkinçiliklerini giňeltmek we ş.m. ugurlary boýunça teleýaýlymlarda yzygiderli çykyş edilýär, şeýle-de ýurdumyzyň we daşary ýurtly ýokary okuw mekdepleri hem-de ylmy merkezleri bilen teleköpri arkaly onlaýn maslahatlar gurnalýar. Sanly platformalaryň mümkinçiliklerini giňeltmek we täze sanly hyzmatlary ornaşdyrmak boýunça taslamalary we çözgütleri taýýarlamak babatynda dünýä tejribesi öwrenilýär. Ýurdumyzyň sanly ykdysadyýeti ösdürmegiň ileri tutulýan ugurlary boýunça pudaklaýyn dolandyryş edaralary üçin teklipler taýýarlanylýar. Institutyň talyplarynyň arasynda intellektual bäsleşikleri yzygiderli gurnaýar. Ýurdumyzda geçirilýän ylmy we taslama bäsleşiklerine, sergilere hödürlenilýän işleri, taslamalary taýýarlamaga talyplary we ýaş mugallymlary çekmek, olara maslahat bermek işleri alnyp barylýar.</p>`,
+    },
+    'scientific-advice': {
+      title: 'Ylmy maslahatlar',
+      description: `<p>2022-nji ýylda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň professor-mugallymlary, aspirantlary, magistrantlary we talyplary indiki ylmy maslahatlara gatnaşdylar we olaryň makalalary, tezisleri çap edildi:</p><ul><li><p>2022-nji ýylyň 17-nji maýynda geçirilen «<em>Türkmenistanyň konstitusiýasyna 30 ýyl: Täze taryhy eýýäm we kanunçykaryjylyk işiniň häzirki zaman tejribesi</em>» atly ylmy-amaly maslahatynda 28 sany çykyş;</p></li><li><p>2022-nji ýylyň 2-nji iýunynda geçen «<em>Türkmen keşdeçilik sungaty – milli mirasymyz</em>» atly ylmy-amaly maslahatynda 9 sany çykyş;</p></li><li><p>2022-nji ýylyň 17-nji maýynda geçirilen «<em>Durnukly ykdysady ösüşi gazanmakda sanly tehnologiýalaryň orny</em>» atly ylmy-amaly maslahatynda 45 sany çykyş.</p></li></ul>`,
+    },
+    'scientific-institutions': {
+      title: 'Ylmy gurnaklar',
+      description: `<p>Türkmen döwlet ykdysadyýet we dolandyryş institutynda talyplaryň ylmy gurnagy hereket edýär. Ylmy gurnak bu talyplaryň jemgyýetçilik bileleşigi bolup, ol professor-mugallymlaryň ýolbaşçylygynda talyplaryň ylmy-barlag işlerini amala aşyrýan guramasydyr. Ylmy gurnak kafedralaryň ýanynda açylyp, onuň esasy maksady ýokary okuw mekdebinde okadylýan dersleri içgin öwrenmäge, talyplaryň özbaşdak ylmy-barlag işlerini geçirmäge, olaryň seljeriş başarnyklaryny ösdürmäge ýardam etmekden ybaratdyr. Ylmy gurnagyň işiniň esasy görnüşi ýygnaklaryň üsti bilen amala aşyrylýar. Olarda talyplaryň çykyşlary we ylmy-barlag işleriniň netijeleri diňlenilýär. Binýatly we amaly ylmy derňewlere gatnaşmak amal edilýär. Türkmen döwlet ykdysadyýet we dolandyryş institutynda:</p><ul><li><p><em>Buhgalter hasaby, ykdysady analiz we audit;</em></p></li><li><p><em>Statistika;</em></p></li><li><p><em>Ykdysady nazaryýet;</em></p></li><li><p><em>Ykdysadyýet we hukuk;</em></p></li><li><p><em>Maliýe;</em></p></li><li><p><em>Bank işi;</em></p></li><li><p><em>Türkmenistanyň taryhy;</em></p></li><li><p><em>Sanly ykdysadyýet;</em></p></li><li><p><em>Menejment;</em></p></li><li><p><em>Hünäri boýunça iňlis, hytaý, ýapon dilleri;</em></p></li><li><p><em>Hünäri boýunça rus, türkmen, nemes dilleri;</em></p></li><li><p><em>Dünýä ykdysadyýeti;</em></p></li><li><p><em>Maglumat ulgamlary;</em></p></li><li><p><em>Ykdysady kibernetika;</em></p></li><li><p><em>Marketing;</em></p></li><li><p><em>Zähmetiň ykdysadyýeti;</em></p></li><li><p><em>Matematika </em>ýaly ylmy gurnaklar hereket edýär. Bu ylmy gurnaklarda düzgünnama laýyklykda öňde goýlan wezipeler yzygiderli ýerine ýetirilýär.</p></li></ul>`,
     },
   },
 }
