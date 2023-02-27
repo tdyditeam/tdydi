@@ -19,7 +19,7 @@ export default {
         {
           id: 2,
           name: this.$t('departments.statistics.title'),
-          path: '/about-us/departments/statistic',
+          path: '/about-us/departments/statistics',
           exact: false,
         },
         {

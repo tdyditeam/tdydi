@@ -1,7 +1,11 @@
 <template>
   <section>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
-    <block-pages :description="description" :title="title"></block-pages>
+    <block-pages
+      :description="description"
+      :title="title"
+      :img="img"
+    ></block-pages>
   </section>
 </template>
 
@@ -11,6 +15,7 @@ export default {
     return {
       title: this.$t('tradeUnion.title'),
       description: this.$t('tradeUnion.description'),
+      img: 'image.png',
       breadCrumbs: [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
