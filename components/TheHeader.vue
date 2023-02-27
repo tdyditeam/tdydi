@@ -398,6 +398,7 @@ export default {
         font-weight: 700;
         font-size: 20px;
         line-height: 23px;
+        text-transform: uppercase;
         color: var(--text);
         cursor: pointer;
         &:hover {
