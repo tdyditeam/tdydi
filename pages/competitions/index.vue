@@ -2,8 +2,8 @@
   <section>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
-      :description="description"
-      :title="title"
+      :description="$t('competitions.description')"
+      :title="$t('competitions.name')"
       :img="img"
     ></block-pages>
     <the-table :datas="datas"></the-table>

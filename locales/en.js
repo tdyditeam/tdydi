@@ -51,11 +51,12 @@ export default {
       },
       competitions: {
         name: 'COMPETITIONS',
-        lessonCompetitions: 'Ders bäsleşikler',
-        scientificCompetitions: 'Ylmy bäsleşikler',
-        teacherCompetitions: 'Ýylyň mugallymy bäsleşigi',
-        studentCompetitions: 'Ýylyň talyby bäsleşigi',
-        internationalCompetitions: 'Halkara onlaýn internet ders bäsleşikleri',
+        lessonCompetitions: 'Subject competitions',
+        scientificCompetitions: 'Scientific competitions',
+        teacherCompetitions: '“Teacher of the Year” competition',
+        studentCompetitions: '“Student of the Year” competition',
+        internationalCompetitions:
+          'International Online Internet Subject Olympiads',
       },
       candidate: {
         name: 'CANDIDATE-2023',
@@ -406,8 +407,20 @@ export default {
   'international-projects': `<p><strong><span >Erasmus+ project:</span></strong></p><p><strong><span >Project title:</span></strong><span > "Modernization of Master's Program in Industrial Business Management in Transitional Economies"</span></p><p><strong><span >The goal of the project:</span></strong><span > means of using a new methodology for the modernization of the higher education system of the Central Asian states. To promote the professional development of teachers and the effective management of master's programs based on the European Bologna system.</span></p><p><strong><span >Project duration:</span></strong><span > 2020-2023.</span></p><p><strong><span >Main project coordinator:</span></strong><span > University of Santiago de Compostela, Spain</span></p><p><span >Coordinator for Turkmenistan: Academy of Sciences of Turkmenistan</span></p><p><strong><span >Project participants:</span></strong><span > Academy of Sciences of Turkmenistan, Turkmen State Institute of Economics and Management, Turkmen State Institute of Finance, Technology Center of Turkmenistan.</span></p><p><strong><span >Coordinator of the Turkmen State Institute of Economics and Management:</span></strong></p><p><span >Head of the Department of Management Shallyev Ch.M.</span></p><p><span >Online classes will use high-quality study materials that have been tested at the universities of Santiago de Compostela in Spain, Ljubljana in Slovenia, and Naples in Italy. International Master's programs will be analyzed and needs and skills will be identified.</span></p><p><span >In the conditions of digitization of education, work is planned to expand the network of international relations between partner higher education institutions, to make extensive use of new methods and methodological resources, and to improve the professional training of teachers.</span></p>`,
   competitions: {
     'scientific-competitions': {
-      title: 'Ylmy bäsleşikler',
-      description: `<p>2022-nji ýylda Türkmenistanyň Magtymguly adyndaky Ýaşlar guramasynyň Merkezi Geňeşiniň we Türkmenistanyň Ylymlar akademiýasynyň Türkmenistanyň ýaşlarynyň arasynda geçirilen ylmy işler boýunça bäsleşige 3 ugur boýunça 10 sany ylmy iş, ýagny, «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça 6 sany, «<em>Maglumat we aragatnaşyk ulgamlary, kompýuter tehnologiýalary</em>» ugry boýunça 3 sany, «<em>Ynsanperwer ylymlary</em>» ugry boýunça 1 sany ylmy iş hödürlenildi (4 sany mugallym, 6 sany talyp).</p><p>Bäsleşigiň netijesinde «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça bank işi kafedrasynyň mugallym-öwrenijisi <em>Sahatkuliýew Begenç I orna</em>, Dünýä maliýe bazary hünäriniň 4-nji ýyl talyby <em>Gurbanow Ýaranmuhammet II orna</em>, Buhgalterçilik hasaba alnyşy we audit hünäriniň 4-nji ýyl talyby <em>Amanmämmedowa Aksoltan III orna</em> mynasyp boldy.</p>`,
+      title: 'Scientific competitions',
+      description: `<p><span>In 2022, the Central Council of the Magtymguly Youth Organization of Turkmenistan and the Academy of Sciences of Turkmenistan held a competition for scientific works among the youth of Turkmenistan. 10 scientific works in 3 fields, that is, 6 in the field of "Innovation economy", "Information and communication systems, computer technologies" 3 scientific works were presented in the "Humanities" field (4 teachers, 6 students).</span></p><p><span>As a result of the competition, Sahatkuliyev Begench, a teacher-student of the department of banking in the direction of "Innovation Economy" won the 1st place, Gurbanov Yaranmuhammet, a 4th-year student of the World Financial Market major, took the 2nd place, and Amanmammedova Aksoltan, a 4th-year student of the Accounting and Audit major, took the 3rd place.</span></p>`,
+    },
+    'international-online-internet-course-competitions': {
+      title: 'International Online Internet Subject Olympiads',
+      description: `<p><span>Students of the Turkmen State Institute of Economics and Management in 2022:</span></p><p><span>- Participating in the 8th Mathematics Competition of the universities of the Northern countries held by the National Research University of Information Technologies, Mechanics and Optics of Saint Petersburg on April 24, 2022, and won 3 third places;</span></p><p><span>- Participated in the Open International Mathematics Olympiad held by the International Humanities and Development University on April 27, 2022, and took 3 third places;</span></p><p><span>- Participated in the International Internet Olympiad on Chemistry held by the Yagshygeldi Kakayev International Oil and Gas University on May 4, 2022, and won 1 third place;</span></p><p><span>- Participated in the 1st International Internet Olympiad on the English language course held by the Dovletmammet Azadi Turkmen National Institute of World Languages on May 4, 2022, and won 1 second place.</span></p>`,
+    },
+    'teacher-of-the-year-competitions': {
+      title: '“Teacher of the Year” competition',
+      description: `<p><span>In the "Teacher of the Year" competition held in May 2022 among the professors of Higher Educational Institutions, Acting Head of the Department of Banking, senior teacher Khojanepesova A.K. won the 1st place.</span></p>`,
+    },
+    'student-of-the-year-competitions': {
+      title: '“Student of the Year” competition',
+      description: `G. Saparova, a 4th-year student of the Faculty of Management, majoring in World Economy, won the 3rd place in the "Student of the Year" competition held in May 2022 among students of Higher Educational Institutions.`,
     },
   },
 }

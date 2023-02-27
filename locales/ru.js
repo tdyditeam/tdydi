@@ -51,10 +51,11 @@ export default {
       competitions: {
         name: 'ОЛИМПИАДЫ',
         lessonCompetitions: 'Ders bäsleşikler',
-        scientificCompetitions: 'Ylmy bäsleşikler',
-        teacherCompetitions: 'Ýylyň mugallymy bäsleşigi',
-        studentCompetitions: 'Ýylyň talyby bäsleşigi',
-        internationalCompetitions: 'Halkara onlaýn internet ders bäsleşikleri',
+        scientificCompetitions: 'Конкурс научных работ',
+        teacherCompetitions: 'Конкурс «Учитель года»',
+        studentCompetitions: 'Конкурс «Студент года»',
+        internationalCompetitions:
+          'Международные онлайн-конкурсы интернет-курсов',
       },
       candidate: {
         name: 'ПОСТУПЛЕНИЕ 2023',
@@ -499,9 +500,23 @@ export default {
   `,
   'international-projects': `<p><span style="color: rgb(32, 33, 36)">Проект действующий по Программе </span><strong><span style="color: rgb(32, 33, 36)">Эразмус+:</span></strong></p><p><strong><span style="color: rgb(32, 33, 36)">Название проекта:</span></strong><span style="color: rgb(32, 33, 36)"> </span><em><span style="color: rgb(32, 33, 36)">«Модернизация магистерской программы по управлению промышленным бизнесом в странах с переходной экономикой».</span></em></p><p><strong><span style="color: rgb(32, 33, 36)">Цель проекта:</span></strong><span style="color: rgb(32, 33, 36)"> использование новейших </span><span>методологических инструментов </span><span style="color: rgb(32, 33, 36)">для модернизации системы высшего образования государств Центральной Азии. Способствовать профессиональному развитию преподавателей и эффективному управлению магистерскими программами на основе европейской Болонской системы.</span></p><p><strong><span style="color: rgb(32, 33, 36)">Продолжительность проекта:</span></strong><span style="color: rgb(32, 33, 36)"> 2020-2023 гг.</span></p><p><strong><span style="color: rgb(32, 33, 36)">Главный координатор проекта:</span></strong><span style="color: rgb(32, 33, 36)"> Университет </span><span>Сантьяго-де-Компостела, </span><span style="color: rgb(32, 33, 36)">Испания</span></p><p><strong><span style="color: rgb(32, 33, 36)">Координатор по Туркменистану:</span></strong><span style="color: rgb(32, 33, 36)"> Академия наук Туркменистана</span></p><p><strong><span style="color: rgb(32, 33, 36)">Участники проекта:</span></strong><span style="color: rgb(32, 33, 36)"> Академия наук Туркменистана, Туркменский государственный институт экономики и управления, Туркменский государственный институт финансов, </span><span>Технологический центр Туркменистана.</span></p><p><strong><span style="color: rgb(32, 33, 36)">Координатор Туркменского государственного института экономики и управления: </span></strong><span style="color: rgb(32, 33, 36)">Заведующий кафедрой менеджмента Шаллыев Ч.М.</span></p><p><span style="color: rgb(32, 33, 36)">На онлайн-занятиях будут использоваться новейшие учебные материалы, которые были протестированы в университетах Сантьяго-де-Компостела в Испании, Любляны в Словении и Неаполя в Италии.</span></p><p>Анализ международных магистерских программ, даст возможность определить потребности и навыки в обучении.</p>`,
   competitions: {
+    name: 'Олимпиады',
+    description: `Результаты студенческой олимпиады, полученные студентами Туркменского государственного института экономики и управления в Государственных олимпиадах по предметам  среди студентов высших учебных заведений Туркменистана, состоявшихся 22, 23 и 24 декабря 2022 года.`,
     'scientific-competitions': {
-      title: 'Ylmy bäsleşikler',
-      description: `<p>2022-nji ýylda Türkmenistanyň Magtymguly adyndaky Ýaşlar guramasynyň Merkezi Geňeşiniň we Türkmenistanyň Ylymlar akademiýasynyň Türkmenistanyň ýaşlarynyň arasynda geçirilen ylmy işler boýunça bäsleşige 3 ugur boýunça 10 sany ylmy iş, ýagny, «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça 6 sany, «<em>Maglumat we aragatnaşyk ulgamlary, kompýuter tehnologiýalary</em>» ugry boýunça 3 sany, «<em>Ynsanperwer ylymlary</em>» ugry boýunça 1 sany ylmy iş hödürlenildi (4 sany mugallym, 6 sany talyp).</p><p>Bäsleşigiň netijesinde «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça bank işi kafedrasynyň mugallym-öwrenijisi <em>Sahatkuliýew Begenç I orna</em>, Dünýä maliýe bazary hünäriniň 4-nji ýyl talyby <em>Gurbanow Ýaranmuhammet II orna</em>, Buhgalterçilik hasaba alnyşy we audit hünäriniň 4-nji ýyl talyby <em>Amanmämmedowa Aksoltan III orna</em> mynasyp boldy.</p>`,
+      title: 'Конкурс научных работ',
+      description: `<p><span style="color: rgb(32, 33, 36)">На конкурс научных работ среди молодёжи Туркменистана, проведенный Центральным советом Молодёжной организации Туркменистана имени Махтумкули и Академии наук Туркменистана в 2022 году призовые места заняли 10 научных работ (всего 4 преподавателя, 6 студентов) по 3 направлениям:</span></p><p><span style="color: rgb(32, 33, 36)">по направлению «Инновационная экономика», «Информационно-коммуникационные системы, компьютерные технологии» 6 работ;</span></p><p><span style="color: rgb(32, 33, 36)">по направлению «Гуманитарные науки» представлено 3 научных работ.</span></p><p><span style="color: rgb(32, 33, 36)">По итогам конкурса 1 место занял Сахаткулиев Бегенч, преподаватель-стажёр кафедры Банковское дело по направлению «Инновационная экономика», 2 место занял Гурбанов Яранмухаммет, студент 4 курса специальности «Мировой финансовый рынок». место, а Аманмаммедова Аксолтан, студентка 4 курса специальности «Бухгалтерский учет и аудит» - 3 место.</span></p>`,
+    },
+    'international-online-internet-course-competitions': {
+      title: 'Международные онлайн-конкурсы интернет-курсов',
+      description: `<p><span style="color: rgb(32, 33, 36)">В 2022 году студенты Туркменского государственного института экономики и управления заняли 347 первых мест, 16 вторых мест и 1 третье место, всего 364 места на международных </span><span>онлайн-конкурсах интернет-курсов.</span></p><p><span style="color: rgb(32, 33, 36)">Студенты</span><span> Туркменского государственного института экономики и управления в 2022 году заняли следующие призовые места:</span></p><p><span>Участвуя</span><span style="color: rgb(32, 33, 36)"> в 8-й математической олимпиаде вузов Северных стран, проведенной </span><span>Санкт-Петербургским национальным исследовательским университетом информационных технологий, механики и оптики</span> <span style="color: rgb(32, 33, 36)">24 апреля 2022 г., заняли 3 III места;</span></p><p><span>Участвуя в Открытой международной олимпиаде по математике, проводимой Международным университетом гуманитарных наук и развития 27 апреля 2022 года, заняли 3 III места;</span></p><p><span style="color: rgb(32, 33, 36)">Участвуя</span><span> в Международной интернет-олимпиаде по предмету Химия, проведенной Международным университетом нефти и газа имени Ягшегельды Какаева, 4 мая 2022 года, заняли 1 III место;</span></p><p><span style="color: rgb(32, 33, 36)">Участвуя в I Международной интернет-олимпиаде по английскому языку, проведенный </span><span style="color: black">Туркменским национальным институтом мировых языков им. Довлетмаммета Азади, </span><span style="color: rgb(32, 33, 36)">4 мая 2022 года, заняли 1 II место;</span></p>`,
+    },
+    'teacher-of-the-year-competitions': {
+      title: 'Конкурс «Учитель года»',
+      description: `<p><span style="color: rgb(32, 33, 36)">В конкурсе «Учитель года», проведенном в мае 2022 года среди профессорско-преподавательского состава высших учебных заведений, </span><span style="color: rgb(0, 32, 96)">временный исполнитель должности </span><span style="color: rgb(32, 33, 36)">заведующего кафедрой Банковское дело старший преподаватель Ходжанепесова А.К. заняла 1 место.</span></p>`,
+    },
+    'student-of-the-year-competitions': {
+      title: 'Конкурс «Студент года»',
+      description: `Сапарова Г., студентка 4 курса факультета Менеджмента по специальности «Мировая экономика», заняла 3 место в конкурсе «Студент года», проведенном в мае 2022 года среди студентов высших учебных заведений.`,
     },
   },
 }
