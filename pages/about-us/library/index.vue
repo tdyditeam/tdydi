@@ -29,8 +29,6 @@ export default {
         },
       ],
       img: '1.png',
-      title: 'KITAPHANA',
-      description: `sadasd`,
     }
   },
   mounted() {
