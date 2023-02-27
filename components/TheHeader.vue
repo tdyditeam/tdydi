@@ -471,6 +471,7 @@ export default {
         margin-left: 35px;
         position: relative;
         cursor: pointer;
+        text-transform: uppercase;
         &::after {
           content: '';
           position: absolute;

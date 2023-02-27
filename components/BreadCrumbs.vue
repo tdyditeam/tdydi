@@ -34,7 +34,7 @@ export default {
   flex: 0 1 auto;
   list-style-type: none;
   margin: 0;
-  padding: 10px 0px 10px 0px;
+  padding: 0px 0px 10px 0px;
   font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 400;
