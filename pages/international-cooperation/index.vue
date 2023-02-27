@@ -1,22 +1,20 @@
 <template>
   <div class="international-partners">
     <!-- <bread-crumbs></bread-crumbs> -->
-    <block-pages :description="description" :title="title"></block-pages>
+    <block-pages
+      :title="$t('header.menu.internationalCooperation.name')"
+    ></block-pages>
     <div class="international-partners__image">
       <img src="@/assets/img/international-partners/00.png" alt="img" />
     </div>
     <p class="international-partners__text">
-      Bilim ulgamynda halkara hyzmatdaşlygyny berkitmek we hünärmenleri
-      taýýarlamagyň hilini ýokarlandyrmak, bilelikde okuw, usulyýet we
-      ylmy-barlag işleri alyp barmak we kämilleşdirmek maksady bilen birnäçe
-      ýurtlar bilen ylmy, okuw we mugallymlaryň özara tejribe alyşmak işleri
-      giňden alnyp barylýar. Bu ugurda:
+      {{ $t('international-cooperation.description') }}
     </p>
     <div
       class="international-partners__block-international-partners block-international-partners"
     >
       <h2 class="block-international-partners__title">
-        Hyzmatdaşlyk edilýän ýokary okuw mekdepleriniň ady
+        {{ $t('international-cooperation.title') }}
       </h2>
       <div class="block-international-partners__body">
         <div class="block-international-partners__column">
@@ -39,10 +37,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Belarus döwlet ykdysadyýet uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[0]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -62,15 +60,14 @@
             <p class="item-block-international-partners__p">
               Ýurdy:
               <span class="item-block-international-partners__pspan"
-                >Päkistan</span
+                >Belarusiýa</span
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Päkistan Yslam Respublikasynyň Maglumat tehnologiýalar
-                instituty</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[1]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -89,16 +86,13 @@
 
             <p class="item-block-international-partners__p">
               Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Belarusiýa</span
-              >
+              <span class="item-block-international-partners__pspan"></span>
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Belarusyň alyjylar kooperasiýasynyň söwda-ykdysady
-                uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[2]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -122,10 +116,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Daşkent dowlet ykdysady uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[3]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -149,10 +143,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Buharestiň ykdysady bilimler uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[4]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -176,10 +170,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Braşowyň Transilwaniýa uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[5]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -203,10 +197,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Kazanyň Federal uniwersiteti</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[6]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -230,10 +224,10 @@
               >
             </p>
             <p class="item-block-international-partners__p">
-              Hyzmatdaşlyk edilýän ýokary okuw mekdepleriň ady:
-              <span class="item-block-international-partners__pspan"
-                >Singapur dolandyryş we ösüş instituty</span
-              >
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[7]')
+              }}</span>
             </p>
           </div>
         </div>
@@ -241,14 +235,7 @@
     </div>
     <div class="international-partners__bottom-text">
       <p>
-        Türkmen döwlet ykdysadyýet we dolandyryş instituty bilen CAREC
-        Institutynyň arasynda ýakyn hyzmatdaşlyk saklanýar. 2022-nji ýylyň
-        sentýabr aýynyň 15-16-y aralygynda Azerbaýjanyň Baku şäherinde Ylmy
-        merkezleriň işini gowulandyrmak boýunça 6-njy Forum geçirildi. Bu
-        forumda Menejment kafedrasynyň müdiri Şallyýew Ç.M. «<em
-          >Türkmenistanda Durnukly ösüş maksatlarynyň amala aşyrylyşy</em
-        >» (<em>Implementation of SDGs in Turkmenistan</em>) atly tema boýunça
-        çykyş etdi.
+        {{ $t('international-cooperation.text') }}
       </p>
     </div>
   </div>
@@ -257,10 +244,7 @@
 <script>
 export default {
   data() {
-    return {
-      title: 'Halkara hyzmatdaşlar',
-      description: ``,
-    }
+    return {}
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
