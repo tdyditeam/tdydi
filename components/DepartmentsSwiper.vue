@@ -183,8 +183,9 @@ export default {
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
+    width: 210px;
+    height: 150px;
+    border-radius: 10px;
     img {
       width: 100%;
       height: 100%;

@@ -4,7 +4,7 @@
     <block-pages
       :description="description"
       :title="title"
-      img="tdy_shema.jpg"
+      :img="computedImage"
     ></block-pages>
   </section>
 </template>
@@ -31,6 +31,17 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    computedImage() {
+      if (this.$i18n.locale === 'tm') {
+        return 'tdy_shema.jpg'
+      } else if (this.$i18n.locale === 'ru') {
+        return 'tdy_shema_rus.png'
+      } else if (this.$i18n.locale === 'en') {
+        return 'tdy_shema_eng.png'
+      }
+    },
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
