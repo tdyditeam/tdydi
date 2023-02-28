@@ -13,6 +13,7 @@ export default {
     departmentTeachers: 'Kafedranyň mugallymlary',
     contact: 'Habarlaşmak',
     feedBack: 'Ýüz tutmak üçin',
+    theBest: 'Ýokary görkezjiler!',
   },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />
@@ -558,4 +559,98 @@ gözlegleri geçirmekde başarnygyny görkezen şahslar bäsleşik esasynda kabu
   },
   'international-tips': `<p>2022-nji ýylda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň professor-mugallymlary, aspirantlary, magistrantlary we talyplary indiki halkara ylmy maslahatlara gatnaşdylar we olaryň tezisleri çap edildi:</p><ul><li><p>2022-nji ýylyň 22-nji aprelinde geçirilen «<em>Türkmen bedewi we dünýäniň seýisçilik sungaty</em>» atly XIV halkara ylmy maslahatynyň nutuklarynyň gysgaça beýanynda 9 sany çykyşlaryň tezisleri;</p></li><li><p>2022-nji ýylyň 12-13-nji iýunynda geçirilen «<em>Berkarar döwletiň täzä eýýamynyň galkynyşy döwründe ylym, tehnika we innowasion tehnologiýalar</em>» atly halkara ylmy maslahatynyň nutuklarynyň gysgaça beýanynda 37 sany çykyşlaryň tezisleri. Halkara ylmy maslahatyň «<em>Innowasion ykdysadyýet</em>» atly V bölüminiň işi Türkmen döwlet ykdysadyýet we dolandyryş institutynda geçirildi;</p></li><li><p>2022-nji ýylyň 12-13-nji iýunynda geçirilen «<em>Saglygy goraýyş, bilim we sport Berkarar döwletiň täze eýýamynyň Galkynyşy döwründe</em>» atly halkara ylmy maslahatynyň nutuklarynyň ýygyndysynda 30 sany çykyşlaryň tezisleri.</p></li></ul><p><br></p><p>2023-nji ýylyň 18-nji ýanwarynda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň uly mejlisler zalynda Aziýa Ösüş Bankynyň «<em>Makroykdysady syýasaty işläp düzmek we durmuşa geçirmek babatynda institusional mümkinçiliklerini pugtalandyrmak</em>» atly tehniki taslamasynyň çäklerinde Aziýa Ösüş Bankynyň wekilleriniň gatnaşmagynda talyplar bilen maliýe ugry boýunça okuw sapagy geçirildi.</p><p><br></p><p>18 января 2023 года в актовом зале Туркменского государственного института экономики и управления с участием представителей Азиатского банка развития в рамках технического проекта «<em>Укрепление институционального потенциала для разработки и реализации макроэкономической политики</em>» было проведено учебное занятие по направлению финансы.</p><p><br></p><p>On January 18, 2023, a training session on finance was held in the assembly hall of the Turkmen State Institute of Economics and Management with the participation of representatives of the Asian Development Bank as a part of the technical project “<em>Strengthening of institutional capacity for the development and implementation of macroeconomic policy</em>”.</p>`,
   'international-projects': `<p><strong><em>E rasmus+ Maksatnamasy</em></strong> boýunça hereket edýän taslama:</p><p><strong>Taslamanyň ady:</strong> «<em>Geçiş ykdysadyýetli döwletlerde önümçilik telekeçiligini dolandyrmak boýunça magistrlik maksatnamasyny döwrebaplaşdyrmak</em>»</p><p><strong>Taslamanyň maksady:</strong> Merkezi Aziýa döwletleriniň ýokary bilim ulgamynyň döwrebaplaşdyrylmagy üçin täze usulyýet serişdeleri ulanmak. Ýewropanyň Bolon ulgamy esasynda mugallymlaryň hünär derejesini ýokarlandyrmak we magistrlik maksatnamalarynyň netijeli dolandyrylmagyna ýardam bermek.</p><p><strong>Taslamanyň hereket edýän möhleti:</strong> 2020 – 2023 ý.ý.</p><p><strong>Taslamanyň esasy utgaşdyryjysy:</strong> Ispaniýanyň Santýago de Kompostela uniwersiteti</p><p><strong>Türkmenistan boýunça utgaşdyryjy:</strong> Türkmenistanyň Ylymlar akademiýasy</p><p><strong>Taslama gatnaşyjylar:</strong> Türkmenistanyň Ylymlar akademiýasy, Türkmen döwlet ykdysadyýet we dolandyryş instituty, Türkmen döwlet maliýe instituty, Türkmenistanyň tehnologiýalar merkezi.</p><p><strong>Türkmen döwlet ykdysadyýet we dolandyryş instituty boýunça utgaşdyryjy:</strong></p><p>Menejment kafedrasynyň müdiri Şallyýew Ç.M.</p><p>On-line görnüşinde sapaklar okadylanda Ispaniýanyň Santýago de Kompostela, Sloweniýäniň Lýublýana we Italiýanyň Napoli uniwersitetlerinde synagdan geçen ýokary hilli okuw materiallary ulanylar. Halkara magistrlik maksatnamalaryna seljerme berlip, zerurlyklar we başarnyklar kesgitlener.</p><p>Bilimiň sanlylaşdyrylýan şertlerinde hyzmatdaş ýokary okuw mekdepleriň arasynda halkara gatnaşyklar ulgamyny giňeltmek, täze usuly we usulyýet çeşmelerinden giňden peýdalanmak, mugallymlaryň hünär taýýarlygyny gowulandyrmak boýunça işler meýilnamalaşdyrylýar.</p>`,
+  competitions: {
+    name: 'DERS BÄSLEŞIKLERI',
+    description: `Türkmen döwlet ykdysadyýet we dolandyryş institutynyň talyplarynyň 2022-nji ýylyň dekabr aýynyň 22-i, 23-i we 24-i günleri geçirilen Türkmenistanyň ýokary okuw mekdepleriniň talyplarynyň okuw dersleri boýunça Döwlet bäsleşiklerinde gazanan netijeleri`,
+    'scientific-competitions': {
+      title: 'Ylmy bäsleşikler',
+      description: `<p>2022-nji ýylda Türkmenistanyň Magtymguly adyndaky Ýaşlar guramasynyň Merkezi Geňeşiniň we Türkmenistanyň Ylymlar akademiýasynyň Türkmenistanyň ýaşlarynyň arasynda geçirilen ylmy işler boýunça bäsleşige 3 ugur boýunça 10 sany ylmy iş, ýagny, «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça 6 sany, «<em>Maglumat we aragatnaşyk ulgamlary, kompýuter tehnologiýalary</em>» ugry boýunça 3 sany, «<em>Ynsanperwer ylymlary</em>» ugry boýunça 1 sany ylmy iş hödürlenildi (4 sany mugallym, 6 sany talyp).</p><p>Bäsleşigiň netijesinde «<em>Innowasiýa ykdysadyýeti</em>» ugry boýunça bank işi kafedrasynyň mugallym-öwrenijisi <em>Sahatkuliýew Begenç I orna</em>, Dünýä maliýe bazary hünäriniň 4-nji ýyl talyby <em>Gurbanow Ýaranmuhammet II orna</em>, Buhgalterçilik hasaba alnyşy we audit hünäriniň 4-nji ýyl talyby <em>Amanmämmedowa Aksoltan III orna</em> mynasyp boldy.</p>`,
+    },
+    'international-online-internet-course-competitions': {
+      title: 'Halkara onlaýn internet ders bäsleşikleri',
+      description: `<p>2022-nji ýylda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň talyplary Halkara Internet ders bäsleşiklerinde 347 sany I orny, 16 sany II orny, 1 sany III orny, jemi 364 sany orny gazandylar.</p><p><br></p><p>2022-nji ýylda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň talyplary:</p><ul><li><p>Sankt-Peterburg şäheriniň Maglumat tehnologiýalar, mehanika we optika Milli barlag uniwersiteti tarapyndan 2022-nji ýylyň 24-nji aprelinde geçirilen Demirgazyk ýurtlaryň uniwersitetleriniň 8-nji matematika bäsleşigine gatnaşyp, 3 sany III orna;</p></li><li><p>Halkara ynsanperwer ylymlary we ösüş uniwersiteti tarapyndan 2022-nji ýylyň 27-nji aprelinde geçirilen Açyk Halkara matematika olimpiadasyna gatnaşyp, 3 sany III orna;</p></li><li><p>Ýagşygeldi Kakaýew adyndaky Halkara nebit we gaz uniwersiteti tarapyndan 2022-nji ýylyň 4-nji maýynda geçirilen Himiýa dersi boýunça halkara internet olimpiadasyna gatnaşyp, 1 sany III orna;</p></li><li><p>Döwletmämmet Azady adyndaky Türkmen milli dünýä dilleri instituty tarapyndan 2022-nji ýylyň 4-nji maýynda geçirilen Iňlis dili dersi boýunça I halkara internet olimpiadasyna gatnaşyp, 1 sany II orna mynasyp boldular.</p></li></ul>`,
+    },
+    'teacher-of-the-year-competitions': {
+      title: 'Ýylyň mugallymy bäsleşigi',
+      description: `<p>Ýokary okuw mekdepleriniň professor-mugallymlarynyň arasynda 2022-nji ýylyň maý aýynda geçirilen «<em>Ýylyň mugallymy</em>» bäsleşiginde Bank işi kafedrasynyň müdiriniň w.w.ý.ý., <em>uly mugallym Hojanepesowa A.K. 1-nji orna</em> mynasyp boldy.</p>`,
+    },
+    'student-of-the-year-competitions': {
+      title: 'Ýylyň talyby bäsleşigi',
+      description: `<p>2022-nji ýylda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň talyplary Halkara Internet ders bäsleşiklerinde 347 sany I orny, 16 sany II orny, 1 sany III orny, jemi 364 sany orny gazandylar.</p><p>Ýokary okuw mekdepleriniň talyplarynyň arasynda 2022-nji ýylyň maý aýynda geçirilen «<em>Ýylyň talyby</em>» bäsleşiginde Menejment fakultetiniň Dünýä ykdysadyýeti hünäriniň 4-nji ýyl talyby <em>G.Saparowa 3-nji orna</em> mynasyp boldy.</p>`,
+    },
+  },
+  candidate: {
+    title: 'Bakalawr taýýarlyk ugurlary',
+    description: `
+	<p></p><p><strong>2022/2023-nji okuw ýyly üçin bakalawr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna talyplyga kabul edýär:</strong></p><p>1. Ykdysadyýet we dolandyryş (taýýarlygyň ugurlary:&nbsp;<strong>ykdysadyýet;
+		 ykdysadyýet we hukuk; maliýe hukugy; buhgalterçilik hasaba alnyşy we audit; ykdysady howpsuzlyk; statistika; sanly ykdysadyýet; maliýe menejmenti; gymmatly kagyzlaryň bazary; baha kesmek işi; bank işi we pul dolanyşygy;
+		  dünýä maliýe bazary; elektron işewürliginiň ykdysadyýeti; elektron täjirçiligi; dünýä ykdysadyýeti; menejment; işewürlik we telekeçilik; kärhananyň ykdysadyýeti we dolandyrylyşy; döwlet we ýerli dolandyryş; ykdysady 
+		  kibernetika; täjirçilik (söwda işi); zähmetiň ykdysadyýeti we bazary; ilatyň durmuş üpjünçiligini guramak; marketing; harytşynaslyk; sanly ykdysadyýetde maliýe bazarlary we maliýe howpsuzlygy; söwdada we logistikada 
+		  sanly tehnologiýalar</strong>).</p><p>2. Informatika we hasaplaýyş tehnikasy (taýýarlygyň ugurlary:&nbsp;<strong>maglumat ulgamlary we&nbsp;tehnologiýalary (ykdysadyýetde we dolandyryşda); kompýuter ulgamynyň programma 
+		  üpjünçiligi)</strong>.</p><p>3. Tehniki ulgamlarda dolandyryş (taýýarlygyň ugry:&nbsp;<strong>hili dolandyrmak)</strong>.</p><p>4. Senagat ekologiýasy we biotehnologiýalar (taýýarlygyň ugry:&nbsp;<strong>önümiň tehnologiýasy 
+			we jemgyýetçilik iýmitini guramak</strong>).</p><p>Institutda okuwlar tölegli esasda alnyp barlar.</p><p>Instituta Türkmenistanyň umumy orta bilimden pes bolmadyk binýatda bilimi bolan, ýaşy 35-den geçmedik raýatlary giriş 
+			synaglarynyň netijeleri boýunça bäsleşik esasynda kabul edilýär.</p><p><strong>Resmi iş kagyzlary&nbsp;</strong>welaýat merkezlerinde we Aşgabat şäherinde 2022-nji ýylyň 11-24-nji iýuly aralygynda kabul edilýär.</p><p><strong>
+			Resmi iş kagyzlarynyň sanawy:</strong></p><p>- bellenilen nusgada rektoryň adyna ýazylan arza;</p><p>- bellenilen nusgadaky sowalnama (anketa);</p><p>- bilimi baradaky resminama (asyl nusgasy);</p><p>- Türkmenistanyň Saglygy
+			 goraýyş we derman senagaty ministrligi tarapyndan bellenilen nusgadaky saglyk kepilnamasy;</p><p>- soňky okan ýerinden (işlän ýerinden, harby bölümden) häsiýetnama;</p><p>- 3x4 sm ölçegdäki sekiz sany fotosurat;</p><p>- 
+			 işleýänler üçin zähmet depderçesiniň tassyklanan göçürmesi;</p><p>- okuw dersleri boýunça mekdep okuwçylarynyň döwlet bäsleşiginiň ýeňijileri, halkara bäsleşiklerine gatnaşan Türkmenistanyň ýygyndy toparynyň agzalary şol 
+			 ýagdaýlary tassyklaýan degişli resminamanyň asyl nusgasyny tabşyrýarlar.</p><br/><p>Bulardan başga-da, okuwa girmäge isleg bildirýänler ýokarda görkezilen resminamalar bilen birlikde resminamalary kabul edýän iş toparyna 
+			 aşakdakylary görkezýärler we nusgalaryny tabşyrýarlar:</p><p>- şahsy pasportyny;</p><p>- harby şahadatnamasyny ýa-da ýazylyş şahadatnamasyny we ýaşaýan ýeri boýunça harby wekillikden güwähatyny.</p><p>Dalaşgär bäsleşiksiz
+			  we (ýa-da) okuwa kabul edilmek üçin artykmaç hukukdan peýdalanýandygyny tassyklaýan beýleki resminamalary görkezip biler.</p><p>Institutyň resminamalary kabul edýän iş topary zerur bolan ýagdaýynda dalaşgärlerden goşmaça
+			   maglumatlary sorap biler.</p><p>Nädogry berlen maglumatlar we galp resmi iş kagyzlary üçin dalaşgär şahsy jogapkärçilik çekýär.</p><p><strong>Giriş synaglary we okuwa kabul edilmek&nbsp;</strong>institutda (Aşgabat şäheri)
+			    we welaýat merkezlerinde aşakdaky möhletlerde geçirilýär:</p><p>Lebap welaýaty — iýul aýynyň 27-si, 28-i we 29-y günleri;</p><p>Mary welaýaty — iýul aýynyň 31-i – awgust aýynyň 1-i, 2-si we 3-i günleri;</p><p>Daşoguz 
+				welaýaty — awgust aýynyň 5-i, 6-sy we 7-si günleri;</p><p>Balkan welaýaty— awgust aýynyň 9-y, 10-y we 11-i günleri;</p><p>Aşgabat şäheri — awgust aýynyň 13-14-i, 15-i we 16-sy günleri;</p><p>Ahal welaýaty — awgust aýynyň 
+				18-19-y, 20-i we 21-i günleri.</p><p><strong>Giriş synaglary&nbsp;</strong>aşakdaky okuw dersleri boýunça geçirilýär:</p><p>taýýarlygyň ugurlary:&nbsp;<strong>maglumat ulgamlary we&nbsp;tehnologiýalary (ykdysadyýetde we
+					 dolandyryşda); kompýuter ulgamynyň programma üpjünçiligi –&nbsp;</strong>matematika, fizika, Türkmenistanyň taryhy;</p><p>&nbsp; taýýarlygyň beýleki ugurlary&nbsp;<strong>–&nbsp;</strong>matematika, Türkmenistanyň 
+					 taryhy; geografiýa;</p><p>Okuw dersleri boýunça giriş synaglary Türkmenistanyň orta mekdepleriniň okuw maksatnamalarynyň esasynda geçirilýär.</p><p>Okuw dersleri boýunça giriş synaglary döwlet dilinde dilden 
+					 geçirilýär.</p><p>Giriş synaglarynyň tertibinde bellenilen wagtda synaglara esassyz sebäplere görä gelip bilmedikler ýa-da okuw dersleriniň biri boýunça synaglardan geçip bilmedikler soňky synaglara goýberilmeýär.
+					 </p><p>Giriş synaglaryndan üstünlikli geçen ýagdaýynda,&nbsp;<strong>bäsleşiksiz we</strong> <strong>talyplyga kabul edilmek üçin artykmaç hukukdan&nbsp;</strong>«Bilim hakynda» Türkmenistanyň Kanunynyň rejelenen 
+					 görnüşinde kesgitlenen düzgünlere laýyk gelýän dalaşgärler peýdalanýarlar.</p>`,
+
+    magistr: {
+      title: 'Magistr taýýarlyk ugurlary',
+      description: `<p><strong><span style="color: rgb(0, 32, 96)">TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ 
+	  INSTITUTY<br>2022-nji ýylyň 11-12-nji maýynda sagat 15:00-da orta we hünär okuw mekdepleriniň uçurymlary, 
+	  okuw merkezleriniň diňleýjileri, harby bölümleriň esgerleri, önümçilikde zähmet çekýän ýaşlar üçin «AÇYK 
+	  GAPYLAR» gününi geçirýär</span></strong></p><p><strong><span style="color: rgb(0, 112, 192)">«AÇYK 
+	  GAPYLAR» </span></strong><span style="color: black">gününde ýaşlar hormatly Prezidentimiziň ýurdumyzyň 
+	  ylym-bilim ulgamyny ösdürmekde alyp barýan syýasatynyň durmuşa geçirilişi, ýokary bilim ulgamynda gazanylýan üstünlikler, okuwlaryň guralyşy, öwrenilýän hünärler, taýýarlyk ugurlary, döwrebap tehnologiýalar we internet bilen enjamlaşdyrylan täze okuw binalary, ýöriteleşdirilen okuw we lingafon otaglary, aýdym-saz, tans toparlarynyň çykyşlary, sport klubunyň işi, talyplaryň ýaşaýyş şertleri bilen tanşyp bilerler.</span></p><p></p><p><strong><span style="color: black">Salgymyz: Aşgabat ş., 1972-nji (Atatürk) köçäniň 73-nji jaýy,</span></strong></p><p><strong><span style="color: black">telefonlary: 48-62-31, 48-62-33, 48-62-29.</span></strong></p> 
+	   <br><p><strong>2022/2023-nji okuw ýyly üçin magistr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna
+	    talyplyga kabul edýär:</strong></p><p>1.Ykdysadyýet we dolandyryş (taýýarlygyň ugurlary:&nbsp;<strong>
+	ykdysadyýet; salgyt menejmenti,</strong> <strong>milli ykdysadyýet, dünýä ykdysadyýeti</strong>).
+	</p><p>Okuwlar tölegli esasda amala aşyrylýar.</p><p>Instituta taýýarlygyň&nbsp;<strong>ykdysadyýet
+	&nbsp;</strong>we&nbsp;<strong>salgyt menejmenti</strong>&nbsp;ugurlary boýunça ýokary bilimden pes 
+bolmadyk, taýýarlygyň&nbsp;<strong>milli ykdysadyýet&nbsp;</strong>we<strong>&nbsp;dünýä
+ ykdysadyýeti&nbsp;</strong>ugurlary boýunça ykdysadyýet we dolandyryş çygrynda ýokary bilimden pes bolmadyk
+  binýatda bilimi bolan Türkmenistanyň raýatlary giriş synaglarynyň netijeleri boýunça bäsleşik esasynda
+   kabul edilýär.</p><p><strong>Resmi iş kagyzlary&nbsp;</strong>welaýat merkezlerinde we Aşgabat şäherinde 
+   2022-nji ýylyň 11 – 24-nji iýuly aralygynda kabul edilýär.</p><p><strong>Resmi iş kagyzlarynyň sanawy:
+   &nbsp;</strong></p><p>– bellenilen nusgada rektoryň adyna ýazylan arza;</p><p>– bellenilen nusgadaky 
+   sowalnama (anketa);</p><p>– ýokary bilim baradaky resminamanyň we goşundysynyň tassyklanan göçürmeleri 
+   ýa-da asyl nusgalary (daşary ýurt döwletinde berlen ýokary bilim hakyndaky resminama onuň Türkmenistanda
+	 ykrar edilendigi baradaky şahadatnamasy goşulýar);</p><p>– Türkmenistanyň Saglygy goraýyş we derman 
+	 senagaty ministrligi tarapyndan bellenilen nusgadaky saglyk kepilnamasy;</p><p>– soňky okan ýerinden 
+	 (işlän ýerinden, harby bölümden) häsiýetnama;</p><p>– 3x4 sm ölçegdäki sekiz sany fotosurat;</p><p>– 
+	 işleýänler üçin zähmet depderçesiniň tassyklanan göçürmesi.</p><p>Bulardan başga-da, okuwa girmäge 
+	 isleg bildirýänler ýokarda görkezilen resminamalar bilen birlikde resminamalary kabul edýän iş toparyna 
+	 aşakdakylary görkezýär we nusgalaryny tabşyrýarlar:</p><p>– şahsy pasportyny;</p><p>– harby şahadatnamasyny
+	  ýa-da ýazylyş şahadatnamasyny we ýaşaýan ýeri boýunça harby wekillikden güwähatyny.</p><p>Institutyň 
+	  resminamalary kabul edýän iş topary zerur bolan ýagdaýynda dalaşgärden goşmaça maglumatlary sorap biler.
+	  </p><p>Nädogry berlen maglumatlar we galp resmi iş kagyzlary üçin dalaşgär şahsy jogapkärçilik çekýär.
+	  </p><p><strong>Giriş synaglary we okuwa kabul edilmek&nbsp;</strong>institutda (Aşgabat şäheri) 2022-nji 
+	  ýylyň awgust aýynyň 15-16-syna geçirilýär.</p><p><strong>Giriş synaglary&nbsp;</strong>ýokary bilimiň 
+	  okuw maksatnamasy esasynda şu aşakdaky dersler boýunça döwlet dilinde geçirilýär:</p><p>taýýarlygyň 
+	  ugurlary:&nbsp;<strong>ykdysadyýet, milli ykdysadyýet&nbsp;</strong>— ykdysady nazaryýet, Türkmenistanyň 
+	  ykdysadyýeti;</p><p>taýýarlygyň ugry:&nbsp;<strong>salgyt menejmenti&nbsp;</strong>— ykdysady nazaryýet, 
+	  salgyt menejmenti;</p><p>&nbsp;taýýarlygyň ugry:&nbsp;<strong>dünýä ykdysadyýeti&nbsp;</strong>— ykdysady 
+	  nazaryýet, dünýä ykdysadyýeti.</p><p>Bellenilen wagtda giriş synagyna esassyz sebäplere görä gelmediklere 
+	  goşmaça mümkinçilik berilmeýär.</p><p>Giriş synaglarynyň netijeleri boýunça magistr maksatnamasyna&nbsp;
+	  <strong>talyplyga kabul edilmek üçin artykmaç hukukdan&nbsp;</strong>saýlan taýýarlygynyň ugry boýunça 2 
+	  ýyldan az bolmadyk iş döwri bolanlar peýdalanýarlar.</p>`,
+    },
+    annonce: {
+      title: '«AÇYK GAPYLAR»',
+      text: 'TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY2022-nji ýylyň 11-12-nji maýynda sagat 15:00-da orta we hünär okuw mekdepleriniň uçurymlary, okuw merkezleriniň diňleýjileri, harby bölümleriň esgerleri, önümçilikde zähmet çekýän ýaşlar üçin «AÇYK GAPYLAR» gününi geçirýär',
+      description: `«AÇYK GAPYLAR» gününde ýaşlar hormatly Prezidentimiziň ýurdumyzyň ylym-bilim ulgamyny ösdürmekde alyp barýan syýasatynyň durmuşa geçirilişi, ýokary bilim ulgamynda gazanylýan üstünlikler, okuwlaryň guralyşy, öwrenilýän hünärler, taýýarlyk ugurlary, döwrebap tehnologiýalar we internet bilen enjamlaşdyrylan täze okuw binalary, ýöriteleşdirilen okuw we lingafon otaglary, aýdym-saz, tans toparlarynyň çykyşlary, sport klubunyň işi, talyplaryň ýaşaýyş şertleri bilen tanşyp bilerler. Salgymyz: Aşgabat ş., 1972-nji (Atatürk) köçäniň 73-nji jaýy, telefonlary: 48-62-31, 48-62-33, 48-62-29.`,
+    },
+  },
 }

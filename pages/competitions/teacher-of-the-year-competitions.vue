@@ -2,8 +2,10 @@
   <secion>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
-      :description="description"
-      :title="title"
+      :description="
+        $t('competitions.teacher-of-the-year-competitions.description')
+      "
+      :title="$t('competitions.teacher-of-the-year-competitions.title')"
       :img="img"
     ></block-pages>
   </secion>

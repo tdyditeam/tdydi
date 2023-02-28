@@ -1,6 +1,6 @@
 <template>
   <div class="pointers">
-    <h2 class="pointers__title">Ýokary görkezjiler!</h2>
+    <h2 class="pointers__title">{{ $t('button.theBest') }}</h2>
     <div class="pointers__row">
       <div class="pointers__left">
         <div class="pointers__item">
@@ -76,7 +76,7 @@
       </div>
       <div class="pointers__right">
         <div class="pointers__image">
-          <img src="@/assets/img/home/pointers-image.png" alt="img" />
+          <img src="@/assets/img/home/pointers-image.webp" alt="img" />
         </div>
       </div>
     </div>
