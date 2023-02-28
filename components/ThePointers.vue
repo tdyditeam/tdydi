@@ -3,11 +3,74 @@
     <h2 class="pointers__title">{{ $t('button.theBest') }}</h2>
     <div class="pointers__row">
       <div class="pointers__left">
-        <div v-for="(item, index) in 10" :key="item" class="pointers__item">
-          <p>{{ index + 1 }}.</p>
+        <div class="pointers__item">
+          <p>1.</p>
           <p>
             Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby:Durdyýew Oraz
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>2.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>3.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>4.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>5.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>6.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>7.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>8.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>9.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
+          </p>
+        </div>
+        <div class="pointers__item">
+          <p>10.</p>
+          <p>
+            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
+            talyby: Durdyýew Oraz
           </p>
         </div>
       </div>
@@ -68,9 +131,9 @@ export default {}
     display: flex;
     align-items: flex-start;
     padding: 10px;
-    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
     margin-right: 2px;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 4px;
   }
 
   p {

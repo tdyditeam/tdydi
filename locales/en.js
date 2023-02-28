@@ -69,7 +69,7 @@ export default {
   aboutUs: {
     description: `<p><span >In the period of 
 	the Revival of the New Epoch </span><span>of &nbsp;Powerful State, under the leadership 
-	</span><span style="color: red">of our Esteemed President </span><span>Serdar Berdimuhamedov, 
+	</span><span>of our Esteemed President </span><span>Serdar Berdimuhamedov, 
 	stable coordination of the achievements of science and technology with the economy, comprehensive 
 	operation of all the available opportunities of the society and, based on this, to transform Turkmenistan 
 	into an innovative state, to create a modern high-tech industry, and to produce competitive finished products
