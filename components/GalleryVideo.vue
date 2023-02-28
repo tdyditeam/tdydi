@@ -3,7 +3,7 @@
     <div class="video-block__row">
       <div class="video-block__column">
         <div class="video-block__video">
-          <video id="videos" poster="1.jpg">
+          <video class="videos" poster="banner.png">
             <source src="@/assets/video/video.mp4" />
           </video>
           <div @click="playVideo" class="video-block__play-icon">
@@ -15,7 +15,9 @@
               <div class="bottom-block-video__title">
                 Ykdysadyýet we dolandyryş instituty
               </div>
-              <div class="bottom-block-video__time">10:30:05</div>
+              <div @click="fullscreen" class="bottom-block-video__time">
+                <img src="@/assets/img/home/maxsimize.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -33,9 +35,9 @@ export default {
   },
   methods: {
     playVideo() {
-      let video = document.getElementById('videos')
+      let video = document.querySelector('.videos')
       this.status = video.paused
-      console.log(video.paused)
+      console.log(video)
       if (!video.paused) {
         video.pause()
       } else {
@@ -43,13 +45,13 @@ export default {
       }
     },
     fullscreen() {
-      let video = document.getElementById('videos')
+      let video = document.querySelector('.videos')
       video.requestFullscreen()
     },
   },
   mounted() {
-    let video = document.getElementById('videos')
-    this.status = video.paused
+    // let video = document.getElementById('videos')
+    // this.status = video.paused
   },
 }
 </script>
@@ -98,6 +100,7 @@ export default {
   &__play-icon {
     cursor: pointer;
     position: absolute;
+    opacity: 0;
   }
 
   &__bottom-block {
@@ -142,9 +145,16 @@ export default {
     font-weight: 600;
     font-size: 14px;
     line-height: 114%;
+    img {
+      width: 20px;
+      height: 20px;
+    }
     @media (max-width: 767px) {
       font-size: 12px;
     }
   }
+}
+.video-block__video:hover .video-block__play-icon {
+  opacity: 1;
 }
 </style>
