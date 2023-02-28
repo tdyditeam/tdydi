@@ -50,8 +50,8 @@ export default {
         economical: 'image.webp',
         finanse: '3.png',
         managament: 'management.png',
-        marketing: '1.png',
-        'proffesional-development': 'image.png',
+        marketing: '1.webp',
+        'proffesional-development': 'image.webp',
       },
     }
   },

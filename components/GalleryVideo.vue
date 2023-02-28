@@ -3,94 +3,17 @@
     <div class="video-block__row">
       <div class="video-block__column">
         <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
+          <video id="videos" poster="1.jpg">
+            <source src="@/assets/video/video.mp4" />
+          </video>
+          <div @click="playVideo" class="video-block__play-icon">
+            <img v-if="!status" src="@/assets/img/home/play.svg" alt="" />
+            <img v-else src="@/assets/img/home/pouse.svg" alt="" />
           </div>
           <div class="video-block__bottom-block bottom-block-video">
             <div class="bottom-block-video__row">
               <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
-              </div>
-              <div class="bottom-block-video__time">10:30:05</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video-block__column">
-        <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
-          </div>
-          <div class="video-block__bottom-block bottom-block-video">
-            <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
-              </div>
-              <div class="bottom-block-video__time">10:30:05</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video-block__column">
-        <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
-          </div>
-          <div class="video-block__bottom-block bottom-block-video">
-            <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
-              </div>
-              <div class="bottom-block-video__time">10:30:05</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video-block__column">
-        <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
-          </div>
-          <div class="video-block__bottom-block bottom-block-video">
-            <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
-              </div>
-              <div class="bottom-block-video__time">10:30:05</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video-block__column">
-        <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
-          </div>
-          <div class="video-block__bottom-block bottom-block-video">
-            <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
-              </div>
-              <div class="bottom-block-video__time">10:30:05</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video-block__column">
-        <div class="video-block__video">
-          <img src="@/assets/img/home/gallery/img_1.png" alt="surat" />
-          <div class="video-block__play-icon">
-            <img src="@/assets/img/home/gallery/play.svg" alt="icon" />
-          </div>
-          <div class="video-block__bottom-block bottom-block-video">
-            <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Goşmaça okuw sapakalry
+                Ykdysadyýet we dolandyryş instituty
               </div>
               <div class="bottom-block-video__time">10:30:05</div>
             </div>
@@ -102,7 +25,33 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      status: true,
+    }
+  },
+  methods: {
+    playVideo() {
+      let video = document.getElementById('videos')
+      this.status = video.paused
+      console.log(video.paused)
+      if (!video.paused) {
+        video.pause()
+      } else {
+        video.play()
+      }
+    },
+    fullscreen() {
+      let video = document.getElementById('videos')
+      video.requestFullscreen()
+    },
+  },
+  mounted() {
+    let video = document.getElementById('videos')
+    this.status = video.paused
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -133,7 +82,7 @@ export default {}
     align-items: center;
     position: relative;
     border-radius: 10px;
-    img {
+    video {
       width: 100%;
       height: 100%;
       object-fit: cover;
