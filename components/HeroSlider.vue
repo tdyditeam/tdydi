@@ -1,7 +1,7 @@
 <template>
   <div class="hero-slider">
     <video class="banner__video" id="videos" autoplay muted loop poster="1.jpg">
-      <source src="@/assets/video/video.mp4" />
+      <source src="@/assets/video/narhoz.mp4" />
     </video>
     <div class="overlay"></div>
   </div>

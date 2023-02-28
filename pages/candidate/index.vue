@@ -22,7 +22,6 @@ export default {
           exact: true,
         },
       ],
-      img: 'tdy.webp',
     }
   },
   mounted() {

@@ -1,7 +1,7 @@
 <template>
   <div class="announce">
     <div class="announce__image">
-      <img src="@/assets/img/about-us/tdy.webp" alt="" />
+      <img src="@/assets/img/about-us/tdydi2.jpg" alt="" />
     </div>
     <div class="announce__text">
       <div class="announce__wrapper">
