@@ -5,6 +5,7 @@
       :description="$t('science.research-and-project-work.description')"
       :title="$t('science.research-and-project-work.title')"
       :img="img"
+      imgPdf
     ></block-pages>
   </section>
 </template>

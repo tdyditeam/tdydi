@@ -47,9 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .title-block-pages {
-  margin-top: 15px;
   padding: 0px 0px 20px 0px;
-  //   flex: 1 1 auto;
   &__row {
     display: flex;
     align-items: center;

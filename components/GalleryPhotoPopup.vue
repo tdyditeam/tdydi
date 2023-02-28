@@ -13,50 +13,27 @@
         <div class="body-gallery-photo-popup__wrapper swiper-wrapper">
           <div class="body-gallery-photo-popup__slide swiper-slide">
             <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_2.png" alt="surat" />
             </div>
           </div>
           <div class="body-gallery-photo-popup__slide swiper-slide">
             <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_2.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_3.png" alt="surat" />
             </div>
           </div>
           <div class="body-gallery-photo-popup__slide swiper-slide">
             <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_4.png" alt="surat" />
             </div>
           </div>
           <div class="body-gallery-photo-popup__slide swiper-slide">
             <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_5.png" alt="surat" />
             </div>
           </div>
           <div class="body-gallery-photo-popup__slide swiper-slide">
             <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
-            </div>
-          </div>
-          <div class="body-gallery-photo-popup__slide swiper-slide">
-            <div class="body-gallery-photo-popup__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/TheHistory.png" alt="surat" />
             </div>
           </div>
         </div>
@@ -77,34 +54,22 @@
         <div class="mini-body__wrapper swiper-wrapper">
           <div class="mini-body__slide swiper-slide">
             <div class="mini-body__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_2.png" alt="surat" />
             </div>
           </div>
           <div class="mini-body__slide swiper-slide">
             <div class="mini-body__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img-mini_2.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_3.png" alt="surat" />
             </div>
           </div>
           <div class="mini-body__slide swiper-slide">
             <div class="mini-body__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_4.png" alt="surat" />
             </div>
           </div>
           <div class="mini-body__slide swiper-slide">
             <div class="mini-body__image">
-              <img
-                src="@/assets/img/home/gallery-popup/img_1.png"
-                alt="surat"
-              />
+              <img src="@/assets/img/home/gallery/img_5.png" alt="surat" />
             </div>
           </div>
         </div>
@@ -295,10 +260,13 @@ export default {
   }
 
   &__image {
+    width: 100%;
+    height: 788px;
+    border-radius: 10px;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
     }
   }

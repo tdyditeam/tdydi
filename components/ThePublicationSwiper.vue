@@ -99,6 +99,22 @@ export default {
           id: 11,
           imgPath: 'img_11.png',
         },
+        {
+          id: 12,
+          imgPath: 'img_12.png',
+        },
+        {
+          id: 13,
+          imgPath: 'img_13.png',
+        },
+        {
+          id: 14,
+          imgPath: 'img_14.png',
+        },
+        {
+          id: 15,
+          imgPath: 'img_15.png',
+        },
       ],
     }
   },

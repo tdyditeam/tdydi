@@ -3,7 +3,16 @@
     <div class="block__content">
       <title-block-pages :title="title"></title-block-pages>
       <div class="block__description">
-        <div class="block__description-img" v-if="img">
+        <div class="block__description-img-pdf" v-if="img && imgPdf">
+          <!-- <img :src="require(`@/assets/img/about-us/${img}`)" alt="" /> -->
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><img src="@/assets/img/about-us/zurnal.png" alt=""
+          /></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><img src="@/assets/img/about-us/zurnal2.png" alt=""
+          /></a>
+        </div>
+        <div class="block__description-img" v-if="img && !imgPdf">
           <img :src="require(`@/assets/img/about-us/${img}`)" alt="" />
         </div>
         <div v-html="description" class="block__description-content"></div>
@@ -26,6 +35,10 @@ export default {
     img: {
       type: String,
       default: () => '',
+    },
+    imgPdf: {
+      type: Boolean,
+      default: () => false,
     },
   },
 }
@@ -68,6 +81,25 @@ export default {
   width: 100%;
   height: 400px;
   margin-bottom: 30px;
+}
+.block__description-img-pdf {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 30px;
+  padding: 22px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 100%;
+    width: 550px;
+    cursor: pointer;
+    object-fit: contain;
+    object-position: center center;
+    &:hover {
+      filter: drop-shadow(5px 4px 12px rgba(0, 0, 0, 0.1));
+    }
+  }
 }
 .block__description-img img {
   width: 100%;
