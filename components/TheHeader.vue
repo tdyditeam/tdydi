@@ -376,7 +376,7 @@ export default {
 .header {
   position: sticky;
   top: 0px;
-  background: #fff;
+  background: transparent;
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   @media (max-width: 992px) {
@@ -388,6 +388,7 @@ export default {
   &__top {
     display: flex;
     align-items: center;
+
     @media (max-width: 992px) {
       display: none;
     }
@@ -399,7 +400,7 @@ export default {
         font-size: 20px;
         line-height: 23px;
         text-transform: uppercase;
-        color: var(--text);
+        color: var(--white);
         cursor: pointer;
         &:hover {
           color: var(--primary);
@@ -428,7 +429,7 @@ export default {
       line-height: 21px;
       text-align: center;
       text-transform: capitalize;
-      color: var(--text);
+      color: var(--white);
       .languages {
         display: flex;
         cursor: pointer;
@@ -584,8 +585,10 @@ export default {
   }
   &__bottom {
     width: 100%;
-    border-top: 1px solid var(--white);
-    border-bottom: 1px solid var(--white);
+    background: rgba(50, 50, 50, 0.512);
+
+    // border-top: 1px solid var(--white);
+    // border-bottom: 1px solid var(--white);
     @media (max-width: 992px) {
       display: none;
     }
@@ -610,7 +613,7 @@ export default {
       transition: 0.3s ease;
       display: flex;
       flex-direction: column;
-      color: var(--text);
+      color: var(--white);
       text-transform: uppercase;
       span:nth-child(1) {
         margin-top: 8px;
@@ -620,11 +623,10 @@ export default {
         height: 2px;
         width: 0%;
         transition: 0.3s ease;
-        background: var(--primary);
+        background: var(--white);
         border-radius: 30px;
       }
       &:hover {
-        color: var(--primary);
         & span:nth-child(2) {
           width: 100%;
         }
@@ -647,8 +649,7 @@ export default {
       display: flex;
       width: 100vw;
       top: 50px;
-      color: var(--text);
-      background: var(--white);
+      color: var(--white);
       transform: translateX(-50%);
       //   border-top: 2px solid var(--border);
       opacity: 0;
@@ -657,7 +658,7 @@ export default {
       overflow: auto;
       z-index: 5;
       //   border-top: 1px solid #000;
-      //   border-bottom: 1px solid #000;
+      border-bottom: 1px solid #000;
     }
     &-submenu {
       display: flex;
@@ -714,7 +715,6 @@ export default {
 }
 .nuxt-link-exact-active,
 .nuxt-link-active {
-  color: var(--primary);
   & span:nth-child(2) {
     width: 100%;
   }

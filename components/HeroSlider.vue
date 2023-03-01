@@ -100,7 +100,7 @@ export default {
   background: #00000057;
 }
 .hero-slider {
-  height: calc(100vh - 205px);
+  height: 100vh;
   width: 100%;
   position: relative;
   &__slider {
