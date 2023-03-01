@@ -24,7 +24,7 @@ export default {}
 <style lang="scss" scoped>
 .banner {
   position: relative;
-  top: -215px;
+  //   top: -215px;
   &-figure {
     &__wrapper {
       position: absolute;

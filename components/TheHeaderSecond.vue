@@ -64,7 +64,7 @@
                 exact
                 class="header__bottom-items"
               >
-                <span class="some">{{ $t('header.menu.main') }}</span
+                <span>{{ $t('header.menu.main') }}</span
                 ><span></span>
               </nuxt-link>
               <client-only v-for="item in menuItems" :key="item.id">
@@ -72,7 +72,7 @@
                   :to="localePath(`${item.path}`)"
                   class="header__bottom-items"
                 >
-                  <span class="some">{{ item.name }}</span>
+                  <span>{{ item.name }}</span>
                   <span></span>
                   <div class="header__bottom-submenu-container">
                     <div class="header__bottom-submenu __container">
@@ -376,8 +376,7 @@ export default {
 .header {
   position: sticky;
   top: 0px;
-  background: rgba(50, 50, 50, 0.512);
-  //   background: transparent;
+  background: #fff;
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   @media (max-width: 992px) {
@@ -389,7 +388,6 @@ export default {
   &__top {
     display: flex;
     align-items: center;
-
     @media (max-width: 992px) {
       display: none;
     }
@@ -401,7 +399,7 @@ export default {
         font-size: 20px;
         line-height: 23px;
         text-transform: uppercase;
-        color: var(--white);
+        color: var(--text);
         cursor: pointer;
         &:hover {
           color: var(--primary);
@@ -425,12 +423,12 @@ export default {
       align-items: center;
       font-family: 'Roboto Flex';
       font-style: normal;
-
+      font-weight: 600;
       font-size: 18px;
       line-height: 21px;
       text-align: center;
       text-transform: capitalize;
-      color: var(--white);
+      color: var(--text);
       .languages {
         display: flex;
         cursor: pointer;
@@ -439,7 +437,6 @@ export default {
         transition: 2s ease;
         height: 25px;
         padding: 3px 0;
-        font-weight: 400;
         &:hover .lang__item {
           &:nth-child(1) {
             transform: translateX(-75px);
@@ -456,17 +453,17 @@ export default {
           opacity: 0;
           visibility: hidden;
           transition: 0.3s ease;
+
           &:not(:last-child) {
             margin-right: 5px;
           }
           &:hover {
-            color: var(--white);
+            color: var(--primary);
           }
           &._active {
-            font-weight: 600;
             opacity: 1;
             visibility: visible;
-            color: var(--white);
+            color: var(--primary);
           }
         }
       }
@@ -475,14 +472,13 @@ export default {
         position: relative;
         cursor: pointer;
         text-transform: uppercase;
-        font-weight: 600;
         &::after {
           content: '';
           position: absolute;
           left: -15px;
-          width: 2px;
+          width: 1px;
           height: 100%;
-          background: var(--white);
+          background: var(--text);
           opacity: 0.5;
         }
       }
@@ -588,10 +584,8 @@ export default {
   }
   &__bottom {
     width: 100%;
-    // background: rgba(50, 50, 50, 0.512);
-    // border-top: 1px solid var(--white);
-    border-bottom: 1px solid #ffffff82;
-    padding-bottom: 10px;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
     @media (max-width: 992px) {
       display: none;
     }
@@ -605,7 +599,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 10px 0 0px 0;
+      padding: 10px 0 10px 0;
       font-family: 'Roboto Flex';
       font-weight: 600;
       font-size: 18px;
@@ -616,42 +610,23 @@ export default {
       transition: 0.3s ease;
       display: flex;
       flex-direction: column;
-      color: var(--white);
+      color: var(--text);
       text-transform: uppercase;
-      .some {
-        position: relative;
-        padding: 10px 0;
-        &::after {
-          content: '';
-          position: absolute;
-          border-radius: 50%;
-          width: 8px;
-          height: 8px;
-          left: -15px;
-          top: 50%;
-          opacity: 0;
-          transform: translateY(-50%);
-          background: var(--white);
-        }
+      span:nth-child(1) {
+        margin-top: 8px;
       }
-
-      //   span:nth-child(2) {
-      //     position: absolute;
-      //     left: -10px;
-      //     top: 50%;
-      //     transform: translateX(-50%);
-      //     height: 10px;
-      //     width: 10px;
-      //     opacity: 0;
-      //     border-radius: 50%;
-      //     transition: 0.3s ease;
-      //     background: var(--white);
-      //   }
+      span:nth-child(2) {
+        margin-top: 8px;
+        height: 2px;
+        width: 0%;
+        transition: 0.3s ease;
+        background: var(--primary);
+        border-radius: 30px;
+      }
       &:hover {
-        .some {
-          &::after {
-            opacity: 1;
-          }
+        color: var(--primary);
+        & span:nth-child(2) {
+          width: 100%;
         }
       }
       &:hover .header__bottom-submenu-container {
@@ -667,13 +642,13 @@ export default {
     // &-submenu-container{
     // }
     &-submenu-container {
-      background: rgba(50, 50, 50, 0.512);
       position: absolute;
       left: 50%;
       display: flex;
       width: 100vw;
-      top: 60px;
-      color: var(--white);
+      top: 50px;
+      color: var(--text);
+      background: var(--white);
       transform: translateX(-50%);
       //   border-top: 2px solid var(--border);
       opacity: 0;
@@ -681,8 +656,8 @@ export default {
       transition: 0.3s ease;
       overflow: auto;
       z-index: 5;
-      border-top: 1px solid #ffffff82;
-      border-bottom: 1px solid #ffffff82;
+      //   border-top: 1px solid #000;
+      //   border-bottom: 1px solid #000;
     }
     &-submenu {
       display: flex;
@@ -708,7 +683,7 @@ export default {
       }
     }
     &-subitems {
-      padding: 17px 0;
+      padding: 20px 0;
       display: flex;
       align-items: center;
       position: relative;
@@ -723,7 +698,7 @@ export default {
           top: 50%;
           transform: translateY(-50%);
           right: -15px;
-          background: var(--white);
+          background: var(--primary);
           height: 25%;
           width: 1px;
         }
@@ -739,10 +714,9 @@ export default {
 }
 .nuxt-link-exact-active,
 .nuxt-link-active {
-  .some {
-    &::after {
-      opacity: 1;
-    }
+  color: var(--primary);
+  & span:nth-child(2) {
+    width: 100%;
   }
 }
 .header {

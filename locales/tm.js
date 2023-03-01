@@ -23,7 +23,7 @@ export default {
       aboutUs: {
         name: 'Biz barada',
         rektorat: 'Rektorat',
-        fakulties: 'Falultetlar',
+        fakulties: 'Fakultetlar',
         departments: 'Kafedralar',
         publicOrganizations: 'Jemgyýetçilik guramalary',
         studyCenter: 'Okuw merkezleri',
@@ -259,7 +259,7 @@ Harytşynaslyk, Hili dolandyrmak,  Jemgyýetçilik iýmitini guramak, Täjirçil
     },
     'digital-economy': {
       title: 'Sanly ykdysadyýet',
-      description: ``,
+      description: `<p><span>Sanly ykdysadyýet kafedrasy institutyň düzüm birligi bolup, onda bilim bermek, okuw-usuly we ylmy-barlag işleri alnyp barylýar.<br>Sanly ykdysadyýetiň ösýän şertlerine laýyklykda kafedrada Elektron täjirçiligi, Elektron işewürliginiň ykdysadyýeti, Sanly ykdysadyýet taýýarlyk ugurlary boýunça bakalawrlar taýýarlanylýar.<br>Umumy sapaklar döwrebap multimedia serişdeleri bilen enjamlaşdyrylan, tejribe sapaklar ýöriteleşdirilen häzirki zaman kompýuter enjamlary we programma üpjünçiligi bilen üpjün edilen okuw otaglarynda geçirilýär. Bu bolsa öz gezeginde Sanly ykdysadyýet, Elektron täjirçiligi, Elektron işewürligi, Web dizaýn we programmirlemek, Blokçeýn tehnologiýalary, Tor tehnologiýalary, MT taslamalary dolandyrmak, Uly göwrümli maglumatlary seljermegiň gurallary, Maglumat howpsuzlygy, Algoritmiň we programmirlemegiň esaslary ýaly hünär derslerini amatly şertlerde okatmaga mümkinçilik berýar.<br>Kafedrada Türkmenistanyň Ylymlar Akademiýasy bilen ylalaşylan ylmy tema boýunça iş alnyp barylýar.<br>Kafedranyň ýaş mugallymlary we talyplary döwlet derejesinde geçirilýän taslama we ylmy bäsleşiklerine, ýurdumyzda we daşary ýurtlarda geçirilýän ylmy-amaly maslahatlara işjeň gatnaşýarlar.<br>Kafedranyň mugallymlary, talyplary ylmy žurnallarda, gazetlerde makalalary çap edýärler, şeýle hem köpçülikleýin habar beriş serişdelerinde çykyş edýärler. Kafedrada Sanly ykdysadyýet ylmy gurnagy hereket edýär.</span></p>`,
     },
     'social-studies': {
       title: 'Jemgyýeti öwreniş ylymlary',
@@ -442,6 +442,7 @@ Audit okuw merkezinde Audit we Rieltorçylyk işi boýunça hünär derejesini �
     5: `Braşowyň Transilwaniýa uniwersiteti`,
     6: `Kazanyň Federal uniwersiteti`,
     7: `Singapur dolandyryş we ösüş instituty`,
+    8: `Päkistan Yslam respublikasynyň maglumat tehnologiýalar instituty`,
   },
   education: {
     title: `Türkmen döwlet ykdysadyýet we dolandyryş institutynda bilim berilýän hünärler`,
@@ -582,7 +583,7 @@ gözlegleri geçirmekde başarnygyny görkezen şahslar bäsleşik esasynda kabu
   candidate: {
     title: 'Bakalawr taýýarlyk ugurlary',
     description: `
-	<p></p><p><strong>2022/2023-nji okuw ýyly üçin bakalawr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna talyplyga kabul edýär:</strong></p><p>1. Ykdysadyýet we dolandyryş (taýýarlygyň ugurlary:&nbsp;<strong>ykdysadyýet;
+	<p><strong>2022/2023-nji okuw ýyly üçin bakalawr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna talyplyga kabul edýär:</strong></p><p>1. Ykdysadyýet we dolandyryş (taýýarlygyň ugurlary:&nbsp;<strong>ykdysadyýet;
 		 ykdysadyýet we hukuk; maliýe hukugy; buhgalterçilik hasaba alnyşy we audit; ykdysady howpsuzlyk; statistika; sanly ykdysadyýet; maliýe menejmenti; gymmatly kagyzlaryň bazary; baha kesmek işi; bank işi we pul dolanyşygy;
 		  dünýä maliýe bazary; elektron işewürliginiň ykdysadyýeti; elektron täjirçiligi; dünýä ykdysadyýeti; menejment; işewürlik we telekeçilik; kärhananyň ykdysadyýeti we dolandyrylyşy; döwlet we ýerli dolandyryş; ykdysady 
 		  kibernetika; täjirçilik (söwda işi); zähmetiň ykdysadyýeti we bazary; ilatyň durmuş üpjünçiligini guramak; marketing; harytşynaslyk; sanly ykdysadyýetde maliýe bazarlary we maliýe howpsuzlygy; söwdada we logistikada 
@@ -611,13 +612,7 @@ gözlegleri geçirmekde başarnygyny görkezen şahslar bäsleşik esasynda kabu
 
     magistr: {
       title: 'Magistr taýýarlyk ugurlary',
-      description: `<p><strong><span style="color: rgb(0, 32, 96)">TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ 
-	  INSTITUTY<br>2022-nji ýylyň 11-12-nji maýynda sagat 15:00-da orta we hünär okuw mekdepleriniň uçurymlary, 
-	  okuw merkezleriniň diňleýjileri, harby bölümleriň esgerleri, önümçilikde zähmet çekýän ýaşlar üçin «AÇYK 
-	  GAPYLAR» gününi geçirýär</span></strong></p><p><strong><span style="color: rgb(0, 112, 192)">«AÇYK 
-	  GAPYLAR» </span></strong><span style="color: black">gününde ýaşlar hormatly Prezidentimiziň ýurdumyzyň 
-	  ylym-bilim ulgamyny ösdürmekde alyp barýan syýasatynyň durmuşa geçirilişi, ýokary bilim ulgamynda gazanylýan üstünlikler, okuwlaryň guralyşy, öwrenilýän hünärler, taýýarlyk ugurlary, döwrebap tehnologiýalar we internet bilen enjamlaşdyrylan täze okuw binalary, ýöriteleşdirilen okuw we lingafon otaglary, aýdym-saz, tans toparlarynyň çykyşlary, sport klubunyň işi, talyplaryň ýaşaýyş şertleri bilen tanşyp bilerler.</span></p><p></p><p><strong><span style="color: black">Salgymyz: Aşgabat ş., 1972-nji (Atatürk) köçäniň 73-nji jaýy,</span></strong></p><p><strong><span style="color: black">telefonlary: 48-62-31, 48-62-33, 48-62-29.</span></strong></p> 
-	   <br><p><strong>2022/2023-nji okuw ýyly üçin magistr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna
+      description: `2022/2023-nji okuw ýyly üçin magistr maksatnamasy boýunça taýýarlygyň aşakdaky ugurlaryna
 	    talyplyga kabul edýär:</strong></p><p>1.Ykdysadyýet we dolandyryş (taýýarlygyň ugurlary:&nbsp;<strong>
 	ykdysadyýet; salgyt menejmenti,</strong> <strong>milli ykdysadyýet, dünýä ykdysadyýeti</strong>).
 	</p><p>Okuwlar tölegli esasda amala aşyrylýar.</p><p>Instituta taýýarlygyň&nbsp;<strong>ykdysadyýet
