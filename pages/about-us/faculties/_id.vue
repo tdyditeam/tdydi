@@ -49,7 +49,7 @@ export default {
       img: {
         economical: 'image.webp',
         finanse: '3.png',
-        managament: 'management.png',
+        managament: 'menejment.png',
         marketing: '1.webp',
         'proffesional-development': 'image.webp',
       },
