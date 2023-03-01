@@ -231,6 +231,28 @@
             </p>
           </div>
         </div>
+        <div class="block-international-partners__column">
+          <div
+            class="block-international-partners__item item-block-international-partners"
+          >
+            <div class="item-block-international-partners__image-wrapper">
+              <div class="item-block-international-partners__image"></div>
+            </div>
+
+            <p class="item-block-international-partners__p">
+              Ýurdy:
+              <span class="item-block-international-partners__pspan"
+                >Pakistan</span
+              >
+            </p>
+            <p class="item-block-international-partners__p">
+              {{ $t('international-cooperation.title') }}: <br />
+              <span class="item-block-international-partners__pspan">{{
+                $t('internationalPartnership[8]')
+              }}</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="international-partners__bottom-text">

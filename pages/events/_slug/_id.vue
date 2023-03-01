@@ -81,8 +81,7 @@ export default {
           title: 'Halkara ylmy-amaly maslahat',
           createdAt: '26.01.23',
           viewCount: 324,
-          description:
-            'Türkmen döwlet ykdysadyýet we dolandyryş instituty ýokary okuw mekdepleriň professor-mugallymlaryny «Döwletiň durnukly...',
+          description: '',
         },
         {
           id: 2,
@@ -90,8 +89,7 @@ export default {
           title: 'AÇYK HALKARA INTERNET OLIMPIADASY',
           createdAt: '23.01.23',
           viewCount: 125,
-          description:
-            'Türkmen döwlet ykdysadyýet we dolandyryş instituty ýokary okuw mekdepleriň talyplaryny 2023-nji ýylyň 12-nji aprelinde...',
+          description: '',
         },
         {
           id: 3,
@@ -100,8 +98,7 @@ export default {
             'Aziýa Ösüş Bankynyň wekilleriniň gatnaşmagynda talyplar bilen...',
           createdAt: '19.01.23',
           viewCount: 345,
-          description:
-            '2023-nji ýylyň 18-nji ýanwarynda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň uly mejlisler zalynda Aziýa Ösüş Bankynyň...',
+          description: '',
         },
         {
           id: 4,
@@ -109,8 +106,7 @@ export default {
           title: 'Halkara Bitaraplyk güni mynasybetli “Ykdysadyýet” ugry...',
           createdAt: '01.12.22',
           viewCount: 324,
-          description:
-            'Halkara Bitaraplyk güni mynasybetli “Ykdysadyýet” ugry boýunça ýokary okuw mekdepleriniň talyplarynyň arasynda online görnüşinde...',
+          description: '',
         },
       ],
       articles: [

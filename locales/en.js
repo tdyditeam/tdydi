@@ -284,6 +284,7 @@ export default {
     5: `Transylvania University of Brasov`,
     6: `Kazan Federal University`,
     7: `Singapore Institute of Management and Development`,
+    8: `Institute of Information Technology of the Islamic Republic of Pakistan`,
   },
   education: {
     title: `Programs conducted at the Turkmen State Institute of Economics and Management`,
