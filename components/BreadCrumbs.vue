@@ -59,4 +59,8 @@ export default {
     }
   }
 }
+.nuxt-link-exact-active,
+.nuxt-link-active {
+  color: var(--primary);
+}
 </style>
