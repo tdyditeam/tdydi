@@ -4,7 +4,14 @@
       v-if="$route.name === `index___${$i18n.locale}` && !header"
     ></the-header>
     <the-header-second v-else></the-header-second>
-    <nuxt class="page"></nuxt>
+    <nuxt
+      :class="[
+        'page',
+        {
+          header__second: $route.name === `index___${$i18n.locale}` && !header,
+        },
+      ]"
+    ></nuxt>
     <the-footer></the-footer>
   </section>
 </template>
@@ -38,8 +45,10 @@ export default {
   overflow-x: hidden;
 }
 .page {
-  position: relative;
-  //   top: -215px;
   flex: 1 1 auto;
+}
+.header__second {
+  position: relative;
+  top: -215px;
 }
 </style>
