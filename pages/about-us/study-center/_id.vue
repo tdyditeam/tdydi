@@ -160,16 +160,16 @@
 </template>
 
 <script>
-let ClassicEditor
-let CKEditor
+// let ClassicEditor
+// let CKEditor
 
-if (process.client) {
-  console.log(process.client)
-  ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
-  //   CKEditor = require('@ckeditor/ckeditor5-vue')
-} else {
-  CKEditor = { component: { template: '<div></div>' } }
-}
+// if (process.client) {
+//   console.log(process.client)
+//   ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
+//   //   CKEditor = require('@ckeditor/ckeditor5-vue')
+// } else {
+//   CKEditor = { component: { template: '<div></div>' } }
+// }
 export default {
   data() {
     return {
@@ -207,15 +207,15 @@ export default {
     }
   },
   async mounted() {
-    setTimeout(() => {
-      ClassicEditor.create(document.querySelector('#ckeditor'))
-        .then((editor) => {
-          window.editor = editor
-        })
-        .catch((error) => {
-          console.error('There was a problem initializing the editor.', error)
-        })
-    }, 500)
+    // setTimeout(() => {
+    //   ClassicEditor.create(document.querySelector('#ckeditor'))
+    //     .then((editor) => {
+    //       window.editor = editor
+    //     })
+    //     .catch((error) => {
+    //       console.error('There was a problem initializing the editor.', error)
+    //     })
+    // }, 500)
   },
 }
 </script>
