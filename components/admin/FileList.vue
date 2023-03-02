@@ -4,8 +4,15 @@
       <h2>{{ title }}</h2>
     </div>
     <div class="admin-filelist__content">
-      <div @click="$emit('clickPhoto')" class="admin-filelist__content-fixsed">
-        <img v-if="icon" :src="require(`@/assets/img/admin/${icon}`)" alt="" />
+      <div class="admin-filelist__image">
+        <img v-if="publicationImg" :src="publicationImg" alt="" />
+        <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
+        <input
+          @change="change"
+          accept=".jpg, .jpeg, .png"
+          class="admin-filelist__image-input"
+          type="file"
+        />
       </div>
       <div class="admin-filelist__content-wrapper">
         <div class="admin-filelist__content-list">
@@ -15,14 +22,14 @@
             class="admin-filelist__content-img"
           >
             <div :class="[{ 'admin-filelist__content-indicators': indicator }]">
-              <img src="@/assets/img/home/TheHistory.png" alt="" />
+              <img :src="`${imageUrl}${item.image}`" alt="" />
               <div v-if="indicator">
                 <p>Hunarler</p>
                 <p>154</p>
               </div>
             </div>
             <div class="admin-filelist__content-events">
-              <span>
+              <span @click="$emit('itemDelete', item.id)">
                 <img src="@/assets/img/admin/trash.png" alt="" />
               </span>
               <span v-if="edit">
@@ -43,7 +50,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import fileUpload from '@/mixins/fileUpload'
 export default {
+  mixins: [fileUpload],
   props: {
     title: {
       type: String,
@@ -66,6 +76,20 @@ export default {
       default: () => false,
     },
   },
+  data() {
+    return {
+      publicationImg: null,
+    }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+  methods: {
+    change(event) {
+      this.publicationImg = URL.createObjectURL(event.target.files[0])
+      this.$emit('fileUploaded', event.target.files[0])
+    },
+  },
 }
 </script>
 
@@ -78,6 +102,33 @@ export default {
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
+  &__image {
+    border: 1px dashed #969494;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #f4f4f4;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    &-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
   &__title {
     font-weight: 400;
     font-size: 20px;
@@ -128,6 +179,7 @@ export default {
     }
     &-list {
       display: flex;
+      margin-left: 20px;
     }
     &-img {
       display: flex;
@@ -140,7 +192,7 @@ export default {
         height: 150px;
         border-radius: 4px;
         object-position: center;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
     &-events {
@@ -156,7 +208,7 @@ export default {
         img {
           width: 16px;
           height: 16px;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
         }
       }

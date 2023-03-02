@@ -105,10 +105,11 @@ export default {}
 
   &__title {
     font-weight: 600;
-    font-size: 40px;
-    line-height: 47px;
+    font-size: 36px;
+    line-height: 120%px;
     color: #333333;
     margin-bottom: 40px;
+    text-transform: uppercase;
     @media (max-width: 767px) {
       display: none;
     }

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = `${process.env.baseURL}`
+const baseURL = `${process.env.BASE_API}`
 export const request = async ({
   url,
   method = 'post',
