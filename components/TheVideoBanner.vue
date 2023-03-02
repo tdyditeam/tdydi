@@ -3,7 +3,7 @@
     <div class="banner__video-wrapper">
       <!--  -->
       <video id="videos" autoplay muted loop poster="banner.png">
-        <source src="@/assets/video/video.mp4" />
+        <source src="@/assets/video/narhoz.mp4" />
       </video>
       <div class="banner__video-controls">
         <div @click="playVideo" class="banner__video-play">

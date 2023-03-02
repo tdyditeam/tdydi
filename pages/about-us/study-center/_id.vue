@@ -15,7 +15,7 @@
         iconUrl="icons/icon-down.svg"
       ></base-button>
     </div>
-    <div v-if="feedBack">
+    <div>
       <div class="study-center__block-about block-about">
         <div class="block-about__input-group">
           <div class="block-about__input-wrapper">
@@ -41,7 +41,12 @@
             </div>
           </div>
         </div>
-        <div class="block-about__body">
+        <client-only>
+          <div class="ckeditor">
+            <div id="ckeditor" style="height: 300px"></div>
+          </div>
+        </client-only>
+        <!-- <div class="block-about__body">
           <div class="block-about__header">
             <div class="block-about__left">
               <div class="block-about__icons">
@@ -111,7 +116,7 @@
             </div>
           </div>
           <div class="block-about__content"></div>
-        </div>
+        </div> -->
         <div class="block-about__button">
           <base-button
             @click="$router.push(localeLocation('/about-us'))"
@@ -133,13 +138,6 @@
               <p class="chat__data">20.01.2023 13:10</p>
             </div>
             <p class="chat__people-incoming">Salam gowmy yagday</p>
-            <div class="chat__people-send-wrapper">
-              <p class="chat__people-send">Howa gowy</p>
-              <p class="chat__people-send">Men gowy dal?</p>
-            </div>
-            <div class="chat__toanswer">
-              <p>Otwet beray</p>
-            </div>
           </div>
         </div>
       </div>
@@ -154,9 +152,6 @@
               <p class="chat__data">20.01.2023 13:10</p>
             </div>
             <p class="chat__people-incoming">Salam gowmy yagday</p>
-            <div class="chat__toanswer">
-              <p>Otwet beray</p>
-            </div>
           </div>
         </div>
       </div>
@@ -165,6 +160,16 @@
 </template>
 
 <script>
+let ClassicEditor
+let CKEditor
+
+if (process.client) {
+  console.log(process.client)
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
+  //   CKEditor = require('@ckeditor/ckeditor5-vue')
+} else {
+  CKEditor = { component: { template: '<div></div>' } }
+}
 export default {
   data() {
     return {
@@ -201,10 +206,21 @@ export default {
       },
     }
   },
+  async mounted() {
+    setTimeout(() => {
+      ClassicEditor.create(document.querySelector('#ckeditor'))
+        .then((editor) => {
+          window.editor = editor
+        })
+        .catch((error) => {
+          console.error('There was a problem initializing the editor.', error)
+        })
+    }, 500)
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .study-center {
   display: flex;
   flex-direction: column;
@@ -342,12 +358,13 @@ export default {
 .chat {
   &__item {
     max-width: 460px;
-    padding: 10px 20px;
+    padding: 25px 20px;
     display: flex;
     align-items: flex-start;
     column-gap: 20px;
     background-color: #f2f2f2;
     border-radius: 6px;
+    margin-bottom: 20px;
   }
 
   &__profile {
@@ -422,5 +439,16 @@ export default {
     line-height: 16px;
     color: #16ab65;
   }
+}
+.ck-editor__main {
+  height: 300px !important;
+}
+.ck.ck-editor__main > .ck-editor__editable {
+  height: 300px !important;
+}
+.ck-editor__main p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: calc(35 / 28) * 100%;
 }
 </style>

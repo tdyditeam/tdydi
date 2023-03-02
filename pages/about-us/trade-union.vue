@@ -15,7 +15,7 @@ export default {
     return {
       title: this.$t('tradeUnion.title'),
       description: this.$t('tradeUnion.description'),
-      img: 'image.png',
+      img: 'ceperHowesjen.png',
       breadCrumbs: [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {

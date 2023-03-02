@@ -39,7 +39,7 @@ export default {
 }
 .page {
   position: relative;
-  top: -215px;
+  //   top: -215px;
   flex: 1 1 auto;
 }
 </style>

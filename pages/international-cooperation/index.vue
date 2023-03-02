@@ -1,6 +1,6 @@
 <template>
   <div class="international-partners">
-    <!-- <bread-crumbs></bread-crumbs> -->
+    <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
       :title="$t('header.menu.internationalCooperation.name')"
     ></block-pages>
@@ -266,7 +266,19 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
+        {
+          id: 2,
+          name: this.$t(
+            'header.menu.internationalCooperation.internationalPartners'
+          ),
+          path: '/international-cooperation',
+          exact: true,
+        },
+      ],
+    }
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0

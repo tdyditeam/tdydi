@@ -4,7 +4,7 @@
       <div class="video-block__column">
         <div class="video-block__video">
           <video class="videos" poster="banner.png">
-            <source src="@/assets/video/video.mp4" />
+            <source src="@/assets/video/narhoz.mp4" />
           </video>
           <div @click="playVideo" class="video-block__play-icon">
             <img v-if="!status" src="@/assets/img/home/play.svg" alt="" />
