@@ -1,24 +1,34 @@
 <template>
   <div class="wrapper">
     <div class="admin-about">
-      <div class="admin-about__img">
-        <div class="popup__image">
-          <img v-if="image" :src="image" alt="" />
-          <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
-          <input
-            @change="change"
-            accept=".jpg, .jpeg, .png"
-            class="popup__image-input"
-            type="file"
-          />
+      <div class="row">
+        <div class="col-3 row-3">
+          <div class="admin-about__img">
+            <div class="popup__image">
+              <img v-if="image" :src="image" alt="" />
+              <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
+              <input
+                @change="change"
+                accept=".jpg, .jpeg, .png"
+                class="popup__image-input"
+                type="file"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="admin-about__text">
-        <div class="admin-about__title">
-          <input type="text" />
+        <div class="col-9">
+          <text-filed
+            label="Title"
+            :value="main.title"
+            :error="!main.title && error"
+            @updateValue="(val) => (main.title = val)"
+          ></text-filed>
         </div>
-        <div class="admin-about__description">
+        <div class="col-9">
           <editor v-model="text" class="editor" />
+        </div>
+        <div class="col-2">
+          <base-button text="Save"></base-button>
         </div>
       </div>
     </div>
@@ -26,6 +36,8 @@
 </template>
 
 <script>
+import { request } from '@/api/generic.api'
+
 const Editor = () => import('@/components/admin/Editor.vue')
 export default {
   layout: 'admin',
@@ -36,7 +48,19 @@ export default {
     return {
       text: null,
       image: null,
+      error: false,
+      main: {
+        title: '',
+      },
     }
+  },
+  methods: {
+    change(event) {
+      this.image = URL.createObjectURL(event.target.files[0])
+      console.log(event)
+      //   this.images = event.target.files[0]
+      //   fileUpload('', event.target.files[0])
+    },
   },
 }
 </script>
@@ -48,7 +72,7 @@ export default {
   border-radius: 6px;
 }
 .admin-about {
-  display: flex;
+  padding: 20px;
 }
 
 .popup__image {
@@ -59,9 +83,8 @@ export default {
   justify-content: center;
   position: relative;
   background: #f4f4f4;
-  height: 100%;
   width: 100%;
-
+  height: 250px;
   &-input {
     position: absolute;
     top: 0;

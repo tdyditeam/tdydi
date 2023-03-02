@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="eitor">
     <bubble-menu :editor="editor" v-if="editor" class="bubble">
       <input
         class="editor-color"
@@ -339,6 +339,12 @@ export default {
 </script>
 
 <style>
+.eitor {
+  background: var(--input);
+  padding: 12px 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
 .bubble {
   background: #2c2c2c;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.2);
