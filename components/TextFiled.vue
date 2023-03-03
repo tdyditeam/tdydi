@@ -92,6 +92,7 @@ export default {
       flex: 1 1 auto;
       background: transparent;
       padding: 0px 10px;
+      width: 100%;
     }
   }
   &__prepend--icon {

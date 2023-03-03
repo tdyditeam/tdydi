@@ -1,8 +1,11 @@
 <template>
   <div class="popup">
-    <div class="popup__wrapper">
+    <div
+      class="popup__wrapper"
+      :style="`height: ${height ? `${height}px` : null}`"
+    >
       <div class="row">
-        <div class="col-2 row-2">
+        <div class="col-3 row-3">
           <div class="popup__image">
             <img v-if="newsImg?.blobFile" :src="newsImg.blobFile" alt="" />
             <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
@@ -25,11 +28,11 @@
             >
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-9">
           <text-filed
             label="Ugur"
-            :value="main.skils[activeKey]"
-            @updateValue="(val) => (main.skils[activeKey] = val)"
+            :value="main.name"
+            @updateValue="(val) => (main.name = val)"
           ></text-filed>
         </div>
         <div class="col-4">
@@ -73,12 +76,16 @@ export default {
     Editor,
   },
   mixins: [changeImage],
-
+  props: {
+    height: {
+      type: String,
+      default: () => null,
+    },
+  },
   data() {
     return {
       newsImg: null,
       activeLang: 1,
-      activeKey: 'tm',
       newsDate: '',
       langs: [
         {
@@ -98,38 +105,39 @@ export default {
         },
       ],
       main: {
-        skils: {
-          tm: '',
-          ru: '',
-          en: '',
-        },
-        count: 0,
-        place: 1,
+        lang: 'tm',
+        name: '',
+        count: null,
+        order_number: null,
+        image: '',
       },
     }
   },
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
+      this.main.image = this.newsImg.postFile
     },
 
     toggleLang(id, key) {
       this.activeLang = id
-      this.activeKey = key
+      this.main.lang = key
+      this.main.name = ''
     },
 
     async save() {
-      const formData = new FormData()
-      //   formData.append('title  ', this.main.title[this.activeKey])
-      //   formData.append('description   ', this.main.description[this.activeKey])
-      //   formData.append('date', this.newsDate)
-      //   formData.append('student_firstname', this.main.nameWriter[this.activeKey])
-      //   formData.append('student_firstname', this.main.nameWriter[this.activeKey])
-      //   try {
-      //     const res = await request({ url: '' })
-      //   } catch (error) {
-      //     console.log(error)
-      //   }
+      try {
+        const res = await request({
+          url: '/indicators',
+          file: true,
+          data: this.main,
+        })
+        if (res) {
+          this.$emit('indicatorsCreated')
+        }
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }

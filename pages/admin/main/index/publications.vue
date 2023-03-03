@@ -38,7 +38,6 @@ export default {
           url: '/publications',
           method: 'GET',
         })
-        console.log(res)
         if (res) {
           this.items = res
         }
@@ -56,7 +55,6 @@ export default {
           },
           file: true,
         })
-        console.log(res)
         if (res.status) {
           await this.fetchPublications()
         }
@@ -67,13 +65,9 @@ export default {
     async itemDelete(id) {
       try {
         const res = await request({
-          url: `/publications`,
-          data: {
-            id: id,
-          },
+          url: `/publications/${id}`,
           method: 'DELETE',
         })
-        console.log(res)
         if (res.status) {
           await this.fetchPublications()
         }

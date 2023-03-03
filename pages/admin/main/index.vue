@@ -49,11 +49,13 @@ export default {
           name: 'Hyzmatdaşlar',
           path: 'partners',
         },
+        {
+          id: 7,
+          name: 'Indicators',
+          path: 'indicators',
+        },
       ],
     }
-  },
-  mounted() {
-    this.$router.push('/admin/main/slider')
   },
 }
 </script>
