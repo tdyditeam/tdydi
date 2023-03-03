@@ -25,8 +25,8 @@ export const request = async ({
     }
     data = formData
   }
-  localStorage.getItem('token') &&
-    (headers['authorization'] = localStorage.getItem('token'))
+  //   localStorage.getItem('token') &&
+  //     (headers['authorization'] = localStorage.getItem('token'))
   const response = await axios({
     url: `${baseURL}${url}`,
     method,

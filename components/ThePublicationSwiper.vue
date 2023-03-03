@@ -11,10 +11,7 @@
           class="swiper-block-publication__slide swiper-slide"
         >
           <div class="swiper-block-publication__image">
-            <img
-              :src="require(`@/assets/img/home/publication/${img.imgPath}`)"
-              alt="surat"
-            />
+            <img :src="`${imageUrl}${img.image}`" alt="surat" />
           </div>
         </div>
       </div>
@@ -23,7 +20,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  props: {
+    images: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       options: {
@@ -54,69 +58,10 @@ export default {
           clickable: true,
         },
       },
-      images: [
-        {
-          id: 1,
-          imgPath: 'img_1.png',
-        },
-        {
-          id: 2,
-          imgPath: 'img_2.png',
-        },
-        {
-          id: 3,
-          imgPath: 'img_3.png',
-        },
-        {
-          id: 7,
-          imgPath: 'img_7.png',
-        },
-        {
-          id: 4,
-          imgPath: 'img_4.png',
-        },
-        {
-          id: 8,
-          imgPath: 'img_8.png',
-        },
-        {
-          id: 5,
-          imgPath: 'img_5.png',
-        },
-        {
-          id: 6,
-          imgPath: 'img_6.png',
-        },
-        {
-          id: 9,
-          imgPath: 'img_9.png',
-        },
-        {
-          id: 10,
-          imgPath: 'img_10.png',
-        },
-        {
-          id: 11,
-          imgPath: 'img_11.png',
-        },
-        {
-          id: 12,
-          imgPath: 'img_12.png',
-        },
-        {
-          id: 13,
-          imgPath: 'img_13.png',
-        },
-        {
-          id: 14,
-          imgPath: 'img_14.png',
-        },
-        {
-          id: 15,
-          imgPath: 'img_15.png',
-        },
-      ],
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
 }
 </script>
