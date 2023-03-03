@@ -26,7 +26,7 @@ export default {
   &-main {
     flex: 1 1 auto;
     padding: 0px 0px 0px 10px;
-    overflow: hidden;
+    height: 100%;
   }
 }
 </style>

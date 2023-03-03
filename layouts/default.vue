@@ -1,9 +1,9 @@
 <template>
   <section class="wrapper">
-    <the-header
+    <!-- <the-header
       v-if="$route.name === `index___${$i18n.locale}` && !header"
-    ></the-header>
-    <the-header-second v-else></the-header-second>
+    ></the-header> -->
+    <the-header-second></the-header-second>
     <nuxt
       :class="[
         'page',
