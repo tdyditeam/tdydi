@@ -5,15 +5,12 @@
         {{ $t('history.title') }}
       </div>
       <div class="institute-history__image">
-        <img src="@/assets/img/home/TheHistory.png" alt="surat" />
+        <img :src="`${imageUrl}${about?.image}`" alt="surat" />
       </div>
       <div class="institute-history__body">
         <div class="institute-history__content">
           <div class="institute-history__title">{{ $t('history.title') }}</div>
-          <div
-            v-html="$t('history.text')"
-            class="institute-history__text"
-          ></div>
+          <div v-html="about?.text" class="institute-history__text"></div>
         </div>
         <div class="institute-history__button">
           <base-button
@@ -30,7 +27,37 @@
 </template>
 
 <script>
-export default {}
+import { request } from '@/api/generic.api'
+import { mapGetters } from 'vuex'
+export default {
+  data() {
+    return {
+      about: null,
+    }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+  async fetch() {
+    await this.fetcAbout()
+  },
+  methods: {
+    async fetcAbout() {
+      try {
+        const { about, status } = await request({
+          url: `/about?lang=${this.$i18n.locale}`,
+          method: 'GET',
+        })
+        if (status) {
+          console.log(about)
+          this.about = about[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -120,6 +147,11 @@ export default {}
     font-size: 20px;
     line-height: 23px;
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #000000;
     @media (max-width: 767px) {
       font-size: 16px;

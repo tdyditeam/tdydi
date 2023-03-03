@@ -1,18 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="admin-about">
+      <h2 class="admin-about__title">Biz barada</h2>
       <div class="row">
-        <div class="col-9">
-          <div class="popup__tab">
-            <span
-              v-for="lang in langs"
-              :key="lang.id"
-              @click="toggleLang(lang.id, lang.key)"
-              :class="{ active: activeLang === lang.id }"
-              >{{ lang.name }}</span
-            >
-          </div>
-        </div>
         <div class="col-3 row-3">
           <div class="admin-about__img">
             <div class="popup__image">
@@ -27,14 +17,53 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-9">
-          <text-filed
-            label="Title"
-            :value="main.title"
-            :error="!main.title && error"
-            @updateValue="(val) => (main.title = val)"
-          ></text-filed>
-        </div> -->
+        <div class="col-9">
+          <div class="popup__tab">
+            <span
+              v-for="lang in langs"
+              :key="lang.id"
+              @click="toggleLang(lang.id, lang.key)"
+              :class="{ active: activeLang === lang.id }"
+              >{{ lang.name }}</span
+            >
+          </div>
+        </div>
+        <div class="col-9">
+          <editor v-model="main.text" class="editor" />
+        </div>
+        <div @click="addAbout" class="col-2">
+          <base-button text="Save" style="text-align: center"></base-button>
+        </div>
+      </div>
+    </div>
+    <div class="admin-about">
+      <h2 class="admin-about__title">Rektorat</h2>
+      <div class="row">
+        <div class="col-3 row-3">
+          <div class="admin-about__img">
+            <div class="popup__image">
+              <img v-if="image" :src="image" alt="" />
+              <img v-else src="@/assets/img/admin/addphoto.png" alt="" />
+              <input
+                @change="change"
+                accept=".jpg, .jpeg, .png"
+                class="popup__image-input"
+                type="file"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="popup__tab">
+            <span
+              v-for="lang in langs"
+              :key="lang.id"
+              @click="toggleLang(lang.id, lang.key)"
+              :class="{ active: activeLang === lang.id }"
+              >{{ lang.name }}</span
+            >
+          </div>
+        </div>
         <div class="col-9">
           <editor v-model="main.text" class="editor" />
         </div>
@@ -48,6 +77,7 @@
 
 <script>
 import { request } from '@/api/generic.api'
+import { mapGetters } from 'vuex'
 
 const Editor = () => import('@/components/admin/Editor.vue')
 export default {
@@ -82,18 +112,22 @@ export default {
         text: '',
         lang: 'tm',
         image: null,
+        id: null,
       },
     }
   },
-
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
   async mounted() {
     await this.fetcAbout()
   },
 
   methods: {
-    toggleLang(id, key) {
+    async toggleLang(id, key) {
       this.activeLang = id
       this.main.lang = key
+      await this.fetcAbout()
     },
     change(event) {
       this.image = URL.createObjectURL(event.target.files[0])
@@ -102,33 +136,28 @@ export default {
 
     async addAbout() {
       try {
-        const { data, status } = await request({
-          url: `/about`,
-          method: 'POST',
+        const res = await request({
+          url: `/about/${this.main.id}`,
+          method: 'PUT',
           data: this.main,
           file: true,
         })
-        if (status) {
-          this.main.text = ''
-          this.main.image = ''
-          this.image = null
-          console.log(data)
-        }
+        console.log(res)
       } catch (error) {
         console.log(error)
       }
     },
     async fetcAbout() {
       try {
-        const res = await request({
+        const { about, status } = await request({
           url: `/about?lang=${this.main.lang}`,
           method: 'GET',
-          file: true,
         })
-        console.log(res)
-        // if (status) {
-        //   console.log(data)
-        // }
+        if (status) {
+          this.main.text = about[0].text
+          this.image = `${this.imageUrl}${about[0].image}`
+          this.main.id = about[0].id
+        }
       } catch (error) {
         console.log(error)
       }
@@ -142,9 +171,20 @@ export default {
   background-color: #fff;
   height: 100%;
   border-radius: 6px;
+  height: 100%;
+  overflow: overlay;
 }
 .admin-about {
   padding: 20px;
+}
+.editor {
+  overflow: overlay;
+  height: 400px;
+}
+.admin-about__title {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 22px;
 }
 .popup {
   position: fixed;

@@ -2,7 +2,7 @@
   <section>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
-      :description="description"
+      :description="about?.text"
       :title="title"
       :img="img"
     ></block-pages>
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { request } from '@/api/generic.api'
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -22,6 +24,7 @@ export default {
           exact: true,
         },
       ],
+      about: null,
       title: this.$t('header.menu.aboutUs.name'),
       img: 'image.webp',
       description: this.$t('aboutUs.description'),
@@ -29,6 +32,27 @@ export default {
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+  async fetch() {
+    await this.fetcAbout()
+  },
+  methods: {
+    async fetcAbout() {
+      try {
+        const { about, status } = await request({
+          url: `/about?lang=${this.$i18n.locale}`,
+          method: 'GET',
+        })
+        if (status) {
+          this.about = about[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
   },
 }
 </script>
