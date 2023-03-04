@@ -22,13 +22,14 @@
         <div class="header__top-content">
           <div class="languages">
             <nuxt-link
-              :class="['lang__item', { _active: $i18n.locale == locale.code }]"
+              class="lang"
               exact
               v-for="locale in $i18n.locales"
               :key="locale.code"
               :to="switchLocalePath(locale.code)"
             >
-              {{ locale.name }}
+              <img :src="require(`@/assets/img/${locale.code}.png`)" alt="" />
+              <p>{{ locale.name }}</p>
             </nuxt-link>
           </div>
           <div class="contact" @click="showPopUp">
@@ -445,39 +446,26 @@ export default {
       color: var(--text);
       .languages {
         display: flex;
+        justify-content: space-around;
         cursor: pointer;
         position: relative;
-        width: 150px;
+        width: 250px;
         transition: 2s ease;
         height: 25px;
         padding: 3px 0;
-        &:hover .lang__item {
-          &:nth-child(1) {
-            transform: translateX(-75px);
+        .lang {
+          display: flex;
+          align-items: center;
+          p {
+            margin-left: 5px;
+            height: 100%;
+            font-size: 20px;
           }
-          &:nth-child(2) {
-            transform: translateX(-37px);
-          }
-          opacity: 1;
-          visibility: visible;
-        }
-        .lang__item {
-          position: absolute;
-          right: 0;
-          opacity: 0;
-          visibility: hidden;
-          transition: 0.3s ease;
-
-          &:not(:last-child) {
-            margin-right: 5px;
-          }
-          &:hover {
-            color: var(--primary);
-          }
-          &._active {
-            opacity: 1;
-            visibility: visible;
-            color: var(--primary);
+          img {
+            width: 30px;
+            height: 20px;
+            object-fit: cover;
+            object-position: center;
           }
         }
       }
@@ -777,7 +765,6 @@ export default {
       align-items: center;
       font-family: 'Roboto Flex';
       font-style: normal;
-
       font-size: 18px;
       line-height: 21px;
       text-align: center;
@@ -787,38 +774,19 @@ export default {
         display: flex;
         cursor: pointer;
         position: relative;
-        width: 150px;
         transition: 2s ease;
+        width: 250px;
         height: 25px;
         padding: 3px 0;
         font-weight: 400;
-        &:hover .lang__item {
-          &:nth-child(1) {
-            transform: translateX(-75px);
-          }
-          &:nth-child(2) {
-            transform: translateX(-37px);
-          }
-          opacity: 1;
-          visibility: visible;
-        }
-        .lang__item {
-          position: absolute;
-          right: 0;
-          opacity: 0;
-          visibility: hidden;
-          transition: 0.3s ease;
-          &:not(:last-child) {
-            margin-right: 5px;
-          }
-          &:hover {
-            color: var(--white);
-          }
-          &._active {
-            font-weight: 600;
-            opacity: 1;
-            visibility: visible;
-            color: var(--white);
+        .lang {
+          display: flex;
+          align-items: center;
+          img {
+            width: 30px;
+            height: 20px;
+            object-fit: cover;
+            object-position: center;
           }
         }
       }
@@ -1136,39 +1104,18 @@ export default {
       display: flex;
       cursor: pointer;
       position: relative;
-      width: 150px;
       transition: 2s ease;
+      align-items: center;
+      justify-content: space-around;
       height: 25px;
       padding: 3px 0;
       font-weight: 400;
-      &:hover .lang__item {
-        &:nth-child(1) {
-          transform: translateX(-75px);
-        }
-        &:nth-child(2) {
-          transform: translateX(-37px);
-        }
+
+      &._active {
+        font-weight: 600;
         opacity: 1;
         visibility: visible;
-      }
-      .lang__item {
-        position: absolute;
-        right: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s ease;
-        &:not(:last-child) {
-          margin-right: 5px;
-        }
-        &:hover {
-          color: var(--white);
-        }
-        &._active {
-          font-weight: 600;
-          opacity: 1;
-          visibility: visible;
-          color: var(--white);
-        }
+        color: var(--white);
       }
     }
     .contact {
@@ -1320,6 +1267,7 @@ export default {
 }
 .header.active .nuxt-link-active {
   color: var(--white);
+  font-weight: 700;
   & span:nth-child(2) {
     width: 100%;
   }
