@@ -37,7 +37,7 @@ export default {
         {
           id: 4,
           name: 'Kafedralar',
-          path: 'publications',
+          path: '/admin/about-us/departments',
         },
         {
           id: 5,
