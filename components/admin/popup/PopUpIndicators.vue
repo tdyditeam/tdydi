@@ -47,8 +47,8 @@
           <text-filed
             label="Ýeri"
             type="number"
-            :value="main.place"
-            @updateValue="(val) => (main.place = val)"
+            :value="main.order_number"
+            @updateValue="(val) => (main.order_number = val)"
           ></text-filed>
         </div>
         <div class="col-12">
@@ -132,6 +132,7 @@ export default {
           file: true,
           data: this.main,
         })
+        console.log(res)
         if (res) {
           this.$emit('indicatorsCreated')
         }

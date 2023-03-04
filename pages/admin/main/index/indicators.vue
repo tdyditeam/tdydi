@@ -4,6 +4,11 @@
       <div class="admin__news-header">
         <base-button @click="openPupup" text="+ Goşmak" isActive></base-button>
       </div>
+      <div class="admin__langs">
+        <div class="admin__lang">tk</div>
+        <div class="admin__lang">ru</div>
+        <div class="admin__lang">en</div>
+      </div>
       <div class="admin__news-body">
         <table class="table">
           <thead class="table__head">
@@ -16,20 +21,28 @@
             </tr>
           </thead>
           <tbody class="table__body">
-            <tr v-for="(item, i) in 20" :key="item" class="table__body-row">
-              <td class="table__body-col">{{ i }}</td>
+            <tr
+              v-for="(item, i) in indicators"
+              :key="item.id"
+              class="table__body-row"
+            >
+              <td class="table__body-col">{{ i + 1 }}</td>
               <td class="table__body-col">
                 <img
                   class="table__body-col__image"
-                  src="@/assets/img/home/TheHistory.png"
+                  :src="`${imageUrl}${item.image}`"
                   alt=""
                 />
               </td>
-              <td class="table__body-col"></td>
-              <td class="table__body-col"></td>
+              <td class="table__body-col">{{ item.name }}</td>
+              <td class="table__body-col">{{ item.count }}</td>
               <td class="table__body-col actions">
                 <img src="@/assets/img/admin/edit.png" alt="" />
-                <img src="@/assets/img/admin/trash.png" alt="" />
+                <img
+                  src="@/assets/img/admin/trash.png"
+                  alt=""
+                  @click="deleteItem(item)"
+                />
               </td>
             </tr>
           </tbody>
@@ -38,14 +51,14 @@
     </div>
     <pop-up-indicators
       v-if="popupNews"
-      @close="popupNews = false"
-      @indicatorsCreated="indicatorsCreated"
+      @close="close"
       height="350"
     ></pop-up-indicators>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 const PopUpIndicators = () =>
   import('~/components/admin/popup/PopUpIndicators.vue')
 import { request } from '@/api/generic.api'
@@ -56,7 +69,11 @@ export default {
   data() {
     return {
       popupNews: false,
+      indicators: [],
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   async mounted() {
     await this.fetchIndicators()
@@ -67,19 +84,38 @@ export default {
     },
     async fetchIndicators() {
       try {
-        const res = await request({
-          url: '/indicators',
+        const { indicators } = await request({
+          url: `/indicators?lang=${`tm`}`,
           method: 'GET',
         })
-        console.log(res)
-        if (res) {
+        console.log(indicators)
+        if (indicators) {
+          this.indicators = indicators
         }
       } catch (error) {
         console.log(error)
       }
     },
-    async indicatorsCreated() {
+    async close() {
+      this.popupNews = false
       await this.fetchIndicators()
+    },
+    async deleteItem(item) {
+      try {
+        const res = await request({
+          url: `/indicators`,
+          data: {
+            image_name: item.image,
+          },
+          method: 'DELETE',
+        })
+        console.log(res)
+        //   if (indicators) {
+        //     this.indicators = indicators
+        //   }
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }
