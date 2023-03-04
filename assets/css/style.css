@@ -323,15 +323,18 @@ body ::selection {
 }
 ::-webkit-scrollbar-track {
   background: transparent;
+  height: 2px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 10px;
+  height: 2px;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
   background-color: #c1c1c1c1;
+  height: 4px;
 }
 ::-webkit-scrollbar-corner {
   visibility: hidden;
