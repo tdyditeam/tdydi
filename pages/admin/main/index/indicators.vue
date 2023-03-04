@@ -4,10 +4,14 @@
       <div class="admin__news-header">
         <base-button @click="openPupup" text="+ Goşmak" isActive></base-button>
       </div>
-      <div class="admin__langs">
-        <div class="admin__lang">tk</div>
-        <div class="admin__lang">ru</div>
-        <div class="admin__lang">en</div>
+      <div class="popup__tab">
+        <span
+          v-for="lang in langs"
+          :key="lang.id"
+          @click="toggleLang(lang.id, lang.key)"
+          :class="{ active: activeLang === lang.id }"
+          >{{ lang.name }}</span
+        >
       </div>
       <div class="admin__news-body">
         <table class="table">
@@ -37,7 +41,11 @@
               <td class="table__body-col">{{ item.name }}</td>
               <td class="table__body-col">{{ item.count }}</td>
               <td class="table__body-col actions">
-                <img src="@/assets/img/admin/edit.png" alt="" />
+                <img
+                  src="@/assets/img/admin/edit.png"
+                  alt=""
+                  @click="editItem(item)"
+                />
                 <img
                   src="@/assets/img/admin/trash.png"
                   alt=""
@@ -51,6 +59,7 @@
     </div>
     <pop-up-indicators
       v-if="popupNews"
+      :editItemDatas="editItemDatas"
       @close="close"
       height="350"
     ></pop-up-indicators>
@@ -70,6 +79,26 @@ export default {
     return {
       popupNews: false,
       indicators: [],
+      activeLang: 1,
+      lang: 'tm',
+      editItemDatas: null,
+      langs: [
+        {
+          id: 1,
+          name: 'TK',
+          key: 'tm',
+        },
+        {
+          id: 2,
+          name: 'RU',
+          key: 'ru',
+        },
+        {
+          id: 3,
+          name: 'EN',
+          key: 'en',
+        },
+      ],
     }
   },
   computed: {
@@ -82,10 +111,15 @@ export default {
     openPupup() {
       this.popupNews = true
     },
+    async toggleLang(id, key) {
+      this.activeLang = id
+      this.lang = key
+      await this.fetchIndicators()
+    },
     async fetchIndicators() {
       try {
         const { indicators } = await request({
-          url: `/indicators?lang=${`tm`}`,
+          url: `/indicators?lang=${this.lang}`,
           method: 'GET',
         })
         console.log(indicators)
@@ -110,12 +144,27 @@ export default {
           method: 'DELETE',
         })
         console.log(res)
-        //   if (indicators) {
-        //     this.indicators = indicators
-        //   }
+        if (res.status) {
+          await this.fetchIndicators()
+        }
       } catch (error) {
         console.log(error)
       }
+    },
+    async editItem(item) {
+      this.editItemDatas = item
+      // try {
+      //   const res = await request({
+      //     url: `/indicators/${item.id}`,
+      //     method: 'PUT',
+      //   })
+      //   console.log(res)
+      //   //   if (res.status) {
+      //   //     await this.fetchIndicators()
+      //   //   }
+      // } catch (error) {
+      //   console.log(error)
+      // }
     },
   },
 }
@@ -135,6 +184,34 @@ export default {
     }
   }
 }
+.popup {
+  &__tab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    span {
+      padding: 8px 28px;
+      margin-right: 2px;
+      font-family: 'Roboto Flex';
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+
+      color: #969494;
+      border-radius: 2px;
+    }
+
+    span:hover {
+      color: #333333;
+      background: #f4f4f4;
+    }
+    span.active {
+      color: #333333;
+      background: #f4f4f4;
+    }
+  }
+}
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -146,8 +223,9 @@ export default {
     &-row {
     }
     &-col {
-      text-align: left;
-      padding-left: 10px;
+      text-align: center;
+      // text-align: left;
+      // padding-left: 10px;
     }
   }
   &__body {
@@ -156,8 +234,9 @@ export default {
       border-bottom: 2px solid #f4f4f4;
     }
     &-col {
-      text-align: left;
-      padding-left: 10px;
+      text-align: center;
+      // text-align: left;
+      // padding-left: 10px;
       &__image {
         width: 70px;
         height: 70px;

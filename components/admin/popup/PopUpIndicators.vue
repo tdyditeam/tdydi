@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { request } from '@/api/generic.api'
 import changeImage from '@/mixins/changeImage'
 const Editor = () => import('@/components/admin/Editor.vue')
@@ -81,6 +82,22 @@ export default {
       type: String,
       default: () => null,
     },
+    editItemDatas: {
+      type: Object,
+      default: () => null,
+    },
+  },
+  watch: {
+    editItemDatas: function (val) {
+      this.name = val.name
+      this.count = val.count
+      this.order_number = val.order_number
+      this.newsImg = `${this.imageUrl}${val.image}`
+      this.image = `${val.image}`
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   data() {
     return {
@@ -132,12 +149,13 @@ export default {
           file: true,
           data: this.main,
         })
-        console.log(res)
         if (res) {
           this.$emit('indicatorsCreated')
+          alert('Üstünlikli goşuldy !')
         }
       } catch (error) {
         console.log(error)
+        alert('Ýalňyşlyk ýa-da internet nä sazlygy !')
       }
     },
   },
