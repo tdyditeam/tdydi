@@ -109,6 +109,7 @@ export default {
   },
   methods: {
     openPupup() {
+      this.editItemDatas = null
       this.popupNews = true
     },
     async toggleLang(id, key) {
@@ -151,8 +152,10 @@ export default {
         console.log(error)
       }
     },
-    async editItem(item) {
+    editItem(item) {
       this.editItemDatas = item
+      this.popupNews = true
+      console.log(this.editItemDatas)
       // try {
       //   const res = await request({
       //     url: `/indicators/${item.id}`,

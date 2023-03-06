@@ -449,7 +449,7 @@ export default {
         justify-content: space-around;
         cursor: pointer;
         position: relative;
-        width: 250px;
+        width: 200px;
         transition: 2s ease;
         height: 25px;
         padding: 3px 0;
@@ -458,11 +458,12 @@ export default {
           align-items: center;
           p {
             margin-left: 5px;
+            padding-top: 1px;
             height: 100%;
-            font-size: 20px;
+            font-size: 18px;
           }
           img {
-            width: 30px;
+            width: 25px;
             height: 20px;
             object-fit: cover;
             object-position: center;
@@ -743,9 +744,6 @@ export default {
         text-transform: uppercase;
         color: var(--white);
         cursor: pointer;
-        &:hover {
-          color: var(--primary);
-        }
       }
     }
     &-logo {
@@ -772,18 +770,25 @@ export default {
       color: var(--white);
       .languages {
         display: flex;
+        justify-content: space-around;
         cursor: pointer;
         position: relative;
         transition: 2s ease;
-        width: 250px;
+        width: 200px;
         height: 25px;
         padding: 3px 0;
         font-weight: 400;
         .lang {
           display: flex;
           align-items: center;
+          p {
+            margin-left: 5px;
+            padding-top: 3px;
+            height: 100%;
+            font-size: 18px;
+          }
           img {
-            width: 30px;
+            width: 25px;
             height: 20px;
             object-fit: cover;
             object-position: center;
@@ -1073,9 +1078,6 @@ export default {
       text-transform: uppercase;
       color: var(--white);
       cursor: pointer;
-      &:hover {
-        color: var(--primary);
-      }
     }
   }
   &-logo {

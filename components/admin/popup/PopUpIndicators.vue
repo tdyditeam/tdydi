@@ -88,13 +88,14 @@ export default {
     },
   },
   watch: {
-    editItemDatas: function (val) {
-      this.name = val.name
-      this.count = val.count
-      this.order_number = val.order_number
-      this.newsImg = `${this.imageUrl}${val.image}`
-      this.image = `${val.image}`
-    },
+    //  editItemDatas: function (val) {
+    //    console.log(val)
+    //    this.name = val.name
+    //    this.count = val.count
+    //    this.order_number = val.order_number
+    //    this.newsImg = `${this.imageUrl}${val.image}`
+    //    this.image = `${val.image}`
+    //  },
   },
   computed: {
     ...mapGetters(['imageUrl']),
@@ -130,6 +131,18 @@ export default {
       },
     }
   },
+  mounted() {
+    console.log(this.editItemDatas)
+    if (this.editItemDatas) {
+      this.main.name = this.editItemDatas.name
+      this.main.count = this.editItemDatas.count
+      this.main.order_number = this.editItemDatas.order_number
+      this.newsImg = {
+        blobFile: `${this.imageUrl}${this.editItemDatas.image}`,
+      }
+      this.main.image = `${this.editItemDatas.image}`
+    }
+  },
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
@@ -148,10 +161,15 @@ export default {
           url: '/indicators',
           file: true,
           data: this.main,
+          method: this.editItemDatas ? 'PUT' : 'POST',
         })
         if (res) {
+          if (this.editItemDatas) {
+            alert('Üstünlikli üýtgedildi !')
+          } else {
+            alert('Üstünlikli goşuldy !')
+          }
           this.$emit('indicatorsCreated')
-          alert('Üstünlikli goşuldy !')
         }
       } catch (error) {
         console.log(error)
