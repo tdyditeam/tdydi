@@ -101,7 +101,7 @@ export default {
     async addAbout() {
       try {
         const res = await request({
-          url: `/about/${this.main.id}`,
+          url: `/rectorate/${this.main.id}`,
           method: 'PUT',
           data: this.main,
           file: true,
@@ -113,14 +113,14 @@ export default {
     },
     async fetcAbout() {
       try {
-        const { about, status } = await request({
-          url: `/about?lang=${this.main.lang}`,
+        const { message, status } = await request({
+          url: `/rectorate?lang=${this.main.lang}`,
           method: 'GET',
         })
         if (status) {
-          this.main.text = about[0].text
-          this.image = `${this.imageUrl}${about[0].image}`
-          this.main.id = about[0].id
+          this.main.text = message[0].text
+          this.image = `${this.imageUrl}${message[0].image}`
+          this.main.id = message[0].id
         }
       } catch (error) {
         console.log(error)

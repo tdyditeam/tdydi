@@ -40,6 +40,11 @@ export default {
           path: '/admin/about-us/departments',
         },
         {
+          id: 9,
+          name: 'Mugallymalar',
+          path: '/admin/about-us/teachers',
+        },
+        {
           id: 5,
           name: 'Jemgyýetçilik guramalary',
           path: 'gallery',

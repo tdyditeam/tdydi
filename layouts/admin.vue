@@ -29,23 +29,6 @@ export default {
     height: 100%;
     width: 100%;
     overflow: overlay;
-    &::-webkit-scrollbar-track {
-      background: transparent;
-      display: none;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: var(--primary);
-      display: none;
-    }
-    &::-webkit-scrollbar {
-      background: transparent;
-      display: none;
-    }
-    &::-webkit-scrollbar-corner {
-      display: none;
-      visibility: hidden;
-      opacity: 0px;
-    }
   }
 }
 </style>
