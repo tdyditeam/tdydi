@@ -70,19 +70,13 @@ export default {
       type: String,
       default: () => null,
     },
-    editItemDatas: {
-      type: Object,
+    uuid: {
+      type: Number,
       default: () => null,
     },
   },
-  watch: {
-    editItemDatas: function (val) {
-      this.name = val.name
-      this.count = val.count
-      this.order_number = val.order_number
-      this.newsImg = `${this.imageUrl}${val.image}`
-      this.image = `${val.image}`
-    },
+  mounted() {
+    console.log(this.uuid)
   },
   computed: {
     ...mapGetters(['imageUrl']),
@@ -117,6 +111,11 @@ export default {
       },
     }
   },
+  async mounted() {
+    if (this.uuid) {
+      await this.fetchOneItem()
+    }
+  },
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
@@ -137,7 +136,7 @@ export default {
           data: this.main,
         })
         if (res) {
-          this.$emit('indicatorsCreated')
+          this.$emit('close')
           alert('Üstünlikli goşuldy !')
         }
       } catch (error) {
@@ -145,11 +144,28 @@ export default {
         alert('Ýalňyşlyk ýa-da internet nä sazlygy !')
       }
     },
+
+    async fetchOneItem() {
+      try {
+        const { message, status } = await request({
+          url: `/faculties/${this.uuid}`,
+          method: 'GET',
+        })
+        if (status) {
+          console.log(message)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.editor {
+  overflow: overlay;
+}
 .popup {
   position: fixed;
   z-index: 99;
