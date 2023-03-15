@@ -1,46 +1,25 @@
 <template>
   <div class="admin-slider">
-    <file-list
-      :items="items"
-      icon="addphoto.png"
-      title="Uly slider"
-    ></file-list>
     <file-list :items="items" icon="addvideo.png" title="Video"></file-list>
     <file-list
       :items="items"
       icon="addphoto.png"
       title="Ýylyň nyşany"
     ></file-list>
-    <file-list
-      :items="items"
-      icon="addphoto.png"
-      title="Gorkezijiler"
-      @clickPhoto="popupIndicators = true"
-      edit
-      indicator
-    ></file-list>
-    <pop-up-indicators
-      v-if="popupIndicators"
-      @close="popupIndicators = false"
-    ></pop-up-indicators>
   </div>
 </template>
 
 <script>
 import { request } from '~/api/generic.api'
 const FileList = () => import('@/components/admin/FileList.vue')
-const PopUpIndicators = () =>
-  import('~/components/admin/popup/PopUpIndicators.vue')
 
 export default {
   layout: 'admin',
   components: {
     FileList,
-    PopUpIndicators,
   },
   data() {
     return {
-      popupIndicators: false,
       items: [
         { id: 1, path: 'asd' },
         { id: 2, path: 'ads' },
@@ -54,16 +33,16 @@ export default {
     }
   },
   async mounted() {
-    await this.fetchMainIamges()
+    //  await this.fetchMainIamges()
   },
   methods: {
-    async fetchMainIamges() {
-      try {
-        const res = await request({ url: '/admin/main-images', method: 'GET' })
-      } catch (error) {
-        console.log(error)
-      }
-    },
+    //  async fetchMainIamges() {
+    //    try {
+    //      const res = await request({ url: '/admin/main-images', method: 'GET' })
+    //    } catch (error) {
+    //      console.log(error)
+    //    }
+    //  },
   },
 }
 </script>

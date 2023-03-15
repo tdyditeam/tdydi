@@ -86,6 +86,7 @@ export default {
   },
   methods: {
     change(event) {
+      console.log(event.target.files[0])
       this.publicationImg = URL.createObjectURL(event.target.files[0])
       this.$emit('fileUploaded', event.target.files[0])
     },

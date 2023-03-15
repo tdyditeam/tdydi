@@ -19,13 +19,7 @@
         </div>
         <div class="col-9">
           <div class="popup__tab">
-            <span
-              v-for="lang in langs"
-              :key="lang.id"
-              @click="toggleLang(lang.id, lang.key)"
-              :class="{ active: activeLang === lang.id }"
-              >{{ lang.name }}</span
-            >
+            <span class="active">{{ lang.toUpperCase() }}</span>
           </div>
         </div>
         <div class="col-9">
@@ -78,6 +72,10 @@ export default {
   },
   mixins: [changeImage],
   props: {
+    lang: {
+      type: String,
+      default: () => '',
+    },
     height: {
       type: String,
       default: () => null,
@@ -87,16 +85,7 @@ export default {
       default: () => null,
     },
   },
-  watch: {
-    //  editItemDatas: function (val) {
-    //    console.log(val)
-    //    this.name = val.name
-    //    this.count = val.count
-    //    this.order_number = val.order_number
-    //    this.newsImg = `${this.imageUrl}${val.image}`
-    //    this.image = `${val.image}`
-    //  },
-  },
+  watch: {},
   computed: {
     ...mapGetters(['imageUrl']),
   },
@@ -105,28 +94,11 @@ export default {
       newsImg: null,
       activeLang: 1,
       newsDate: '',
-      langs: [
-        {
-          id: 1,
-          name: 'TKM',
-          key: 'tm',
-        },
-        {
-          id: 2,
-          name: 'RUS',
-          key: 'ru',
-        },
-        {
-          id: 3,
-          name: 'ENG',
-          key: 'en',
-        },
-      ],
       main: {
-        lang: 'tm',
         name: '',
         count: null,
         order_number: null,
+        lang: this.lang,
         image: '',
       },
     }
@@ -140,36 +112,44 @@ export default {
       this.newsImg = {
         blobFile: `${this.imageUrl}${this.editItemDatas.image}`,
       }
-      this.main.image = `${this.editItemDatas.image}`
+      this.main.image = null
     }
   },
   methods: {
     change(event) {
       this.newsImg = this.changeImage(event)
       this.main.image = this.newsImg.postFile
+      console.log(this.main.image)
     },
-
-    toggleLang(id, key) {
-      this.activeLang = id
-      this.main.lang = key
-      this.main.name = ''
-    },
-
     async save() {
       try {
         const res = await request({
-          url: '/indicators',
-          file: true,
-          data: this.main,
+          url: this.editItemDatas
+            ? `/indicators/${this.editItemDatas.id}`
+            : '/indicators',
+          file: this.editItemDatas ? (this.main.image ? true : false) : true,
+          data: this.editItemDatas
+            ? this.main.image
+              ? this.main
+              : {
+                  lang: this.main.lang,
+                  name: this.main.name,
+                  count: this.main.count,
+                  order_number: this.main.order_number,
+                }
+            : this.main,
           method: this.editItemDatas ? 'PUT' : 'POST',
         })
-        if (res) {
+        console.log(res)
+        if (res.status) {
           if (this.editItemDatas) {
             alert('Üstünlikli üýtgedildi !')
           } else {
             alert('Üstünlikli goşuldy !')
           }
           this.$emit('indicatorsCreated')
+        } else {
+          alert('Ýalňyşlyk ýa-da internet nä sazlygy !')
         }
       } catch (error) {
         console.log(error)

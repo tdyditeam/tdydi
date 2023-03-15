@@ -60,6 +60,7 @@
     <pop-up-indicators
       v-if="popupNews"
       :editItemDatas="editItemDatas"
+      :lang="lang"
       @close="close"
       height="350"
     ></pop-up-indicators>
@@ -85,7 +86,7 @@ export default {
       langs: [
         {
           id: 1,
-          name: 'TK',
+          name: 'TM',
           key: 'tm',
         },
         {
@@ -147,6 +148,8 @@ export default {
         console.log(res)
         if (res.status) {
           await this.fetchIndicators()
+        } else {
+          alert('Ýalňyşlyk ýa-da internet nä sazlygy !')
         }
       } catch (error) {
         console.log(error)

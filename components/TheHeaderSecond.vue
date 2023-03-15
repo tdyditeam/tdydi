@@ -458,7 +458,7 @@ export default {
           align-items: center;
           p {
             margin-left: 5px;
-            padding-top: 1px;
+            padding-top: 0.6px;
             height: 100%;
             font-size: 18px;
           }
