@@ -1,5 +1,5 @@
 <template>
-  <secion>
+  <section>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
       :description="
@@ -8,7 +8,7 @@
       :title="$t('competitions.teacher-of-the-year-competitions.title')"
       :img="img"
     ></block-pages>
-  </secion>
+  </section>
 </template>
 
 <script>
