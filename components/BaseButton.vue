@@ -2,9 +2,6 @@
   <div :class="['button', { active: isActive }]" @click="$emit('click')">
     <button>
       <span class="button__text">{{ text }}</span>
-      <span class="button__append-icon" v-if="appendIcon"
-        ><img :src="require(`@/assets/img/${iconUrl}`)" alt=""
-      /></span>
     </button>
   </div>
 </template>
@@ -14,7 +11,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: () => '',
+      default: () => "",
     },
     appendIcon: {
       type: Boolean,
@@ -22,14 +19,14 @@ export default {
     },
     iconUrl: {
       type: String,
-      default: () => '',
+      default: () => "",
     },
     isActive: {
       type: Boolean,
       default: () => false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -45,13 +42,10 @@ export default {
   button {
     text-align: center;
     background: transparent;
-    font-family: 'Roboto Flex';
+    font-family: "Roboto Flex";
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     white-space: nowrap;
     @media (max-width: 768px) {
       font-size: 12px;

@@ -74,26 +74,28 @@
                 ><span></span>
               </nuxt-link>
               <client-only v-for="item in menuItems" :key="item.id">
-                <nuxt-link
-                  :to="localePath(`${item.path}`)"
-                  class="header__bottom-items"
-                >
-                  <span>{{ item.name }}</span>
-                  <span></span>
-                  <div class="header__bottom-submenu-container">
-                    <div class="header__bottom-submenu __container">
-                      <div
-                        v-for="subMenu in item.subMenus"
-                        :key="subMenu.id"
-                        class="header__bottom-subitems"
-                      >
-                        <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
-                          <span>{{ subMenu.name }}</span>
-                        </nuxt-link>
+                <span @click.prevent="clickCategory(item)">
+                  <nuxt-link
+                    :to="localePath(`${item.path}`)"
+                    :class="['header__bottom-items']"
+                  >
+                    <span>{{ item.name }}</span>
+                    <span></span>
+                    <div class="header__bottom-submenu-container">
+                      <div class="header__bottom-submenu __container">
+                        <div
+                          v-for="subMenu in item.subMenus"
+                          :key="subMenu.id"
+                          class="header__bottom-subitems"
+                        >
+                          <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
+                            <span>{{ subMenu.name }}</span>
+                          </nuxt-link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </nuxt-link>
+                  </nuxt-link>
+                </span>
               </client-only>
             </div>
           </div>
@@ -170,6 +172,7 @@ export default {
           name: this.$t('header.menu.aboutUs.name'),
           path: '/about-us',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -213,6 +216,7 @@ export default {
           name: this.$t('header.menu.education.name'),
           path: '/education',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -236,6 +240,7 @@ export default {
           name: this.$t('header.menu.science.name'),
           path: '/science',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -269,6 +274,7 @@ export default {
           name: this.$t('header.menu.internationalCooperation.name'),
           path: '/international-cooperation',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -299,6 +305,7 @@ export default {
           name: this.$t('header.menu.competitions.name'),
           path: '/competitions',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -334,6 +341,7 @@ export default {
           name: this.$t('header.menu.candidate.name'),
           path: '/candidate',
           exact: false,
+          active: false,
           subMenus: [
             {
               id: 1,
@@ -381,6 +389,9 @@ export default {
     closePopUp() {
       document.body.classList.remove('_lock')
       this.isActive = false
+    },
+    clickCategory(data) {
+      console.log(data)
     },
   },
 }
@@ -632,15 +643,17 @@ export default {
           width: 100%;
         }
       }
-      &:hover .header__bottom-submenu-container {
-        opacity: 1;
-        visibility: visible;
+      &.nuxt-link-active {
+        .header__bottom-submenu-container {
+          opacity: 1;
+          visibility: visible;
+        }
       }
-      // &._active {
-      //   span:nth-child(1) {
-      //     color: var(--primary);
-      //   }
-      // }
+      &._active {
+        span:nth-child(1) {
+          color: var(--primary);
+        }
+      }
     }
     // &-submenu-container{
     // }
@@ -661,6 +674,10 @@ export default {
       z-index: 5;
       //   border-top: 1px solid #000;
       //   border-bottom: 1px solid #000;
+      // box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+      -moz-box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+      -webkit-box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+      box-shadow: 0 3px 3px rgb(0 0 0 / 15%);
     }
     &-submenu {
       display: flex;
@@ -972,17 +989,17 @@ export default {
       //     transition: 0.3s ease;
       //     background: var(--white);
       //   }
-      &:hover {
-        .some {
-          &::after {
-            opacity: 1;
-          }
-        }
-      }
-      &:hover .header__bottom-submenu-container {
-        opacity: 1;
-        visibility: visible;
-      }
+      // &:hover {
+      //   .some {
+      //     &::after {
+      //       opacity: 1;
+      //     }
+      //   }
+      // }
+      // &:hover .header__bottom-submenu-container {
+      //   opacity: 1;
+      //   visibility: visible;
+      // }
       // &._active {
       //   span:nth-child(1) {
       //     color: var(--primary);
@@ -1179,10 +1196,10 @@ export default {
         width: 100%;
       }
     }
-    &:hover .header__bottom-submenu-container {
-      opacity: 1;
-      visibility: visible;
-    }
+    //  &:hover .header__bottom-submenu-container {
+    //    opacity: 1;
+    //    visibility: visible;
+    //  }
     // &._active {
     //   span:nth-child(1) {
     //     color: var(--primary);
