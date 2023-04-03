@@ -1,7 +1,7 @@
 <template>
-  <div class="hero-slider">
+  <div class="hero-slider" v-if="video">
     <video class="banner__video" id="videos" autoplay muted loop poster="1.jpg">
-      <source src="@/assets/video/narhoz.mp4" />
+      <source :src="`${imageUrl}${video}`" />
     </video>
     <div class="overlay"></div>
   </div>
@@ -25,12 +25,18 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Swiper,
     SwiperSlide,
   },
-  props: {},
+  props: {
+    video: {
+      type: String,
+      default: () => '',
+    },
+  },
   data() {
     return {
       options: {
@@ -71,6 +77,9 @@ export default {
         // },
       ],
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   mounted() {
     let slide = document.querySelector(

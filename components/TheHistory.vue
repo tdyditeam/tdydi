@@ -27,35 +27,16 @@
 </template>
 
 <script>
-import { request } from '@/api/generic.api'
 import { mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      about: null,
-    }
+  props: {
+    about: {
+      type: Object,
+      default: () => null,
+    },
   },
   computed: {
     ...mapGetters(['imageUrl']),
-  },
-  async fetch() {
-    await this.fetcAbout()
-  },
-  methods: {
-    async fetcAbout() {
-      try {
-        const { about, status } = await request({
-          url: `/about?lang=${this.$i18n.locale}`,
-          method: 'GET',
-        })
-        if (status) {
-          console.log(about)
-          this.about = about[0]
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    },
   },
 }
 </script>

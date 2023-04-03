@@ -8,15 +8,18 @@
       @change="change"
     >
     </the-title-block>
-    <events-article
-      :events="activeId === 1 ? news : arcticles"
-      :activeId="activeId"
-    ></events-article>
+    <events-article :events="events" :activeId="activeId"></events-article>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    events: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       activeId: 1,

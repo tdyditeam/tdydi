@@ -7,7 +7,7 @@
           v-for="(event, index) in events"
           :key="event.id"
           :event="event"
-          @clickOneItem="$router.push(`/events/${activeId}/${index}`)"
+          @clickOneItem="(id) => $router.push(`/events/${activeId}/${id}`)"
         ></article-item>
       </div>
       <div class="swiper-block__buttons">

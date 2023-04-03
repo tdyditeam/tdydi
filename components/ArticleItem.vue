@@ -1,46 +1,52 @@
 <template>
-  <div @click="$emit('clickOneItem')" class="article-item">
+  <div @click="$emit('clickOneItem', event.id)" class="article-item">
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <img
-            v-if="event.img"
-            :src="require(`@/assets/img/home/events/news/${event.img}`)"
-            alt=""
-          />
+          <img v-if="event.image" :src="`${imageUrl}${event.image}`" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
-            <span v-show="event.createdAt">{{ event.createdAt }}</span>
+            <span v-show="event.date">{{
+              new Date(event.date).toISOString().slice(0, 10)
+            }}</span>
             <span>
               <img src="@/assets/img/home/article/eye.png" alt="" />
-              <p>{{ event.viewCount }}</p>
+              <p>{{ event.views ? event.views : 0 }}</p>
             </span>
           </div>
           <div class="content-swiper-block__title">
             {{ event.title }}
           </div>
-          <div class="content-swiper-block__text">
-            {{ event.description }}
-          </div>
+          <div
+            class="content-swiper-block__text"
+            v-html="event.description"
+          ></div>
         </div>
       </div>
-      <div class="article-item__people people-swiper-block" v-if="true">
+      <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
-          <div class="people-swiper-block__left-block">
-            <div class="people-swiper-block__image">
-              <img src="@/assets/img/home/article/profile_1.png" alt="surat" />
-            </div>
+          <div
+            class="people-swiper-block__left-block"
+            v-if="event.student_fullname"
+          >
             <div class="people-swiper-block__content">
-              <div class="people-swiper-block__title">Atayew Atamyrat</div>
+              <div class="people-swiper-block__title">
+                {{ event.student_fullname }}
+              </div>
               <div class="people-swiper-block__subtitle">
-                Elektron isewurliginin ykdysadyyeti
+                {{ event.majors }}
               </div>
             </div>
           </div>
-          <div class="people-swiper-block__right-block">
+          <div
+            class="people-swiper-block__right-block"
+            v-if="event.teacher_fullname"
+          >
             <div class="people-swiper-block__title">Mugallym:</div>
-            <div class="people-swiper-block__subtitle">Amanow Aman</div>
+            <div class="people-swiper-block__subtitle">
+              {{ event.teacher_fullname }}
+            </div>
           </div>
         </div>
       </div>
@@ -49,6 +55,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     event: {
@@ -56,8 +63,8 @@ export default {
       default: () => {},
     },
   },
-  data() {
-    return {}
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
 }
 </script>
@@ -126,6 +133,7 @@ export default {
       }
       p {
         margin-left: 5px;
+        padding-top: 3px;
       }
     }
   }
@@ -166,6 +174,8 @@ export default {
   &__row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px;
     gap: 30px;
     @media (max-width: 479px) {
       gap: 5px;

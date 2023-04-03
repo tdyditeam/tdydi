@@ -1,14 +1,25 @@
 <template>
-  <div class="banner__title">
+  <div class="banner__title" v-if="mainYearText">
     <div class="banner__title-img">
-      <img src="/logo2022.png" alt="" />
+      <img :src="`${imageUrl}${mainYearText?.image}`" alt="" />
     </div>
-    <div v-html="$t('slogan')" class="banner__title-text"></div>
+    <div v-html="mainYearText?.name" class="banner__title-text"></div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  props: {
+    mainYearText: {
+      type: Object,
+      default: () => null,
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>

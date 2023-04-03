@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
-    <hero-slider></hero-slider>
-    <the-banner-title></the-banner-title>
+    <hero-slider :video="video"></hero-slider>
+    <the-banner-title :mainYearText="mainYearText"></the-banner-title>
     <the-banner-statistics></the-banner-statistics>
     <!-- <the-video-banner></the-video-banner> -->
 
@@ -18,7 +18,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    video: {
+      type: String,
+      default: () => '',
+    },
+    mainYearText: {
+      type: Object,
+      default: () => null,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
