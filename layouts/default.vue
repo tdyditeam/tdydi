@@ -1,8 +1,8 @@
 <template>
   <section class="wrapper">
-    <div class="loader" v-if="isLoaded">
+    <!-- <div class="loader" v-if="isLoaded">
       <Loader />
-    </div>
+    </div> -->
     <client-only>
       <the-header-second></the-header-second>
       <nuxt
