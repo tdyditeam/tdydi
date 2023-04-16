@@ -61,8 +61,10 @@ table {
         text-align: center;
         @media (max-width: 767px) {
           font-size: 14px;
+          padding: 6px;
         }
         @media (max-width: 479px) {
+          padding: 4px;
           font-size: 12px;
           padding: 6px;
         }
@@ -88,10 +90,11 @@ table {
         padding: 10px;
         @media (max-width: 767px) {
           font-size: 14px;
+          padding: 6px;
         }
         @media (max-width: 479px) {
-          font-size: 12px;
-          padding: 6px;
+          font-size: 10px;
+          padding: 4px;
         }
       }
     }

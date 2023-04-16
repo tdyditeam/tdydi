@@ -461,7 +461,7 @@ export default {
         cursor: pointer;
         position: relative;
         width: 200px;
-        transition: 2s ease;
+        transition: 0.3s ease 0s;
         height: 25px;
         padding: 3px 0;
         .lang {
