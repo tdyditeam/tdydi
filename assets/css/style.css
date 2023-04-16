@@ -187,6 +187,57 @@ h6 {
   --background-second: #e7e7e7;
   --input: #f4f4f4;
   --error: #a83232;
+  --text: #333333;
+  --text-second: #474747;
+  --hover: #e7e4ff;
+  --border: #c1c1c1;
+  --white: #ffffff;
+  --background: #fcfcfc;
+  --background-second: #e7e7e7;
+  --input: #f4f4f4;
+  --error: #a83232;
+  --primary-second: #474747;
+  --white-secondary: #f5f5f5;
+  --white: #ffffff;
+  --black: #000000;
+  --background: #f0f3e8;
+  --background-second: #f7f7f7;
+  --button-bg: #eff7eb;
+  --border: #c1c1c1;
+  --primary-dark: #343632;
+  --primary-100: #f9fdf7;
+  --primary-200: #e2f3d8;
+  --primary-300: #caeab9;
+  --primary-400: #b3e09a;
+  --primary-500: #9cd77b;
+  --primary-600: #84ce5c;
+  --primary-700: #6cc53d;
+  --error: #a83232;
+  --error-100: #fdf7f7;
+  --error-200: #f3d8d8;
+  --error-300: #eab9b9;
+  --error-400: #e09a9a;
+  --error-500: #d77b7b;
+  --error-600: #ce5c5c;
+  --error-700: #c53d3d;
+  --connected: #3268a8;
+  --connected-100: #f7fafd;
+  --connected-200: #d8e5f3;
+  --connected-300: #b9d0ea;
+  --connected-400: #9abbe0;
+  --connected-500: #7ba6d7;
+  --connected-600: #5c91ce;
+  --connected-700: #3d7cc5;
+  --secondary: #474747;
+  --secondary-100: #fbfbfb;
+  --secondary-200: #e7e7e7;
+  --secondary-300: #d3d3d3;
+  --secondary-400: #bfbfbf;
+  --secondary-500: #ababab;
+  --secondary-600: #979797;
+  --secondary-700: #838383;
+  --secondary-800: #6f6f6f;
+  --secondary-900: #5b5b5b;
 }
 
 body._lock {
@@ -215,7 +266,42 @@ body ::selection {
   padding-right: 20px;
   width: 100%;
 }
+.toast-container {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 
+.toast-container .toast {
+  background-color: var(--primary);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 15px 25px;
+  margin-bottom: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
 .swiper-container {
   margin-left: auto;
   margin-right: auto;

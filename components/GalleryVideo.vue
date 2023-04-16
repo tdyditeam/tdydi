@@ -1,19 +1,26 @@
 <template>
   <div class="video-block">
     <div class="video-block__row">
-      <div class="video-block__column">
+      <div
+        class="video-block__column"
+        v-for="galery in galerias"
+        :key="galery.id"
+      >
         <div class="video-block__video">
           <video class="videos" poster="banner.png">
-            <source src="@/assets/video/narhoz.mp4" />
+            <source :src="`${imageUrl}${galery.image}`" />
           </video>
           <div @click="playVideo" class="video-block__play-icon">
-            <img v-if="!status" src="@/assets/img/home/play.svg" alt="" />
+            <img v-if="status" src="@/assets/img/home/play.svg" alt="" />
             <img v-else src="@/assets/img/home/pouse.svg" alt="" />
           </div>
           <div class="video-block__bottom-block bottom-block-video">
             <div class="bottom-block-video__row">
-              <div class="bottom-block-video__title">
-                Ykdysadyýet we dolandyryş instituty
+              <div class="bottom-block-video__title" v-if="galery.name">
+                {{ galery.name }}
+              </div>
+              <div class="bottom-block-video__title" v-else>
+                TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY
               </div>
               <div @click="fullscreen" class="bottom-block-video__time">
                 <img src="@/assets/img/home/maxsimize.png" alt="" />
@@ -27,16 +34,26 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  props: {
+    galerias: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       status: true,
     }
   },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
   methods: {
     playVideo() {
       let video = document.querySelector('.videos')
-      this.status = video.paused
+      this.status = !this.status
       console.log(video)
       if (!video.paused) {
         video.pause()
@@ -48,10 +65,6 @@ export default {
       let video = document.querySelector('.videos')
       video.requestFullscreen()
     },
-  },
-  mounted() {
-    // let video = document.getElementById('videos')
-    // this.status = video.paused
   },
 }
 </script>
@@ -70,6 +83,8 @@ export default {
     padding: 0px 10px;
     margin-bottom: 20px;
     cursor: pointer;
+    width: 350px;
+    height: 350px;
     @media (max-width: 767px) {
       flex: 0 1 50%;
     }
@@ -84,6 +99,8 @@ export default {
     align-items: center;
     position: relative;
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
     video {
       width: 100%;
       height: 100%;

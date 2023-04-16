@@ -7,7 +7,7 @@
             <img src="@/assets/img/home/footer/logo.png" alt="logo" />
           </div>
           <div class="left-block-footer__adress">
-            Aşgabat ş., 1972-nji (Atatürk) köçe, 73,
+            {{ $t('address') }}
           </div>
         </div>
         <div class="left-block-footer__about-wrapper">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="footer__right-block right-block-footer">
-        <p>Copyrighted © 2022 Upload TDY WE DI</p>
+        <p>Copyrighted © 2022 TDYweDI</p>
       </div>
     </div>
   </footer>

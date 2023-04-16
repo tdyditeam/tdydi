@@ -3,47 +3,13 @@
     <h2 class="pointers__title">{{ $t('button.theBest') }}</h2>
     <div class="pointers__row">
       <div class="pointers__left">
-        <div class="pointers__item">
-          <p>1.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Durdyýew Oraz
-          </p>
-        </div>
-        <div class="pointers__item">
-          <p>2.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Ataýew Myrat
-          </p>
-        </div>
-        <div class="pointers__item">
-          <p>3.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Baýramow Muhammetmyrat
-          </p>
-        </div>
-        <div class="pointers__item">
-          <p>4.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Çaryýew Mekan
-          </p>
-        </div>
-        <div class="pointers__item">
-          <p>5.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Jumaýew Muhammetnazar
-          </p>
-        </div>
-        <div class="pointers__item">
-          <p>6.</p>
-          <p>
-            Türkmen döwlet ykdysadyýet we dolandyryş institutynyň 4-nji ýyl
-            talyby: Ahmedow Şanazar
-          </p>
+        <div
+          class="pointers__item"
+          v-for="(topPointer, index) in topPointers"
+          :key="topPointer.id"
+        >
+          <p>{{ index + 1 }}.</p>
+          <p>{{ topPointer.major }}: {{ topPointer.name }}</p>
         </div>
       </div>
       <div class="pointers__right">
@@ -56,7 +22,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    topPointers: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

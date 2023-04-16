@@ -12,10 +12,7 @@
             v-for="(item, index) in items"
             :key="index"
           >
-            <img
-              :src="require(`@/assets/img/home/events/news/${item}`)"
-              alt=""
-            />
+            <img :src="`${imageUrl}${item}`" alt="" />
           </div>
         </div>
       </div>
@@ -33,21 +30,18 @@
           class="departments-swiper-mini__slide swiper-slide"
         >
           <div class="departments-swiper-mini__image">
-            <img
-              :src="require(`@/assets/img/home/events/news/${item}`)"
-              alt=""
-            />
+            <img :src="`${imageUrl}${item}`" alt="" />
           </div>
         </div>
       </div>
     </div>
-    <div class="departments-swiper__text" v-html="datas.description"></div>
+    <div class="departments-swiper__text" v-html="datas?.description"></div>
   </div>
 </template>
 
 <script>
 import Swiper from '@/plugins/thumbs'
-
+import { mapGetters } from 'vuex'
 export default {
   computed: {
     swiperSmall() {
@@ -94,6 +88,9 @@ export default {
         },
       },
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   mounted() {
     this.swiperMainMini()

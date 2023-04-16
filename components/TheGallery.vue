@@ -6,31 +6,44 @@
       :activeId="activeId"
       @change="change"
     ></the-title-block>
-    <gallery-photo v-if="activeId == 1"></gallery-photo>
-    <gallery-video v-else></gallery-video>
+    <gallery-photo v-if="activeId == 1" :galerias="galerias"></gallery-photo>
+    <gallery-video v-else :galerias="galerias"></gallery-video>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    galerias: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       activeId: 1,
-      items: [
+    }
+  },
+  computed: {
+    items() {
+      return [
         {
           id: 1,
-          name: 'Suratlar',
+          name: this.$t('images'),
+          galleryType: 'image',
         },
         {
           id: 2,
-          name: 'Videolar',
+          name: this.$t('videos'),
+          galleryType: 'video',
         },
-      ],
-    }
+      ]
+    },
   },
   methods: {
     change(data) {
       this.activeId = data.id
+      this.$emit('changeGallery', data.galleryType)
     },
   },
 }

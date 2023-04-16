@@ -1,15 +1,25 @@
 <template>
   <div>
-    <the-banner :video="video" :mainYearText="mainYearText"></the-banner>
+    <the-banner
+      :video="video"
+      :mainYearText="mainYearText"
+      :indicators="indicators"
+    ></the-banner>
     <section class="__container">
-      <the-banner-outside></the-banner-outside>
+      <the-banner-outside
+        :bannerLeft="bannerLeft"
+        :bannerRight="bannerRight"
+      ></the-banner-outside>
       <the-history :about="about"></the-history>
-      <the-events :events="events"></the-events>
+      <the-events :events="events" @change="changeEvent"></the-events>
       <the-publication :publications="publications"></the-publication>
-      <the-pointers></the-pointers>
-      <the-gallery></the-gallery>
-      <the-view></the-view>
-      <the-partners></the-partners>
+      <the-pointers :topPointers="topPointers"></the-pointers>
+      <the-gallery
+        :galerias="galerias"
+        @changeGallery="changeGallery"
+      ></the-gallery>
+      <!-- <the-view></the-view> -->
+      <the-partners :partnersUniversity="partnersUniversity"></the-partners>
     </section>
   </div>
 </template>
@@ -24,16 +34,29 @@ export default {
       mainYearText: null,
       about: null,
       eventType: 'news',
+      galleryType: 'image',
       events: null,
+      topPointers: null,
+      bannerLeft: null,
+      bannerRight: null,
+      indicators: null,
+      galerias: null,
+      partnersUniversity: null,
     }
   },
   async fetch() {
     await Promise.all([
       this.fetchVideo(),
       this.fetchMainYearText(),
+      this.fetchIndicators(),
+      this.fetchBannerLeft(),
+      this.fetchBannerRight(),
       this.fetcAbout(),
       this.fetchEvents(),
+      this.fetchTopPointers(),
+      this.fetchGallery(),
       this.fetchPublications(),
+      this.fetchPartners(),
     ])
   },
   mounted() {
@@ -90,6 +113,59 @@ export default {
         console.log(error)
       }
     },
+    async fetchIndicators() {
+      try {
+        const res = await request({
+          url: '/indicators',
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('fetchIndicators', res)
+        if (res.status) {
+          this.indicators = res?.indicators || []
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchBannerLeft() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-left',
+          },
+          method: 'GET',
+        })
+        console.log('banner-left', res)
+        if (res.status) {
+          this.bannerLeft = res?.galerias[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchBannerRight() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-right',
+          },
+          method: 'GET',
+        })
+        console.log('banner', res)
+        if (res.status) {
+          this.bannerRight = res?.galerias
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
     async fetchEvents() {
       try {
         const res = await request({
@@ -107,6 +183,41 @@ export default {
         console.log(error)
       }
     },
+    async fetchTopPointers() {
+      try {
+        const res = await request({
+          url: `/top-pointers`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('pointers', res)
+        if (res.status) {
+          this.topPointers = res.top_pointers || []
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchGallery() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: this.galleryType,
+          },
+          method: 'GET',
+        })
+        console.log('galleryType', res)
+        if (res.status) {
+          this.galerias = res?.galerias || []
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
     async fetchPublications() {
       try {
         const res = await request({
@@ -116,11 +227,38 @@ export default {
         if (res) {
           console.log('publications')
           this.publications = res
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchPartners() {
+      try {
+        const res = await request({
+          url: '/partners/university',
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('fetchPartners', res)
+        if (res.status) {
+          this.partnersUniversity = res?.partners_university || []
           this.$store.commit('SET_LOADER', false)
         }
       } catch (error) {
         console.log(error)
       }
+    },
+    async changeEvent(val) {
+      console.log(val)
+      this.eventType = val
+      await this.fetchEvents()
+    },
+    async changeGallery(val) {
+      console.log(val)
+      this.galleryType = val
+      await this.fetchGallery()
     },
   },
 }

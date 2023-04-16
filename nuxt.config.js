@@ -5,7 +5,7 @@ require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'TDYDI',
+    title: 'TDYDI | TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY',
     htmlAttrs: {
       lang: 'en',
     },
@@ -31,7 +31,10 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
+  plugins: [
+    '@/plugins/toast.js',
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

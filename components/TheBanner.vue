@@ -2,7 +2,7 @@
   <div class="banner">
     <hero-slider :video="video"></hero-slider>
     <the-banner-title :mainYearText="mainYearText"></the-banner-title>
-    <the-banner-statistics></the-banner-statistics>
+    <the-banner-statistics :indicators="indicators"></the-banner-statistics>
     <!-- <the-video-banner></the-video-banner> -->
 
     <!-- <div class="banner-figure__wrapper">
@@ -27,6 +27,10 @@ export default {
     mainYearText: {
       type: Object,
       default: () => null,
+    },
+    indicators: {
+      type: Array,
+      default: () => [],
     },
   },
 }

@@ -11,29 +11,13 @@
         ref="swiperTop"
       >
         <div class="body-gallery-photo-popup__wrapper swiper-wrapper">
-          <div class="body-gallery-photo-popup__slide swiper-slide">
+          <div
+            class="body-gallery-photo-popup__slide swiper-slide"
+            v-for="image in images"
+            :key="image.id"
+          >
             <div class="body-gallery-photo-popup__image">
-              <img src="@/assets/img/home/gallery/img_2.png" alt="surat" />
-            </div>
-          </div>
-          <div class="body-gallery-photo-popup__slide swiper-slide">
-            <div class="body-gallery-photo-popup__image">
-              <img src="@/assets/img/home/gallery/img_3.png" alt="surat" />
-            </div>
-          </div>
-          <div class="body-gallery-photo-popup__slide swiper-slide">
-            <div class="body-gallery-photo-popup__image">
-              <img src="@/assets/img/home/gallery/img_4.png" alt="surat" />
-            </div>
-          </div>
-          <div class="body-gallery-photo-popup__slide swiper-slide">
-            <div class="body-gallery-photo-popup__image">
-              <img src="@/assets/img/home/gallery/img_5.png" alt="surat" />
-            </div>
-          </div>
-          <div class="body-gallery-photo-popup__slide swiper-slide">
-            <div class="body-gallery-photo-popup__image">
-              <img src="@/assets/img/home/TheHistory.png" alt="surat" />
+              <img :src="`${imageUrl}${image.image}`" alt="" />
             </div>
           </div>
         </div>
@@ -52,24 +36,13 @@
         :options="swiperSmallOptions"
       >
         <div class="mini-body__wrapper swiper-wrapper">
-          <div class="mini-body__slide swiper-slide">
+          <div
+            class="mini-body__slide swiper-slide"
+            v-for="image in images"
+            :key="image.id"
+          >
             <div class="mini-body__image">
-              <img src="@/assets/img/home/gallery/img_2.png" alt="surat" />
-            </div>
-          </div>
-          <div class="mini-body__slide swiper-slide">
-            <div class="mini-body__image">
-              <img src="@/assets/img/home/gallery/img_3.png" alt="surat" />
-            </div>
-          </div>
-          <div class="mini-body__slide swiper-slide">
-            <div class="mini-body__image">
-              <img src="@/assets/img/home/gallery/img_4.png" alt="surat" />
-            </div>
-          </div>
-          <div class="mini-body__slide swiper-slide">
-            <div class="mini-body__image">
-              <img src="@/assets/img/home/gallery/img_5.png" alt="surat" />
+              <img :src="`${imageUrl}${image.image}`" alt="" />
             </div>
           </div>
         </div>
@@ -80,7 +53,7 @@
 
 <script>
 import Swiper from '@/plugins/thumbs'
-
+import { mapGetters } from 'vuex'
 export default {
   computed: {
     swiperSmall() {
@@ -92,6 +65,13 @@ export default {
       type: Boolean,
       default: () => false,
     },
+    images: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   data() {
     return {

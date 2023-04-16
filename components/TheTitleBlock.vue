@@ -16,7 +16,11 @@
         </button>
         <button
           v-if="isAll"
-          @click="$router.push(localeLocation(`/events/${activeId}`))"
+          @click="
+            $router.push(
+              localeLocation(`/events/${activeId}?event_type=${eventType}`)
+            )
+          "
           class="buttons-title-block__button buttons-title-block__button--green buttons-title-block__button--dark"
         >
           {{ $t('button.all') }}
@@ -48,6 +52,10 @@ export default {
     isAll: {
       type: Boolean,
       default: () => false,
+    },
+    eventType: {
+      type: String,
+      default: () => '',
     },
   },
 }

@@ -1,6 +1,18 @@
 export default {
   slogan: `  ARKADAG SERDARLY <br />
 	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  search: 'Поиск',
+  teacher: 'Учитель',
+  images: 'Изображений',
+  videos: 'Видео',
+  fullName: 'Ф.А.А',
+  email: 'Электронная почта',
+  tel: 'Номер телефона',
+  document: 'Документ',
+  sendCom: 'Отправить',
+  message: 'Письмо',
+  checkCommit: 'Admin tarapyndan barlanylýar !',
+  address: 'г. Ашхабад, улица 1972 (Ататюрка), 73,',
   button: {
     readMore: 'читать далее',
     news: 'Новости',

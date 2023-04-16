@@ -1,68 +1,56 @@
 <template>
   <div class="news-item __container">
-    <bread-crumbs v-show="false"></bread-crumbs>
-    <the-banner-outside></the-banner-outside>
+    <bread-crumbs></bread-crumbs>
+    <the-banner-outside
+      :bannerLeft="bannerLeft"
+      :bannerRight="bannerRight"
+    ></the-banner-outside>
     <div class="news-item__content">
       <div class="news-item__header">
         <div class="news-item__header-title">
           <h2>
-            {{
-              $route.params?.slug == 1
-                ? news[$route.params.id]?.title
-                : articles[$route.params.id]?.title
-            }}
+            {{ event?.title }}
           </h2>
         </div>
-        <div class="news-item__header-date">
-          <span>{{
-            $route.params?.slug == 1
-              ? news[$route.params.id]?.createdAt
-              : articles[$route.params.id]?.createdAt
-          }}</span>
+        <div class="news-item__header-date" v-if="event?.date">
+          <span>{{ new Date(event?.date).toISOString().slice(0, 10) }}</span>
           <span>
             <img src="@/assets/img/home/article/eye.png" alt="" />
             <p>
-              {{
-                $route.params?.slug == 1
-                  ? news[$route.params.id]?.viewCount
-                  : articles[$route.params.id]?.viewCount
-              }}
+              {{ event?.views }}
             </p>
           </span>
         </div>
       </div>
       <div class="news-item__picture">
         <departments-swiper
-          :datas="
-            $route.params?.slug == 1
-              ? news[$route.params.id]
-              : articles[$route.params.id]
-          "
-          :items="[
-            $route.params?.slug == 1
-              ? news[$route.params.id].img
-              : articles[$route.params.id].img
-              ? articles[$route.params.id].img
-              : 'news1.jpg',
-          ]"
+          :datas="event"
+          :items="[event?.image]"
         ></departments-swiper>
       </div>
-      <div class="article-item__people people-swiper-block" v-if="false">
+      <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
-            <div class="people-swiper-block__image">
-              <img src="@/assets/img/home/article/profile_1.png" alt="surat" />
-            </div>
-            <div class="people-swiper-block__content">
-              <div class="people-swiper-block__title">Atayew Atamyrat</div>
+            <div
+              class="people-swiper-block__content"
+              v-if="event?.student_fullname"
+            >
+              <div class="people-swiper-block__title">
+                {{ event?.student_fullname }}
+              </div>
               <div class="people-swiper-block__subtitle">
-                Elektron isewurliginin ykdysadyyeti
+                {{ event?.majors || '' }}
               </div>
             </div>
           </div>
-          <div class="people-swiper-block__right-block">
-            <div class="people-swiper-block__title">Mugallym:</div>
-            <div class="people-swiper-block__subtitle">Amanow Aman</div>
+          <div
+            class="people-swiper-block__right-block"
+            v-if="event?.teacher_fullname"
+          >
+            <div class="people-swiper-block__title">{{ $t('teacher') }}:</div>
+            <div class="people-swiper-block__subtitle">
+              {{ event?.teacher_fullname }}
+            </div>
           </div>
         </div>
       </div>
@@ -71,9 +59,84 @@
 </template>
 
 <script>
+import { request } from '~/api/generic.api'
 export default {
   data() {
-    return {}
+    return {
+      bannerLeft: null,
+      bannerRight: null,
+      event: null,
+    }
+  },
+  async fetch() {
+    await Promise.all([
+      this.fetchBannerLeft(),
+      this.fetchBannerRight(),
+      this.fetchOneEvent(),
+    ])
+  },
+  mounted() {
+    document.querySelector('.wrapper').scrollTop = 0
+  },
+  methods: {
+    async fetchBannerLeft() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-left',
+          },
+          method: 'GET',
+        })
+        console.log('banner-left', res)
+        if (res.status) {
+          this.bannerLeft = res?.galerias[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchBannerRight() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-right',
+          },
+          method: 'GET',
+        })
+        console.log('banner', res)
+        if (res.status) {
+          this.bannerRight = res?.galerias
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchOneEvent() {
+      try {
+        const res = await request({
+          url: `/news/${this.$route.params.id}`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('news', res)
+        if (res.status) {
+          this.event = res.events || []
+          this.$store.commit('SET_LOADER', false)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async updatePage(p) {
+      this.page = p
+      await this.fetchEvents()
+    },
   },
 }
 </script>

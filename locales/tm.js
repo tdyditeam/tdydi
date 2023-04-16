@@ -1,6 +1,18 @@
 export default {
   slogan: `  ARKADAG SERDARLY <br />
 	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  search: 'Gözleg',
+  teacher: 'Mugallym',
+  images: 'Suratlar',
+  videos: 'Videolar',
+  fullName: 'F.A.A',
+  email: 'E-poçta',
+  message: 'Hatyňyz',
+  tel: 'Telefon belgiňiz',
+  document: 'Resminama ýüklemek',
+  sendCom: 'Ugratmak',
+  checkCommit: 'Admin tarapyndan barlanylýar !',
+  address: 'Aşgabat ş., 1972-nji (Atatürk) köçe, 73,',
   button: {
     readMore: 'Doly oka',
     news: 'Täzelikler',

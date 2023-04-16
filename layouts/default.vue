@@ -14,6 +14,10 @@
           },
         ]"
       ></nuxt>
+      <div
+        class="toast-container __container"
+        style="align-items: center; z-index: 1000000"
+      ></div>
       <the-footer></the-footer>
     </client-only>
   </section>

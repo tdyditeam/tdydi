@@ -3,55 +3,27 @@
     <div class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
+          <!-- <img :src="`${imageUrl}${bannerLeft?.image}`" alt="img" /> -->
           <img
-            v-if="$i18n.locale === 'tm'"
             src="@/assets/img/home/banners-outside/imageonline-co-gifimage.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'ru'"
-            src="@/assets/img/home/banners-outside/imageonline-co-gifimageRu.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'en'"
-            src="@/assets/img/home/banners-outside/imageonline-co-gifimageEn.gif"
             alt="img"
           />
         </div>
       </div>
       <div class="banners-outside__bannner-right">
+        <!-- <div
+          class="banners-outside__image"
+          v-for="(banner, index) in bannerRight"
+          :key="index"
+        >
+          <img :src="`${imageUrl}${banner?.image}`" alt="img" />
+        </div> -->
         <div class="banners-outside__image">
-          <img
-            v-if="$i18n.locale === 'tm'"
-            src="@/assets/img/home/banners-outside/banking.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'ru'"
-            src="@/assets/img/home/banners-outside/bankingRu.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'en'"
-            src="@/assets/img/home/banners-outside/bankingEn.gif"
-            alt="img"
-          />
+          <img src="@/assets/img/home/banners-outside/banking.gif" alt="img" />
         </div>
         <div class="banners-outside__image">
           <img
-            v-if="$i18n.locale === 'tm'"
             src="@/assets/img/home/banners-outside/olimpiada.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'ru'"
-            src="@/assets/img/home/banners-outside/olimpiadaRu.gif"
-            alt="img"
-          />
-          <img
-            v-if="$i18n.locale === 'en'"
-            src="@/assets/img/home/banners-outside/olimpiadaEn.gif"
             alt="img"
           />
         </div>
@@ -61,7 +33,22 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  props: {
+    bannerLeft: {
+      type: Object,
+      default: () => null,
+    },
+    bannerRight: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>

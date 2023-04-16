@@ -13,38 +13,43 @@
         <div class="contact-popup__body body-pop-up">
           <div class="body-pop-up__left-block">
             <div class="body-pop-up__title-wrapper">
-              <div class="body-pop-up__title">Habarlaşmak</div>
-              <div class="body-pop-up__sub-title">
-                Where does it come from?Where does it come from?
-              </div>
+              <div class="body-pop-up__title">{{ $t('button.contact') }}</div>
             </div>
             <div class="body-pop-up__input-block input-block-contact">
               <div class="input-block-contact__item">
-                <div class="input-block-contact__title">Name*</div>
-                <form action="#" class="input-block-contact__form">
+                <div class="input-block-contact__title">
+                  {{ $t('fullName') }}*
+                </div>
+                <form
+                  action="#"
+                  @submit.prevent
+                  class="input-block-contact__form"
+                >
                   <input
                     autocomplete="off"
-                    placeholder="Your Email"
+                    :placeholder="$t('fullName')"
                     class="input-block-contact__input"
                   />
                 </form>
               </div>
               <div class="input-block-contact__item">
-                <div class="input-block-contact__title">Email*</div>
+                <div class="input-block-contact__title">{{ $t('email') }}*</div>
                 <form action="#" class="input-block-contact__form">
                   <input
                     autocomplete="off"
                     type="email"
-                    placeholder="Enter your full name"
+                    :placeholder="$t('email')"
                     class="input-block-contact__input"
                   />
                 </form>
               </div>
               <div class="input-block-contact__item">
-                <div class="input-block-contact__title">Message*</div>
+                <div class="input-block-contact__title">
+                  {{ $t('message') }}*
+                </div>
                 <form action="#" class="input-block-contact__form">
                   <textarea
-                    placeholder="Message"
+                    :placeholder="$t('message')"
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                     class="input-block-contact__textarea"
                   ></textarea>
@@ -52,7 +57,9 @@
               </div>
             </div>
             <div class="input-block-contact__button-wrapper">
-              <button class="input-block-contact__button">Ugratmak</button>
+              <button class="input-block-contact__button">
+                {{ $t('sendCom') }}
+              </button>
             </div>
           </div>
           <div class="body-pop-up__right-block right-block-contact">
@@ -143,7 +150,7 @@ export default {
   @media (max-width: 767px) {
   }
   &__left-block {
-    max-width: 480px;
+    max-width: 800px;
   }
 
   &__title-wrapper {

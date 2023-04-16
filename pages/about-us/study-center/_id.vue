@@ -8,7 +8,6 @@
     ></block-pages>
     <div class="study-center__button">
       <base-button
-        @click="feedBack = !feedBack"
         :text="$t('button.feedBack')"
         appendIcon
         isActive
@@ -19,23 +18,30 @@
       <div class="study-center__block-about block-about">
         <div class="block-about__input-group">
           <div class="block-about__input-wrapper">
-            <div class="block-about__title">F.A.A</div>
-            <input type="text" placeholder="Ady" class="block-about__input" />
+            <div class="block-about__title">{{ $t('fullName') }}</div>
+            <input
+              type="text"
+              :placeholder="$t('fullName')"
+              v-model="main.name"
+              class="block-about__input"
+            />
           </div>
           <div class="block-about__right-row">
             <div class="block-about__input-wrapper">
-              <div class="block-about__title">E-pocta</div>
+              <div class="block-about__title">{{ $t('email') }}</div>
               <input
                 type="text"
-                placeholder="e-mail"
+                :placeholder="$t('email')"
+                v-model="main.email"
                 class="block-about__input"
               />
             </div>
             <div class="block-about__input-wrapper">
-              <div class="block-about__title">Tel nomer</div>
+              <div class="block-about__title">{{ $t('tel') }}</div>
               <input
                 type="text"
-                placeholder="telefon belgiňiz"
+                :placeholder="$t('tel')"
+                v-model="main.phone_number"
                 class="block-about__input"
               />
             </div>
@@ -46,81 +52,17 @@
             <div id="ckeditor" style="height: 300px"></div>
           </div>
         </client-only>
-        <!-- <div class="block-about__body">
-          <div class="block-about__header">
-            <div class="block-about__left">
-              <div class="block-about__icons">
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-bold.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-italic.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-u.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-a.svg" alt="icon" />
-                </button>
-              </div>
-              <div class="block-about__icons">
-                <button class="block-about__icon">
-                  <img
-                    src="@/assets/img/icons/icon-left-align.svg"
-                    alt="icon"
-                  />
-                </button>
-                <button class="block-about__icon">
-                  <img
-                    src="@/assets/img/icons/icon-center-align.svg"
-                    alt="icon"
-                  />
-                </button>
-                <button class="block-about__icon">
-                  <img
-                    src="@/assets/img/icons/icon-numeration.svg"
-                    alt="icon"
-                  />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-symbols.svg" alt="icon" />
-                </button>
-              </div>
-              <div class="block-about__icons">
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-union.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-img.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-smile.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-add.svg" alt="icon" />
-                </button>
-              </div>
-            </div>
-            <div class="block-about__right">
-              <div class="block-about__back-next">
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-back.svg" alt="icon" />
-                </button>
-                <button class="block-about__icon">
-                  <img src="@/assets/img/icons/icon-next.svg" alt="icon" />
-                </button>
-              </div>
-              <button class="block-about__icon">
-                <img src="@/assets/img/icons/icon-yet.svg" alt="icon" />
-              </button>
-            </div>
-          </div>
-          <div class="block-about__content"></div>
-        </div> -->
+        <File
+          :label="$t('document')"
+          placeholder="--------"
+          :progress="progress"
+          :success="progress === 100"
+          @changeFile="changeFile"
+        />
         <div class="block-about__button">
           <base-button
-            @click="$router.push(localeLocation('/about-us'))"
-            text="Ugratmak"
+            @click="sendComment"
+            :text="$t('sendCom')"
             appendIcon
             isActive
             iconUrl="icons/icon-down.svg"
@@ -151,7 +93,16 @@
               <p class="chat__people-name">Maksat Maksadow</p>
               <p class="chat__data">20.01.2023 13:10</p>
             </div>
-            <p class="chat__people-incoming">Salam gowmy yagday</p>
+            <p class="chat__people-incoming">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+              soluta expedita a suscipit voluptatem atque, repellat enim
+              accusantium aperiam tenetur ipsum vero ut recusandae, veniam
+              asperiores saepe minima, dolore sunt! Lorem ipsum dolor sit, amet
+              consectetur adipisicing elit. Natus fuga praesentium est in
+              delectus facere doloremque non veritatis hic consequuntur
+              voluptatibus modi animi eveniet aliquid sed placeat, ab qui
+              labore?
+            </p>
           </div>
         </div>
       </div>
@@ -160,20 +111,29 @@
 </template>
 
 <script>
-// let ClassicEditor
-// let CKEditor
+let ClassicEditor
+let CKEditor
 
-// if (process.client) {
-//   console.log(process.client)
-//   ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
-//   //   CKEditor = require('@ckeditor/ckeditor5-vue')
-// } else {
-//   CKEditor = { component: { template: '<div></div>' } }
-// }
+if (process.client) {
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
+  //   CKEditor = require('@ckeditor/ckeditor5-vue')
+} else {
+  CKEditor = { component: { template: '<div></div>' } }
+}
 export default {
   data() {
     return {
       feedBack: false,
+      progress: 0,
+      main: {
+        id: null,
+        name: null,
+        email: null,
+        phone_number: null,
+        description: null,
+        image: null,
+        is_needed: false,
+      },
       breadCrumbs: [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
@@ -207,15 +167,27 @@ export default {
     }
   },
   async mounted() {
-    // setTimeout(() => {
-    //   ClassicEditor.create(document.querySelector('#ckeditor'))
-    //     .then((editor) => {
-    //       window.editor = editor
-    //     })
-    //     .catch((error) => {
-    //       console.error('There was a problem initializing the editor.', error)
-    //     })
-    // }, 500)
+    setTimeout(() => {
+      ClassicEditor.create(document.querySelector('#ckeditor'))
+        .then((editor) => {
+          window.editor = editor
+        })
+        .catch((error) => {
+          console.error('There was a problem initializing the editor.', error)
+        })
+    }, 500)
+  },
+  methods: {
+    async sendComment() {
+      const elem = document.querySelector('.ck-content')
+      console.log(elem.innerHTML)
+      this.main.description = elem.innerHTML
+      console.log(this.main)
+      this.$toast(this.$t('checkCommit'))
+    },
+    changeFile(file) {
+      this.main.image = file
+    },
   },
 }
 </script>
@@ -357,7 +329,7 @@ export default {
 }
 .chat {
   &__item {
-    max-width: 460px;
+    max-width: 600px;
     padding: 25px 20px;
     display: flex;
     align-items: flex-start;
@@ -450,5 +422,8 @@ export default {
   font-size: 16px;
   color: var(--text);
   line-height: calc(35 / 28) * 100%;
+}
+.ck-file-dialog-button {
+  display: none !important;
 }
 </style>

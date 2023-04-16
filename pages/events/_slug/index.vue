@@ -1,33 +1,46 @@
 <template>
   <div class="news __container">
-    <!-- <bread-crumbs></bread-crumbs> -->
-    <the-banner-outside></the-banner-outside>
+    <bread-crumbs></bread-crumbs>
+    <the-banner-outside
+      :bannerLeft="bannerLeft"
+      :bannerRight="bannerRight"
+    ></the-banner-outside>
     <div class="news__header">
       <div class="news__header-search">
         <text-filed
-          placeholder="gozle"
+          :placeholder="$t('search')"
           :value="search"
           prependIcon="search-normal.png"
         ></text-filed>
       </div>
       <div class="news__header-buttons">
+        <pagination
+          v-if="pageLength > 1"
+          :modelValue="page"
+          @clickPage="(pagination) => updatePage(pagination)"
+          :pageCount="pageLength"
+        ></pagination>
         <base-button
           v-for="item in items"
           :key="item.id"
           :text="item.name"
           :isActive="item.id === Number($route.params.slug)"
-          @click="$router.push(localeLocation(`/events/${item.id}`))"
+          @click="
+            $router.push(
+              localeLocation(`/events/${item.id}?event_type=${item.eventType}`)
+            )
+          "
         ></base-button>
       </div>
     </div>
     <div class="news__content">
       <article-item
-        v-for="(event, index) in $route.params.slug == 1 ? news : arcticles"
+        v-for="(event, index) in events"
         :key="event.id"
         :event="event"
         @clickOneItem="
           $router.push(
-            localeLocation(`/events/${Number($route.params.slug)}/${index}`)
+            localeLocation(`/events/${Number($route.params.slug)}/${event.id}`)
           )
         "
       ></article-item>
@@ -36,113 +49,108 @@
 </template>
 
 <script>
+import { request } from '~/api/generic.api'
 import EventsArticle from '~/components/EventsArticle.vue'
 export default {
   components: { EventsArticle },
-  head() {
-    return {
-      meta: [
-        {
-          hid: 'test',
-          name: 'test',
-          content: 'asdasd',
-        },
-      ],
-    }
-  },
   data() {
     return {
       search: '',
-      items: [
-        {
-          id: 1,
-          name: 'Täzelikler',
-        },
-        {
-          id: 2,
-          name: 'Makalalar',
-        },
-      ],
-      news: [
-        {
-          id: 1,
-          img: 'news1.jpg',
-          title: 'Halkara ylmy-amaly maslahat',
-          createdAt: '26.01.23',
-          viewCount: 324,
-          description:
-            'Türkmen döwlet ykdysadyýet we dolandyryş instituty ýokary okuw mekdepleriň professor-mugallymlaryny «Döwletiň durnukly...',
-        },
-        {
-          id: 2,
-          img: 'news2.jpg',
-          title: 'AÇYK HALKARA INTERNET OLIMPIADASY',
-          createdAt: '23.01.23',
-          viewCount: 125,
-          description:
-            'Türkmen döwlet ykdysadyýet we dolandyryş instituty ýokary okuw mekdepleriň talyplaryny 2023-nji ýylyň 12-nji aprelinde...',
-        },
-        {
-          id: 3,
-          img: 'news3.jpg',
-          title:
-            'Aziýa Ösüş Bankynyň wekilleriniň gatnaşmagynda talyplar bilen...',
-          createdAt: '19.01.23',
-          viewCount: 345,
-          description:
-            '2023-nji ýylyň 18-nji ýanwarynda Türkmen döwlet ykdysadyýet we dolandyryş institutynyň uly mejlisler zalynda Aziýa Ösüş Bankynyň...',
-        },
-        {
-          id: 4,
-          img: 'news4.jpg',
-          title: 'Halkara Bitaraplyk güni mynasybetli “Ykdysadyýet” ugry...',
-          createdAt: '01.12.22',
-          viewCount: 324,
-          description:
-            'Halkara Bitaraplyk güni mynasybetli “Ykdysadyýet” ugry boýunça ýokary okuw mekdepleriniň talyplarynyň arasynda online görnüşinde...',
-        },
-      ],
-      arcticles: [
-        {
-          id: 1,
-          img: null,
-          title: 'Türkmenistanyň dermanlyk ösümlikleri – dertleriň melhemi.',
-          createdAt: null,
-          viewCount: 324,
-          description:
-            '2022-nji ýylyň 18-nji oktýabrynda Türkmen döwlet ykdysadyýet we...',
-        },
-        {
-          id: 2,
-          img: null,
-          title: 'Saglygy goraýyş ulgamynda halkara hyzmatdaşlyk',
-          createdAt: null,
-          viewCount: 125,
-          description: 'Ýurdumyzda 10.10.2022ý.-11.10.2022ý....',
-        },
-        {
-          id: 3,
-          img: null,
-          title: 'Daşary ýurt dillerini öwrenmek döwrüň talabydyr',
-          createdAt: null,
-          viewCount: 345,
-          description:
-            'Bedew batly ösüşleri özüne hemra edinip, baky bagtyýarlyk ýolundan barha öňe barýan  Garaşsyz, hemişelik Bitarap...',
-        },
-        {
-          id: 4,
-          img: null,
-          title: 'Halyçylyk - gadymy senet',
-          createdAt: null,
-          viewCount: 324,
-          description:
-            'Gözelligiň we kämilligiň ajaýyp nusgasy bolan türkmen halysy özüniň üýtgeşik owadanlygy, nepisligi bilen has ir döwürlerden...',
-        },
-      ],
+      limit: 20,
+      page: 1,
+      pageLength: 0,
+      events: null,
+      bannerLeft: null,
+      bannerRight: null,
     }
+  },
+  computed: {
+    items() {
+      let arr = [
+        {
+          id: 1,
+          name: this.$t('button.news'),
+          eventType: 'news',
+        },
+        {
+          id: 2,
+          name: this.$t('button.articles'),
+          eventType: 'article',
+        },
+      ]
+      return arr
+    },
+  },
+  async fetch() {
+    await Promise.all([
+      this.fetchBannerLeft(),
+      this.fetchBannerRight(),
+      this.fetchEvents(),
+    ])
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+  },
+  methods: {
+    async fetchBannerLeft() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-left',
+          },
+          method: 'GET',
+        })
+        console.log('banner-left', res)
+        if (res.status) {
+          this.bannerLeft = res?.galerias[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchBannerRight() {
+      try {
+        const res = await request({
+          url: '/galerias',
+          params: {
+            lang: this.$i18n.locale,
+            type: 'main-banner-right',
+          },
+          method: 'GET',
+        })
+        console.log('banner', res)
+        if (res.status) {
+          this.bannerRight = res?.galerias
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchEvents() {
+      try {
+        const res = await request({
+          url: `/news?events_type=${this.$route.query.event_type}&limit=${this.limit}&page=${this.page}`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('news', res)
+        if (res.status) {
+          this.pageLength = Math.ceil(res.total / this.limit)
+          this.events = res.events || []
+          this.$store.commit('SET_LOADER', false)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async updatePage(p) {
+      this.page = p
+      await this.fetchEvents()
+    },
   },
 }
 </script>
@@ -153,24 +161,31 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     &-search {
-      width: 438px;
+      width: 32%;
+      @media (max-width: 992px) {
+        width: 420px;
+      }
       @media (max-width: 768px) {
-        width: 166px;
+        width: 420px;
         .input__body {
           padding: 4px 10px;
         }
       }
-      @media (max-width: 368px) {
-        width: 150px;
+      @media (max-width: 460px) {
+        width: 300px;
       }
     }
     &-buttons {
       display: flex;
       border: 1px solid transparent;
       .button {
-        &:first-child {
-          margin-right: 5px;
+        &:last-child {
+          margin-left: 10px;
         }
       }
     }

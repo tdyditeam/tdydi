@@ -3,19 +3,16 @@
     <div v-swiper:mySwiper="options" class="partners-swiper__swiper swiper">
       <div class="partners-swiper__wrapper swiper-wrapper">
         <div
-          v-for="(img, index) in images"
+          v-for="(img, index) in items"
           :key="img.id"
           class="partners-swiper__slide swiper-slide"
         >
           <div class="partners-swiper__body">
             <div class="partners-swiper__image">
-              <img
-                :src="require(`@/assets/img/home/partners/${img.imgPath}`)"
-                alt="surat"
-              />
+              <img :src="`${imageUrl}${img.image}`" alt="surat" />
             </div>
             <h2 class="partners-swiper__title">
-              {{ $t(`internationalPartnership[${index}]`) }}
+              {{ img.country }}
             </h2>
           </div>
         </div>
@@ -25,7 +22,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
   data() {
     return {
       options: {
@@ -53,41 +60,7 @@ export default {
           delay: 2000,
           disableOnInteraction: false,
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
       },
-      images: [
-        {
-          id: 1,
-          imgPath: 'img_1.png',
-        },
-        {
-          id: 2,
-          imgPath: 'img_2.png',
-        },
-        {
-          id: 3,
-          imgPath: 'img_3.png',
-        },
-        {
-          id: 4,
-          imgPath: 'img_4.png',
-        },
-        {
-          id: 5,
-          imgPath: 'img_5.png',
-        },
-        {
-          id: 6,
-          imgPath: 'img_6.png',
-        },
-        {
-          id: 7,
-          imgPath: 'img_7.png',
-        },
-      ],
     }
   },
 }

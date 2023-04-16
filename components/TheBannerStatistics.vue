@@ -1,55 +1,32 @@
 <template>
   <div ref="observe" class="banner__statistics">
-    <div class="banner__statistics-item">
+    <div
+      class="banner__statistics-item"
+      v-for="indicator in indicators"
+      :key="indicator.id"
+    >
       <div class="banner__statistics-icon">
-        <img src="@/assets/icons/faculti.png" alt="" />
+        <img :src="`${imageUrl}${indicator.image}`" alt="" />
       </div>
       <div class="banner__statistics-text">
-        <span>{{ $t('header.menu.aboutUs.fakulties') }}</span>
-        <span class="counter" :data-target="faculti">4</span>
-      </div>
-    </div>
-    <div class="banner__statistics-item">
-      <div class="banner__statistics-icon">
-        <img src="@/assets/icons/hunaler.png" alt="" />
-      </div>
-      <div class="banner__statistics-text">
-        <span>{{ $t('header.menu.education.skills') }}</span>
-        <span class="counter" :data-target="skill">52</span>
-      </div>
-    </div>
-    <div class="banner__statistics-item">
-      <div class="banner__statistics-icon">
-        <img src="@/assets/icons/teacher.png" alt="" />
-      </div>
-      <div class="banner__statistics-text">
-        <span>{{ $t('statistics.teacher') }}</span>
-        <span class="counter" :data-target="teacher">0</span>
-      </div>
-    </div>
-    <div class="banner__statistics-item">
-      <div class="banner__statistics-icon">
-        <img src="@/assets/icons/student.png" alt="" />
-      </div>
-      <div class="banner__statistics-text">
-        <span>{{ $t('statistics.students') }}</span>
-        <span class="counter" :data-target="student">0</span>
-      </div>
-    </div>
-    <div class="banner__statistics-item">
-      <div class="banner__statistics-icon">
-        <img src="@/assets/icons/student.png" alt="" />
-      </div>
-      <div class="banner__statistics-text">
-        <span>{{ $t('statistics.master') }}</span>
-        <span class="counter" :data-target="magistr">0</span>
+        <span>{{ indicator.name }}</span>
+        <span class="counter" :data-target="indicator.count">{{
+          indicator.count
+        }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  props: {
+    indicators: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       observer: null,
@@ -59,6 +36,9 @@ export default {
       skill: 52,
       faculti: 5,
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   mounted() {
     const options =

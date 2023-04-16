@@ -1,11 +1,23 @@
 export default {
-  slogan: `  ARKADAG SERDARLY <br />
+  slogan: ` ARKADAG SERDARLY <br />
 	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  search: 'Search',
+  teacher: 'Teacher',
+  images: 'Images',
+  videos: 'Videos',
+  fullName: 'F.A.A',
+  email: 'Email',
+  tel: 'Phone number',
+  document: 'Document',
+  sendCom: 'Send',
+  message: 'Message',
+  checkCommit: 'Admin tarapyndan barlanylýar !',
+  address: 'Ashgabat city, 1972 (Ataturk) street, 73,',
   button: {
     readMore: 'Read more',
     news: 'News',
     publications: 'Publications',
-    galerey: 'GALLERY',
+    galerey: 'GALERY',
     partners: 'PARTNERS',
     all: 'All',
     articles: 'Articles',
