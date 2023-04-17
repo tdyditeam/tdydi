@@ -12,12 +12,12 @@
     <tbody>
       <tr v-for="(data, index) in datas" :key="data.id">
         <td>{{ index + 1 }}</td>
-        <td>{{ data.fullName }}</td>
+        <td>{{ data.name }}</td>
         <td>
-          {{ data.skills }}
+          {{ data.majors_year }}
         </td>
-        <td>{{ data.competitionName }}</td>
-        <td>{{ data.winnerPlace }}</td>
+        <td>{{ data.subject_name }}</td>
+        <td>{{ data.student_result }}</td>
       </tr>
     </tbody>
   </table>

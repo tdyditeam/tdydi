@@ -2,14 +2,10 @@
   <div class="international-partners">
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
+      :description="partnersTop?.description"
+      :img="partnersTop?.image"
       :title="$t('header.menu.internationalCooperation.name')"
     ></block-pages>
-    <div class="international-partners__image">
-      <img src="@/assets/img/international-partners/00.png" alt="img" />
-    </div>
-    <p class="international-partners__text">
-      {{ $t('international-cooperation.description') }}
-    </p>
     <div
       class="international-partners__block-international-partners block-international-partners"
     >
@@ -17,271 +13,107 @@
         {{ $t('international-cooperation.title') }}
       </h2>
       <div class="block-international-partners__body">
-        <div class="block-international-partners__column">
+        <div
+          class="block-international-partners__column"
+          v-for="partners in partnersBottom"
+          :key="partners.id"
+        >
           <div
             class="block-international-partners__item item-block-international-partners"
           >
             <div class="item-block-international-partners__image-wrapper">
               <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/01.png"
-                  alt="img"
-                />
+                <img :src="`${imageUrl}${partners.image}`" alt="img" />
               </div>
             </div>
 
             <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Belarusiýa</span
-              >
+              {{ $t('country') }}:
+              <span class="item-block-international-partners__pspan">{{
+                partners.country
+              }}</span>
             </p>
             <p class="item-block-international-partners__p">
               {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[0]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/02.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Belarusiýa</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[1]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/03.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"></span>
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[2]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/04.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Özbekstan</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[3]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/05.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Rumyniýa</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[4]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/06.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Rumyniýa</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[5]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/07.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Russiýa</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[6]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image">
-                <img
-                  src="@/assets/img/international-partners/08.png"
-                  alt="img"
-                />
-              </div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Singapur</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[7]')
-              }}</span>
-            </p>
-          </div>
-        </div>
-        <div class="block-international-partners__column">
-          <div
-            class="block-international-partners__item item-block-international-partners"
-          >
-            <div class="item-block-international-partners__image-wrapper">
-              <div class="item-block-international-partners__image"></div>
-            </div>
-
-            <p class="item-block-international-partners__p">
-              Ýurdy:
-              <span class="item-block-international-partners__pspan"
-                >Pakistan</span
-              >
-            </p>
-            <p class="item-block-international-partners__p">
-              {{ $t('international-cooperation.title') }}: <br />
-              <span class="item-block-international-partners__pspan">{{
-                $t('internationalPartnership[8]')
-              }}</span>
+              <span
+                class="item-block-international-partners__pspan"
+                v-html="partners.description"
+              ></span>
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="international-partners__bottom-text">
-      <p>
-        {{ $t('international-cooperation.text') }}
-      </p>
-    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { request } from '~/api/generic.api'
 export default {
   data() {
     return {
-      breadCrumbs: [
+      partnersTop: null,
+      partnersBottom: null,
+    }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
           id: 2,
           name: this.$t(
             'header.menu.internationalCooperation.internationalPartners'
           ),
-          path: '/international-cooperation',
+          path: `/international-cooperation/main?q=${this.$route.query.q}`,
           exact: true,
         },
-      ],
-    }
+      ]
+    },
+    ...mapGetters(['imageUrl']),
+  },
+  async fetch() {
+    await Promise.all([this.fetchTopDatas(), this.fetchBottomDatas()])
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+  },
+  methods: {
+    async fetchTopDatas() {
+      try {
+        const res = await request({
+          url: `/partners/top`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('partners', res)
+        if (res.status) {
+          this.partnersTop = res.partners_top[0] || null
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchBottomDatas() {
+      try {
+        const res = await request({
+          url: `/partners/university`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('partnersBottom', res)
+        if (res.status) {
+          this.partnersBottom = res.partners_university || []
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
   },
 }
 </script>
@@ -318,7 +150,7 @@ export default {
     font-size: 40px;
     line-height: calc(47 / 40) * 100%;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 50px 0px;
     @media (max-width: 767px) {
       font-size: 30px;
     }

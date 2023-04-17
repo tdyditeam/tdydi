@@ -9,11 +9,13 @@ export default {
   email: 'Электронная почта',
   tel: 'Номер телефона',
   document: 'Документ',
+  documentCom: 'Документ',
   sendCom: 'Отправить',
   message: 'Письмо',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'г. Ашхабад, улица 1972 (Ататюрка), 73,',
   teachers: 'Учителя',
+  country: 'Город',
   facultiesName: 'Факультеты',
   button: {
     readMore: 'читать далее',

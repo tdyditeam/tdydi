@@ -94,6 +94,39 @@
                   class="chat__people-incoming"
                   v-html="comment.description"
                 ></p>
+                <div class="comments__files" v-if="comment.image">
+                  <a
+                    :href="`${imageUrl}${comment.image}`"
+                    target="download"
+                    class="comments__file"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_4647_45579)">
+                        <path
+                          d="M8 16.7031H16V18.7031H8V16.7031ZM8 12.7031H16V14.7031H8V12.7031ZM14 2.70312H6C4.9 2.70312 4 3.60312 4 4.70312V20.7031C4 21.8031 4.89 22.7031 5.99 22.7031H18C19.1 22.7031 20 21.8031 20 20.7031V8.70312L14 2.70312ZM18 20.7031H6V4.70312H13V9.70312H18V20.7031Z"
+                          fill="#474747"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_4647_45579">
+                          <rect
+                            width="24"
+                            height="24"
+                            fill="white"
+                            transform="translate(0 0.703125)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p>{{ $t('documentCom') }}</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -110,6 +143,7 @@
 
 <script>
 import { request } from '~/api/generic.api'
+import { mapGetters } from 'vuex'
 let ClassicEditor
 let CKEditor
 
@@ -154,6 +188,9 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   async fetch() {
     await Promise.all([this.fetchDatas(), this.fetchCommets()])
@@ -481,5 +518,33 @@ export default {
 }
 .ck-file-dialog-button {
   display: none !important;
+}
+.comments {
+  // .comments__files
+  &__files {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  // .comments__file
+  &__file {
+    width: 80%;
+    display: flex;
+    border: 0.5px solid #c1c1c1;
+    border-radius: 4px;
+    color: var(--secondary);
+    align-items: center;
+    padding: 10px;
+    p {
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.135px;
+    }
+    span:last-child {
+      cursor: pointer;
+    }
+  }
 }
 </style>

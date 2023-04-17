@@ -30,9 +30,9 @@ export default {
         {
           id: 2,
           name: this.$route.query.name,
-          path: `/science/${Number(this.$route.params.id)}?name=${
-            this.$route.query.name
-          }`,
+          path: `/international-cooperation/${Number(
+            this.$route.params.id
+          )}?name=${this.$route.query.name}`,
           exact: true,
         },
       ]
@@ -48,7 +48,7 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/${Number(this.$route.params.id)}/science`,
+          url: `/${Number(this.$route.params.id)}/international-partners`,
           params: {
             lang: this.$i18n.locale,
             submenu_id: Number(this.$route.params.id),

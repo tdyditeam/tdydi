@@ -48,7 +48,7 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/${Number(this.$route.params.id)}/science`,
+          url: `/${Number(this.$route.params.id)}/education`,
           params: {
             lang: this.$i18n.locale,
             submenu_id: Number(this.$route.params.id),

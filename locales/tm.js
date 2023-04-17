@@ -10,11 +10,13 @@ export default {
   message: 'Hatyňyz',
   tel: 'Telefon belgiňiz',
   document: 'Resminama ýüklemek',
+  documentCom: 'Resminama',
   sendCom: 'Ugratmak',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'Aşgabat ş., 1972-nji (Atatürk) köçe, 73,',
   teachers: 'Mugallymlar',
   facultiesName: 'Fakultetler',
+  country: 'Ýurdy',
   button: {
     readMore: 'Doly oka',
     news: 'Täzelikler',

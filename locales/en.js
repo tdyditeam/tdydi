@@ -9,11 +9,13 @@ export default {
   email: 'Email',
   tel: 'Phone number',
   document: 'Document',
+  documentCom: 'Document',
   sendCom: 'Send',
   message: 'Message',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'Ashgabat city, 1972 (Ataturk) street, 73,',
   teachers: 'Teachers',
+  country: 'City',
   facultiesName: 'Faculties',
   button: {
     readMore: 'Read more',

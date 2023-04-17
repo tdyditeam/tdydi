@@ -93,7 +93,7 @@
                     <div class="header__bottom-submenu __container">
                       <div
                         v-for="subMenu in item.children.filter(
-                          (item) => item.slug !== 'teachers'
+                          (item) => item?.slug !== 'teachers'
                         )"
                         :key="subMenu.id"
                         class="header__bottom-subitems"
@@ -490,12 +490,19 @@ export default {
         localStorage.setItem('id', data.id)
         if (data.children[0].slug) {
           this.$router.push(
-            this.localeLocation(`${data.slug}/${data.children[0].slug}`)
+            this.localeLocation(
+              `${data.slug}/${data.children[0].slug}?q=${data.id}`
+            )
           )
           this.routeSubActive = data.children[0].id
+          localStorage.setItem('subId', data.children[0].id)
         } else {
           this.$router.push(
-            this.localeLocation(`${data.slug}/${data.children[0].id}`)
+            this.localeLocation(
+              `${data.slug}/${data.children[0].id}?name=${this.subMenuLocale(
+                data.children[0]
+              )}`
+            )
           )
           this.routeSubActive = data.children[0].id
           localStorage.setItem('subId', data.children[0].id)

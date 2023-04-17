@@ -1,11 +1,8 @@
 <template>
   <section>
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
-    <block-pages
-      :description="datas?.name"
-      :title="title"
-      :img="datas?.image"
-    ></block-pages>
+    <the-announce :datas="datas"></the-announce>
+    <block-pages :description="datas?.text" :title="title"></block-pages>
   </section>
 </template>
 
@@ -30,7 +27,7 @@ export default {
         {
           id: 2,
           name: this.$route.query.name,
-          path: `/science/${Number(this.$route.params.id)}?name=${
+          path: `/candidate/${Number(this.$route.params.id)}?name=${
             this.$route.query.name
           }`,
           exact: true,
@@ -48,7 +45,7 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/${Number(this.$route.params.id)}/science`,
+          url: `/${Number(this.$route.params.id)}/condidate`,
           params: {
             lang: this.$i18n.locale,
             submenu_id: Number(this.$route.params.id),

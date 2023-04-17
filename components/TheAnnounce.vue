@@ -1,21 +1,21 @@
 <template>
   <div class="announce">
     <div class="announce__image">
-      <img src="@/assets/img/about-us/tdydi2.jpg" alt="" />
+      <img :src="`${imageUrl}${datas?.image}`" alt="" />
     </div>
     <div class="announce__text">
       <div class="announce__wrapper">
         <div class="announce__title">
           <h2>{{ $t('candidate.annonce.title') }}</h2>
         </div>
-        <div class="announce__title">
+        <!-- <div class="announce__title">
           <p>
             {{ $t('candidate.annonce.text') }}
           </p>
-        </div>
+        </div> -->
         <div class="announce__description">
           <p>
-            {{ $t('candidate.annonce.description') }}
+            {{ datas?.open_doors }}
           </p>
         </div>
       </div>
@@ -24,7 +24,18 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  props: {
+    datas: {
+      type: Object,
+      default: () => null,
+    },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>
