@@ -662,10 +662,9 @@ export default {
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
-      color: var(--text);
+      color: var(--white);
       @media (max-width: 767px) {
         font-size: 16px;
-        color: var(--text);
       }
       @media (max-width: 479px) {
         font-size: 14px;
@@ -679,7 +678,7 @@ export default {
       }
     }
     &-title {
-      color: var(--text);
+      color: var(--white);
     }
     &-burger {
       display: none;
@@ -697,7 +696,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: var(--text);
+        background-color: #fff;
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;
@@ -992,7 +991,6 @@ export default {
       @media (max-width: 479px) {
         gap: 2px;
       }
-
     }
     &-title {
       font-family: 'Roboto Flex';
@@ -1030,7 +1028,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: #333333;
+        background-color: #fff;
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;

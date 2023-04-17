@@ -26,7 +26,7 @@ export default {
 .banner {
   &__title {
     position: absolute;
-    top: 75%;
+    top: 20%;
     left: 0;
     transform: translateY(-50%);
     z-index: 1;
