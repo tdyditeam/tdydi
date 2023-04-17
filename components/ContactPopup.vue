@@ -150,7 +150,7 @@ export default {
   @media (max-width: 767px) {
   }
   &__left-block {
-    max-width: 800px;
+    width: 600px;
   }
 
   &__title-wrapper {
@@ -229,7 +229,7 @@ export default {
 
   &__button {
     background-color: #fff;
-    padding: 20px 46px;
+    padding: 15px 30px;
     border-radius: 10px;
     font-weight: 400;
     font-size: 14px;

@@ -13,6 +13,8 @@ export default {
   message: 'Письмо',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'г. Ашхабад, улица 1972 (Ататюрка), 73,',
+  teachers: 'Учителя',
+  facultiesName: 'Факультеты',
   button: {
     readMore: 'читать далее',
     news: 'Новости',
@@ -33,7 +35,7 @@ export default {
       main: 'Главная',
       aboutUs: {
         name: 'О нас',
-        rektorat: 'Ректорат',
+        rectorate: 'Ректорат',
         fakulties: 'Факультеты',
         departments: 'Кафедры',
         publicOrganizations: 'Общественные организации',

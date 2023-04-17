@@ -1,57 +1,84 @@
 <template>
   <div class="faculties">
-    <nuxt-child></nuxt-child>
-    <sidebar :subMenus="subMenus"></sidebar>
+    <section style="width: 100%">
+      <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
+      <block-pages
+        :description="datas?.description"
+        :title="datas?.name"
+        :img="datas?.image"
+      ></block-pages>
+    </section>
+    <sidebar-without-route
+      :subMenus="subMenus"
+      :activeId="activeId"
+      @changeDatas="changeDatas"
+    ></sidebar-without-route>
   </div>
 </template>
 
 <script>
+import { request } from '~/api/generic.api'
 export default {
   data() {
     return {
-      title: 'Fakultetler',
-      description: ``,
-      subMenus: [
-        {
-          id: 1,
-          name: this.$t('faculties.economical'),
-          path: '/about-us/faculties/economical',
-          exact: false,
-        },
+      title: this.$t('facultiesName'),
+      datas: null,
+      subMenus: null,
+      activeId: null,
+      breadCrumbs: [
+        { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
           id: 2,
-          name: this.$t('faculties.finanse'),
-          path: '/about-us/faculties/finanse',
-          exact: false,
+          name: this.$t('header.menu.aboutUs.name'),
+          path: '/about-us',
+          exact: true,
         },
         {
           id: 3,
-          name: this.$t('faculties.managament'),
-          path: '/about-us/faculties/managament',
-          exact: false,
-        },
-        {
-          id: 4,
-          name: this.$t('faculties.marketing'),
-          path: '/about-us/faculties/marketing',
-          exact: false,
-        },
-        {
-          id: 5,
-          name: this.$t('faculties.proffesional-development'),
-          path: '/about-us/faculties/proffesional-development',
-          exact: false,
+          name: this.$t('header.menu.aboutUs.fakulties'),
+          path: `/about-us/faculties?q=${this.$route.query.q}`,
+          exact: true,
         },
       ],
     }
   },
+  async fetch() {
+    await this.fetchDatas()
+  },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+  },
+  methods: {
+    async fetchDatas() {
+      try {
+        const res = await request({
+          url: `/faculties`,
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('data', res)
+        if (res.status) {
+          this.subMenus = res.message || null
+          this.activeId = this.subMenus[0].id
+          this.datas = this.subMenus[0]
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    changeDatas(id) {
+      this.datas = this.subMenus.find((item) => item.id === id)
+      console.log(this.datas)
+      this.activeId = this.subMenus.find((item) => item.id === id)?.id
+    },
   },
 }
 </script>
 <style>
 .faculties {
   display: flex;
+  justify-content: space-between;
 }
 </style>

@@ -5,28 +5,28 @@
         class="departments-teachers__item-wrapper item-departments-teachers"
         v-for="teacher in teachers"
         :key="teacher.id"
-        @click="$emit('clickedToCard', teacher.name)"
+        @click="$emit('clickedToCard', teacher)"
       >
         <div class="departments-teachers__item item-departments-teachers">
           <div class="item-departments-teachers__row">
             <div class="item-departments-teachers__image">
-              <img
-                :src="
-                  require(`@/assets/img/home/departments-teachers/${teacher.img}`)
-                "
-                alt="img"
-              />
+              <img :src="`${imageUrl}${teacher.image}`" alt="img" />
             </div>
             <div class="item-departments-teachers__content">
               <div class="item-departments-teachers__teacher">
-                <h2>{{ teacher.name }}</h2>
-                <h3 class="item-departments-teachers__about">
+                <h2>
+                  {{
+                    `${teacher.firstname} ${teacher.lastname} ${teacher.middlename}`
+                  }}
+                </h2>
+                <!-- <h3 class="item-departments-teachers__about">
                   {{ teacher.skills }}
-                </h3>
+                </h3> -->
               </div>
-              <div class="item-departments-teachers__text">
-                {{ teacher.description }}
-              </div>
+              <div
+                class="item-departments-teachers__text"
+                v-html="teacher.description"
+              ></div>
             </div>
           </div>
           <div
@@ -41,12 +41,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     teachers: {
       type: Array,
       default: () => [],
     },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
 }
 </script>

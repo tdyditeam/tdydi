@@ -3,29 +3,16 @@
     <div class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
-          <!-- <img :src="`${imageUrl}${bannerLeft?.image}`" alt="img" /> -->
-          <img
-            src="@/assets/img/home/banners-outside/imageonline-co-gifimage.gif"
-            alt="img"
-          />
+          <img :src="`${imageUrl}${bannerLeft?.image}`" alt="img" />
         </div>
       </div>
       <div class="banners-outside__bannner-right">
-        <!-- <div
+        <div
           class="banners-outside__image"
           v-for="(banner, index) in bannerRight"
           :key="index"
         >
           <img :src="`${imageUrl}${banner?.image}`" alt="img" />
-        </div> -->
-        <div class="banners-outside__image">
-          <img src="@/assets/img/home/banners-outside/banking.gif" alt="img" />
-        </div>
-        <div class="banners-outside__image">
-          <img
-            src="@/assets/img/home/banners-outside/olimpiada.gif"
-            alt="img"
-          />
         </div>
       </div>
     </div>

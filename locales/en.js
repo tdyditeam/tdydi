@@ -13,6 +13,8 @@ export default {
   message: 'Message',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'Ashgabat city, 1972 (Ataturk) street, 73,',
+  teachers: 'Teachers',
+  facultiesName: 'Faculties',
   button: {
     readMore: 'Read more',
     news: 'News',
@@ -34,7 +36,7 @@ export default {
       main: 'Main page',
       aboutUs: {
         name: 'About us',
-        rektorat: 'Rectorate',
+        rectorate: 'Rectorate',
         fakulties: 'Faculties',
         departments: 'Departments',
         publicOrganizations: 'Public Organizations',

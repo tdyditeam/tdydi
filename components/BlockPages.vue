@@ -13,7 +13,7 @@
           /></a>
         </div>
         <div class="block__description-img" v-if="img && !imgPdf">
-          <img :src="require(`@/assets/img/about-us/${img}`)" alt="" />
+          <img :src="`${imageUrl}${img}`" alt="" />
         </div>
         <div v-html="description" class="block__description-content"></div>
       </div>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     description: {
@@ -40,6 +42,9 @@ export default {
       type: Boolean,
       default: () => false,
     },
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
 }
 </script>

@@ -65,37 +65,55 @@
         <div class="header__bottom-container __container">
           <div class="header__bottom-container-body">
             <div class="header__bottom-menu">
-              <nuxt-link
+              <!-- <nuxt-link
                 :to="localePath('/')"
                 exact
                 class="header__bottom-items"
               >
                 <span>{{ $t('header.menu.main') }}</span
                 ><span></span>
-              </nuxt-link>
-              <client-only v-for="item in menuItems" :key="item.id">
-                <span @click.prevent="clickCategory(item)">
-                  <nuxt-link
-                    :to="localePath(`${item.path}`)"
-                    :class="['header__bottom-items']"
+              </nuxt-link> -->
+              <client-only v-for="item in menus" :key="item.id">
+                <a
+                  href="#"
+                  @click.prevent.stop="clickCategory(item)"
+                  :class="[
+                    'header__bottom-items',
+                    {
+                      'nuxt-link-active': routeActive === item.id,
+                    },
+                  ]"
+                >
+                  <span>{{ item.name }}</span>
+                  <span></span>
+                  <div
+                    class="header__bottom-submenu-container"
+                    v-if="item.children.length > 0"
                   >
-                    <span>{{ item.name }}</span>
-                    <span></span>
-                    <div class="header__bottom-submenu-container">
-                      <div class="header__bottom-submenu __container">
-                        <div
-                          v-for="subMenu in item.subMenus"
-                          :key="subMenu.id"
-                          class="header__bottom-subitems"
+                    <div class="header__bottom-submenu __container">
+                      <div
+                        v-for="subMenu in item.children.filter(
+                          (item) => item.slug !== 'teachers'
+                        )"
+                        :key="subMenu.id"
+                        class="header__bottom-subitems"
+                      >
+                        <a
+                          herf="#"
+                          @click.prevent.stop="clickSubCategory(item, subMenu)"
+                          :class="[
+                            {
+                              'nuxt-link-exact-active':
+                                routeSubActive === subMenu.id,
+                            },
+                          ]"
                         >
-                          <nuxt-link :to="localePath(`${subMenu.path}`)" exact>
-                            <span>{{ subMenu.name }}</span>
-                          </nuxt-link>
-                        </div>
+                          <span>{{ subMenuLocale(subMenu) }}</span>
+                        </a>
                       </div>
                     </div>
-                  </nuxt-link>
-                </span>
+                  </div>
+                </a>
               </client-only>
             </div>
           </div>
@@ -109,11 +127,7 @@
       >
         <nav class="header__mobile-bottom-menu menu-mobile">
           <div class="menu-mobile__list">
-            <div
-              v-for="item in menuItems"
-              :key="item.id"
-              class="menu-mobile__item"
-            >
+            <div v-for="item in menus" :key="item.id" class="menu-mobile__item">
               <div class="menu-mobile__link-wrapper">
                 <div class="menu-mobile__link">{{ item.name }}</div>
                 <div class="menu-mobile__icon">
@@ -125,11 +139,13 @@
               </div>
               <div class="menu-mobile__sub-list">
                 <div
-                  v-for="subMenu in item.subMenus"
+                  v-for="subMenu in item.children"
                   :key="subMenu.id"
                   class="menu-mobile__sub-item"
                 >
-                  <div class="menu-mobile__sub-link">{{ subMenu.name }}</div>
+                  <div class="menu-mobile__sub-link">
+                    {{ subMenuLocale(subMenu) }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,210 +172,244 @@
 </template>
 
 <script>
+import { request } from '@/api/generic.api'
 export default {
   data() {
     return {
       isActive: false,
       isMobileActive: false,
       header: false,
+      menus: [],
+      routeActive: null,
+      routeSubActive: null,
     }
   },
-  computed: {
-    menuItems() {
-      let menus = [
-        {
-          id: 2,
-          name: this.$t('header.menu.aboutUs.name'),
-          path: '/about-us',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t('header.menu.aboutUs.rektorat'),
-              path: '/about-us/rektorat',
-            },
-            {
-              id: 2,
-              name: this.$t('header.menu.aboutUs.fakulties'),
-              path: '/about-us/faculties/economical',
-            },
-            {
-              id: 3,
-              name: this.$t('header.menu.aboutUs.departments'),
-              path: '/about-us/departments/accounting',
-            },
-            {
-              id: 6,
-              name: this.$t('header.menu.aboutUs.publicOrganizations'),
-              path: '/about-us/public-organizations/0',
-            },
-            {
-              id: 9,
-              name: this.$t('header.menu.aboutUs.studyCenter'),
-              path: '/about-us/study-center/0',
-            },
-            {
-              id: 10,
-              name: this.$t('header.menu.aboutUs.library'),
-              path: '/about-us/library',
-            },
-            {
-              id: 7,
-              name: this.$t('header.menu.aboutUs.tradeUnion'),
-              path: '/about-us/trade-union',
-            },
-          ],
-        },
-        {
-          id: 3,
-          name: this.$t('header.menu.education.name'),
-          path: '/education',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t('header.menu.education.skills'),
-              path: '/education',
-            },
-            {
-              id: 2,
-              name: this.$t('header.menu.education.undergraduateCourses'),
-              path: '/education/undergraduate-courses',
-            },
-            {
-              id: 3,
-              name: this.$t('header.menu.education.mastersCourses'),
-              path: '/education/masters-training-courses',
-            },
-          ],
-        },
-        {
-          id: 4,
-          name: this.$t('header.menu.science.name'),
-          path: '/science',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t('header.menu.science.postgraduate'),
-              path: '/science',
-            },
-            {
-              id: 2,
-              name: this.$t('header.menu.science.researchProjectWork'),
-              path: '/science/research-and-project-work',
-            },
-            {
-              id: 3,
-              name: this.$t('header.menu.science.centerEconomicInnovation'),
-              path: '/science/center-for-economic-innovation',
-            },
-            {
-              id: 4,
-              name: this.$t('header.menu.science.scientificAdvice'),
-              path: '/science/scientific-advice',
-            },
-            {
-              id: 5,
-              name: this.$t('header.menu.science.scientificInstitutions'),
-              path: '/science/scientific-institutions',
-            },
-          ],
-        },
-        {
-          id: 5,
-          name: this.$t('header.menu.internationalCooperation.name'),
-          path: '/international-cooperation',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t(
-                'header.menu.internationalCooperation.internationalPartners'
-              ),
-              path: '/international-cooperation',
-            },
-            {
-              id: 2,
-              name: 'Halkara maslahatlar',
-              name: this.$t(
-                'header.menu.internationalCooperation.internationalTips'
-              ),
-              path: '/international-cooperation/international-tips',
-            },
-            {
-              id: 3,
-              name: this.$t(
-                'header.menu.internationalCooperation.internationalProjects'
-              ),
-              path: '/international-cooperation/international-projects',
-            },
-          ],
-        },
-        {
-          id: 7,
-          name: this.$t('header.menu.competitions.name'),
-          path: '/competitions',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t('header.menu.competitions.lessonCompetitions'),
-              path: '/competitions',
-            },
-            {
-              id: 3,
-              name: this.$t('header.menu.competitions.scientificCompetitions'),
-              path: '/competitions/scientific-competitions',
-            },
-            {
-              id: 4,
-              name: this.$t('header.menu.competitions.teacherCompetitions'),
-              path: '/competitions/teacher-of-the-year-competitions',
-            },
-            {
-              id: 5,
-              name: this.$t('header.menu.competitions.studentCompetitions'),
-              path: '/competitions/student-of-the-year-competitions',
-            },
-            {
-              id: 7,
-              name: this.$t(
-                'header.menu.competitions.internationalCompetitions'
-              ),
-              path: '/competitions/international-online-internet-course-competitions',
-            },
-          ],
-        },
-        {
-          id: 6,
-          name: this.$t('header.menu.candidate.name'),
-          path: '/candidate',
-          exact: false,
-          active: false,
-          subMenus: [
-            {
-              id: 1,
-              name: this.$t('header.menu.candidate.name'),
-              path: '/candidate',
-            },
-            {
-              id: 2,
-              name: this.$t('header.menu.candidate.magistr'),
-              path: '/candidate/magistr',
-            },
-          ],
-        },
-      ]
-      return menus
+  watch: {
+    '$i18n.locale': async function () {
+      await this.fetchMenus()
+    },
+    $route: function (val) {
+      if (val.name === `index___${this.$i18n.locale}`) {
+        this.routeActive = this.menus[0]?.id
+        this.routeSubActive = null
+      } else if (val.name === `about-us___${this.$i18n.locale}`) {
+        this.routeSubActive = null
+      }
     },
   },
+  async fetch() {
+    await this.fetchMenus()
+  },
+  computed: {
+    //  menuItems() {
+    //    let menus = [
+    //      {
+    //        id: 2,
+    //        name: this.$t('header.menu.aboutUs.name'),
+    //        path: '/about-us',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t('header.menu.aboutUs.rektorat'),
+    //            path: '/about-us/rektorat',
+    //          },
+    //          {
+    //            id: 2,
+    //            name: this.$t('header.menu.aboutUs.fakulties'),
+    //            path: '/about-us/faculties/economical',
+    //          },
+    //          {
+    //            id: 3,
+    //            name: this.$t('header.menu.aboutUs.departments'),
+    //            path: '/about-us/departments/accounting',
+    //          },
+    //          {
+    //            id: 6,
+    //            name: this.$t('header.menu.aboutUs.publicOrganizations'),
+    //            path: '/about-us/public-organizations/0',
+    //          },
+    //          {
+    //            id: 9,
+    //            name: this.$t('header.menu.aboutUs.studyCenter'),
+    //            path: '/about-us/study-center/0',
+    //          },
+    //          {
+    //            id: 10,
+    //            name: this.$t('header.menu.aboutUs.library'),
+    //            path: '/about-us/library',
+    //          },
+    //          {
+    //            id: 7,
+    //            name: this.$t('header.menu.aboutUs.tradeUnion'),
+    //            path: '/about-us/trade-union',
+    //          },
+    //        ],
+    //      },
+    //      {
+    //        id: 3,
+    //        name: this.$t('header.menu.education.name'),
+    //        path: '/education',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t('header.menu.education.skills'),
+    //            path: '/education',
+    //          },
+    //          {
+    //            id: 2,
+    //            name: this.$t('header.menu.education.undergraduateCourses'),
+    //            path: '/education/undergraduate-courses',
+    //          },
+    //          {
+    //            id: 3,
+    //            name: this.$t('header.menu.education.mastersCourses'),
+    //            path: '/education/masters-training-courses',
+    //          },
+    //        ],
+    //      },
+    //      {
+    //        id: 4,
+    //        name: this.$t('header.menu.science.name'),
+    //        path: '/science',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t('header.menu.science.postgraduate'),
+    //            path: '/science',
+    //          },
+    //          {
+    //            id: 2,
+    //            name: this.$t('header.menu.science.researchProjectWork'),
+    //            path: '/science/research-and-project-work',
+    //          },
+    //          {
+    //            id: 3,
+    //            name: this.$t('header.menu.science.centerEconomicInnovation'),
+    //            path: '/science/center-for-economic-innovation',
+    //          },
+    //          {
+    //            id: 4,
+    //            name: this.$t('header.menu.science.scientificAdvice'),
+    //            path: '/science/scientific-advice',
+    //          },
+    //          {
+    //            id: 5,
+    //            name: this.$t('header.menu.science.scientificInstitutions'),
+    //            path: '/science/scientific-institutions',
+    //          },
+    //        ],
+    //      },
+    //      {
+    //        id: 5,
+    //        name: this.$t('header.menu.internationalCooperation.name'),
+    //        path: '/international-cooperation',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t(
+    //              'header.menu.internationalCooperation.internationalPartners'
+    //            ),
+    //            path: '/international-cooperation',
+    //          },
+    //          {
+    //            id: 2,
+    //            name: 'Halkara maslahatlar',
+    //            name: this.$t(
+    //              'header.menu.internationalCooperation.internationalTips'
+    //            ),
+    //            path: '/international-cooperation/international-tips',
+    //          },
+    //          {
+    //            id: 3,
+    //            name: this.$t(
+    //              'header.menu.internationalCooperation.internationalProjects'
+    //            ),
+    //            path: '/international-cooperation/international-projects',
+    //          },
+    //        ],
+    //      },
+    //      {
+    //        id: 7,
+    //        name: this.$t('header.menu.competitions.name'),
+    //        path: '/competitions',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t('header.menu.competitions.lessonCompetitions'),
+    //            path: '/competitions',
+    //          },
+    //          {
+    //            id: 3,
+    //            name: this.$t('header.menu.competitions.scientificCompetitions'),
+    //            path: '/competitions/scientific-competitions',
+    //          },
+    //          {
+    //            id: 4,
+    //            name: this.$t('header.menu.competitions.teacherCompetitions'),
+    //            path: '/competitions/teacher-of-the-year-competitions',
+    //          },
+    //          {
+    //            id: 5,
+    //            name: this.$t('header.menu.competitions.studentCompetitions'),
+    //            path: '/competitions/student-of-the-year-competitions',
+    //          },
+    //          {
+    //            id: 7,
+    //            name: this.$t(
+    //              'header.menu.competitions.internationalCompetitions'
+    //            ),
+    //            path: '/competitions/international-online-internet-course-competitions',
+    //          },
+    //        ],
+    //      },
+    //      {
+    //        id: 6,
+    //        name: this.$t('header.menu.candidate.name'),
+    //        path: '/candidate',
+    //        exact: false,
+    //        active: false,
+    //        subMenus: [
+    //          {
+    //            id: 1,
+    //            name: this.$t('header.menu.candidate.name'),
+    //            path: '/candidate',
+    //          },
+    //          {
+    //            id: 2,
+    //            name: this.$t('header.menu.candidate.magistr'),
+    //            path: '/candidate/magistr',
+    //          },
+    //        ],
+    //      },
+    //    ]
+    //    return menus
+    //  },
+  },
   mounted() {
+    console.log('process.client')
+    const id = Number(localStorage.getItem('id'))
+    const subId = Number(localStorage.getItem('subId'))
+    if (id) {
+      if (this.$route.name === `index___${this.$i18n.locale}`) {
+        this.routeActive = this.menus[0]?.id
+        this.routeSubActive = null
+      } else {
+        this.routeActive = id
+        this.routeSubActive = subId
+      }
+    } else {
+      this.routeActive = this.menus[0]?.id
+    }
     let className = 'scroll'
     let scrollTrigger = 30
     let wrapper = document.querySelector('.wrapper')
@@ -382,6 +432,44 @@ export default {
     })
   },
   methods: {
+    async fetchMenus() {
+      try {
+        const res = await request({
+          url: '/menu',
+          params: {
+            lang: this.$i18n.locale,
+          },
+          method: 'GET',
+        })
+        console.log('menu', res)
+        if (res.status) {
+          this.menus = res.menu
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    localeChangeRoute(data) {
+      console.log(data)
+      if (data) {
+        if (data.id === 34) {
+          return data.slug
+        } else if (data.id === 35) {
+          return data.slug
+        } else {
+          return data.children[0].slug
+        }
+      }
+    },
+    subMenuLocale(subMenu) {
+      if (this.$i18n.locale === 'tm') {
+        return subMenu.name_tm
+      } else if (this.$i18n.locale === 'ru') {
+        return subMenu.name_ru
+      } else {
+        return subMenu.name_en
+      }
+    },
     showPopUp() {
       document.body.classList.add('_lock')
       this.isActive = true
@@ -392,6 +480,39 @@ export default {
     },
     clickCategory(data) {
       console.log(data)
+      this.routeActive = data.id
+      if (data.slug === '') {
+        this.$router.push(this.localeLocation('/'))
+      } else if (data.slug === '/about-us') {
+        localStorage.setItem('id', data.id)
+        this.$router.push(this.localeLocation(data.slug))
+      } else {
+        localStorage.setItem('id', data.id)
+        if (data.children[0].slug) {
+          this.$router.push(
+            this.localeLocation(`${data.slug}/${data.children[0].slug}`)
+          )
+          this.routeSubActive = data.children[0].id
+        } else {
+          this.$router.push(
+            this.localeLocation(`${data.slug}/${data.children[0].id}`)
+          )
+        }
+      }
+    },
+    clickSubCategory(parent, child) {
+      console.log(parent, child)
+      localStorage.setItem('subId', child.id)
+      this.routeSubActive = child.id
+      if (child.slug) {
+        this.$router.push(
+          this.localeLocation(`${parent.slug}/${child.slug}?q=${child.id}`)
+        )
+      } else {
+        this.$router.push(
+          this.localeLocation(`${parent.slug}/${child.id}?q=${child.id}`)
+        )
+      }
     },
   },
 }

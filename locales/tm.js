@@ -13,6 +13,8 @@ export default {
   sendCom: 'Ugratmak',
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'Aşgabat ş., 1972-nji (Atatürk) köçe, 73,',
+  teachers: 'Mugallymlar',
+  facultiesName: 'Fakultetler',
   button: {
     readMore: 'Doly oka',
     news: 'Täzelikler',
@@ -34,7 +36,7 @@ export default {
       main: 'Baş sahypa',
       aboutUs: {
         name: 'Biz barada',
-        rektorat: 'Rektorat',
+        rectorate: 'Rektorat',
         fakulties: 'Fakultetlar',
         departments: 'Kafedralar',
         publicOrganizations: 'Jemgyýetçilik guramalary',

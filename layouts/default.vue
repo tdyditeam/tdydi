@@ -1,25 +1,22 @@
 <template>
   <section class="wrapper">
-    <!-- <div class="loader" v-if="isLoaded">
+    <div class="loader" v-show="isLoaded">
       <Loader />
-    </div> -->
-    <client-only>
-      <the-header-second></the-header-second>
-      <nuxt
-        :class="[
-          'page',
-          {
-            header__second:
-              $route.name === `index___${$i18n.locale}` && !header,
-          },
-        ]"
-      ></nuxt>
-      <div
-        class="toast-container __container"
-        style="align-items: center; z-index: 1000000"
-      ></div>
-      <the-footer></the-footer>
-    </client-only>
+    </div>
+    <the-header-second></the-header-second>
+    <nuxt
+      :class="[
+        'page',
+        {
+          header__second: $route.name === `index___${$i18n.locale}` && !header,
+        },
+      ]"
+    ></nuxt>
+    <div
+      class="toast-container __container"
+      style="align-items: center; z-index: 1000000"
+    ></div>
+    <the-footer></the-footer>
   </section>
 </template>
 
