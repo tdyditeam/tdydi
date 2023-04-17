@@ -120,6 +120,17 @@ export default {
 
   &__block {
     padding: 40px;
+    @media (max-width: 992px) {
+      width: 700px;
+    }
+    @media (max-width: 767px) {
+      width: 500px;
+      padding: 20px;
+    }
+    @media (max-width: 479px) {
+      width: 420px;
+      padding: 10px;
+    }
   }
 
   &__icon-close-wrapper {
@@ -135,6 +146,9 @@ export default {
     display: inline-flex;
     border-radius: 50%;
     cursor: pointer;
+    @media (max-width: 992px) {
+      padding: 14px;
+    }
   }
 
   &__body {
@@ -142,24 +156,30 @@ export default {
     backdrop-filter: blur(7px);
     border-radius: 10px;
     padding: 40px;
+    @media (max-width: 767px) {
+      padding: 20px;
+    }
   }
 }
 .body-pop-up {
-  display: flex;
+  display: grid;
   gap: 30px;
-  @media (max-width: 767px) {
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
   }
   &__left-block {
-    width: 600px;
   }
 
   &__title-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     color: #fff;
     font-weight: 500;
     margin-bottom: 30px;
+    @media (max-width: 992px) {
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
@@ -174,7 +194,6 @@ export default {
   }
 
   &__right-block {
-    max-width: 600px;
   }
 }
 .input-block-contact {
@@ -182,6 +201,9 @@ export default {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 8px;
+  @media (max-width: 992px) {
+    gap: 10px;
+  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -238,11 +260,13 @@ export default {
 }
 .right-block-contact {
   &__image {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+    @media (max-width: 992px) {
+      iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 }

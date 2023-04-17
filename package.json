@@ -12,6 +12,7 @@
     "lintfix": "prettier --write --list-different ."
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^37.0.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.2.2",
     "@tiptap/extension-bubble-menu": "^2.0.0-beta.55",
