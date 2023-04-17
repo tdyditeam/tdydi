@@ -67,6 +67,6 @@ export default {
 }
 .header__second {
   position: relative;
-  top: -215px;
+  top: 0;
 }
 </style>

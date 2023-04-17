@@ -17,7 +17,7 @@
           class="header__top-logo"
           @click="$router.push(localeLocation('/'))"
         >
-          <img src="@/assets/icons/logo.png" alt="logo" />
+          <img src="@/assets/icons/logo-big.svg" alt="logo" />
         </div>
         <div class="header__top-content">
           <div class="languages">
@@ -43,7 +43,7 @@
             class="header__mobile-logo"
             @click="$router.push(localeLocation('/'))"
           >
-            <img src="@/assets/icons/logo.png" alt="logo" />
+            <img src="@/assets/icons/logo.svg" alt="logo" />
           </div>
           <div
             class="header__mobile-title"
@@ -533,10 +533,10 @@ export default {
 .header {
   position: sticky;
   top: 0px;
-  background: #fff;
   z-index: 200;
   transition: 0.5s ease;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  background-color: #fff;
   @media (max-width: 992px) {
     position: fixed;
     width: 100%;
@@ -568,12 +568,9 @@ export default {
       width: 84px;
       height: 84px;
       flex: 1 1 auto;
-      cursor: pointer;
+      text-align: center;
       img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+        cursor: pointer;
       }
     }
     &-content {
@@ -640,6 +637,9 @@ export default {
           background-color: #fff;
         }
       }
+      .header__mobile-title {
+        color: white;
+      }
     }
     @media (max-width: 992px) {
       display: flex;
@@ -662,8 +662,10 @@ export default {
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
+      color: var(--text);
       @media (max-width: 767px) {
         font-size: 16px;
+        color: var(--text);
       }
       @media (max-width: 479px) {
         font-size: 14px;
@@ -676,10 +678,13 @@ export default {
         height: 100%;
       }
     }
+    &-title {
+      color: var(--text);
+    }
     &-burger {
       display: none;
       cursor: pointer;
-      width: 24px;
+      min-width: 24px;
       height: 18px;
       position: relative;
       z-index: 2;
@@ -692,7 +697,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: #333333;
+        background-color: var(--text);
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;
@@ -867,8 +872,7 @@ export default {
 .header.active {
   position: sticky;
   top: 0px;
-  background: rgba(50, 50, 50, 0.512);
-  //   background: transparent;
+  background: #464545;
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   @media (max-width: 992px) {
@@ -899,12 +903,12 @@ export default {
       width: 84px;
       height: 84px;
       flex: 1 1 auto;
-      cursor: pointer;
       img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         object-position: center;
+        cursor: pointer;
       }
     }
     &-content {
@@ -988,12 +992,14 @@ export default {
       @media (max-width: 479px) {
         gap: 2px;
       }
+
     }
     &-title {
       font-family: 'Roboto Flex';
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
+      color: var(--white) !important;
       @media (max-width: 767px) {
         font-size: 16px;
       }
@@ -1011,7 +1017,7 @@ export default {
     &-burger {
       display: none;
       cursor: pointer;
-      width: 24px;
+      min-width: 24px;
       height: 18px;
       position: relative;
       z-index: 2;
@@ -1233,12 +1239,8 @@ export default {
     width: 84px;
     height: 84px;
     flex: 1 1 auto;
-    cursor: pointer;
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+      cursor: pointer;
     }
   }
   &-content {
