@@ -4,7 +4,7 @@
       <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
       <block-pages
         :description="datas?.text"
-        :title="$route.query.department"
+        :title="this.departmentName"
       ></block-pages>
     </section>
     <sidebar-without-route
@@ -23,7 +23,17 @@ export default {
       datas: null,
       subMenus: null,
       activeId: null,
-      breadCrumbs: [
+      departmentName: null,
+    }
+  },
+  watch: {
+    $route: async function () {
+      await Promise.all([this.fetchDatas(), this.fetchDepartments()])
+    },
+  },
+  computed: {
+    breadCrumbs() {
+      return [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
           id: 2,
@@ -39,16 +49,11 @@ export default {
         },
         {
           id: 4,
-          name: this.$route.query.department,
+          name: this.departmentName,
           path: `/about-us/libraries/${this.$route.params.id}?q=${this.$route.query.q}&department=${this.$route.query.department}`,
           exact: true,
         },
-      ],
-    }
-  },
-  watch: {
-    $route: async function () {
-      await Promise.all([this.fetchDatas(), this.fetchDepartments()])
+      ]
     },
   },
   async fetch() {
@@ -61,15 +66,16 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/libraries`,
+          url: `/libraries/departments`,
           params: {
             lang: this.$i18n.locale,
-            department_id: Number(this.$route.params.id),
+            department_id: this.$route.query.department,
           },
           method: 'GET',
         })
-        console.log('about', res)
+        console.log('libraries-------', res)
         if (res.status) {
+          this.departmentName = res.department_name
           this.datas = res.libraries[0] || null
         }
       } catch (error) {
@@ -88,17 +94,20 @@ export default {
         console.log('data', res)
         if (res.status) {
           this.subMenus = res.departments || null
-          this.activeId = Number(this.$route.params.id)
+          this.activeId = res.departments.find(
+            (item) => item.image === this.$route.query.department
+          )?.id
         }
       } catch (error) {
         console.log(error)
       }
     },
     changeDatas(id) {
+      this.activeId = id
       this.$router.push(
         this.localeLocation(
           `/about-us/libraries/${id}?q=${this.$route.query.q}&department=${
-            this.subMenus.find((item) => item.id === id)?.name
+            this.subMenus.find((item) => item.id === id)?.image
           }`
         )
       )

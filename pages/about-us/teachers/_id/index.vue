@@ -8,7 +8,7 @@
         (data) =>
           $router.push(
             localeLocation(
-              `/about-us/teachers/${this.$route.params.id}/${data.id}?q=${this.$route.query.q}&name=${data.firstname} ${data.lastname} ${data.middlename}&department=${this.$route?.query?.department}`
+              `/about-us/teachers/${this.$route.params.id}/${data.id}?q=${this.$route.query.q}&name=${data.firstname} ${data.lastname} ${data.middlename}&department=${this.$route?.query?.department}&teacher=${data.image}`
             )
           )
       "
@@ -21,7 +21,21 @@ import { request } from '~/api/generic.api'
 export default {
   data() {
     return {
-      breadCrumbs: [
+      departmentName: null,
+      teachers: null,
+    }
+  },
+  //   watch: {
+  //     '$i18n.locale': async function () {
+  //       await this.fetchDatas()
+  //     },
+  //   },
+  async fetch() {
+    await this.fetchDatas()
+  },
+  computed: {
+    breadCrumbs() {
+      return [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
         {
           id: 2,
@@ -37,16 +51,12 @@ export default {
         },
         {
           id: 4,
-          name: this.$route?.query?.department,
+          name: this.departmentName,
           path: `/about-us/teachers/${this.$route.params.id}?q=${this.$route.query.q}&department=${this.$route?.query?.department}`,
           exact: true,
         },
-      ],
-      teachers: null,
-    }
-  },
-  async fetch() {
-    await this.fetchDatas()
+      ]
+    },
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
@@ -58,12 +68,13 @@ export default {
           url: `/teachers`,
           params: {
             lang: this.$i18n.locale,
-            department_id: Number(this.$route.params.id),
+            department_id: this.$route?.query?.department,
           },
           method: 'GET',
         })
-        console.log('data', res)
+        console.log('dataaaaaaaaaaaa', res)
         if (res.status) {
+          this.departmentName = res?.department_name
           this.teachers = res.teachers || []
         }
       } catch (error) {

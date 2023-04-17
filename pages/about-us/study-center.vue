@@ -58,6 +58,7 @@
             placeholder="--------"
             :progress="progress"
             :success="progress === 100"
+            :fileName="fileName"
             @changeFile="changeFile"
           />
           <div class="block-about__button">
@@ -70,43 +71,33 @@
             ></base-button>
           </div>
         </div>
-        <!-- <div class="study-center__chat chat">
-          <div class="chat__item">
-            <div class="chat__profile">
-              <p>M</p>
-            </div>
-            <div class="chat__people">
-              <div class="chat__name-data">
-                <p class="chat__people-name">Maksat Maksadow</p>
-                <p class="chat__data">20.01.2023 13:10</p>
+        <template v-if="comments.length > 0">
+          <div
+            class="study-center__chat chat"
+            v-for="comment in comments"
+            :key="comment.id"
+          >
+            <div class="chat__item">
+              <div class="chat__profile">
+                <p>{{ comment.name.slice(0, 1).toUpperCase() }}</p>
               </div>
-              <p class="chat__people-incoming">Salam gowmy yagday</p>
+              <div class="chat__people">
+                <div class="chat__name-data">
+                  <p class="chat__people-name">{{ comment.name }}</p>
+                  <p class="chat__data">
+                    {{
+                      new Date(comment.created_at).toISOString().slice(0, 10)
+                    }}
+                  </p>
+                </div>
+                <p
+                  class="chat__people-incoming"
+                  v-html="comment.description"
+                ></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="study-center__chat chat">
-          <div class="chat__item">
-            <div class="chat__profile">
-              <p>M</p>
-            </div>
-            <div class="chat__people">
-              <div class="chat__name-data">
-                <p class="chat__people-name">Maksat Maksadow</p>
-                <p class="chat__data">20.01.2023 13:10</p>
-              </div>
-              <p class="chat__people-incoming">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-                soluta expedita a suscipit voluptatem atque, repellat enim
-                accusantium aperiam tenetur ipsum vero ut recusandae, veniam
-                asperiores saepe minima, dolore sunt! Lorem ipsum dolor sit,
-                amet consectetur adipisicing elit. Natus fuga praesentium est in
-                delectus facere doloremque non veritatis hic consequuntur
-                voluptatibus modi animi eveniet aliquid sed placeat, ab qui
-                labore?
-              </p>
-            </div>
-          </div>
-        </div> -->
+        </template>
       </div>
     </div>
     <sidebar-without-route
@@ -133,6 +124,8 @@ export default {
     return {
       feedBack: false,
       progress: 0,
+      fileName: null,
+      comments: [],
       main: {
         id: null,
         name: null,
@@ -142,7 +135,6 @@ export default {
         image: null,
         is_needed: false,
       },
-      title: this.$t('facultiesName'),
       datas: null,
       subMenus: null,
       activeId: null,
@@ -156,15 +148,15 @@ export default {
         },
         {
           id: 3,
-          name: this.$t('header.menu.aboutUs.fakulties'),
-          path: `/about-us/faculties?q=${this.$route.query.q}`,
+          name: this.$t('header.menu.aboutUs.studyCenter'),
+          path: `/about-us/study-center?q=${this.$route.query.q}`,
           exact: true,
         },
       ],
     }
   },
   async fetch() {
-    await this.fetchDatas()
+    await Promise.all([this.fetchDatas(), this.fetchCommets()])
   },
   async mounted() {
     document.querySelector('.wrapper').scrollTop = 0
@@ -208,22 +200,54 @@ export default {
       console.log(elem.innerHTML)
       this.main.description = elem.innerHTML
       console.log(this.main)
-      this.$toast(this.$t('checkCommit'))
-      this.main.id = null
-      this.main.name = null
-      this.main.email = null
-      this.main.phone_number = null
-      this.main.description = null
-      this.main.image = null
-      this.main.is_needed = null
+      try {
+        const res = await request({
+          url: `/comments`,
+          data: this.main,
+        })
+        console.log('comments', res)
+        if (res.status) {
+          this.$toast(this.$t('checkCommit'))
+          this.main.id = null
+          this.main.name = null
+          this.main.email = null
+          this.main.phone_number = null
+          this.main.description = null
+          this.main.image = null
+          this.main.is_needed = false
+          this.fileName = null
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchCommets() {
+      try {
+        const res = await request({
+          url: `/comments/get-user`,
+          method: 'GET',
+        })
+        console.log('comments-get', res)
+        if (res.status) {
+          this.comments = res.comment || []
+        }
+      } catch (error) {
+        console.log(error)
+      }
     },
     changeFile(file) {
+      this.fileName = file.name
       this.main.image = file
+      console.log(this.main)
     },
   },
 }
 </script>
 <style lang="scss">
+.faculties {
+  display: flex;
+  justify-content: space-between;
+}
 .study-center {
   width: 100%;
   display: flex;

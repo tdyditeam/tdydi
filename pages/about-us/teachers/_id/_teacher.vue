@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       datas: null,
+      departmentName: null,
     }
   },
   computed: {
@@ -38,14 +39,14 @@ export default {
         },
         {
           id: 4,
-          name: this.$route?.query?.department,
+          name: this.departmentName,
           path: `/about-us/teachers/${this.$route.params.id}?q=${this.$route.query.q}&department=${this.$route?.query?.department}`,
           exact: true,
         },
         {
           id: 5,
-          name: this.$route?.query?.name,
-          path: `/about-us/teachers/${this.$route.params.id}/${this.$route.params.teacher}?q=${this.$route.query.q}&name=${this.$route?.query?.name}&department=${this.$route?.query?.department}`,
+          name: `${this.datas?.firstname} ${this.datas?.lastname} ${this.datas?.middlename}`,
+          path: `/about-us/teachers/${this.$route.params.id}/${this.$route.params.teacher}?q=${this.$route.query.q}&name=${this.$route?.query?.name}&department=${this.$route?.query?.department}&teacher=${this.$route?.query?.teacher}`,
           exact: true,
         },
       ]
@@ -61,14 +62,17 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/teachers/${this.$route.params.teacher}`,
+          url: `/teachers/one`,
           params: {
+            id: this.$route.query.teacher,
             lang: this.$i18n.locale,
+            department_id: this.$route.query.department,
           },
           method: 'GET',
         })
         console.log('data', res)
         if (res.status) {
+          this.departmentName = res.department_name
           this.datas = res.teachers || []
         }
       } catch (error) {

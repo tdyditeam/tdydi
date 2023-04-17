@@ -12,7 +12,7 @@
         @clicked="
           $router.push(
             localeLocation(
-              `/about-us/teachers/${datas.id}?q=${$route.query.q}&department=${datas?.name}`
+              `/about-us/teachers/${datas.id}?q=${$route.query.q}&department=${datas?.image}`
             )
           )
         "

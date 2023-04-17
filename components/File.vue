@@ -113,12 +113,15 @@ export default {
       type: String,
       default: '.pdf,.doc,.docx,.xml,.txt,.zip,.xlsx, .xls, .csv',
     },
+    fileName: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
       showMessage: false,
       file: null,
-      fileName: null,
     }
   },
   computed: {
@@ -137,7 +140,6 @@ export default {
   methods: {
     changeFile(e) {
       console.log(e.target.files)
-      this.fileName = e.target.files[0].name
       this.$emit('changeFile', e.target.files[0])
       setTimeout(() => {
         this.$refs.file = null

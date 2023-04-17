@@ -90,7 +90,7 @@ export default {
         this.localeLocation(
           `/about-us/libraries/${this.activeId}?q=${
             this.$route.query.q
-          }&department=${this.subMenus.find((item) => item.id === id)?.name}`
+          }&department=${this.subMenus.find((item) => item.id === id)?.image}`
         )
       )
     },

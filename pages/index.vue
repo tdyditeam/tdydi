@@ -18,7 +18,7 @@
         :galerias="galerias"
         @changeGallery="changeGallery"
       ></the-gallery>
-      <!-- <the-view></the-view> -->
+      <the-view></the-view>
       <the-partners :partnersUniversity="partnersUniversity"></the-partners>
     </section>
   </div>

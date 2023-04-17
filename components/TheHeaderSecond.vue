@@ -497,6 +497,8 @@ export default {
           this.$router.push(
             this.localeLocation(`${data.slug}/${data.children[0].id}`)
           )
+          this.routeSubActive = data.children[0].id
+          localStorage.setItem('subId', data.children[0].id)
         }
       }
     },
@@ -510,7 +512,9 @@ export default {
         )
       } else {
         this.$router.push(
-          this.localeLocation(`${parent.slug}/${child.id}?q=${child.id}`)
+          this.localeLocation(
+            `${parent.slug}/${child.id}?name=${this.subMenuLocale(child)}`
+          )
         )
       }
     },

@@ -14,7 +14,7 @@ import { request } from '~/api/generic.api'
 export default {
   data() {
     return {
-      title: this.$t('tradeUnion.title'),
+      title: this.$route.query.name,
       datas: null,
       breadCrumbs: [
         { id: 1, name: this.$t('header.menu.main'), path: '/', exact: true },
@@ -26,8 +26,8 @@ export default {
         },
         {
           id: 3,
-          name: this.$t('tradeUnion.title'),
-          path: `/about-us/trade-union?q=${this.$route.query.q}`,
+          name: this.$route.query.name,
+          path: `/about-us/${this.$route.params.id}?name=${this.$route.query.name}`,
           exact: true,
         },
       ],
@@ -43,10 +43,10 @@ export default {
     async fetchDatas() {
       try {
         const res = await request({
-          url: `/${Number(this.$route.query.q)}/about-us`,
+          url: `/${Number(this.$route.params.id)}/about-us`,
           params: {
             lang: this.$i18n.locale,
-            submenu_id: Number(this.$route.query.q),
+            submenu_id: Number(this.$route.params.id),
           },
           method: 'GET',
         })
