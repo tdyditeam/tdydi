@@ -32,9 +32,9 @@
               <p>{{ locale.name }}</p>
             </nuxt-link>
           </div>
-          <div class="contact" @click="showPopUp">
+          <!-- <div class="contact" @click="showPopUp">
             {{ $t('button.contact') }}
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="header__mobile __container">
@@ -127,7 +127,12 @@
       >
         <nav class="header__mobile-bottom-menu menu-mobile">
           <div class="menu-mobile__list">
-            <div v-for="item in menus" :key="item.id" class="menu-mobile__item">
+            <div
+              v-for="item in menus"
+              :key="item.id"
+              class="menu-mobile__item"
+              @click.prevent.stop="clickCategoryMobile(item)"
+            >
               <div class="menu-mobile__link-wrapper">
                 <div class="menu-mobile__link">{{ item.name }}</div>
                 <div class="menu-mobile__icon">
@@ -142,6 +147,7 @@
                   v-for="subMenu in item.children"
                   :key="subMenu.id"
                   class="menu-mobile__sub-item"
+                  @click.prevent.stop="clickMobileSubCategory(item, subMenu)"
                 >
                   <div class="menu-mobile__sub-link">
                     {{ subMenuLocale(subMenu) }}
@@ -167,7 +173,7 @@
         </div>
       </div>
     </div>
-    <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup>
+    <!-- <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup> -->
   </header>
 </template>
 
@@ -478,6 +484,29 @@ export default {
       document.body.classList.remove('_lock')
       this.isActive = false
     },
+    clickCategoryMobile(data) {
+      if (data.slug === '') {
+        this.$router.push(this.localeLocation('/'))
+      } else if (data.slug === '/about-us') {
+        this.$router.push(this.localeLocation(data.slug))
+      } else {
+        if (data.children[0].slug) {
+          this.$router.push(
+            this.localeLocation(
+              `${data.slug}/${data.children[0].slug}?q=${data.id}`
+            )
+          )
+        } else {
+          this.$router.push(
+            this.localeLocation(
+              `${data.slug}/${data.children[0].id}?name=${this.subMenuLocale(
+                data.children[0]
+              )}`
+            )
+          )
+        }
+      }
+    },
     clickCategory(data) {
       console.log(data)
       this.routeActive = data.id
@@ -509,8 +538,21 @@ export default {
         }
       }
     },
+    clickMobileSubCategory(parent, child) {
+      if (child.slug) {
+        this.$router.push(
+          this.localeLocation(`${parent.slug}/${child.slug}?q=${child.id}`)
+        )
+      } else {
+        this.$router.push(
+          this.localeLocation(
+            `${parent.slug}/${child.id}?name=${this.subMenuLocale(child)}`
+          )
+        )
+      }
+    },
+
     clickSubCategory(parent, child) {
-      console.log(parent, child)
       localStorage.setItem('subId', child.id)
       this.routeSubActive = child.id
       if (child.slug) {
@@ -662,7 +704,7 @@ export default {
       font-weight: 700;
       font-size: 18px;
       line-height: 115%;
-      color: var(--white);
+      color: var(--text);
       @media (max-width: 767px) {
         font-size: 16px;
       }
@@ -678,7 +720,7 @@ export default {
       }
     }
     &-title {
-      color: var(--white);
+      color: var(--text);
     }
     &-burger {
       display: none;
@@ -696,7 +738,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: var(--text);
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;
@@ -874,6 +916,12 @@ export default {
   background: #464545;
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
+  .header__mobile-title {
+    color: var(--white);
+  }
+  .header__mobile-burger span {
+    background-color: var(--white);
+  }
   @media (max-width: 992px) {
     position: fixed;
     width: 100%;
@@ -1028,7 +1076,7 @@ export default {
         height: 2px;
         position: absolute;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: #fff !important;
         transition: 0.3s;
         &:nth-child(1) {
           top: 0;
