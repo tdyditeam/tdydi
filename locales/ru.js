@@ -17,6 +17,9 @@ export default {
   teachers: 'Учителя',
   country: 'Город',
   facultiesName: 'Факультеты',
+  sendContact: 'Ваше сообщение было отправлено успешно!',
+  totalNewsCount: 'Количество читателей',
+  viewPagesCount: 'Количество посетителей сайта',
   button: {
     readMore: 'читать далее',
     news: 'Новости',

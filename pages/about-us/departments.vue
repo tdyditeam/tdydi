@@ -71,7 +71,7 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
+        console.log('departments', res)
         if (res.status) {
           this.subMenus = res.departments || null
           this.activeId = this.subMenus[0].id

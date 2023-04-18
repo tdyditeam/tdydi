@@ -121,7 +121,6 @@ export default {
   data() {
     return {
       showMessage: false,
-      file: null,
     }
   },
   computed: {
@@ -139,7 +138,6 @@ export default {
   },
   methods: {
     changeFile(e) {
-      console.log(e.target.files)
       this.$emit('changeFile', e.target.files[0])
       setTimeout(() => {
         this.$refs.file = null

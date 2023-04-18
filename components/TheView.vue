@@ -3,8 +3,10 @@
     <div class="view__row">
       <div class="view__item">
         <div class="view__left">
-          <p :data-target="student" class="view__number counter">0</p>
-          <p class="view__text">Okyjalaryn sany</p>
+          <p :data-target="Number(totalNews)" class="view__number counter">
+            {{ Number(totalNews) }}
+          </p>
+          <p class="view__text">{{ $t('totalNewsCount') }}</p>
         </div>
         <div class="view__right">
           <div class="view__image">
@@ -14,8 +16,10 @@
       </div>
       <div class="view__item view__item-second">
         <div class="view__left">
-          <p class="counter view__number" :data-target="teacher">0</p>
-          <p class="view__text">Web sahypany gorenlerin sany</p>
+          <p class="counter view__number" :data-target="statics">
+            {{ statics }}
+          </p>
+          <p class="view__text">{{ $t('viewPagesCount') }}</p>
         </div>
         <div class="view__right">
           <div class="view__image">
@@ -29,14 +33,19 @@
 
 <script>
 export default {
+  props: {
+    totalNews: {
+      type: String,
+      default: () => '',
+    },
+    statics: {
+      type: Number,
+      default: () => 0,
+    },
+  },
   data() {
     return {
       observer: null,
-      magistr: 300,
-      student: 3320,
-      teacher: 277,
-      skill: 52,
-      faculti: 5,
     }
   },
   mounted() {

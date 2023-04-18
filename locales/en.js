@@ -17,6 +17,9 @@ export default {
   teachers: 'Teachers',
   country: 'City',
   facultiesName: 'Faculties',
+  sendContact: 'Your message has been sent successfully!',
+  totalNewsCount: 'Number of readers',
+  viewPagesCount: 'Number of visitors to the website',
   button: {
     readMore: 'Read more',
     news: 'News',

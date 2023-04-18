@@ -32,9 +32,9 @@
               <p>{{ locale.name }}</p>
             </nuxt-link>
           </div>
-          <!-- <div class="contact" @click="showPopUp">
+          <div class="contact" @click="showPopUp">
             {{ $t('button.contact') }}
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="header__mobile __container">
@@ -65,14 +65,6 @@
         <div class="header__bottom-container __container">
           <div class="header__bottom-container-body">
             <div class="header__bottom-menu">
-              <!-- <nuxt-link
-                :to="localePath('/')"
-                exact
-                class="header__bottom-items"
-              >
-                <span>{{ $t('header.menu.main') }}</span
-                ><span></span>
-              </nuxt-link> -->
               <client-only v-for="item in menus" :key="item.id">
                 <a
                   href="#"
@@ -84,7 +76,7 @@
                     },
                   ]"
                 >
-                  <span>{{ item.name }}</span>
+                  <span>{{ menuLocale(item) }}</span>
                   <span></span>
                   <div
                     class="header__bottom-submenu-container"
@@ -134,7 +126,7 @@
               @click.prevent.stop="clickCategoryMobile(item)"
             >
               <div class="menu-mobile__link-wrapper">
-                <div class="menu-mobile__link">{{ item.name }}</div>
+                <div class="menu-mobile__link">{{ menuLocale(item) }}</div>
                 <div class="menu-mobile__icon">
                   <img
                     src="@/assets/img/home/header/icon-right.svg"
@@ -173,7 +165,7 @@
         </div>
       </div>
     </div>
-    <!-- <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup> -->
+    <contact-popup :isActive="isActive" @close="closePopUp"></contact-popup>
   </header>
 </template>
 
@@ -465,6 +457,15 @@ export default {
         } else {
           return data.children[0].slug
         }
+      }
+    },
+    menuLocale(subMenu) {
+      if (this.$i18n.locale === 'tm') {
+        return subMenu.name_tm
+      } else if (this.$i18n.locale === 'ru') {
+        return subMenu.name_ru
+      } else {
+        return subMenu.name_en
       }
     },
     subMenuLocale(subMenu) {

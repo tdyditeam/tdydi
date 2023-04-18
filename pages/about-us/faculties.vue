@@ -58,7 +58,7 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
+        console.log('faculties', res)
         if (res.status) {
           this.subMenus = res.message || null
           this.activeId = this.subMenus[0].id

@@ -241,6 +241,7 @@ export default {
         const res = await request({
           url: `/comments`,
           data: this.main,
+          file: true,
         })
         console.log('comments', res)
         if (res.status) {
@@ -275,7 +276,6 @@ export default {
     changeFile(file) {
       this.fileName = file.name
       this.main.image = file
-      console.log(this.main)
     },
   },
 }

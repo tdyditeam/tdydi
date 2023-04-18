@@ -17,6 +17,9 @@ export default {
   teachers: 'Mugallymlar',
   facultiesName: 'Fakultetler',
   country: 'Ýurdy',
+  sendContact: 'Habaryňyz üstünlikli ugradyldy!',
+  totalNewsCount: 'Okyjalaryn sany',
+  viewPagesCount: 'Web sahypany gorenleriň sany',
   button: {
     readMore: 'Doly oka',
     news: 'Täzelikler',

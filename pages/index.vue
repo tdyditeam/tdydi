@@ -18,7 +18,7 @@
         :galerias="galerias"
         @changeGallery="changeGallery"
       ></the-gallery>
-      <!-- <the-view></the-view> -->
+      <the-view :totalNews="totalNews" :statics="statics"></the-view>
       <the-partners :partnersUniversity="partnersUniversity"></the-partners>
     </section>
   </div>
@@ -41,10 +41,15 @@ export default {
       bannerRight: null,
       indicators: null,
       galerias: null,
+      totalNews: null,
+      statics: null,
       partnersUniversity: null,
     }
   },
   async fetch() {
+    if (!this.$cookies.get('view')) {
+      await this.fetchStatics()
+    }
     await Promise.all([
       this.fetchVideo(),
       this.fetchMainYearText(),
@@ -56,6 +61,8 @@ export default {
       this.fetchTopPointers(),
       this.fetchGallery(),
       this.fetchPublications(),
+      this.fetchTotalNews(),
+      this.fetchTotal(),
       this.fetchPartners(),
     ])
   },
@@ -75,7 +82,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log(res)
         if (res.status) {
           this.video = res?.galerias[0]?.image
         }
@@ -90,7 +96,6 @@ export default {
           method: 'GET',
         })
         if (status) {
-          console.log(about)
           this.about = about[0]
         }
       } catch (error) {
@@ -107,7 +112,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log(res)
         if (res.status) {
           this.mainYearText = res?.galerias[0]
         }
@@ -124,7 +128,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('fetchIndicators', res)
         if (res.status) {
           this.indicators = res?.indicators || []
         }
@@ -142,7 +145,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('banner-left', res)
         if (res.status) {
           this.bannerLeft = res?.galerias[0]
         }
@@ -160,7 +162,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('banner', res)
         if (res.status) {
           this.bannerRight = res?.galerias
         }
@@ -177,7 +178,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('news', res)
         if (res.status) {
           this.events = res.events || []
         }
@@ -194,7 +194,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('pointers', res)
         if (res.status) {
           this.topPointers = res.top_pointers || []
         }
@@ -212,7 +211,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('galleryType', res)
         if (res.status) {
           this.galerias = res?.galerias || []
         }
@@ -226,9 +224,49 @@ export default {
           url: '/publications',
           method: 'GET',
         })
-        if (res) {
-          console.log('publications')
+        if (res.status) {
           this.publications = res
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchTotalNews() {
+      try {
+        const res = await request({
+          url: '/total-news',
+          method: 'GET',
+        })
+        if (res.status) {
+          this.totalNews = res.total_news
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchTotal() {
+      try {
+        const res = await request({
+          url: '/statics/total',
+          method: 'GET',
+        })
+        console.log('total', res)
+        if (res.status) {
+          this.statics = res.statics
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchStatics() {
+      try {
+        const res = await request({
+          url: '/statics',
+          method: 'GET',
+        })
+        if (res.status) {
+          console.log('statics', res)
+          this.$cookies.set('view', 1)
         }
       } catch (error) {
         console.log(error)
@@ -243,7 +281,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('fetchPartners', res)
         if (res.status) {
           this.partnersUniversity = res?.partners_university || []
           this.$store.commit('SET_LOADER', false)
@@ -253,12 +290,10 @@ export default {
       }
     },
     async changeEvent(val) {
-      console.log(val)
       this.eventType = val
       await this.fetchEvents()
     },
     async changeGallery(val) {
-      console.log(val)
       this.galleryType = val
       await this.fetchGallery()
     },

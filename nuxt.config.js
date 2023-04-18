@@ -29,6 +29,8 @@ export default {
     color: '#16ab65',
     height: '2px',
   },
+  ssr: true,
+  target: 'server',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -48,6 +50,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
     '@nuxt/image',
+    'cookie-universal-nuxt',
   ],
   env: {
     BASE_API: process.env.BASE_API,

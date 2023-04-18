@@ -28,17 +28,23 @@
                   <input
                     autocomplete="off"
                     :placeholder="$t('fullName')"
+                    v-model="main.name"
                     class="input-block-contact__input"
                   />
                 </form>
               </div>
               <div class="input-block-contact__item">
                 <div class="input-block-contact__title">{{ $t('email') }}*</div>
-                <form action="#" class="input-block-contact__form">
+                <form
+                  action="#"
+                  @submit.prevent
+                  class="input-block-contact__form"
+                >
                   <input
                     autocomplete="off"
                     type="email"
                     :placeholder="$t('email')"
+                    v-model="main.email"
                     class="input-block-contact__input"
                   />
                 </form>
@@ -47,9 +53,14 @@
                 <div class="input-block-contact__title">
                   {{ $t('message') }}*
                 </div>
-                <form action="#" class="input-block-contact__form">
+                <form
+                  action="#"
+                  @submit.prevent
+                  class="input-block-contact__form"
+                >
                   <textarea
                     :placeholder="$t('message')"
+                    v-model="main.text"
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                     class="input-block-contact__textarea"
                   ></textarea>
@@ -57,7 +68,10 @@
               </div>
             </div>
             <div class="input-block-contact__button-wrapper">
-              <button class="input-block-contact__button">
+              <button
+                class="input-block-contact__button"
+                @click.prevent="contactUs"
+              >
                 {{ $t('sendCom') }}
               </button>
             </div>
@@ -83,11 +97,38 @@
 </template>
 
 <script>
+import { request } from '~/api/generic.api'
 export default {
   props: {
     isActive: {
       type: Boolean,
       default: () => false,
+    },
+  },
+  data() {
+    return {
+      main: {
+        id: null,
+        name: null,
+        email: null,
+        text: null,
+      },
+    }
+  },
+  methods: {
+    async contactUs() {
+      try {
+        const res = await request({
+          url: `/contact-us`,
+          data: this.main,
+        })
+        if (res.status) {
+          this.$emit('close')
+          this.$toast(this.$t('sendContact'))
+        }
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 }
