@@ -49,7 +49,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('partners', res)
         if (res.status) {
           this.competitionsTop = res.data[0] || null
         }
@@ -66,7 +65,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('partnersBottom', res)
         if (res.status) {
           this.competitionsBottom = res.student_competitions || []
         }

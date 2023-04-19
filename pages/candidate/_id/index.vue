@@ -52,7 +52,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('about', res)
         if (res.status) {
           this.datas = res.data[0] || null
         }

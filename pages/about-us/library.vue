@@ -57,7 +57,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
         if (res.status) {
           this.datas = res.libraries[0]
         }
@@ -74,11 +73,10 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
         if (res.status) {
           this.subMenus = res.departments || null
-          //  this.activeId = this.subMenus[0].id
-          //  this.datas = this.subMenus[0]
+          this.activeId = this.subMenus[0].id
+          this.datas = this.subMenus[0]
         }
       } catch (error) {
         console.log(error)

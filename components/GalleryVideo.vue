@@ -7,12 +7,16 @@
         :key="galery.id"
       >
         <div class="video-block__video">
-          <video class="videos" poster="banner.png">
+          <video v-if="galery" class="videos" :id="galery.id">
             <source :src="`${imageUrl}${galery.image}`" />
           </video>
-          <div @click="playVideo" class="video-block__play-icon">
-            <img v-if="status" src="@/assets/img/home/play.svg" alt="" />
-            <img v-else src="@/assets/img/home/pouse.svg" alt="" />
+          <div @click="playVideo(galery)" class="video-block__play-icon">
+            <img
+              v-if="galery.status"
+              src="@/assets/img/home/pouse.svg"
+              alt=""
+            />
+            <img v-else src="@/assets/img/home/play.svg" alt="" />
           </div>
           <div class="video-block__bottom-block bottom-block-video">
             <div class="bottom-block-video__row">
@@ -22,7 +26,10 @@
               <div class="bottom-block-video__title" v-else>
                 TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY
               </div>
-              <div @click="fullscreen" class="bottom-block-video__time">
+              <div
+                @click="fullscreen(galery.id)"
+                class="bottom-block-video__time"
+              >
                 <img src="@/assets/img/home/maxsimize.png" alt="" />
               </div>
             </div>
@@ -45,24 +52,33 @@ export default {
   data() {
     return {
       status: true,
+      selectedId: null,
     }
   },
   computed: {
     ...mapGetters(['imageUrl']),
   },
   methods: {
-    playVideo() {
-      let video = document.querySelector('.videos')
-      this.status = !this.status
-      console.log(video)
-      if (!video.paused) {
-        video.pause()
-      } else {
+    playVideo(galery) {
+      let video = document.getElementById(`${galery.id}`)
+      galery.status = !galery.status
+      if (this.selectedId !== null && this.selectedId !== galery.id) {
+        let elem = document.getElementById(`${this.selectedId}`)
+        let find = this.galerias.find((data) => data.id === this.selectedId)
+        find.status = !find.status
+        if (!find.status) {
+          elem.pause()
+        }
+      }
+      this.selectedId = galery.id
+      if (galery.status) {
         video.play()
+      } else {
+        video.pause()
       }
     },
-    fullscreen() {
-      let video = document.querySelector('.videos')
+    fullscreen(id) {
+      let video = document.getElementById(`${id}`)
       video.requestFullscreen()
     },
   },

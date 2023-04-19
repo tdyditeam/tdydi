@@ -5,12 +5,12 @@
       <div class="block__description">
         <div class="block__description-img-pdf" v-if="img && imgPdf">
           <!-- <img :src="require(`@/assets/img/about-us/${img}`)" alt="" /> -->
-          <a href="http://" target="_blank" rel="noopener noreferrer"
+          <!-- <a href="http://" target="_blank" rel="noopener noreferrer"
             ><img src="@/assets/img/about-us/zurnal.png" alt=""
           /></a>
           <a href="http://" target="_blank" rel="noopener noreferrer"
             ><img src="@/assets/img/about-us/zurnal2.png" alt=""
-          /></a>
+          /></a> -->
         </div>
         <div class="block__description-img" v-if="img && !imgPdf">
           <img :src="`${imageUrl}${img}`" alt="" />

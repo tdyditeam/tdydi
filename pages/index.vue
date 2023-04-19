@@ -213,6 +213,11 @@ export default {
         })
         if (res.status) {
           this.galerias = res?.galerias || []
+          if (this.galleryType === 'video') {
+            for (let i = 0; i < this.galerias.length; i++) {
+              this.galerias[i]['status'] = false
+            }
+          }
         }
       } catch (error) {
         console.log(error)
@@ -250,7 +255,6 @@ export default {
           url: '/statics/total',
           method: 'GET',
         })
-        console.log('total', res)
         if (res.status) {
           this.statics = res.statics
         }
@@ -265,7 +269,6 @@ export default {
           method: 'GET',
         })
         if (res.status) {
-          console.log('statics', res)
           this.$cookies.set('view', 1)
         }
       } catch (error) {

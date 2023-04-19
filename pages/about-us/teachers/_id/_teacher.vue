@@ -70,7 +70,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
         if (res.status) {
           this.departmentName = res.department_name
           this.datas = res.teachers || []

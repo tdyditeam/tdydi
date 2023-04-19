@@ -57,7 +57,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
         if (res.status) {
           this.subMenus = res.organizations || null
           this.activeId = this.subMenus[0].id
@@ -69,14 +68,11 @@ export default {
     },
     changeDatas(id) {
       this.datas = this.subMenus.find((item) => item.id === id)
-      console.log(this.datas)
       this.activeId = this.subMenus.find((item) => item.id === id)?.id
     },
     async sendComment() {
       const elem = document.querySelector('.ck-content')
-      console.log(elem.innerHTML)
       this.main.description = elem.innerHTML
-      console.log(this.main)
       this.$toast(this.$t('checkCommit'))
       this.main.id = null
       this.main.name = null

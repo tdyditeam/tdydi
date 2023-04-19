@@ -73,7 +73,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('libraries-------', res)
         if (res.status) {
           this.departmentName = res.department_name
           this.datas = res.libraries[0] || null
@@ -91,7 +90,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('data', res)
         if (res.status) {
           this.subMenus = res.departments || null
           this.activeId = res.departments.find(

@@ -89,7 +89,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('partners', res)
         if (res.status) {
           this.partnersTop = res.partners_top[0] || null
         }
@@ -106,7 +105,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('partnersBottom', res)
         if (res.status) {
           this.partnersBottom = res.partners_university || []
         }

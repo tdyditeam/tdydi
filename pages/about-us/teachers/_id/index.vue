@@ -72,7 +72,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('dataaaaaaaaaaaa', res)
         if (res.status) {
           this.departmentName = res?.department_name
           this.teachers = res.teachers || []

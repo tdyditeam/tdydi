@@ -89,7 +89,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('banner-left', res)
         if (res.status) {
           this.bannerLeft = res?.galerias[0]
         }
@@ -107,7 +106,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('banner', res)
         if (res.status) {
           this.bannerRight = res?.galerias
         }
@@ -124,7 +122,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('news', res)
         if (res.status) {
           this.event = res.events || []
           this.$store.commit('SET_LOADER', false)

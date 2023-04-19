@@ -58,7 +58,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log('faculties', res)
         if (res.status) {
           this.subMenus = res.message || null
           this.activeId = this.subMenus[0].id
@@ -70,7 +69,6 @@ export default {
     },
     changeDatas(id) {
       this.datas = this.subMenus.find((item) => item.id === id)
-      console.log(this.datas)
       this.activeId = this.subMenus.find((item) => item.id === id)?.id
     },
   },
