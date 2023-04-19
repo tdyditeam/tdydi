@@ -29,7 +29,7 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      publications: null,
+      publications: [],
       video: null,
       mainYearText: null,
       about: null,
@@ -229,8 +229,8 @@ export default {
           url: '/publications',
           method: 'GET',
         })
-        if (res.status) {
-          this.publications = res
+        if (res.length) {
+          this.publications = res || []
         }
       } catch (error) {
         console.log(error)

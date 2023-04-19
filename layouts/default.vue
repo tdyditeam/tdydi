@@ -1,6 +1,6 @@
 <template>
   <section class="wrapper">
-    <div class="loader" v-show="isLoaded">
+    <div class="loader" v-if="isLoaded">
       <Loader />
     </div>
     <the-header-second></the-header-second>

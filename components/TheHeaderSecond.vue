@@ -199,19 +199,6 @@ export default {
     await this.fetchMenus()
   },
   mounted() {
-    const id = Number(localStorage.getItem('id'))
-    const subId = Number(localStorage.getItem('subId'))
-    if (id) {
-      if (this.$route.name === `index___${this.$i18n.locale}`) {
-        this.routeActive = this.menus[0]?.id
-        this.routeSubActive = null
-      } else {
-        this.routeActive = id
-        this.routeSubActive = subId
-      }
-    } else {
-      this.routeActive = this.menus[0]?.id
-    }
     let className = 'scroll'
     let scrollTrigger = 30
     let wrapper = document.querySelector('.wrapper')
@@ -245,6 +232,19 @@ export default {
         })
         if (res.status) {
           this.menus = res.menu
+          const id = Number(this.$cookies.get('id'))
+          const subId = Number(this.$cookies.get('subId'))
+          if (id) {
+            if (this.$route.name === `index___${this.$i18n.locale}`) {
+              this.routeActive = this.menus[0]?.id
+              this.routeSubActive = null
+            } else {
+              this.routeActive = id
+              this.routeSubActive = subId
+            }
+          } else {
+            this.routeActive = this.menus[0]?.id
+          }
         }
       } catch (error) {
         console.log(error)
@@ -315,10 +315,10 @@ export default {
       if (data.slug === '') {
         this.$router.push(this.localeLocation('/'))
       } else if (data.slug === '/about-us') {
-        localStorage.setItem('id', data.id)
+        this.$cookies.set('id', data.id)
         this.$router.push(this.localeLocation(data.slug))
       } else {
-        localStorage.setItem('id', data.id)
+        this.$cookies.set('id', data.id)
         if (data.children[0].slug) {
           this.$router.push(
             this.localeLocation(
@@ -326,7 +326,7 @@ export default {
             )
           )
           this.routeSubActive = data.children[0].id
-          localStorage.setItem('subId', data.children[0].id)
+          this.$cookies.set('subId', data.children[0].id)
         } else {
           this.$router.push(
             this.localeLocation(
@@ -336,7 +336,7 @@ export default {
             )
           )
           this.routeSubActive = data.children[0].id
-          localStorage.setItem('subId', data.children[0].id)
+          this.$cookies.set('subId', data.children[0].id)
         }
       }
     },
@@ -356,7 +356,7 @@ export default {
     },
 
     clickSubCategory(parent, child) {
-      localStorage.setItem('subId', child.id)
+      this.$cookies.set('subId', child.id)
       this.routeSubActive = child.id
       if (child.slug) {
         this.$router.push(
