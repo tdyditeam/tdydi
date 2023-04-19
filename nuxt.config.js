@@ -49,7 +49,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
-    '@nuxt/image',
     'cookie-universal-nuxt',
   ],
   env: {
