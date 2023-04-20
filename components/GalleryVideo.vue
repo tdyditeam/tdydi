@@ -1,6 +1,6 @@
 <template>
   <div class="video-block">
-    <div class="video-block__row">
+    <div class="video-block__row" v-if="galerias.length > 0">
       <div
         class="video-block__column"
         v-for="galery in galerias"
