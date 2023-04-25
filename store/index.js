@@ -14,6 +14,7 @@ export const getters = {
 
 export const mutations = {
   SET_LOADER(state, val) {
+    console.log('SET_LOADER')
     state.isLoaded = val
   },
 }
