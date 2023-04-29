@@ -8,8 +8,12 @@
           v-for="(topPointer, index) in topPointers"
           :key="topPointer.id"
         >
-          <p>{{ index + 1 }}.</p>
-          <p>{{ topPointer.major }}: {{ topPointer.name }}</p>
+          <p style="font-weight: 600">
+            {{ index + 1 }}. {{ topPointer.name }}:
+          </p>
+          <p style="font-style: italic; padding-top: 5px">
+            {{ topPointer.major }}
+          </p>
         </div>
       </div>
       <div class="pointers__right">
@@ -75,6 +79,7 @@ export default {
   &__item {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     padding: 10px;
     margin-right: 2px;
     border-bottom: 1px solid #ebebeb;

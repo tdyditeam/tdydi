@@ -4,7 +4,7 @@
     <block-pages
       :description="about?.text"
       :title="title"
-      :img="img"
+      :img="about?.image"
     ></block-pages>
   </section>
 </template>
@@ -26,8 +26,6 @@ export default {
       ],
       about: null,
       title: this.$t('header.menu.aboutUs.name'),
-      img: 'image.webp',
-      description: this.$t('aboutUs.description'),
     }
   },
   mounted() {
