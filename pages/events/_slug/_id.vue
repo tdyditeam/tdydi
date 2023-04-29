@@ -25,12 +25,26 @@
       <div class="news-item__picture">
         <departments-swiper
           :datas="event"
-          :items="[event?.image[0]]"
+          :items="
+            event?.image && event?.image?.length > 0
+              ? [
+                  getFileExp(event?.image[0])
+                    ? event?.image[0]
+                    : getFileExp(event?.image[1])
+                    ? event?.image[1]
+                    : '',
+                ]
+              : []
+          "
         ></departments-swiper>
-        <div class="file" v-if="event?.image.length > 1">
-          <a :href="`${imageUrl}${event.image[1]}`" target="download">
-            {{ $t('document') }}</a
-          >
+        <div class="file" v-if="event?.image.length > 0">
+          <template v-for="(image, i) in event?.image">
+            <template v-if="!getFileExp(image)">
+              <a :href="`${imageUrl}${image}`" target="download">
+                {{ $t('document') }}</a
+              >
+            </template>
+          </template>
         </div>
       </div>
       <div class="article-item__people people-swiper-block">
@@ -163,6 +177,15 @@ export default {
     async updatePage(p) {
       this.page = p
       await this.fetchEvents()
+    },
+    getFileExp(fileUrl) {
+      var allowedExtensions =
+        /(\.jpg|\.jpeg|\.png|\.gif|\.svg|\.JPG|\.JPEG|\.PNG|\.GIF|\.SVG)$/i
+      if (!allowedExtensions.exec(fileUrl)) {
+        return false
+      } else {
+        return true
+      }
     },
   },
 }

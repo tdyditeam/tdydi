@@ -1,7 +1,7 @@
 <template>
   <div class="departments-swiper">
     <div
-      v-if="items && items.length"
+      v-if="items && items.length && items[0] !== ''"
       class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
       ref="swiperTop"
     >
@@ -142,6 +142,9 @@ export default {
     line-height: 23px;
     color: #000;
     text-align: justify;
+    :deep(a) {
+      color: var(--primary);
+    }
   }
 }
 .departments-swiper-top {

@@ -4,27 +4,27 @@
       <div class="article-item__body">
         <div class="article-item__image">
           <img
-            v-if="event.image"
-            :src="`${imageUrl}${event.image[0]}`"
+            v-if="event?.image && event?.image?.length > 0"
+            :src="`${imageUrl}${event?.image[0]}`"
             alt=""
           />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
-            <span v-show="event.date">{{
+            <span v-show="event?.date">{{
               new Date(event.date).toISOString().slice(0, 10)
             }}</span>
             <span>
               <img src="@/assets/img/home/article/eye.png" alt="" />
-              <p>{{ event.views ? event.views : 0 }}</p>
+              <p>{{ event?.views ? event?.views : 0 }}</p>
             </span>
           </div>
           <div class="content-swiper-block__title">
-            {{ event.title }}
+            {{ event?.title }}
           </div>
           <div
             class="content-swiper-block__text"
-            v-html="event.description"
+            v-html="event?.description"
           ></div>
         </div>
       </div>
@@ -32,27 +32,27 @@
         <div class="people-swiper-block__row">
           <div
             class="people-swiper-block__left-block"
-            v-if="event.student_fullname !== 'null'"
+            v-if="event?.student_fullname !== 'null'"
           >
             <div class="people-swiper-block__content">
               <div class="people-swiper-block__title">
-                {{ event.student_fullname }}
+                {{ event?.student_fullname }}
               </div>
               <div
                 class="people-swiper-block__subtitle"
-                v-if="event.majors !== 'null'"
+                v-if="event?.majors !== 'null'"
               >
-                {{ event.majors }}
+                {{ event?.majors }}
               </div>
             </div>
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event.teacher_fullname !== 'null'"
+            v-if="event?.teacher_fullname !== 'null'"
           >
             <div class="people-swiper-block__title">Mugallym:</div>
             <div class="people-swiper-block__subtitle">
-              {{ event.teacher_fullname }}
+              {{ event?.teacher_fullname }}
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default {
     font-size: 18px;
     line-height: 111.1%;
     letter-spacing: 0.04em;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

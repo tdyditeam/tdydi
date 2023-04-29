@@ -13,11 +13,7 @@
             {{ $t('candidate.annonce.text') }}
           </p>
         </div> -->
-        <div class="announce__description">
-          <p>
-            {{ datas?.open_doors }}
-          </p>
-        </div>
+        <div class="announce__description" v-html="datas?.open_doors"></div>
       </div>
     </div>
   </div>
