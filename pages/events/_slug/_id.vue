@@ -25,31 +25,39 @@
       <div class="news-item__picture">
         <departments-swiper
           :datas="event"
-          :items="[event?.image]"
+          :items="[event?.image[0]]"
         ></departments-swiper>
+        <div class="file" v-if="event?.image.length > 1">
+          <a :href="`${imageUrl}${event.image[1]}`" target="download">
+            {{ $t('document') }}</a
+          >
+        </div>
       </div>
       <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div
               class="people-swiper-block__content"
-              v-if="event?.student_fullname"
+              v-if="event?.student_fullname !== 'null'"
             >
               <div class="people-swiper-block__title">
                 {{ event?.student_fullname }}
               </div>
-              <div class="people-swiper-block__subtitle">
+              <div
+                class="people-swiper-block__subtitle"
+                v-if="event?.majors !== 'null'"
+              >
                 {{ event?.majors || '' }}
               </div>
             </div>
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event?.teacher_fullname"
+            v-if="event?.teacher_fullname !== 'null'"
           >
             <div class="people-swiper-block__title">{{ $t('teacher') }}:</div>
             <div class="people-swiper-block__subtitle">
-              {{ event?.teacher_fullname }}
+              {{ event?.teacher_fullname || '' }}
             </div>
           </div>
         </div>
@@ -60,13 +68,35 @@
 
 <script>
 import { request } from '~/api/generic.api'
+import { mapGetters } from 'vuex'
 export default {
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+
+    return {
+      title: this.$t('slogan'),
+      meta: [
+        {
+          name: 'content-type',
+          content: 'events',
+        },
+        {
+          name: 'keywords',
+          content: this.$t('keywords'),
+        },
+        ...i18nHead.link,
+      ],
+    }
+  },
   data() {
     return {
       bannerLeft: null,
       bannerRight: null,
       event: null,
     }
+  },
+  computed: {
+    ...mapGetters(['imageUrl']),
   },
   async fetch() {
     await Promise.all([
@@ -241,5 +271,14 @@ export default {
 
   &__right-block {
   }
+}
+.file {
+  font-family: 'Roboto Flex';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--primary);
+  text-align: justify;
+  padding-top: 20px;
 }
 </style>

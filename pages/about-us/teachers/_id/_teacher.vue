@@ -15,6 +15,24 @@
 import { request } from '~/api/generic.api'
 
 export default {
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+
+    return {
+      title: this.$t('slogan'),
+      meta: [
+        {
+          name: 'content-type',
+          content: 'about-us',
+        },
+        {
+          name: 'keywords',
+          content: this.$t('keywords'),
+        },
+        ...i18nHead.link,
+      ],
+    }
+  },
   data() {
     return {
       datas: null,

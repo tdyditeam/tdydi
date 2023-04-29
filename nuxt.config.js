@@ -1,22 +1,11 @@
 import tm from './locales/tm'
 import ru from './locales/ru'
 import en from './locales/en'
+import metaHome from './SEO/main'
 require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'TDYDI | TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }],
-  },
+  head: metaHome,
 
   server: {
     port: 8000,

@@ -1,6 +1,7 @@
 export default {
-  slogan: `  ARKADAG SERDARLY <br />
-	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  slogan: 'TDYDI',
+  keywords:
+    'TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY,Turkmenistan,ylym,bilim,bäsleşik,okuw,talyp,dalaşgär,biz barada,mugallymlar,turkmenistan,ashgabat,ahal,habar,habarlar,iň täze habarlar',
   search: 'Gözleg',
   teacher: 'Mugallym',
   images: 'Suratlar',

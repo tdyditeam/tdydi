@@ -52,6 +52,24 @@
 import { request } from '~/api/generic.api'
 import EventsArticle from '~/components/EventsArticle.vue'
 export default {
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+
+    return {
+      title: this.$t('slogan'),
+      meta: [
+        {
+          name: 'content-type',
+          content: 'events',
+        },
+        {
+          name: 'keywords',
+          content: this.$t('keywords'),
+        },
+        ...i18nHead.link,
+      ],
+    }
+  },
   components: { EventsArticle },
   data() {
     return {

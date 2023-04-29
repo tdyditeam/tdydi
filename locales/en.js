@@ -1,6 +1,7 @@
 export default {
-  slogan: ` ARKADAG SERDARLY <br />
-	BAGTYÝAR ÝAŞLAR ÝYLY`,
+  slogan: 'TSIEM',
+  keywords:
+    'TURKMENISTAN STATE INSTITUTE OF ECONOMY AND ENVIRONMENT, Turkmenistan, science, education, competition, study, student, candidate, about us, teachers, Turkmenistan, ashgabat, population, news,',
   search: 'Search',
   teacher: 'Teacher',
   images: 'Images',

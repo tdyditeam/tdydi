@@ -3,7 +3,11 @@
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <img v-if="event.image" :src="`${imageUrl}${event.image}`" alt="" />
+          <img
+            v-if="event.image"
+            :src="`${imageUrl}${event.image[0]}`"
+            alt=""
+          />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
@@ -28,20 +32,23 @@
         <div class="people-swiper-block__row">
           <div
             class="people-swiper-block__left-block"
-            v-if="event.student_fullname"
+            v-if="event.student_fullname !== 'null'"
           >
             <div class="people-swiper-block__content">
               <div class="people-swiper-block__title">
                 {{ event.student_fullname }}
               </div>
-              <div class="people-swiper-block__subtitle">
+              <div
+                class="people-swiper-block__subtitle"
+                v-if="event.majors !== 'null'"
+              >
                 {{ event.majors }}
               </div>
             </div>
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event.teacher_fullname"
+            v-if="event.teacher_fullname !== 'null'"
           >
             <div class="people-swiper-block__title">Mugallym:</div>
             <div class="people-swiper-block__subtitle">
