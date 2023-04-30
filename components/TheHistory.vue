@@ -4,7 +4,7 @@
       <div class="institute-history__title-mobile">
         {{ $t('history.title') }}
       </div>
-      <div class="institute-history__image">
+      <div class="institute-history__image" v-if="about?.image">
         <img :src="`${imageUrl}${about?.image}`" alt="surat" />
       </div>
       <div class="institute-history__body">

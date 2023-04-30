@@ -18,7 +18,7 @@
         "
       ></title-block-pages>
       <departments-swiper
-        :items="[datas?.image]"
+        :items="datas ? [datas?.image] : null"
         :datas="{ description: datas?.description }"
       ></departments-swiper>
     </section>
@@ -99,6 +99,8 @@ export default {
       }
     },
     changeDatas(id) {
+      this.datas = null
+      this.activeId = null
       this.datas = this.subMenus.find((item) => item.id === id)
       this.activeId = this.subMenus.find((item) => item.id === id)?.id
     },

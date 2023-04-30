@@ -119,6 +119,7 @@ export default {
       }
     },
     changeDatas(id) {
+      this.activeId = null
       this.activeId = id
       this.$router.push(
         this.localeLocation(

@@ -76,6 +76,7 @@ export default {
           method: 'GET',
         })
         if (res.status) {
+          this.activeId = null
           this.datas = res.libraries[0]
         }
       } catch (error) {
@@ -92,15 +93,17 @@ export default {
           method: 'GET',
         })
         if (res.status) {
+          this.subMenus = null
+          this.activeId = null
           this.subMenus = res.departments || null
           this.activeId = this.subMenus[0].id
-          this.datas = this.subMenus[0]
         }
       } catch (error) {
         console.log(error)
       }
     },
     changeDatas(id) {
+      this.activeId = null
       this.activeId = this.subMenus.find((item) => item.id === id)?.id
       this.$router.push(
         this.localeLocation(

@@ -1,5 +1,5 @@
 <template>
-  <div class="banners-outside">
+  <div class="banners-outside" v-if="bannerLeft && bannerRight">
     <div class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">

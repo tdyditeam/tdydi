@@ -4,7 +4,7 @@
       <tr>
         <th>T/B</th>
         <th>F.A.A</th>
-        <th>Hunari we yyly</th>
+        <th>Hünäri we ýyly</th>
         <th>Bäsleşik geçirilen dersiň ady</th>
         <th>Gazanan netijesi</th>
       </tr>

@@ -3,11 +3,11 @@
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <img
-            v-if="event?.image && event?.image?.length > 0"
-            :src="`${imageUrl}${event?.image[0]}`"
-            alt=""
-          />
+          <template v-for="(image, i) in event?.image">
+            <template v-if="getFileExp(image)">
+              <img :src="`${imageUrl}${image}`" alt="" />
+            </template>
+          </template>
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
@@ -72,6 +72,17 @@ export default {
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  methods: {
+    getFileExp(fileUrl) {
+      var allowedExtensions =
+        /(\.jpg|\.jpeg|\.png|\.gif|\.svg|\.JPG|\.JPEG|\.PNG|\.GIF|\.SVG)$/i
+      if (!allowedExtensions.exec(fileUrl)) {
+        return false
+      } else {
+        return true
+      }
+    },
   },
 }
 </script>

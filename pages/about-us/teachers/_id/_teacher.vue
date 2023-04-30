@@ -4,7 +4,9 @@
     <title-block-pages
       :title="`${datas?.firstname} ${datas?.lastname} ${datas?.middlename}`"
     ></title-block-pages>
-    <departments-teachers :teachers="[datas]"></departments-teachers>
+    <departments-teachers
+      :teachers="datas ? [datas] : []"
+    ></departments-teachers>
     <div class="teacher">
       <div class="teacher__description" v-html="datas?.printed_books"></div>
     </div>

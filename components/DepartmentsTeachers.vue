@@ -1,6 +1,6 @@
 <template>
   <div class="departments-teachers">
-    <div class="departments-teachers__block">
+    <div class="departments-teachers__block" v-if="teachers && teachers.length">
       <div
         class="departments-teachers__item-wrapper item-departments-teachers"
         v-for="teacher in teachers"

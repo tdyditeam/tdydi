@@ -5,7 +5,7 @@
       :bannerLeft="bannerLeft"
       :bannerRight="bannerRight"
     ></the-banner-outside>
-    <div class="news-item__content">
+    <div class="news-item__content" v-if="event">
       <div class="news-item__header">
         <div class="news-item__header-title">
           <h2>

@@ -8,6 +8,7 @@
     ></block-pages>
     <div
       class="international-partners__block-international-partners block-international-partners"
+      v-if="partnersBottom && partnersBottom.length"
     >
       <h2 class="block-international-partners__title">
         {{ $t('international-cooperation.title') }}
@@ -27,10 +28,13 @@
               </div>
             </div>
 
-            <p class="item-block-international-partners__p">
+            <p
+              class="item-block-international-partners__p"
+              v-if="partners?.country"
+            >
               {{ $t('country') }}:
               <span class="item-block-international-partners__pspan">{{
-                partners.country
+                partners?.country
               }}</span>
             </p>
             <p class="item-block-international-partners__p">

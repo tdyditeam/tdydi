@@ -18,7 +18,7 @@
       </div>
     </div>
     <div
-      v-show="items.length > 1"
+      v-show="items && items.length > 1"
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
       ref="mySwiperSmall"
       :options="swiperSmallOptions"
