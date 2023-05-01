@@ -304,7 +304,6 @@ export default {
         })
         if (res.status) {
           this.partnersUniversity = res?.partners_university || []
-          this.$store.commit('SET_LOADER', false)
         }
       } catch (error) {
         console.log(error)

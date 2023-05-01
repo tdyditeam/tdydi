@@ -79,11 +79,11 @@ export default {
     }
   }
   &__description {
-    p {
+    :deep(p) {
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 120%;
+      font-size: 18px;
+      line-height: 150%;
       text-align: justify;
       letter-spacing: 0.04em;
       color: #333333;

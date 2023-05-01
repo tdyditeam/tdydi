@@ -68,7 +68,6 @@ export default {
         })
         if (res.status) {
           this.bannerRight = res?.galerias
-          this.$store.commit('SET_LOADER', false)
         }
       } catch (error) {
         console.log(error)

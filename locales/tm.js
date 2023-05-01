@@ -20,7 +20,7 @@ export default {
   address: 'Aşgabat ş., 1972-nji (Atatürk) köçe, 73,',
   teachers: 'Mugallymlar',
   facultiesName: 'Fakultetler',
-  country: 'Ýurdy',
+  country: 'Ýerleşýän ýeri',
   sendContact: 'Habaryňyz üstünlikli ugradyldy!',
   totalNewsCount: 'Okyjalaryn sany',
   viewPagesCount: 'Web sahypany gorenleriň sany',

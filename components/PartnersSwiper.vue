@@ -12,7 +12,7 @@
               <img :src="`${imageUrl}${img.image}`" alt="surat" />
             </div>
             <h2 class="partners-swiper__title">
-              {{ img.country }}
+              {{ img.desctiption }}
             </h2>
           </div>
         </div>

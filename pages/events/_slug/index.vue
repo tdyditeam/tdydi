@@ -156,7 +156,6 @@ export default {
         if (res.status) {
           this.pageLength = Math.ceil(res.total / this.limit)
           this.events = res.events || []
-          this.$store.commit('SET_LOADER', false)
         }
       } catch (error) {
         console.log(error)

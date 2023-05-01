@@ -168,7 +168,6 @@ export default {
         })
         if (res.status) {
           this.event = res.events || []
-          this.$store.commit('SET_LOADER', false)
         }
       } catch (error) {
         console.log(error)

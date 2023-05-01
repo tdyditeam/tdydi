@@ -19,7 +19,7 @@ export default {
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'г. Ашхабад, улица 1972 (Ататюрка), 73,',
   teachers: 'Учителя',
-  country: 'Город',
+  country: 'Местоположения',
   facultiesName: 'Факультеты',
   sendContact: 'Ваше сообщение было отправлено успешно!',
   totalNewsCount: 'Количество читателей',

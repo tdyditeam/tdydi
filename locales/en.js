@@ -19,7 +19,7 @@ export default {
   checkCommit: 'Admin tarapyndan barlanylýar !',
   address: 'Ashgabat city, 1972 (Ataturk) street, 73,',
   teachers: 'Teachers',
-  country: 'City',
+  country: 'Location',
   facultiesName: 'Faculties',
   sendContact: 'Your message has been sent successfully!',
   totalNewsCount: 'Number of readers',
