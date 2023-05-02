@@ -24,6 +24,8 @@ export default {
   sendContact: 'Your message has been sent successfully!',
   totalNewsCount: 'Number of readers',
   viewPagesCount: 'Number of visitors to the website',
+  checkCommitError: 'Fill in the blanks!!',
+  sendComWait: 'Loading...',
   button: {
     readMore: 'Read more',
     news: 'News',

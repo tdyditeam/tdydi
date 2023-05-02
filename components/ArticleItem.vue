@@ -3,11 +3,7 @@
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <template v-for="(image, i) in event?.image">
-            <template v-if="getFileExp(image)">
-              <img :src="`${imageUrl}${image}`" alt="" />
-            </template>
-          </template>
+          <img :src="`${imageUrl}${event.image}`" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">

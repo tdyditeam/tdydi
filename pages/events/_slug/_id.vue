@@ -9,41 +9,31 @@
       <div class="news-item__header">
         <div class="news-item__header-title">
           <h2>
-            {{ event?.title }}
+            {{ event?.events?.title }}
           </h2>
         </div>
-        <div class="news-item__header-date" v-if="event?.date">
-          <span>{{ new Date(event?.date).toISOString().slice(0, 10) }}</span>
+        <div class="news-item__header-date" v-if="event?.events?.date">
+          <span>{{
+            new Date(event?.events?.date).toISOString().slice(0, 10)
+          }}</span>
           <span>
             <img src="@/assets/img/home/article/eye.png" alt="" />
             <p>
-              {{ event?.views }}
+              {{ event?.events?.views }}
             </p>
           </span>
         </div>
       </div>
       <div class="news-item__picture">
         <departments-swiper
-          :datas="event"
-          :items="
-            event?.image && event?.image?.length > 0
-              ? [
-                  getFileExp(event?.image[0])
-                    ? event?.image[0]
-                    : getFileExp(event?.image[1])
-                    ? event?.image[1]
-                    : '',
-                ]
-              : []
-          "
+          :datas="event?.events"
+          :items="event?.events?.image ? [event?.events?.image] : []"
         ></departments-swiper>
-        <div class="file" v-if="event?.image.length > 0">
-          <template v-for="(image, i) in event?.image">
-            <template v-if="!getFileExp(image)">
-              <a :href="`${imageUrl}${image}`" target="download">
-                {{ $t('document') }}</a
-              >
-            </template>
+        <div class="file" v-if="event?.files?.length > 0">
+          <template v-for="(file, i) in event?.files">
+            <a :href="`${imageUrl}${file.file}`" target="download">
+              {{ file.name }}</a
+            >
           </template>
         </div>
       </div>
@@ -52,26 +42,26 @@
           <div class="people-swiper-block__left-block">
             <div
               class="people-swiper-block__content"
-              v-if="event?.student_fullname !== 'null'"
+              v-if="event?.events?.student_fullname !== 'null'"
             >
               <div class="people-swiper-block__title">
-                {{ event?.student_fullname }}
+                {{ event?.events?.student_fullname }}
               </div>
               <div
                 class="people-swiper-block__subtitle"
-                v-if="event?.majors !== 'null'"
+                v-if="event?.events?.majors !== 'null'"
               >
-                {{ event?.majors || '' }}
+                {{ event?.events?.majors || '' }}
               </div>
             </div>
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event?.teacher_fullname !== 'null'"
+            v-if="event?.events?.teacher_fullname !== 'null'"
           >
             <div class="people-swiper-block__title">{{ $t('teacher') }}:</div>
             <div class="people-swiper-block__subtitle">
-              {{ event?.teacher_fullname || '' }}
+              {{ event?.events?.teacher_fullname || '' }}
             </div>
           </div>
         </div>
@@ -167,7 +157,7 @@ export default {
           method: 'GET',
         })
         if (res.status) {
-          this.event = res.events || []
+          this.event = res || []
         }
       } catch (error) {
         console.log(error)
@@ -295,6 +285,9 @@ export default {
   }
 }
 .file {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   font-family: 'Roboto Flex';
   font-weight: 400;
   font-size: 20px;

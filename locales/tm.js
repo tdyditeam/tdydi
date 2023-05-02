@@ -24,6 +24,8 @@ export default {
   sendContact: 'Habaryňyz üstünlikli ugradyldy!',
   totalNewsCount: 'Okyjalaryn sany',
   viewPagesCount: 'Web sahypany gorenleriň sany',
+  checkCommitError: 'Boş meýdanlary dolduryň!',
+  sendComWait: 'Ugradylýar...',
   button: {
     readMore: 'Doly oka',
     news: 'Täzelikler',

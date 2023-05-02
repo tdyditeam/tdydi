@@ -7,6 +7,13 @@
         :title="datas?.name"
         :img="datas?.image"
       ></block-pages>
+      <div class="file" v-if="datas?.files?.length > 0">
+        <template v-for="(file, i) in datas?.files">
+          <a :href="`${imageUrl}${file.file}`" target="download">
+            {{ file.name }}</a
+          >
+        </template>
+      </div>
       <div class="study-center__button">
         <base-button
           :text="$t('button.feedBack')"
@@ -63,8 +70,16 @@
           />
           <div class="block-about__button">
             <base-button
+              v-if="!disabled"
               @click="sendComment"
               :text="$t('sendCom')"
+              appendIcon
+              isActive
+              iconUrl="icons/icon-down.svg"
+            ></base-button>
+            <base-button
+              v-if="disabled"
+              :text="$t('sendComWait')"
               appendIcon
               isActive
               iconUrl="icons/icon-down.svg"
@@ -177,6 +192,7 @@ export default {
       feedBack: false,
       progress: 0,
       fileName: null,
+      disabled: false,
       comments: [],
       main: {
         id: null,
@@ -235,6 +251,7 @@ export default {
           },
           method: 'GET',
         })
+        console.log(res)
         if (res.status) {
           this.subMenus = res.study_centers || null
           this.activeId = this.subMenus[0].id
@@ -253,25 +270,34 @@ export default {
     async sendComment() {
       const elem = document.querySelector('.ck-content')
       this.main.description = elem.innerHTML
-      try {
-        const res = await request({
-          url: `/comments`,
-          data: this.main,
-          file: true,
-        })
-        if (res.status) {
-          this.$toast(this.$t('checkCommit'))
-          this.main.id = null
-          this.main.name = null
-          this.main.email = null
-          this.main.phone_number = null
-          this.main.description = null
-          this.main.image = null
-          this.main.is_needed = false
-          this.fileName = null
+      if (!this.main.name || !this.main.email || !this.main.phone_number) {
+        this.$toast(this.$t('checkCommitError'))
+      } else {
+        this.disabled = true
+        try {
+          const res = await request({
+            url: `/comments`,
+            data: this.main,
+            file: true,
+          })
+          if (res.status) {
+            this.$toast(this.$t('checkCommit'))
+            this.main.id = null
+            this.main.name = null
+            this.main.email = null
+            this.main.phone_number = null
+            this.main.description = null
+            this.main.image = null
+            this.main.is_needed = false
+            this.fileName = null
+            window.editor.setData('')
+          }
+        } catch (error) {
+          console.log(error)
+          this.$toast('Error')
+        } finally {
+          this.disabled = false
         }
-      } catch (error) {
-        console.log(error)
       }
     },
     async fetchCommets() {
@@ -560,5 +586,17 @@ export default {
       cursor: pointer;
     }
   }
+}
+.file {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'Roboto Flex';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--primary);
+  text-align: justify;
+  padding: 10px 0px;
 }
 </style>
