@@ -74,7 +74,7 @@ export default {
       },
     },
   },
-
+  filenames: { chunk: '[name].[chunkhash].js' },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

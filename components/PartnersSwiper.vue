@@ -11,9 +11,7 @@
             <div class="partners-swiper__image">
               <img :src="`${imageUrl}${img.image}`" alt="surat" />
             </div>
-            <h2 class="partners-swiper__title">
-              {{ img.desctiption }}
-            </h2>
+            <div class="partners-swiper__title" v-html="img.description"></div>
           </div>
         </div>
       </div>
