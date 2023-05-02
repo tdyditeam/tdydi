@@ -84,7 +84,7 @@ export default {
 }
 .block__description-img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   margin-bottom: 30px;
 }
 .block__description-img-pdf {
@@ -109,7 +109,7 @@ export default {
 .block__description-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 10px;
 }
 .block__description-content {

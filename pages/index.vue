@@ -29,7 +29,6 @@ export default {
   name: 'IndexPage',
   head() {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
-
     return {
       title: this.$t('slogan'),
       meta: [
