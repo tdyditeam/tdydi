@@ -376,7 +376,8 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0px;
   z-index: 200;
   transition: 0.5s ease;
@@ -714,9 +715,10 @@ export default {
   }
 }
 .header.active {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0px;
-  background: #464545;
+  background: rgb(0, 0, 0, 70%);
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   .header__mobile-title {

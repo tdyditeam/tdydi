@@ -1,6 +1,6 @@
 <template>
   <div class="faculties">
-    <section style="width: 70%">
+    <section style="">
       <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
       <title-block-pages
         isButton
@@ -111,5 +111,6 @@ export default {
 .faculties {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 </style>

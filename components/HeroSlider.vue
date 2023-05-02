@@ -109,9 +109,12 @@ export default {
   background: #00000057;
 }
 .hero-slider {
-  height: calc(100vh - 165px);
+  height: calc(100vh - 40px);
   width: 100%;
   position: relative;
+  @media (max-width: 600px) {
+    height: calc(100vh - 140px);
+  }
   &__slider {
     width: 100%;
     height: 100%;

@@ -44,7 +44,7 @@ export default {
   position: sticky;
   top: 165px;
   @media (max-width: 992px) {
-    margin-top: 120px;
+    margin-top: 160px;
   }
   // .banners-outside__row
   &__row {

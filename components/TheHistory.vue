@@ -44,12 +44,12 @@ export default {
 <style lang="scss" scoped>
 .institute-history {
   font-family: 'Roboto Flex';
-  padding: 60px 0px 15px 0px;
+  // padding: 60px 0px 15px 0px;
   @media (max-width: 992px) {
-    padding-top: 80px;
+    // padding-top: 80px;
   }
   @media (max-width: 600px) {
-    padding-top: 160px;
+    // padding-top: 160px;
   }
   &__row {
     display: flex;

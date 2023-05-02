@@ -119,6 +119,7 @@ export default {
 <style>
 .faculties {
   display: flex;
+  position: relative;
   justify-content: space-between;
 }
 </style>

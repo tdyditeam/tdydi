@@ -323,6 +323,7 @@ export default {
 <style lang="scss">
 .faculties {
   display: flex;
+  position: relative;
   justify-content: space-between;
 }
 .study-center {

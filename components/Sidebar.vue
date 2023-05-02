@@ -1,16 +1,21 @@
 <template>
-  <div class="departments-sidebar">
-    <div class="departments-sidebar__row">
-      <div
-        class="departments-sidebar__item"
-        v-for="subMenu in subMenus"
-        :key="subMenu.id"
-      >
-        <nuxt-link :to="localePath(`${subMenu.path}`)" :exact="subMenu.exact">{{
-          subMenu.name
-        }}</nuxt-link>
+  <div>
+    <div class="departments-sidebar">
+      <div class="departments-sidebar__row">
+        <div
+          class="departments-sidebar__item"
+          v-for="subMenu in subMenus"
+          :key="subMenu.id"
+        >
+          <nuxt-link
+            :to="localePath(`${subMenu.path}`)"
+            :exact="subMenu.exact"
+            >{{ subMenu.name }}</nuxt-link
+          >
+        </div>
       </div>
     </div>
+    .ddd
   </div>
 </template>
 
