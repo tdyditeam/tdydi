@@ -718,7 +718,7 @@ export default {
   position: fixed;
   width: 100%;
   top: 0px;
-  background: rgb(0, 0, 0, 70%);
+  background: rgb(0, 0, 0, 50%);
   z-index: 200;
   box-shadow: 2px 2px 21px rgb(0 0 0 / 15%);
   .header__mobile-title {
