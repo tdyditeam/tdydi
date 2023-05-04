@@ -18,12 +18,13 @@
     </div>
     <div class="sidebar-mini">
       <div class="sidebar-mini__flex">
-        <nuxt-link
-          to="/"
-          class="sidebar-mini__button"
-          v-for="link in 20"
-          :key="link"
-          >Fakultetlar</nuxt-link
+        <a
+          href="#"
+          v-for="subMenu in subMenus"
+          :key="subMenu.id"
+          @click.prevent="$emit('changeDatas', subMenu.id)"
+          :class="['sidebar-mini__button', { active: activeId === subMenu.id }]"
+          >{{ subMenu.name }}</a
         >
       </div>
     </div>
@@ -131,6 +132,14 @@ export default {
       color: #333333;
       @media (max-width: 492px) {
         font-size: 12px;
+      }
+      &:hover {
+        background-color: #16ab65;
+        color: #fff;
+      }
+      &.active {
+        background-color: #16ab65;
+        color: #fff;
       }
     }
   }
