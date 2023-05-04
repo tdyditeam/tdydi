@@ -86,7 +86,6 @@ export default {
   mounted() {
     localStorage.removeItem('id')
     localStorage.removeItem('subId')
-    window.scrollTo(0, 0)
   },
   methods: {
     async fetchVideo() {

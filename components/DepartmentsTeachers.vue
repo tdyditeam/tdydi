@@ -31,9 +31,8 @@
           </div>
           <div
             class="item-departments-teachers__text item-departments-teachers__text--wrapped"
-          >
-            {{ teacher.description }}
-          </div>
+            v-html="teacher.description"
+          ></div>
         </div>
       </div>
     </div>
