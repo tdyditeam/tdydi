@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .banners-outside {
-  margin-top: 80px;
+  margin-top: 230px;
   position: sticky;
   top: 165px;
   @media (max-width: 992px) {

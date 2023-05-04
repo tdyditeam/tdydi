@@ -130,6 +130,7 @@ export default {
       font-size: 14px;
       line-height: 14px;
       color: #333333;
+      white-space: nowrap;
       @media (max-width: 492px) {
         font-size: 12px;
       }
