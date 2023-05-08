@@ -34,11 +34,11 @@ export default {
     partners: 'ПАРТНЕРЫ',
     all: 'Все',
     articles: 'Статии',
-    dearTeachers: 'Учителя',
+    dearTeachers: 'Преподаватели',
     departmentTeachers: 'Учетели кафедры',
     contact: 'Контакт',
     feedBack: 'Свяжитесь с нами',
-    theBest: 'Лучшие указатели!',
+    theBest: 'Активные студенты',
   },
   header: {
     name: `ТУРКМЕНСКИЙ ГОСУДАРСТВЕННЫЙ ИНСТИТУТ <br /> ЭКОНОМИКИ И УПРАВЛЕНИЯ`,

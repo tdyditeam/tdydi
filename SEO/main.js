@@ -12,7 +12,11 @@ export default {
       property: 'og:title',
       content: 'TÜRKMEN DÖWLET YKDYSADYÝET WE DOLANDYRYŞ INSTITUTY',
     },
-    { name: 'author', content: 'TDYweDI' },
+    {
+      name: 'author',
+      content:
+        'Durdyyev Oraz, Charyyew Mekan, Ahmedow Shanazar, Bayramov Muhammetmyrat, Atayev Myratguly, Jumayew Muhammetnazar',
+    },
     {
       itemprop: 'og:image:width',
       content: `1350`,

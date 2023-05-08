@@ -34,11 +34,11 @@ export default {
     partners: 'PARTNERS',
     all: 'All',
     articles: 'Articles',
-    dearTeachers: 'Dear teachers',
+    dearTeachers: 'Teachers',
     departmentTeachers: 'Teachers of department',
     contact: 'Contact',
     feedBack: 'Feed back',
-    theBest: 'Top pointers!',
+    theBest: 'Active students',
   },
   header: {
     name: `TURKMEN STATE INSTITUTE <br /> OF ECONOMICS 

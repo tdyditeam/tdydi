@@ -135,6 +135,7 @@ export default {
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
+  flex: 1 1 auto;
   &__text {
     font-family: 'Roboto Flex';
     font-weight: 400;
@@ -151,6 +152,12 @@ export default {
   width: 100%;
   height: 500px;
   position: relative;
+  @media (max-width: 700px) {
+    height: 400px;
+  }
+  @media (max-width: 500px) {
+    height: 300px;
+  }
   &__wrapper {
     display: flex;
   }
@@ -164,9 +171,12 @@ export default {
     img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
       object-position: center center;
       border-radius: 10px;
+      @media (max-width: 720px) {
+        object-fit: fill;
+      }
     }
   }
 

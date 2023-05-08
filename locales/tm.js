@@ -34,11 +34,11 @@ export default {
     partners: 'Hyzmatdaşlar',
     all: 'Hemmesi',
     articles: 'Makalalar',
-    dearTeachers: 'Hormatly mugallymlar',
+    dearTeachers: 'Mugallymlar',
     departmentTeachers: 'Kafedranyň mugallymlary',
     contact: 'Habarlaşmak',
     feedBack: 'Ýüz tutmak üçin',
-    theBest: 'Ýokary görkezjiler!',
+    theBest: 'Göreldeli talyplar',
   },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />

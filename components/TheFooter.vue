@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="footer__right-block right-block-footer">
-        <p>Copyrighted © 2022 TDYweDI</p>
+        <p>Copyrighted © {{ new Date().getFullYear() }} TDYweDI</p>
       </div>
     </div>
   </footer>

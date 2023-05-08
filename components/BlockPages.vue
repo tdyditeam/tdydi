@@ -85,6 +85,12 @@ export default {
 .block__description-img {
   width: 100%;
   height: 500px;
+  @media (max-width: 700px) {
+    height: 350px;
+  }
+  @media (max-width: 500px) {
+    height: 250px;
+  }
   margin-bottom: 30px;
 }
 .block__description-img-pdf {
@@ -109,8 +115,11 @@ export default {
 .block__description-img img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 10px;
+  @media (max-width: 720px) {
+    object-fit: fill;
+  }
 }
 .block__description-content {
   //   max-width: 900px;

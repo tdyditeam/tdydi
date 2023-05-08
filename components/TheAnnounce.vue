@@ -39,12 +39,22 @@ export default {
   margin: 20px 0;
   &__image {
     width: 100%;
-    height: 400px;
+    height: 500px;
+    @media (max-width: 700px) {
+      height: 400px;
+    }
+    @media (max-width: 500px) {
+      height: 300px;
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      border-radius: 10px;
+      @media (max-width: 720px) {
+        object-fit: fill;
+      }
     }
   }
   &__text {
