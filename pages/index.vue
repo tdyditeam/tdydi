@@ -301,7 +301,6 @@ export default {
           method: 'GET',
         })
         if (res.status) {
-          console.log(res)
           this.partnersUniversity = res?.partners_university || []
         }
       } catch (error) {

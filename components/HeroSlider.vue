@@ -24,13 +24,8 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import { mapGetters } from 'vuex'
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
   props: {
     video: {
       type: String,
@@ -38,45 +33,7 @@ export default {
     },
   },
   data() {
-    return {
-      options: {
-        slidesPerView: 1,
-        loop: true,
-        speed: 2000,
-        //   effect: 'fade',
-        autoplay: {
-          delay: 7000,
-          disableOnInteraction: false,
-        },
-        keyboard: {
-          enabled: true,
-          onlyInViewport: true,
-          pageUpDown: true,
-        },
-      },
-      images: [
-        {
-          id: 1,
-          path: '/1.jpg',
-        },
-        {
-          id: 2,
-          path: '/5.jpg',
-        },
-        // {
-        //   id: 3,
-        //   path: '/TDYweDI_3.jpg',
-        // },
-        // {
-        //   id: 4,
-        //   path: '/TDYweDI_4.jpg',
-        // },
-        // {
-        //   id: 5,
-        //   path: '/sliderImage.jpg',
-        // },
-      ],
-    }
+    return {}
   },
   computed: {
     ...mapGetters(['imageUrl']),

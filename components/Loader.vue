@@ -1,17 +1,42 @@
 <template>
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="loader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    loading: false,
+  }),
+  methods: {
+    start() {
+      this.loading = true
+    },
+    finish() {
+      this.loading = false
+    },
+  },
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000000;
+  background-color: #fff;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .lds-ellipsis {
   display: inline-block;
   position: relative;

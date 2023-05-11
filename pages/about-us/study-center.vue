@@ -251,7 +251,6 @@ export default {
           },
           method: 'GET',
         })
-        console.log(res)
         if (res.status) {
           this.subMenus = res.study_centers || null
           this.activeId = this.subMenus[0].id

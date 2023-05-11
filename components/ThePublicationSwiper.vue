@@ -21,12 +21,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 export default {
   props: {
     images: {
       type: Array,
       default: () => [],
     },
+  },
+  directives: {
+    swiper: directive,
   },
   data() {
     return {

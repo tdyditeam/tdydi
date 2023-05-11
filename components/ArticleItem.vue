@@ -3,7 +3,7 @@
     <div class="article-item__body-wrapper">
       <div class="article-item__body">
         <div class="article-item__image">
-          <img :src="`${imageUrl}${event.image}`" alt="" />
+          <img v-if="event.image" :src="`${imageUrl}${event.image}`" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">

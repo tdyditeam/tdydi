@@ -48,17 +48,6 @@ export default {
   flex-direction: column;
   overflow-x: hidden;
 }
-.loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1000000;
-  background-color: #fff;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .page {
   flex: 1 1 auto;
 }

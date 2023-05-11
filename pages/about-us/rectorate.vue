@@ -5,6 +5,7 @@
       :description="datas?.name"
       :title="title"
       :img="datas?.image"
+      contain
     ></block-pages>
   </section>
 </template>

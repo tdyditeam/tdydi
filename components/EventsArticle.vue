@@ -7,7 +7,9 @@
           v-for="(event, index) in events"
           :key="event.id"
           :event="event"
-          @clickOneItem="(id) => $router.push(`/events/${activeId}/${id}`)"
+          @clickOneItem="
+            (id) => $router.push(localeLocation(`/events/${activeId}/${id}`))
+          "
         ></article-item>
       </div>
       <div class="swiper-block__buttons">
@@ -23,6 +25,7 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 export default {
   props: {
     events: {
@@ -33,6 +36,9 @@ export default {
       type: Number,
       default: () => 1,
     },
+  },
+  directives: {
+    swiper: directive,
   },
   data() {
     return {

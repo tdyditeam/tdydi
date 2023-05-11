@@ -21,6 +21,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 export default {
   props: {
     items: {
@@ -30,6 +31,9 @@ export default {
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  directives: {
+    swiper: directive,
   },
   data() {
     return {

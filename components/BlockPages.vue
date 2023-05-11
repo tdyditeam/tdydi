@@ -12,7 +12,13 @@
             ><img src="@/assets/img/about-us/zurnal2.png" alt=""
           /></a> -->
         </div>
-        <div class="block__description-img" v-if="img && !imgPdf">
+        <div
+          :class="[
+            'block__description-img',
+            { 'block__description-imgContain': contain },
+          ]"
+          v-if="img && !imgPdf"
+        >
           <img :src="`${imageUrl}${img}`" alt="" />
         </div>
         <div v-html="description" class="block__description-content"></div>
@@ -39,6 +45,10 @@ export default {
       default: () => '',
     },
     imgPdf: {
+      type: Boolean,
+      default: () => false,
+    },
+    contain: {
       type: Boolean,
       default: () => false,
     },
@@ -117,6 +127,17 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  object-position: center center;
+  @media (max-width: 720px) {
+    object-fit: fill;
+  }
+}
+.block__description-imgContain img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  object-position: center center;
   @media (max-width: 720px) {
     object-fit: fill;
   }

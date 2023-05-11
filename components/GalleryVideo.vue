@@ -7,7 +7,12 @@
         :key="galery.id"
       >
         <div class="video-block__video">
-          <video v-if="galery" class="videos" :id="galery.id">
+          <video
+            v-if="galery"
+            class="videos"
+            :id="galery.id"
+            poster="TDYweDI_1.jpg"
+          >
             <source :src="`${imageUrl}${galery.image}`" />
           </video>
           <div @click="playVideo(galery)" class="video-block__play-icon">
@@ -161,17 +166,12 @@ export default {
       object-fit: cover;
       object-position: center;
     }
-    &:hover {
-      .bottom-block-video {
-        opacity: 1;
-      }
-    }
   }
 
   &__play-icon {
     cursor: pointer;
     position: absolute;
-    opacity: 0;
+    opacity: 1;
   }
 
   &__bottom-block {
@@ -182,7 +182,7 @@ export default {
   position: absolute;
   width: 100%;
   bottom: 0;
-  opacity: 0;
+  opacity: 1;
   &__row {
     display: flex;
     justify-content: space-between;
