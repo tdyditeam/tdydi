@@ -1,20 +1,20 @@
 export const state = () => ({
   imageUrl: process.env.IMAGE_URL,
-  isLoaded: true,
+  loading: false,
 })
 
 export const getters = {
   imageUrl(state) {
     return state.imageUrl
   },
-  isLoaded(state) {
-    return state.isLoaded
+
+  isLoading(state) {
+    return state.loading
   },
 }
 
 export const mutations = {
-  SET_LOADER(state, val) {
-    console.log('SET_LOADER')
-    state.isLoaded = val
+  setLoading(state, loading) {
+    state.loading = loading
   },
 }

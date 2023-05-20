@@ -48,7 +48,7 @@ export default {
       aboutUs: {
         name: 'Biz barada',
         rectorate: 'Rektorat',
-        fakulties: 'Fakultetlar',
+        fakulties: 'Fakultetler',
         departments: 'Kafedralar',
         publicOrganizations: 'Jemgyýetçilik guramalary',
         studyCenter: 'Okuw merkezleri',

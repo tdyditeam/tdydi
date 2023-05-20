@@ -13,17 +13,18 @@ export default {
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/style.css', 'swiper/css/swiper.css'],
-
+  ssr: true,
   loading: {
     color: '#16ab65',
     height: '2px',
   },
-  ssr: true,
+
   target: 'server',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/toast.js',
+    // '@/plugins/lazyload.js',
     { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
   ],
 
@@ -74,7 +75,11 @@ export default {
       },
     },
   },
-  filenames: { chunk: '[name].[chunkhash].js' },
+
+  //   filenames: { chunk: '[name].[chunkhash].js' },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  router: {
+    middleware: 'loader',
+  },
 }

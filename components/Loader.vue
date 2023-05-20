@@ -1,10 +1,12 @@
 <template>
-  <div class="loader">
-    <div class="lds-ellipsis">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <div class="loader__wrapper">
+    <div class="loader__wrapper-content">
+      <div class="loader__wrapper-logo">
+        <img src="@/assets/icons/logo.webp" alt="logo" />
+      </div>
+      <div class="loader__wrapper-progress">
+        <span></span>
+      </div>
     </div>
   </div>
 </template>
@@ -27,69 +29,56 @@ export default {
 
 <style lang="scss">
 .loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1000000;
-  background-color: #fff;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &__wrapper {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    z-index: 1000000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &-logo {
+      margin-bottom: 20px;
+      img {
+        width: 250px;
+      }
+    }
+    &-progress {
+      background-color: #f4f4f4;
+      width: 160px;
+      height: 4px;
+      margin-top: 20px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 2px;
+      span {
+        width: 50%;
+        height: 100%;
+        background-color: var(--primary);
+        position: absolute;
+        top: 0;
+        left: -50%;
+        border-radius: 2px;
+        -webkit-animation: loading 1.2s linear infinite;
+        animation: loading 1.2s linear infinite;
+      }
+    }
+  }
 }
-.lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--primary);
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
+@keyframes loading {
   0% {
-    transform: scale(0);
+    left: -50%;
   }
+
   100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
+    left: 100%;
   }
 }
 </style>
