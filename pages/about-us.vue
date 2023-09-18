@@ -38,6 +38,7 @@ export default {
   async fetch() {
     await Promise.all([this.fetchBannerLeft(), this.fetchBannerRight()])
   },
+
   methods: {
     async fetchBannerLeft() {
       try {

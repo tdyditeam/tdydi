@@ -17,7 +17,7 @@
           class="header__top-logo"
           @click="$router.push(localeLocation('/'))"
         >
-          <img src="@/assets/icons/logo-big.svg" alt="logo" />
+          <img src="@/assets/icons/logo.webp" alt="logo" />
         </div>
         <div class="header__top-content">
           <div class="languages">
@@ -43,7 +43,7 @@
             class="header__mobile-logo"
             @click="$router.push(localeLocation('/'))"
           >
-            <img src="@/assets/icons/logo.svg" alt="logo" />
+            <img src="@/assets/icons/logo.webp" alt="logo" />
           </div>
           <div
             class="header__mobile-title"
@@ -411,12 +411,12 @@ export default {
       }
     }
     &-logo {
-      width: 84px;
-      height: 84px;
       flex: 1 1 auto;
       text-align: center;
       img {
         cursor: pointer;
+        width: 84px;
+        height: 84px;
       }
     }
     &-content {

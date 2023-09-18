@@ -1,5 +1,6 @@
 <template>
   <section class="wrapper">
+    <Loader v-if="isLoading" />
     <the-header-second></the-header-second>
     <nuxt
       :class="[
@@ -19,6 +20,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Loader from '@/components/Loader.vue'
 export default {
   data() {
     return {
@@ -26,9 +28,14 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['isLoaded']),
+    ...mapGetters(['isLoaded', 'isLoading']),
   },
+
   mounted() {
+    document.querySelector('.wrapper').scrollTop = 0
+    window.addEventListener('load', () => {
+      this.$store.commit('setLoading', false)
+    })
     let wrapper = document.querySelector('.wrapper')
     wrapper.addEventListener('scroll', (e) => {
       if (e.target.scrollTop > 100) {
@@ -37,6 +44,11 @@ export default {
         this.header = false
       }
     })
+  },
+  updated() {
+    setTimeout(() => {
+      this.$store.commit('setLoading', false)
+    }, 1000)
   },
 }
 </script>
