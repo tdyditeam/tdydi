@@ -49,6 +49,8 @@ export default {
         autoplay: false,
         slidesPerView: 3.2,
         speed: 1000,
+        lazy: true,
+        lazyPreloaderClass: 'swiper-lazy-preloader',
         breakpoints: {
           320: {
             slidesPerView: 1.2,
@@ -63,14 +65,14 @@ export default {
             slidesPerView: 3.2,
           },
         },
-        //   autoplay: {
-        //     delay: 2000,
-        //     disableOnInteraction: false,
-        //   },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
+        keyboard: {
+          enabled: true,
+        },
+        grabCursor: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

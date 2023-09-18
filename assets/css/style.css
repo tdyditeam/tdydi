@@ -266,6 +266,9 @@ body ::selection {
   padding-right: 20px;
   width: 100%;
 }
+[v-cloak] {
+  display: none;
+}
 .toast-container {
   position: fixed;
   top: 100px;
