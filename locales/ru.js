@@ -33,7 +33,7 @@ export default {
     galerey: 'ГАЛЕРЕЯ',
     partners: 'ПАРТНЕРЫ',
     all: 'Все',
-    articles: 'Статии',
+    articles: 'Статьи',
     dearTeachers: 'Преподаватели',
     departmentTeachers: 'Учетели кафедры',
     contact: 'Контакт',
