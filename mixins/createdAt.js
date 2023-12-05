@@ -15,7 +15,7 @@ export default {
           'Sentýabr',
           'Oktýabr',
           'Noýabr',
-          'Dekabr'
+          'Dekabr',
         ],
         ru: [
           'Январь',
@@ -29,7 +29,7 @@ export default {
           'Сентябрь',
           'Октябрь',
           'Ноябрь',
-          'Декабрь'
+          'Декабрь',
         ],
         en: [
           'January',
@@ -43,8 +43,8 @@ export default {
           'September',
           'October',
           'November',
-          'December'
-        ]
+          'December',
+        ],
       }
 
       let month = new Date(createdTime).getMonth()
@@ -53,5 +53,5 @@ export default {
       time = `${date} ${monthNames[lang][month]}, ${year}`
       return time
     },
-  }
+  },
 }
