@@ -15,7 +15,7 @@ export default {
     {
       name: 'author',
       content:
-         'Frontend devoleper: Durdyyev Oraz, Design UI/UX: Charyyew Mekan,Backend devoleper: Ahmedow Shanazar, Frontend devoleper: Bayramov Muhammetmyrat, Design UI/UX: Atayev Myratguly, Copywriter: Jumayew Muhammetnazar',
+        'Frontend devolepr: Durdyyev Oraz, Design UI/UX: Charyyew Mekan,  Backend devolepr: Ahmedow Shanazar, Frontend developr: Bayramov Muhammetmyrat, Design UI/UX: Atayev Myratguly, Copywriter: Jumayew Muhammetnazar',
     },
     {
       itemprop: 'og:image:width',
