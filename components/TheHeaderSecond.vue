@@ -317,6 +317,9 @@ export default {
       } else if (data.slug === '/about-us') {
         this.$cookies.set('id', data.id)
         this.$router.push(this.localeLocation(data.slug))
+      } else if (data.slug === '/financial-literacy') {
+        this.$cookies.set('id', data.id)
+        this.$router.push(this.localeLocation(data.slug))
       } else {
         this.$cookies.set('id', data.id)
         if (data.children[0].slug) {

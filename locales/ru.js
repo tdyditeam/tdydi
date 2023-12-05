@@ -54,6 +54,9 @@ export default {
         library: 'Библиотека',
         tradeUnion: 'Центр художественной самодеятельности «Хазына»',
       },
+      finacialLiteracy: {
+        name: 'Финансовая грамотность',
+      },
       education: {
         name: 'ОБРАЗОВАНИЕ',
         skills: 'Специальности',

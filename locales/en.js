@@ -55,6 +55,9 @@ export default {
         library: 'Library',
         tradeUnion: 'Hazyna Center for Art amateur',
       },
+      finacialLiteracy: {
+        name: 'Financial literacy',
+      },
       education: {
         name: 'EDUCATION',
         skills: 'Majors',
