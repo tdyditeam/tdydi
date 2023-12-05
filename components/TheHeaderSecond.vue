@@ -292,6 +292,8 @@ export default {
         this.$router.push(this.localeLocation('/'))
       } else if (data.slug === '/about-us') {
         this.$router.push(this.localeLocation(data.slug))
+      } else if (data.slug === '/financial-literacy') {
+        this.$router.push(this.localeLocation(data.slug))
       } else {
         if (data.children[0].slug) {
           this.$router.push(

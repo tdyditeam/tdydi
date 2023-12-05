@@ -30,6 +30,11 @@ export default {
       ],
     }
   },
+  watch: {
+    $route: async function () {
+      await this.fetchDatas()
+    },
+  },
   data() {
     return {
       title: this.$route.query.name,

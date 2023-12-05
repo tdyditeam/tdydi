@@ -31,7 +31,11 @@ export default {
       ],
     }
   },
-
+  watch: {
+    route: () => {
+      console.log('route')
+    },
+  },
   data() {
     return {
       breadCrumbs: [

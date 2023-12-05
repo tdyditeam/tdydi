@@ -51,6 +51,11 @@ export default {
       ],
     }
   },
+  watch: {
+    $route: async function () {
+      await this.fetchDatas()
+    },
+  },
   async fetch() {
     await this.fetchDatas()
   },
