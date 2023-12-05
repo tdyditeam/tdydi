@@ -266,6 +266,9 @@ body ::selection {
   padding-right: 20px;
   width: 100%;
 }
+[v-cloak] {
+  display: none;
+}
 .toast-container {
   position: fixed;
   top: 100px;
@@ -407,6 +410,7 @@ body ::selection {
 .row-12 {
   grid-row-start: span 12;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
   height: 2px;

@@ -38,6 +38,7 @@ export default {
         spaceBetween: 30,
         loop: true,
         slidesPerView: 6.3,
+        lazy: true,
         speed: 2000,
         breakpoints: {
           320: {
@@ -61,6 +62,10 @@ export default {
           el: '.swiper-pagination',
           clickable: true,
         },
+        keyboard: {
+          enabled: true,
+        },
+        grabCursor: true,
       },
     }
   },

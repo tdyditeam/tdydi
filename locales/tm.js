@@ -55,6 +55,9 @@ export default {
         library: 'Kitaphana',
         tradeUnion: 'Hazyna çeper höwesjeňler merkezi',
       },
+      finacialLiteracy: {
+        name: 'Maliye sowatlylygy',
+      },
       education: {
         name: 'Bilim',
         skills: 'Hünärler',

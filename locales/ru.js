@@ -33,7 +33,7 @@ export default {
     galerey: 'ГАЛЕРЕЯ',
     partners: 'ПАРТНЕРЫ',
     all: 'Все',
-    articles: 'Статии',
+    articles: 'Статьи',
     dearTeachers: 'Преподаватели',
     departmentTeachers: 'Учетели кафедры',
     contact: 'Контакт',
@@ -53,6 +53,9 @@ export default {
         studyCenter: 'Учебные центры',
         library: 'Библиотека',
         tradeUnion: 'Центр художественной самодеятельности «Хазына»',
+      },
+      finacialLiteracy: {
+        name: 'Финансовая грамотность',
       },
       education: {
         name: 'ОБРАЗОВАНИЕ',
