@@ -9,13 +9,13 @@
       <div class="header__top __container">
         <div
           class="header__top-title"
-          @click="$router.push(localeLocation('/'))"
+          @click.stop="$router.push(localeLocation('/'))"
         >
           <h2 v-html="$t('header.name')"></h2>
         </div>
         <div
           class="header__top-logo"
-          @click="$router.push(localeLocation('/'))"
+          @click.stop="$router.push(localeLocation('/'))"
         >
           <img src="@/assets/icons/logo.webp" alt="logo" />
         </div>
@@ -32,7 +32,7 @@
               <p>{{ locale.name }}</p>
             </nuxt-link>
           </div>
-          <div class="contact" @click="showPopUp">
+          <div class="contact" @click.stop="showPopUp">
             {{ $t('button.contact') }}
           </div>
         </div>
@@ -41,18 +41,18 @@
         <div class="header__mobile-logo-block">
           <div
             class="header__mobile-logo"
-            @click="$router.push(localeLocation('/'))"
+            @click.stop="$router.push(localeLocation('/'))"
           >
             <img src="@/assets/icons/logo.webp" alt="logo" />
           </div>
           <div
             class="header__mobile-title"
-            @click="$router.push(localeLocation('/'))"
+            @click.stop="$router.push(localeLocation('/'))"
             v-html="$t('header.name')"
           ></div>
         </div>
         <div
-          @click="isMobileActive = !isMobileActive"
+          @click.stop="isMobileActive = !isMobileActive"
           class="header__mobile-burger"
           :class="{ active: isMobileActive }"
         >
@@ -193,6 +193,8 @@ export default {
       } else if (val.name === `about-us___${this.$i18n.locale}`) {
         this.routeSubActive = null
       }
+      const subId = Number(this.$cookies.get('subId'))
+      this.routeSubActive = subId
     },
   },
   async fetch() {
@@ -234,6 +236,10 @@ export default {
           this.menus = res.menu
           const id = Number(this.$cookies.get('id'))
           const subId = Number(this.$cookies.get('subId'))
+          this.$store.commit(
+            'setSubMenus',
+            this.menus.find((item) => item.id == id)
+          )
           if (id) {
             if (this.$route.name === `index___${this.$i18n.locale}`) {
               this.routeActive = this.menus[0]?.id
@@ -288,6 +294,7 @@ export default {
       this.isActive = false
     },
     clickCategoryMobile(data) {
+      this.$store.commit('setSubMenus', data.children)
       if (data.slug === '') {
         this.$router.push(this.localeLocation('/'))
       } else if (data.slug === '/about-us') {
@@ -295,7 +302,7 @@ export default {
       } else if (data.slug === '/financial-literacy') {
         this.$router.push(this.localeLocation(data.slug))
       } else {
-        if (data.children[0].slug) {
+        if (data.children[0].slug && data.children[0].slug !== 'null') {
           this.$router.push(
             this.localeLocation(
               `${data.slug}/${data.children[0].slug}?q=${data.id}`
@@ -313,18 +320,22 @@ export default {
       }
     },
     clickCategory(data) {
+      this.$store.commit('setSubMenus', data)
       this.routeActive = data.id
       if (data.slug === '') {
+        this.$cookies.remove('subId')
         this.$router.push(this.localeLocation('/'))
       } else if (data.slug === '/about-us') {
         this.$cookies.set('id', data.id)
+        this.$cookies.remove('subId')
         this.$router.push(this.localeLocation(data.slug))
       } else if (data.slug === '/financial-literacy') {
         this.$cookies.set('id', data.id)
+        this.$cookies.remove('subId')
         this.$router.push(this.localeLocation(data.slug))
       } else {
         this.$cookies.set('id', data.id)
-        if (data.children[0].slug) {
+        if (data.children[0].slug && data.children[0].slug !== 'null') {
           this.$router.push(
             this.localeLocation(
               `${data.slug}/${data.children[0].slug}?q=${data.id}`
@@ -346,7 +357,7 @@ export default {
       }
     },
     clickMobileSubCategory(parent, child) {
-      if (child.slug) {
+      if (child.slug && child.slug !== 'null') {
         this.$router.push(
           this.localeLocation(`${parent.slug}/${child.slug}?q=${child.id}`)
         )
@@ -363,7 +374,7 @@ export default {
     clickSubCategory(parent, child) {
       this.$cookies.set('subId', child.id)
       this.routeSubActive = child.id
-      if (child.slug) {
+      if (child.slug && child.slug !== 'null') {
         this.$router.push(
           this.localeLocation(`${parent.slug}/${child.slug}?q=${child.id}`)
         )

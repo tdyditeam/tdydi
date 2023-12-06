@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="footer__right-block right-block-footer">
-        <p>Copyrighted © {{ new Date().getFullYear() }} TDYweDI</p>
+        <p>Copyrighted © {{ new Date().getFullYear() }} TDYDI</p>
       </div>
     </div>
   </footer>

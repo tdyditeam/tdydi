@@ -1,7 +1,30 @@
 <template>
   <div class="block__wrapper">
     <div class="block__content">
-      <title-block-pages :title="title"></title-block-pages>
+      <title-block-pages :title="title" v-if="title"></title-block-pages>
+      <div class="block__sub-content" v-if="datas">
+        <ul class="block__nav-list">
+          <li
+            id="catItem_1"
+            class="cat-nav--list-item"
+            v-for="menu in datas.children"
+            :key="menu.id"
+            @click="clickSubCategory(datas, menu)"
+          >
+            <a
+              @click.prevent
+              :class="[
+                {
+                  active: routeSubActive === menu.id,
+                },
+              ]"
+            >
+              <img :src="`${imageUrl}${menu.image}`" />
+              <span>{{ subMenuLocale(menu) }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="block__description">
         <div class="block__description-img-pdf" v-if="img && imgPdf">
           <!-- <img :src="require(`@/assets/img/about-us/${img}`)" alt="" /> -->
@@ -52,9 +75,52 @@ export default {
       type: Boolean,
       default: () => false,
     },
+    datas: {
+      type: Object,
+      default: () => null,
+    },
+  },
+  data() {
+    return {
+      routeSubActive: Number(this.$cookies.get('subId')),
+    }
+  },
+  watch: {
+    $route: function (val) {
+      const subId = Number(this.$cookies.get('subId'))
+      console.log('kadnwej', subId)
+      this.routeSubActive = subId
+    },
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  methods: {
+    clickSubCategory(parent, child) {
+      console.log(parent, child)
+      this.$cookies.set('subId', child.id)
+      this.routeSubActive = child.id
+      if (child.slug && child.slug !== 'null') {
+        this.$router.push(
+          this.localeLocation(`${parent.slug}/${child.slug}?q=${child.id}`)
+        )
+      } else {
+        this.$router.push(
+          this.localeLocation(
+            `${parent.slug}/${child.id}?name=${this.subMenuLocale(child)}`
+          )
+        )
+      }
+    },
+    subMenuLocale(subMenu) {
+      if (this.$i18n.locale === 'tm') {
+        return subMenu.name_tm
+      } else if (this.$i18n.locale === 'ru') {
+        return subMenu.name_ru
+      } else {
+        return subMenu.name_en
+      }
+    },
   },
 }
 </script>
@@ -67,6 +133,75 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+}
+.block__sub-content {
+  width: 100%;
+  margin: 10px 0px 20px 0px;
+}
+.block__nav-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+}
+.cat-nav--list-item {
+  cursor: pointer;
+  &:hover {
+    a:after {
+      opacity: 1;
+    }
+  }
+}
+// .cat-nav--list-item.active a:after {
+//   opacity: 1;
+// }
+.cat-nav--list-item a {
+  position: relative;
+  display: flex;
+  height: 160px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  img {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+  }
+  span {
+    color: #000;
+    text-align: center;
+    font-family: Roboto Flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #dadddf;
+    border-radius: 6px 6px 0 0;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 9;
+  }
+  &.active {
+    &:after {
+      opacity: 1;
+    }
+  }
 }
 .block__title {
   display: flex;
@@ -151,6 +286,12 @@ export default {
   line-height: 140%;
   text-align: justify;
   color: #000000;
+  &:deep() {
+    a {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+  }
 }
 .block__menu {
   margin-left: 73px;

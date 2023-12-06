@@ -3,14 +3,15 @@
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
       :description="datas?.name"
-      :title="title"
       :img="datas?.image"
+      :datas="getSubMenus"
     ></block-pages>
   </section>
 </template>
 
 <script>
 import { request } from '~/api/generic.api'
+import { mapGetters } from 'vuex'
 export default {
   head() {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
@@ -34,6 +35,9 @@ export default {
     $route: async function () {
       await this.fetchDatas()
     },
+  },
+  computed: {
+    ...mapGetters(['getSubMenus']),
   },
   data() {
     return {

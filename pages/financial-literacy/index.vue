@@ -3,8 +3,8 @@
     <bread-crumbs :breadCrumbs="breadCrumbs"></bread-crumbs>
     <block-pages
       :description="about?.description"
-      :title="title"
       :img="about?.image"
+      :datas="getSubMenus"
     ></block-pages>
   </section>
 </template>
@@ -55,7 +55,7 @@ export default {
     document.querySelector('.wrapper').scrollTop = 0
   },
   computed: {
-    ...mapGetters(['imageUrl']),
+    ...mapGetters(['imageUrl', 'getSubMenus']),
   },
   async fetch() {
     await this.fetcAbout()
