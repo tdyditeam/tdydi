@@ -80,7 +80,7 @@
                   <span></span>
                   <div
                     class="header__bottom-submenu-container"
-                    v-if="item.children.length > 0"
+                    v-if="item.children.length > 0 && item.id !== 70"
                   >
                     <div class="header__bottom-submenu __container">
                       <div
