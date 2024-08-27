@@ -3,7 +3,7 @@
     <div class="announce__image">
       <img :src="`${imageUrl}${datas?.image}`" alt="" />
     </div>
-    <div class="announce__text">
+    <div style="display:none" class="announce__text">
       <div class="announce__wrapper">
         <div class="announce__title">
           <h2>{{ $t('candidate.annonce.title') }}</h2>
