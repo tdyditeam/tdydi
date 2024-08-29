@@ -285,7 +285,13 @@ export default {
           method: 'GET',
         })
         if (res.status) {
-          this.$cookies.set('view', 1)
+          this.$cookies.set('view', 1, {
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7,
+            sameSite: 'Lax',
+            secure: true,
+            httpOnly: true,
+          })
         }
       } catch (error) {
         console.log(error)

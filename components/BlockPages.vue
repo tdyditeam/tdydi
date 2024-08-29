@@ -88,7 +88,6 @@ export default {
   watch: {
     $route: function (val) {
       const subId = Number(this.$cookies.get('subId'))
-      console.log('kadnwej', subId)
       this.routeSubActive = subId
     },
   },
