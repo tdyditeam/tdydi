@@ -11,6 +11,7 @@ export default {
     port: 8000,
     host: '0.0.0.0',
   },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/style.css', 'swiper/css/swiper.css'],
   ssr: true,
@@ -40,6 +41,7 @@ export default {
     '@nuxtjs/i18n',
     'cookie-universal-nuxt',
   ],
+
   env: {
     BASE_API: process.env.BASE_API,
   },
@@ -51,6 +53,7 @@ export default {
 
   i18n: {
     baseUrl: `${process.env.SITE_URL}`,
+
     locales: [
       {
         code: 'tm',
@@ -79,6 +82,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
-    middleware: 'loader',
+    middleware: ['loader', 'setLocale'],
   },
 }
