@@ -149,10 +149,6 @@ export default {
 
 <style lang="scss" scoped>
 .gallery-photo-popup {
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
   transition: all 1s;
   opacity: 0;
   visibility: hidden;
@@ -169,6 +165,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
   @media (max-width: 479px) {
     background: #333333;
     backdrop-filter: none;
@@ -288,13 +289,14 @@ export default {
   opacity: 0;
   visibility: hidden;
   max-height: 0px;
+  overflow: hidden;
   @media (max-width: 479px) {
     opacity: 1;
     visibility: visible;
     max-height: 100%;
     margin: 0px 20px;
   }
-  overflow: hidden;
+
   &__wrapper {
     display: flex;
     width: fit-content;

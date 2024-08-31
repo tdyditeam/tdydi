@@ -229,13 +229,13 @@ export default {
 .block__description-img {
   width: 100%;
   height: 500px;
+  margin-bottom: 30px;
   @media (max-width: 700px) {
     height: 350px;
   }
   @media (max-width: 500px) {
     height: 250px;
   }
-  margin-bottom: 30px;
 }
 .block__description-img-pdf {
   width: 100%;

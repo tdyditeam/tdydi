@@ -136,10 +136,6 @@ export default {
 
 <style lang="scss" scoped>
 .contact-popup {
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
   transition: all 1s;
   opacity: 0;
   visibility: hidden;
@@ -156,6 +152,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
   &__row {
   }
 

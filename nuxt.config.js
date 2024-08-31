@@ -39,7 +39,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
-    'cookie-universal-nuxt',
+    [
+      'cookie-universal-nuxt',
+      { SameSite: 'Strict', secure: false, httpOnly: false },
+    ],
   ],
 
   env: {
