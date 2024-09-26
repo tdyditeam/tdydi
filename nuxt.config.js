@@ -56,6 +56,7 @@ export default {
 
   i18n: {
     baseUrl: `${process.env.SITE_URL}`,
+    detectBrowserLanguage: false,
 
     locales: [
       {

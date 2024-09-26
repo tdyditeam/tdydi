@@ -251,6 +251,14 @@ export default {
           } else {
             this.routeActive = this.menus[0]?.id
           }
+          this.menus.push({
+            name_tm: 'E-žurnal',
+            name_en: 'e-journal',
+            name_ru: 'журнал',
+            slug: '/journal',
+            children: [],
+          })
+          console.log(this.menus, 'asds')
         }
       } catch (error) {
         console.log(error)
@@ -333,6 +341,8 @@ export default {
         this.$cookies.set('id', data.id)
         this.$cookies.remove('subId')
         this.$router.push(this.localeLocation(data.slug))
+      } else if ('/journal') {
+        window.open('https://journal.tsiem.edu.tm', '_blank')
       } else {
         this.$cookies.set('id', data.id)
         if (data.children[0].slug && data.children[0].slug !== 'null') {
