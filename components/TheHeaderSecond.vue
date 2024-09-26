@@ -258,7 +258,6 @@ export default {
             slug: '/journal',
             children: [],
           })
-          console.log(this.menus, 'asds')
         }
       } catch (error) {
         console.log(error)
@@ -309,6 +308,8 @@ export default {
         this.$router.push(this.localeLocation(data.slug))
       } else if (data.slug === '/financial-literacy') {
         this.$router.push(this.localeLocation(data.slug))
+      } else if ('/journal') {
+        window.open('https://journal.tsiem.edu.tm', '_blank')
       } else {
         if (data.children[0].slug && data.children[0].slug !== 'null') {
           this.$router.push(
