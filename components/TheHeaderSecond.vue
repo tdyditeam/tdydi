@@ -308,7 +308,7 @@ export default {
         this.$router.push(this.localeLocation(data.slug))
       } else if (data.slug === '/financial-literacy') {
         this.$router.push(this.localeLocation(data.slug))
-      } else if ('/journal') {
+      } else if (data.slug === '/journal') {
         window.open('https://journal.tsiem.edu.tm', '_blank')
       } else {
         if (data.children[0].slug && data.children[0].slug !== 'null') {
@@ -342,7 +342,7 @@ export default {
         this.$cookies.set('id', data.id)
         this.$cookies.remove('subId')
         this.$router.push(this.localeLocation(data.slug))
-      } else if ('/journal') {
+      } else if (data.slug === '/journal') {
         window.open('https://journal.tsiem.edu.tm', '_blank')
       } else {
         this.$cookies.set('id', data.id)
