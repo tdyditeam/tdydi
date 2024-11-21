@@ -201,6 +201,7 @@ export default {
   background: #fff;
   border-radius: 4px;
   margin: 0 30px 0 0;
+  list-style: none;
   &__item {
     &:not(:last-child) {
       margin-right: 5px;
