@@ -1,9 +1,9 @@
 <template>
   <div @click="$emit('clickOneItem', event.id)" class="article-item">
-    <div class="article-item__body-wrapper">
+    <div ref="imageNewsContainer" class="article-item__body-wrapper">
       <div class="article-item__body">
-        <div class="article-item__image">
-          <img v-if="event.image" :src="`${imageUrl}${event.image}`" alt="" />
+        <div v-if="event.image" class="article-item__image">
+          <img v-if="isVisible" :src="`${imageUrl}${event.image}`" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
@@ -11,7 +11,11 @@
               new Date(event.date).toISOString().slice(0, 10)
             }}</span>
             <span>
-              <img src="@/assets/img/home/article/eye.png" alt="" />
+              <img
+                v-if="isVisible"
+                src="@/assets/img/home/article/eye.png"
+                alt=""
+              />
               <p>{{ event?.views ? event?.views : 0 }}</p>
             </span>
           </div>
@@ -68,6 +72,22 @@ export default {
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  data() {
+    return {
+      isVisible: false,
+    }
+  },
+  mounted() {
+    if (this.$refs.imageNewsContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imageNewsContainer)
+    }
   },
   methods: {
     getFileExp(fileUrl) {

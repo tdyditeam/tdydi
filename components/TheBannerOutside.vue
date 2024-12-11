@@ -1,9 +1,13 @@
 <template>
   <div class="banners-outside" v-if="bannerLeft && bannerRight">
-    <div class="banners-outside__row">
+    <div ref="imageBannerOutsideContainer" class="banners-outside__row">
       <div class="banners-outside__bannner-left">
         <div class="banners-outside__image">
-          <img :src="`${imageUrl}${bannerLeft?.image}`" alt="img" />
+          <img
+            v-if="isVisible"
+            :src="`${imageUrl}${bannerLeft?.image}`"
+            alt="img"
+          />
         </div>
       </div>
       <div class="banners-outside__bannner-right">
@@ -12,7 +16,11 @@
           v-for="(banner, index) in bannerRight"
           :key="index"
         >
-          <img :src="`${imageUrl}${banner?.image}`" alt="img" />
+          <img
+            v-if="isVisible"
+            :src="`${imageUrl}${banner?.image}`"
+            alt="img"
+          />
         </div>
       </div>
     </div>
@@ -32,8 +40,24 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      isVisible: false,
+    }
+  },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  mounted() {
+    if (this.$refs.imageBannerOutsideContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imageBannerOutsideContainer)
+    }
   },
 }
 </script>

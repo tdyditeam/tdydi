@@ -1,11 +1,11 @@
 <template>
   <div class="institute-history">
-    <div class="institute-history__row">
+    <div ref="imageHistoryContainer" class="institute-history__row">
       <div class="institute-history__title-mobile">
         {{ $t('history.title') }}
       </div>
       <div class="institute-history__image" v-if="about?.image">
-        <img :src="`${imageUrl}${about?.image}`" alt="surat" />
+        <img v-if="isVisible" :src="`${imageUrl}${about?.image}`" alt="surat" />
       </div>
       <div class="institute-history__body">
         <div class="institute-history__content">
@@ -35,8 +35,24 @@ export default {
       default: () => null,
     },
   },
+  data() {
+    return {
+      isVisible: false,
+    }
+  },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  mounted() {
+    if (this.$refs.imageHistoryContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imageHistoryContainer)
+    }
   },
 }
 </script>

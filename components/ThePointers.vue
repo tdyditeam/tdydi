@@ -1,5 +1,5 @@
 <template>
-  <div class="pointers">
+  <div ref="imagePointerContainer" class="pointers">
     <h2 class="pointers__title">{{ $t('button.theBest') }}</h2>
     <div class="pointers__row">
       <div class="pointers__left">
@@ -18,7 +18,11 @@
       </div>
       <div class="pointers__right">
         <div class="pointers__image">
-          <img src="@/assets/img/home/pointers-image.webp" alt="img" />
+          <img
+            v-if="isVisible"
+            src="@/assets/img/home/pointers-image.webp"
+            alt="img"
+          />
         </div>
       </div>
     </div>
@@ -32,6 +36,22 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      isVisible: false,
+    }
+  },
+  mounted() {
+    if (this.$refs.imagePointerContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imagePointerContainer)
+    }
   },
 }
 </script>

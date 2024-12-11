@@ -1,6 +1,6 @@
 <template>
   <div class="photo-block">
-    <div class="photo-block__row">
+    <div ref="imageGalleryContainer" class="photo-block__row">
       <div
         class="photo-block__column"
         @click="showPopUp"
@@ -8,7 +8,11 @@
         :key="galery.id"
       >
         <div class="photo-block__image">
-          <img :src="`${imageUrl}${galery.image}`" alt="surat" />
+          <img
+            v-if="isVisible"
+            :src="`${imageUrl}${galery.image}`"
+            alt="surat"
+          />
           <div class="photo-block__text-block" v-if="galery.name">
             <div class="photo-block__text-wrapper">
               <div class="photo-block__text">{{ galery.name || '' }}</div>
@@ -44,10 +48,22 @@ export default {
   data() {
     return {
       isActive: false,
+      isVisible: false,
     }
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  mounted() {
+    if (this.$refs.imageGalleryContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imageGalleryContainer)
+    }
   },
   methods: {
     showPopUp() {

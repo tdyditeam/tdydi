@@ -1,5 +1,5 @@
 <template>
-  <div class="partners-swiper">
+  <div ref="imagePartnersContainer" class="partners-swiper">
     <div v-swiper:mySwiper="options" class="partners-swiper__swiper swiper">
       <div class="partners-swiper__wrapper swiper-wrapper">
         <div
@@ -9,7 +9,11 @@
         >
           <div class="partners-swiper__body">
             <div class="partners-swiper__image">
-              <img :src="`${imageUrl}${img.image}`" alt="surat" />
+              <img
+                v-if="isVisible"
+                :src="`${imageUrl}${img.image}`"
+                alt="surat"
+              />
             </div>
             <div class="partners-swiper__title" v-html="img.description"></div>
           </div>
@@ -37,6 +41,7 @@ export default {
   },
   data() {
     return {
+      isVisible: false,
       options: {
         spaceBetween: 30,
         loop: true,
@@ -63,6 +68,17 @@ export default {
           disableOnInteraction: false,
         },
       },
+    }
+  },
+  mounted() {
+    if (this.$refs.imagePartnersContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imagePartnersContainer)
     }
   },
 }

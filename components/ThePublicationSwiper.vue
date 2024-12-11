@@ -2,16 +2,30 @@
   <div class="publication__swiper-block-publication">
     <div
       v-swiper:mySwiper="options"
+      ref="imageContainer"
       class="swiper-block-publication-publication swiper"
     >
       <div class="swiper-block-publication__wrapper swiper-wrapper">
         <div
-          v-for="img in images"
+          v-for="(img, index) in images.map((item) => {
+            return {
+              ...item,
+              isLoading: true,
+            }
+          })"
           :key="img.id"
           class="swiper-block-publication__slide swiper-slide"
         >
-          <div class="swiper-block-publication__image">
-            <img :src="`${imageUrl}${img.image}`" alt="surat" />
+          <div
+            class="swiper-block-publication__image"
+            :class="{ 'loading-image': img.isLoading }"
+          >
+            <img
+              v-if="isVisible"
+              :src="`${imageUrl}${img.image}`"
+              alt="surat"
+              @load="images[index].isLoading = true"
+            />
           </div>
         </div>
       </div>
@@ -34,6 +48,7 @@ export default {
   },
   data() {
     return {
+      isVisible: false,
       options: {
         spaceBetween: 30,
         loop: true,
@@ -72,6 +87,17 @@ export default {
   computed: {
     ...mapGetters(['imageUrl']),
   },
+  mounted() {
+    if (this.$refs.imageContainer) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true
+          observer.disconnect()
+        }
+      })
+      observer.observe(this.$refs.imageContainer)
+    }
+  },
 }
 </script>
 
@@ -104,6 +130,32 @@ export default {
     @media (max-width: 400px) {
       height: 200px;
     }
+  }
+}
+.loading-image {
+  width: 100%;
+  height: 270px;
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  @media (max-width: 992px) {
+    height: 220px;
+  }
+  @media (max-width: 620px) {
+    height: 180px;
+  }
+  @media (max-width: 479px) {
+    height: 250px;
+  }
+  @media (max-width: 400px) {
+    height: 200px;
+  }
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
   }
 }
 </style>
