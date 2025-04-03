@@ -3,6 +3,15 @@
     <hero-slider :video="video"></hero-slider>
     <the-banner-title :mainYearText="mainYearText"></the-banner-title>
     <the-banner-statistics :indicators="indicators"></the-banner-statistics>
+    <div class="neutrality-wrapper">
+      <a href="https://neutrality.gov.tm" target="_blank">
+        <img
+          style="object-fit: contain"
+          src="@/assets/img/neutrality.webp"
+          alt=""
+        />
+      </a>
+    </div>
     <!-- <the-video-banner></the-video-banner> -->
 
     <!-- <div class="banner-figure__wrapper">
@@ -89,6 +98,28 @@ export default {
       background: var(--primary);
       transform: rotate(45deg);
       transform-origin: bottom right;
+    }
+  }
+}
+.neutrality-wrapper {
+  position: absolute;
+  top: 37%;
+  left: 10px;
+  @media (max-width: 992px) {
+    top: 38%;
+  }
+  @media (max-width: 767px) {
+    top: 29%;
+    left: 0px;
+  }
+  img {
+    width: 150px;
+    height: 100px;
+    @media (max-width: 992px) {
+    }
+    @media (max-width: 767px) {
+      width: 100px;
+      height: 50px;
     }
   }
 }
