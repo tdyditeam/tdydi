@@ -83,3 +83,64 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.block__description-content {
+  table {
+    padding-top: 40px;
+    width: 100%;
+
+    thead {
+      background-color: #20ba72;
+      height: 80px;
+      tr {
+        th {
+          padding: 10px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+          color: #ffffff;
+          text-align: center;
+          @media (max-width: 767px) {
+            font-size: 14px;
+            padding: 6px;
+          }
+          @media (max-width: 479px) {
+            padding: 4px;
+            font-size: 12px;
+            padding: 6px;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        transition: background-color 0.3s ease 0s;
+        cursor: pointer;
+        &:first-child {
+          background-color: #20ba72;
+          color: #ffffff !important;
+        }
+        &:nth-child(even) {
+          background-color: #f5f5f5;
+        }
+        &._active,
+        td {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+          color: #333333;
+          padding: 10px;
+          @media (max-width: 767px) {
+            font-size: 14px;
+            padding: 6px;
+          }
+          @media (max-width: 479px) {
+            font-size: 10px;
+            padding: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+</style>
