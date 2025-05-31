@@ -50,11 +50,12 @@ export default {
       ]
     },
   },
-  async fetch() {
-    await Promise.all([this.fetchTopDatas(), this.fetchBottomDatas()])
-  },
-  mounted() {
+  // async fetch() {
+  //   await Promise.all([this.fetchTopDatas(), this.fetchBottomDatas()])
+  // },
+  async mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+    await Promise.all([this.fetchTopDatas(), this.fetchBottomDatas()])
   },
   methods: {
     async fetchTopDatas() {
@@ -63,12 +64,13 @@ export default {
           url: `/${this.$route.query.q}/competitions`,
           params: {
             lang: this.$i18n.locale,
-            submenu_id: this.$route.query.q,
+            submenu_id: this.$cookies.get('subId'),
           },
           method: 'GET',
         })
         if (res.status) {
           this.competitionsTop = res.data[0] || null
+          console.log(this.competitionsTop)
         }
       } catch (error) {
         console.log(error)

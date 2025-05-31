@@ -349,7 +349,7 @@ export default {
         if (data.children[0].slug && data.children[0].slug !== 'null') {
           this.$router.push(
             this.localeLocation(
-              `${data.slug}/${data.children[0].slug}?q=${data.id}`
+              `${data.slug}/${data.children[0].slug}?q=${data.id}&subId=${data.children[0]?.id}`
             )
           )
           this.routeSubActive = data.children[0].id
