@@ -39,6 +39,7 @@ export default {
     contact: 'Contact',
     feedBack: 'Feed back',
     theBest: 'Active students',
+    educationMinistry: 'bilim.tm news',
   },
   header: {
     name: `TURKMEN STATE INSTITUTE <br /> OF ECONOMICS 

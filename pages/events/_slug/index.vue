@@ -6,13 +6,15 @@
       :bannerRight="bannerRight"
     ></the-banner-outside>
     <div class="news__header">
-      <div class="news__header-search">
+      <div v-if="Number($route.params.slug) === 3" class="news__header-search">
         <text-filed
           :placeholder="$t('search')"
           :value="search"
           prependIcon="search-normal.png"
+          @updateValue="handleSearch"
         ></text-filed>
       </div>
+      <div v-else></div>
       <div class="news__header-buttons">
         <pagination
           v-if="pageLength > 1"
@@ -38,11 +40,7 @@
         v-for="(event, index) in events"
         :key="event.id"
         :event="event"
-        @clickOneItem="
-          $router.push(
-            localeLocation(`/events/${Number($route.params.slug)}/${event.id}`)
-          )
-        "
+        @clickOneItem="handleEventClick(event)"
       ></article-item>
     </div>
   </div>
@@ -80,6 +78,7 @@ export default {
       events: null,
       bannerLeft: null,
       bannerRight: null,
+      searchDebounceTimer: null,
     }
   },
   computed: {
@@ -95,8 +94,23 @@ export default {
           name: this.$t('button.articles'),
           eventType: 'article',
         },
+        {
+          id: 3,
+          name: this.$t('button.educationMinistry'),
+          eventType: 'educationMinistry',
+        },
       ]
       return arr
+    },
+  },
+  watch: {
+    $route: {
+      async handler() {
+        this.page = 1
+        this.search = ''
+        await this.fetchEvents()
+      },
+      deep: true,
     },
   },
   async fetch() {
@@ -108,6 +122,11 @@ export default {
   },
   mounted() {
     document.querySelector('.wrapper').scrollTop = 0
+  },
+  beforeDestroy() {
+    if (this.searchDebounceTimer) {
+      clearTimeout(this.searchDebounceTimer)
+    }
   },
   methods: {
     async fetchBannerLeft() {
@@ -146,24 +165,101 @@ export default {
     },
     async fetchEvents() {
       try {
-        const res = await request({
-          url: `/news?events_type=${this.$route.query.event_type}&limit=${this.limit}&page=${this.page}`,
-          params: {
+        const currentSlug = Number(this.$route.params.slug)
+
+        // Если item.id === 3, используем centralized API
+        if (currentSlug === 3) {
+          const offset = (this.page - 1) * this.limit
+          const params = {
             lang: this.$i18n.locale,
-          },
-          method: 'GET',
-        })
-        if (res.status) {
-          this.pageLength = Math.ceil(res.total / this.limit)
-          this.events = res.events || []
+            limit: this.limit,
+            offset: offset,
+          }
+
+          if (this.search) {
+            params.search = this.search
+          }
+
+          const res = await request({
+            url: '/centralized/news/',
+            params: params,
+            method: 'GET',
+            baseURL: 'https://merkez.bilim.tm/api/v1',
+          })
+
+          if (res && res.results) {
+            this.pageLength = Math.ceil((res.count || 0) / this.limit)
+            // Преобразуем данные из нового API в формат компонента
+            this.events = res.results.map((item) => ({
+              id: item.id,
+              title: item.title,
+              description: item.description || '',
+              image: item.image_thumbnail || item.image || '',
+              date: item.published_date,
+              views: item.views || 0,
+              slug: item.slug || '',
+              publisher: item.publisher || [],
+              student_fullname: null,
+              teacher_fullname: null,
+              majors: null,
+            }))
+          } else {
+            this.events = []
+            this.pageLength = 0
+          }
+        } else {
+          const res = await request({
+            url: `/news?events_type=${this.$route.query.event_type}&limit=${this.limit}&page=${this.page}`,
+            params: {
+              lang: this.$i18n.locale,
+            },
+            method: 'GET',
+          })
+          if (res.status) {
+            this.pageLength = Math.ceil(res.total / this.limit)
+            this.events = res.events || []
+          }
         }
       } catch (error) {
-        console.log(error)
+        console.error('Error fetching events:', error)
+        this.events = []
+        this.pageLength = 0
       }
     },
     async updatePage(p) {
       this.page = p
       await this.fetchEvents()
+    },
+    handleSearch(value) {
+      this.search = value
+      this.page = 1
+
+      // Очищаем предыдущий таймер
+      if (this.searchDebounceTimer) {
+        clearTimeout(this.searchDebounceTimer)
+      }
+
+      // Устанавливаем новый таймер с debounce (500ms)
+      this.searchDebounceTimer = setTimeout(() => {
+        this.fetchEvents()
+      }, 500)
+    },
+    handleEventClick(event) {
+      const currentSlug = Number(this.$route.params.slug)
+
+      // Если item.id === 3, используем slug для навигации
+      if (currentSlug === 3 && event.slug) {
+        this.$router.push(
+          this.localeLocation(
+            `/events/${currentSlug}/${event.id}?slug=${event.slug}`
+          )
+        )
+      } else {
+        // Оригинальная навигация для других случаев
+        this.$router.push(
+          this.localeLocation(`/events/${currentSlug}/${event.id}`)
+        )
+      }
     },
   },
 }
@@ -197,11 +293,7 @@ export default {
     &-buttons {
       display: flex;
       border: 1px solid transparent;
-      .button {
-        &:last-child {
-          margin-left: 10px;
-        }
-      }
+      gap: 10px;
     }
   }
   &__content {

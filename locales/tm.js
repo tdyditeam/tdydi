@@ -39,6 +39,7 @@ export default {
     contact: 'Habarlaşmak',
     feedBack: 'Ýüz tutmak üçin',
     theBest: 'Göreldeli talyplar',
+    educationMinistry: 'bilim.tm täzelikler',
   },
   header: {
     name: `  Türkmen döwlet ykdysadyýet <br />

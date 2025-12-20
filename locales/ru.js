@@ -39,6 +39,7 @@ export default {
     contact: 'Контакт',
     feedBack: 'Свяжитесь с нами',
     theBest: 'Активные студенты',
+    educationMinistry: 'bilim.tm новости',
   },
   header: {
     name: `ТУРКМЕНСКИЙ ГОСУДАРСТВЕННЫЙ ИНСТИТУТ <br /> ЭКОНОМИКИ И УПРАВЛЕНИЯ`,

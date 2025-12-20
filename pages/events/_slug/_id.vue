@@ -37,19 +37,41 @@
           </template>
         </div>
       </div>
+      <div
+        v-if="event?.events?.content || event?.events?.description"
+        class="news-item__text"
+        v-html="event?.events?.content || event?.events?.description"
+      ></div>
+      <div
+        v-if="event?.events?.publisher && event?.events?.publisher.length > 0"
+        class="content-swiper-block__publisher"
+      >
+        <div class="content-swiper-block__publisher-image">
+          <img :src="event?.events?.publisher[0].logo_thumbnail" alt="" />
+        </div>
+        <h2 class="content-swiper-block__publisher-title">
+          {{ event?.events?.publisher[0].title }}
+        </h2>
+      </div>
       <div class="article-item__people people-swiper-block">
         <div class="people-swiper-block__row">
           <div class="people-swiper-block__left-block">
             <div
               class="people-swiper-block__content"
-              v-if="event?.events?.student_fullname !== 'null'"
+              v-if="
+                event?.events?.student_fullname !== 'null' &&
+                event?.events?.student_fullname !== null
+              "
             >
               <div class="people-swiper-block__title">
                 {{ event?.events?.student_fullname }}
               </div>
               <div
                 class="people-swiper-block__subtitle"
-                v-if="event?.events?.majors !== 'null'"
+                v-if="
+                  event?.events?.majors !== 'null' &&
+                  event?.events?.majors !== null
+                "
               >
                 {{ event?.events?.majors || '' }}
               </div>
@@ -57,7 +79,10 @@
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event?.events?.teacher_fullname !== 'null'"
+            v-if="
+              event?.events?.teacher_fullname !== 'null' &&
+              event?.events?.teacher_fullname !== null
+            "
           >
             <div class="people-swiper-block__title">{{ $t('teacher') }}:</div>
             <div class="people-swiper-block__subtitle">
@@ -71,8 +96,8 @@
 </template>
 
 <script>
-import { request } from '~/api/generic.api'
 import { mapGetters } from 'vuex'
+import { request } from '~/api/generic.api'
 export default {
   head() {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
@@ -101,6 +126,14 @@ export default {
   },
   computed: {
     ...mapGetters(['imageUrl']),
+  },
+  watch: {
+    $route: {
+      async handler() {
+        await this.fetchOneEvent()
+      },
+      deep: true,
+    },
   },
   async fetch() {
     await Promise.all([
@@ -149,23 +182,56 @@ export default {
     },
     async fetchOneEvent() {
       try {
-        const res = await request({
-          url: `/news/${this.$route.params.id}`,
-          params: {
-            lang: this.$i18n.locale,
-          },
-          method: 'GET',
-        })
-        if (res.status) {
-          this.event = res || []
+        const currentSlug = Number(this.$route.params.slug)
+
+        // Если item.id === 3, используем centralized API
+        if (currentSlug === 3) {
+          const res = await request({
+            url: `/centralized/news/${this.$route.params.id}`,
+            params: {
+              lang: this.$i18n.locale,
+            },
+            method: 'GET',
+            baseURL: 'https://merkez.bilim.tm/api/v1',
+          })
+
+          if (res) {
+            // Преобразуем данные из centralized API в формат компонента
+            this.event = {
+              events: {
+                id: res.id,
+                title: res.title,
+                description: res.description || '',
+                content: res.content || '',
+                image: res.image || res.image_thumbnail || '',
+                date: res.published_date,
+                views: res.views || 0,
+                slug: res.slug || '',
+                publisher: res.publisher || [],
+                source_link: res.source_link || '',
+                student_fullname: null,
+                teacher_fullname: null,
+                majors: null,
+              },
+              files: [],
+            }
+          }
+        } else {
+          // Оригинальный API для других случаев
+          const res = await request({
+            url: `/news/${this.$route.params.id}`,
+            params: {
+              lang: this.$i18n.locale,
+            },
+            method: 'GET',
+          })
+          if (res.status) {
+            this.event = res || []
+          }
         }
       } catch (error) {
         console.log(error)
       }
-    },
-    async updatePage(p) {
-      this.page = p
-      await this.fetchEvents()
     },
     getFileExp(fileUrl) {
       var allowedExtensions =
@@ -295,5 +361,26 @@ export default {
   color: var(--primary);
   text-align: justify;
   padding-top: 20px;
+}
+.content-swiper-block__publisher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  &-image {
+    width: 40px;
+    height: 40px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &-title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 116.6%;
+    color: #333333;
+  }
 }
 </style>

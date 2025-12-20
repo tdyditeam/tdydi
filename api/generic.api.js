@@ -8,6 +8,7 @@ export const request = async ({
   data = {},
   onUploadProgress = {},
   file = false,
+  baseURL = `${process.env.BASE_API}`,
 }) => {
   if (file) {
     headers['Accept'] = 'application/json'

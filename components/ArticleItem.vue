@@ -3,7 +3,7 @@
     <div ref="imageNewsContainer" class="article-item__body-wrapper">
       <div class="article-item__body">
         <div v-if="event.image" class="article-item__image">
-          <img v-if="isVisible" :src="`${imageUrl}${event.image}`" alt="" />
+          <img v-if="isVisible" :src="eventImageSrc" alt="" />
         </div>
         <div class="article-item__content content-swiper-block">
           <div class="content-swiper-block__data">
@@ -26,6 +26,17 @@
             class="content-swiper-block__text"
             v-html="event?.description"
           ></div>
+          <div
+            v-if="event?.publisher && event?.publisher.length > 0"
+            class="content-swiper-block__publisher"
+          >
+            <div class="content-swiper-block__publisher-image">
+              <img :src="event?.publisher[0].logo_thumbnail" alt="" />
+            </div>
+            <h2 class="content-swiper-block__publisher-title">
+              {{ event?.publisher[0].title }}
+            </h2>
+          </div>
         </div>
       </div>
       <div class="article-item__people people-swiper-block">
@@ -48,7 +59,10 @@
           </div>
           <div
             class="people-swiper-block__right-block"
-            v-if="event?.teacher_fullname !== 'null'"
+            v-if="
+              event?.teacher_fullname !== 'null' &&
+              event?.teacher_fullname !== null
+            "
           >
             <div class="people-swiper-block__title">Mugallym:</div>
             <div class="people-swiper-block__subtitle">
@@ -72,6 +86,18 @@ export default {
   },
   computed: {
     ...mapGetters(['imageUrl']),
+    eventImageSrc() {
+      if (!this.event?.image) return ''
+      // Если изображение уже полный URL, используем его как есть
+      if (
+        this.event.image.startsWith('http://') ||
+        this.event.image.startsWith('https://')
+      ) {
+        return this.event.image
+      }
+      // Иначе добавляем префикс imageUrl
+      return `${this.imageUrl}${this.event.image}`
+    },
   },
   data() {
     return {
@@ -79,6 +105,7 @@ export default {
     }
   },
   mounted() {
+    console.log('ArticleItem event:', this.event)
     if (this.$refs.imageNewsContainer) {
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
@@ -202,6 +229,27 @@ export default {
     @media (max-width: 479px) {
       font-size: 12px;
     }
+  }
+}
+
+.content-swiper-block__publisher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  &-image {
+    width: 30px;
+    height: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 116.6%;
+    color: #333333;
   }
 }
 .people-swiper-block {

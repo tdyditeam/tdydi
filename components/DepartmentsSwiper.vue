@@ -1,7 +1,7 @@
 <template>
   <div class="departments-swiper">
     <div
-      v-if="items && items.length && items[0] !== ''"
+      v-if="Number($route.params.slug) === 3"
       class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
       ref="swiperTop"
     >
@@ -12,16 +12,32 @@
             v-for="(item, index) in items"
             :key="index"
           >
-            <img :src="`${imageUrl}${item}`" alt="" />
+            <img :src="getImageSrc(item)" alt="" />
           </div>
         </div>
       </div>
     </div>
     <div
-      v-show="items && items.length > 1"
+      v-else-if="items && items.length && items[0] !== ''"
+      class="departments-swiper__swiper-top departments-swiper-top swiper mySwiper2"
+      ref="swiperTop"
+    >
+      <div class="departments-swiper-top__wrapper swiper-wrapper">
+        <div class="departments-swiper-top__slide swiper-slide">
+          <div
+            class="departments-swiper-top__image"
+            v-for="(item, index) in items"
+            :key="index"
+          >
+            <img :src="getImageSrc(item)" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      v-else-if="items && items.length > 1"
       class="departments-swiper__swiper-mini departments-swiper-mini swiper mySwiper"
       ref="mySwiperSmall"
-      :options="swiperSmallOptions"
     >
       <div class="departments-swiper-mini__wrapper swiper-wrapper">
         <div
@@ -30,7 +46,7 @@
           class="departments-swiper-mini__slide swiper-slide"
         >
           <div class="departments-swiper-mini__image">
-            <img :src="`${imageUrl}${item}`" alt="" />
+            <img :src="getImageSrc(item)" alt="" />
           </div>
         </div>
       </div>
@@ -43,11 +59,6 @@
 import Swiper from '@/plugins/thumbs'
 import { mapGetters } from 'vuex'
 export default {
-  computed: {
-    swiperSmall() {
-      return this.$refs.mySwiperSmall.$swiper
-    },
-  },
   props: {
     datas: {
       type: Object,
@@ -60,69 +71,69 @@ export default {
   },
   data() {
     return {
-      swiperSmallOptions: null,
-      // items: [
-      //   { id: 1, path: 'img_1.png' },
-      //   { id: 2, path: 'img_2.png' },
-      //   { id: 3, path: 'img_3.png' },
-      //   { id: 4, path: 'img_4.png' },
-      // ],
-      swiperOptionThumbs: {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 4,
-        speed: 2000,
-        watchSlidesProgress: true,
-        slideToClickedSlide: true,
-      },
-      swiperOptionTop: {
-        slidesPerView: 1,
-        speed: 2000,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
+      swiperSmallInstance: null,
+      swiperTopInstance: null,
     }
   },
   computed: {
     ...mapGetters(['imageUrl']),
   },
   mounted() {
-    this.swiperMainMini()
-    this.swiperMainBig()
+    this.$nextTick(() => {
+      this.initSwipers()
+    })
+  },
+  beforeDestroy() {
+    if (this.swiperSmallInstance) {
+      this.swiperSmallInstance.destroy(true, true)
+    }
+    if (this.swiperTopInstance) {
+      this.swiperTopInstance.destroy(true, true)
+    }
   },
   methods: {
-    swiperMainMini() {
-      this.swiperSmallOptions = new Swiper('.departments-swiper-mini', {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 4,
-        speed: 2000,
-        watchSlidesProgress: true,
-        slideToClickedSlide: true,
-      })
+    getImageSrc(imageUrl) {
+      if (!imageUrl) return ''
+      // Если изображение уже полный URL, используем его как есть
+      if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+        return imageUrl
+      }
+      // Иначе добавляем префикс imageUrl
+      return `${this.imageUrl}${imageUrl}`
     },
-    swiperMainBig() {
-      this.swiperSmallOptions = new Swiper('.departments-swiper-top', {
-        slidesPerView: 1,
-        speed: 2000,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        thumbs: {
-          swiper: this.swiperSmallOptions,
-        },
-      })
+    initSwipers() {
+      const currentSlug = Number(this.$route.params.slug)
+      const hasMultipleItems = this.items && this.items.length > 1
+
+      // Не инициализируем Swiper для slug === 3 или когда только одно изображение
+      if (currentSlug === 3 || !hasMultipleItems) {
+        return
+      }
+
+      // Инициализируем мини-свайпер только если есть несколько элементов
+      const miniElement = document.querySelector('.departments-swiper-mini')
+      if (miniElement) {
+        this.swiperSmallInstance = new Swiper('.departments-swiper-mini', {
+          loop: true,
+          spaceBetween: 20,
+          slidesPerView: 4,
+          speed: 2000,
+          watchSlidesProgress: true,
+          slideToClickedSlide: true,
+        })
+
+        // Инициализируем верхний свайпер с thumbs
+        const topElement = document.querySelector('.departments-swiper-top')
+        if (topElement) {
+          this.swiperTopInstance = new Swiper('.departments-swiper-top', {
+            slidesPerView: 1,
+            speed: 2000,
+            thumbs: {
+              swiper: this.swiperSmallInstance,
+            },
+          })
+        }
+      }
     },
   },
 }
