@@ -38,7 +38,7 @@
         </div>
       </div>
       <div
-        v-if="event?.events?.content || event?.events?.description"
+        v-if="event?.events?.content || event?.events?.description && $route.params.slug === 3"
         class="news-item__text"
         v-html="event?.events?.content || event?.events?.description"
       ></div>
