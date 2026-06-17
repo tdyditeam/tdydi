@@ -43,10 +43,22 @@ export default {
       'cookie-universal-nuxt',
       { SameSite: 'Strict', secure: false, httpOnly: false },
     ],
+    ...(process.env.GOOGLE_ANALYTICS_ID
+      ? [
+          [
+            '@nuxtjs/google-gtag',
+            {
+              id: process.env.GOOGLE_ANALYTICS_ID,
+              debug: process.env.NODE_ENV !== 'production',
+            },
+          ],
+        ]
+      : []),
   ],
 
   env: {
     BASE_API: process.env.BASE_API,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
