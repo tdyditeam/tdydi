@@ -85,3 +85,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Large local media (served from server uploads)
+assets/tsiem.mp4

@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="block__description">
-        <div class="block__description-img-pdf" v-if="img && imgPdf">
+        <div class="block__description-img-pdf" v-if="img && imgPdf && !video">
           <!-- <img :src="require(`@/assets/img/about-us/${img}`)" alt="" /> -->
           <!-- <a href="http://" target="_blank" rel="noopener noreferrer"
             ><img src="@/assets/img/about-us/zurnal.png" alt=""
@@ -40,9 +40,22 @@
             'block__description-img',
             { 'block__description-imgContain': contain },
           ]"
-          v-if="img && !imgPdf"
+          v-if="img && !imgPdf && !video"
         >
           <img :src="`${imageUrl}${img}`" alt="" />
+        </div>
+        <div v-if="video" class="block__description-video">
+          <video
+            :src="`${imageUrl}tsiem.mp4`"
+            alt="tdydi"
+            controls
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
         </div>
         <div v-html="description" class="block__description-content"></div>
       </div>
@@ -78,6 +91,10 @@ export default {
     datas: {
       type: Object,
       default: () => null,
+    },
+    video: {
+      type: Boolean,
+      default: () => false,
     },
   },
   data() {
@@ -274,6 +291,22 @@ export default {
   object-position: center center;
   @media (max-width: 720px) {
     object-fit: fill;
+  }
+}
+
+.block__description-video {
+  width: 70%;
+  height: 500px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  margin-bottom: 30px;
+  @media (max-width: 700px) {
+    height: 350px;
+  }
+  @media (max-width: 500px) {
+    height: 250px;
   }
 }
 .block__description-content {

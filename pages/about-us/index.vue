@@ -5,6 +5,7 @@
       :description="about?.text"
       :title="title"
       :img="about?.image"
+      :video="true"
     ></block-pages>
   </section>
 </template>
