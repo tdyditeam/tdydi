@@ -49,12 +49,7 @@
             :src="`${imageUrl}/uploads/tsiem.mp4`"
             alt="tdydi"
             controls
-            style="
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center center;
-            "
+            class="block__description-video-content"
           />
         </div>
         <div v-html="description" class="block__description-content"></div>
@@ -297,10 +292,10 @@ export default {
 .block__description-video {
   width: 70%;
   height: 500px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   @media (max-width: 700px) {
     height: 350px;
@@ -308,6 +303,13 @@ export default {
   @media (max-width: 500px) {
     height: 250px;
   }
+}
+
+.block__description-video-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 .block__description-content {
   //   max-width: 900px;
