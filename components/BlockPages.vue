@@ -298,9 +298,11 @@ export default {
   align-items: center;
   margin-bottom: 30px;
   @media (max-width: 700px) {
+    width: 100%;
     height: 350px;
   }
   @media (max-width: 500px) {
+    width: 100%;
     height: 250px;
   }
 }
