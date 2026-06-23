@@ -46,7 +46,7 @@
         </div>
         <div v-if="video" class="block__description-video">
           <video
-            :src="`${imageUrl}tsiem.mp4`"
+            :src="`${imageUrl}/uploads/tsiem.mp4`"
             alt="tdydi"
             controls
             style="
