@@ -88,3 +88,6 @@ sw.*
 
 # Large local media (served from server uploads)
 assets/tsiem.mp4
+assets/tsiem-compressed.mp4
+assets/tsiem-web.mp4
+assets/tsiem-poster.jpg

@@ -47,8 +47,10 @@
         <div v-if="video" class="block__description-video">
           <video
             :src="`${imageUrl}/uploads/tsiem.mp4`"
-            alt="tdydi"
+            :poster="`${imageUrl}/uploads/tsiem-poster.jpg`"
             controls
+            preload="metadata"
+            playsinline
             class="block__description-video-content"
           />
         </div>
